@@ -1,0 +1,794 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "wireframe-ui",
+  "homepage": "https://wireframe-ui.vercel.app",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+      "dependencies": ["@radix-ui/react-accordion"],
+      "registryDependencies": ["text", "icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Displays a callout for user attention with optional icon and variant styles.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "An image element with a fallback for representing the user.",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Displays a badge or a component that looks like a badge with multiple variants.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Displays the path to the current resource using a hierarchy of links.",
+      "dependencies": ["@radix-ui/react-slot"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Displays a button or a component that looks like a button with multiple variants and sizes.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "A container for displaying content with header, footer, and action sections.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A control that allows the user to toggle between checked and not checked.",
+      "dependencies": ["@radix-ui/react-checkbox"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "An interactive component which expands/collapses a panel.",
+      "dependencies": ["@radix-ui/react-collapsible"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "A modal dialog that interrupts the user with important content and expects a response.",
+      "dependencies": ["@radix-ui/react-dialog"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "A panel that slides out from the edge of the screen with support for multiple directions.",
+      "dependencies": ["vaul"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "For sighted users to preview content available behind a link.",
+      "dependencies": ["@radix-ui/react-hover-card"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "A text input field with support for various types and validation states.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "type": "registry:ui",
+      "title": "Media",
+      "description": "A container for displaying images and videos with loading states and fallback placeholders.",
+      "dependencies": [],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/media.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Displays keyboard shortcuts or keys with proper styling.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Renders an accessible label associated with form controls.",
+      "dependencies": ["@radix-ui/react-label"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "A visually persistent menu common in desktop applications with nested menus and items.",
+      "dependencies": ["@radix-ui/react-menubar"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination with page navigation, next and previous links.",
+      "dependencies": [],
+      "registryDependencies": ["button", "icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Displays a list of options for the user to pick from with keyboard navigation support.",
+      "dependencies": ["@radix-ui/react-select"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Visually or semantically separates content with horizontal or vertical orientation.",
+      "dependencies": ["@radix-ui/react-separator"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "An input where the user selects a value from within a given range.",
+      "dependencies": ["@radix-ui/react-slider"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "type": "registry:ui",
+      "title": "Text",
+      "description": "A skeleton text placeholder component that renders thin animated lines for text content.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["wireframe-types", "wireframe-utils"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "An opinionated toast component for React with beautiful animations and icons.",
+      "dependencies": ["sonner", "next-themes"],
+      "registryDependencies": ["icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A control that allows the user to toggle between checked and unchecked states.",
+      "dependencies": ["@radix-ui/react-switch"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A set of layered sections of content with tab triggers for switching between them.",
+      "dependencies": ["@radix-ui/react-tabs"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text input field with auto-resizing support.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A two-state button that can be either on or off with multiple variants.",
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A popup that displays information related to an element when focused or hovered.",
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "icons",
+      "type": "registry:ui",
+      "title": "Icons",
+      "description": "A collection of icons for wireframe components.",
+      "dependencies": ["motion"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/icons/index.tsx",
+          "type": "registry:component",
+          "target": "components/icons/index.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/arrow-left.tsx",
+          "type": "registry:component",
+          "target": "components/icons/arrow-left.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/arrow-right.tsx",
+          "type": "registry:component",
+          "target": "components/icons/arrow-right.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/audio-lines-icon.tsx",
+          "type": "registry:component",
+          "target": "components/icons/audio-lines-icon.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/badge-alert.tsx",
+          "type": "registry:component",
+          "target": "components/icons/badge-alert.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/check.tsx",
+          "type": "registry:component",
+          "target": "components/icons/check.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/chevron-down.tsx",
+          "type": "registry:component",
+          "target": "components/icons/chevron-down.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/chevron-left.tsx",
+          "type": "registry:component",
+          "target": "components/icons/chevron-left.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/chevron-right.tsx",
+          "type": "registry:component",
+          "target": "components/icons/chevron-right.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/chevron-up.tsx",
+          "type": "registry:component",
+          "target": "components/icons/chevron-up.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/circle-dashed.tsx",
+          "type": "registry:component",
+          "target": "components/icons/circle-dashed.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/clap-icon.tsx",
+          "type": "registry:component",
+          "target": "components/icons/clap-icon.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/cursor.tsx",
+          "type": "registry:component",
+          "target": "components/icons/cursor.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/gallery-thumbnails-icon.tsx",
+          "type": "registry:component",
+          "target": "components/icons/gallery-thumbnails-icon.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/panel-left-close.tsx",
+          "type": "registry:component",
+          "target": "components/icons/panel-left-close.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/panel-left-open.tsx",
+          "type": "registry:component",
+          "target": "components/icons/panel-left-open.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/plus.tsx",
+          "type": "registry:component",
+          "target": "components/icons/plus.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/square-pen.tsx",
+          "type": "registry:component",
+          "target": "components/icons/square-pen.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/user-icon.tsx",
+          "type": "registry:component",
+          "target": "components/icons/user-icon.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/waves.tsx",
+          "type": "registry:component",
+          "target": "components/icons/waves.tsx"
+        },
+        {
+          "path": "registry/new-york/icons/x.tsx",
+          "type": "registry:component",
+          "target": "components/icons/x.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wireframe",
+      "type": "registry:lib",
+      "title": "Wireframe CSS Utilities",
+      "description": "CSS utility classes for wireframe components including patterns, animations, and emphasis levels.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/lib/wireframe.css",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "wireframe-types",
+      "type": "registry:lib",
+      "title": "Wireframe Types",
+      "description": "TypeScript type definitions for wireframe components.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/lib/wireframe-types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "wireframe-utils",
+      "type": "registry:lib",
+      "title": "Wireframe Utilities",
+      "description": "Utility functions for wireframe components including responsive class generation and visibility helpers.",
+      "dependencies": [],
+      "registryDependencies": ["wireframe-types"],
+      "files": [
+        {
+          "path": "registry/new-york/lib/wireframe-utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "paragraph",
+      "type": "registry:ui",
+      "title": "Paragraph",
+      "description": "A composition component that renders multiple Text lines to simulate paragraph content.",
+      "dependencies": [],
+      "registryDependencies": ["text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/paragraph.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "heading",
+      "type": "registry:ui",
+      "title": "Heading",
+      "description": "A composition component that renders appropriately sized Text based on heading level (1-6).",
+      "dependencies": [],
+      "registryDependencies": ["text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/heading.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "list-group",
+      "type": "registry:ui",
+      "title": "ListGroup",
+      "description": "A composition component that renders list items with Text placeholders for wireframe prototyping.",
+      "dependencies": [],
+      "registryDependencies": ["text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/list-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stack",
+      "type": "registry:ui",
+      "title": "Stack",
+      "description": "A layout primitive for arranging wireframe elements with configurable spacing and direction.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/new-york/ui/stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "type": "registry:ui",
+      "title": "Section",
+      "description": "A composition component with preset variants for common layout patterns (hero, content-two-column, feature-grid).",
+      "dependencies": [],
+      "registryDependencies": ["text", "paragraph", "heading"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "A data table component with wireframe helpers for headers and cells.",
+      "dependencies": [],
+      "registryDependencies": ["text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "description": "A flexible item component for lists with wireframe helpers for titles, descriptions, and media.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": ["separator", "text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A context menu component with wireframe helpers for menu items and labels.",
+      "dependencies": ["@radix-ui/react-context-menu"],
+      "registryDependencies": ["text", "icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "file",
+      "type": "registry:ui",
+      "title": "Field Components",
+      "description": "Form field components with wireframe helpers for labels and descriptions.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["label", "separator", "text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/file.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "A carousel component with wireframe helper for slide content.",
+      "dependencies": ["embla-carousel-react"],
+      "registryDependencies": ["button", "text", "icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "A button group component with wireframe helper for text labels.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": ["separator", "text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "An input group component for combining inputs with addons and buttons.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["button", "input", "textarea"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form components built on top of react-hook-form for managing form state.",
+      "dependencies": ["@radix-ui/react-label", "@radix-ui/react-slot", "react-hook-form"],
+      "registryDependencies": ["label"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "A slide-out panel component with wireframe helpers for titles and descriptions.",
+      "dependencies": ["@radix-ui/react-dialog"],
+      "registryDependencies": ["text", "icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "A collapsible sidebar component with wireframe helpers for menu items and labels.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": ["button", "input", "separator", "sheet", "text", "tooltip", "icons"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Chart components built on recharts with wireframe placeholder helper.",
+      "dependencies": ["recharts"],
+      "registryDependencies": ["text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "An empty state component with wireframe helpers for titles, descriptions, and media.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["text"],
+      "files": [
+        {
+          "path": "registry/new-york/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wireframe-utils",
+  "type": "registry:lib",
+  "title": "Wireframe Utilities",
+  "description": "Utility functions for wireframe components including responsive class generation and visibility helpers.",
+  "dependencies": [],
+  "registryDependencies": [
+    "wireframe-types"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/lib/wireframe-utils.ts",
+      "content": "import type { ResponsiveProps } from '@/registry/new-york/lib/wireframe-types'\r\n\r\n/**\r\n * Generates responsive CSS classes based on breakpoint objects\r\n * @param responsive - Object with breakpoint keys (base, sm, md, lg, xl) and prop values\r\n * @param propName - The CSS property name to generate classes for (e.g., 'w' for width, 'h' for height)\r\n * @returns Space-separated string of responsive classes\r\n */\r\nexport function getResponsiveClasses(\r\n  responsive?: ResponsiveProps<Record<string, any>>,\r\n  propName?: string\r\n): string {\r\n  if (!responsive) return ''\r\n\r\n  const classes: string[] = []\r\n\r\n  // Handle base (no prefix)\r\n  if (responsive.base) {\r\n    Object.entries(responsive.base).forEach(([key, value]) => {\r\n      if (propName) {\r\n        classes.push(`${propName}-${value}`)\r\n      } else {\r\n        classes.push(`${key}-${value}`)\r\n      }\r\n    })\r\n  }\r\n\r\n  // Handle breakpoints\r\n  const breakpoints = ['sm', 'md', 'lg', 'xl'] as const\r\n  breakpoints.forEach((breakpoint) => {\r\n    if (responsive[breakpoint]) {\r\n      Object.entries(responsive[breakpoint]!).forEach(([key, value]) => {\r\n        if (propName) {\r\n          classes.push(`${breakpoint}:${propName}-${value}`)\r\n        } else {\r\n          classes.push(`${breakpoint}:${key}-${value}`)\r\n        }\r\n      })\r\n    }\r\n  })\r\n\r\n  return classes.join(' ')\r\n}\r\n\r\n/**\r\n * Generates CSS classes to hide elements at specific breakpoints\r\n * @param hideOn - Array of breakpoint names where the element should be hidden\r\n * @returns Space-separated string of hidden classes\r\n */\r\nexport function getHideOnClasses(hideOn?: ('sm' | 'md' | 'lg' | 'xl')[]): string {\r\n  if (!hideOn || hideOn.length === 0) return ''\r\n\r\n  return hideOn.map((breakpoint) => `${breakpoint}:hidden`).join(' ')\r\n}\r\n",
+      "type": "registry:lib"
+    }
+  ]
+}

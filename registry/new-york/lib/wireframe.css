@@ -1,0 +1,92 @@
+@layer components {
+
+    /* Base wireframe styles */
+    .wireframe-line {
+        @apply rounded-full inline-block bg-muted-foreground/10;
+    }
+
+    .wireframe-block {
+        @apply rounded-lg bg-muted-foreground/5 border border-muted-foreground/10;
+    }
+
+    /* Emphasis levels */
+    .wireframe-emphasis-primary {
+        @apply bg-muted-foreground/20;
+    }
+
+    .wireframe-emphasis-secondary {
+        @apply bg-muted-foreground/15;
+    }
+
+    .wireframe-emphasis-tertiary {
+        @apply bg-muted-foreground/10;
+    }
+
+    .wireframe-emphasis-subtle {
+        @apply bg-muted-foreground/5;
+    }
+
+    /* Pattern utilities */
+    .wireframe-pattern-striped {
+        background-image: repeating-linear-gradient(45deg,
+                currentColor 0,
+                currentColor 1px,
+                transparent 1px,
+                transparent 4px);
+    }
+
+    .wireframe-pattern-dotted {
+        background-image: radial-gradient(circle,
+                currentColor 1px,
+                transparent 1px);
+        background-size: 8px 8px;
+    }
+
+    .wireframe-pattern-crosshatch {
+        background-image:
+            linear-gradient(currentColor 1px, transparent 1px),
+            linear-gradient(90deg, currentColor 1px, transparent 1px);
+        background-size: 8px 8px;
+    }
+
+    .wireframe-pattern-wave {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3' stroke='currentColor' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+    }
+
+    /* Animation keyframes and utilities */
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    .wireframe-animate-shimmer {
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 100%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    @keyframes typing {
+
+        0%,
+        100% {
+            width: 0%;
+        }
+
+        50% {
+            width: 100%;
+        }
+    }
+
+    .wireframe-animate-typing {
+        animation: typing 3s ease-in-out infinite;
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "heading",
+  "type": "registry:ui",
+  "title": "Heading",
+  "description": "A composition component that renders appropriately sized Text based on heading level (1-6).",
+  "dependencies": [],
+  "registryDependencies": [
+    "text"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/ui/heading.tsx",
+      "content": "import * as React from 'react'\r\n\r\nimport { Text, type TextProps } from '@/registry/new-york/ui/text'\r\nimport { cn } from '@/lib/utils'\r\n\r\nexport interface HeadingProps extends Omit<TextProps, 'size' | 'width'> {\r\n  level?: 1 | 2 | 3 | 4 | 5 | 6\r\n  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div'\r\n}\r\n\r\nconst Heading = React.forwardRef<HTMLElement, HeadingProps>(\r\n  ({ level = 1, as, className, ...props }, ref) => {\r\n    // Map heading levels to appropriate text sizes\r\n    const sizeMap = {\r\n      1: 'xl' as const,\r\n      2: 'lg' as const,\r\n      3: 'lg' as const,\r\n      4: 'base' as const,\r\n      5: 'sm' as const,\r\n      6: 'sm' as const,\r\n    }\r\n\r\n    // Map heading levels to appropriate widths\r\n    const widthMap = {\r\n      1: 'lg' as const,\r\n      2: 'lg' as const,\r\n      3: 'md' as const,\r\n      4: 'md' as const,\r\n      5: 'sm' as const,\r\n      6: 'sm' as const,\r\n    }\r\n\r\n    // Use the 'as' prop if provided, otherwise default to the semantic heading tag\r\n    const Component = (as || `h${level}`) as React.ElementType\r\n\r\n    return (\r\n      <Component ref={ref} className={cn(className)}>\r\n        <Text size={sizeMap[level]} width={widthMap[level]} {...props} />\r\n      </Component>\r\n    )\r\n  }\r\n)\r\n\r\nHeading.displayName = 'Heading'\r\n\r\nexport { Heading }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

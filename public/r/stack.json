@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stack",
+  "type": "registry:ui",
+  "title": "Stack",
+  "description": "A layout primitive for arranging wireframe elements with configurable spacing and direction.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/ui/stack.tsx",
+      "content": "import * as React from 'react'\r\n\r\nimport { cn } from '@/lib/utils'\r\n\r\nexport interface StackProps extends React.HTMLAttributes<HTMLDivElement> {\r\n  direction?: 'vertical' | 'horizontal'\r\n  spacing?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'\r\n  align?: 'start' | 'center' | 'end' | 'stretch'\r\n  justify?: 'start' | 'center' | 'end' | 'between' | 'around'\r\n}\r\n\r\nconst Stack = React.forwardRef<HTMLDivElement, StackProps>(\r\n  (\r\n    {\r\n      direction = 'vertical',\r\n      spacing = 'md',\r\n      align = 'stretch',\r\n      justify = 'start',\r\n      className,\r\n      children,\r\n      ...props\r\n    },\r\n    ref\r\n  ) => {\r\n    const spacingMap = {\r\n      xs: 'gap-1',\r\n      sm: 'gap-2',\r\n      md: 'gap-4',\r\n      lg: 'gap-6',\r\n      xl: 'gap-8',\r\n    }\r\n\r\n    const alignMap = {\r\n      start: 'items-start',\r\n      center: 'items-center',\r\n      end: 'items-end',\r\n      stretch: 'items-stretch',\r\n    }\r\n\r\n    const justifyMap = {\r\n      start: 'justify-start',\r\n      center: 'justify-center',\r\n      end: 'justify-end',\r\n      between: 'justify-between',\r\n      around: 'justify-around',\r\n    }\r\n\r\n    return (\r\n      <div\r\n        ref={ref}\r\n        data-slot=\"stack\"\r\n        className={cn(\r\n          'flex',\r\n          direction === 'vertical' ? 'flex-col' : 'flex-row',\r\n          spacingMap[spacing],\r\n          alignMap[align],\r\n          justifyMap[justify],\r\n          className\r\n        )}\r\n        {...props}\r\n      >\r\n        {children}\r\n      </div>\r\n    )\r\n  }\r\n)\r\n\r\nStack.displayName = 'Stack'\r\n\r\nexport { Stack }\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

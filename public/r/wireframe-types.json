@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "wireframe-types",
+  "type": "registry:lib",
+  "title": "Wireframe Types",
+  "description": "TypeScript type definitions for wireframe components.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/lib/wireframe-types.ts",
+      "content": "/**\r\n * Wireframe Type Definitions\r\n * \r\n * TypeScript type definitions for wireframe components.\r\n * These types are used across the wireframe-ui component library.\r\n */\r\n\r\n/**\r\n * Size variants for wireframe elements\r\n */\r\nexport type WireframeSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl'\r\n\r\n/**\r\n * Width variants for wireframe elements\r\n */\r\nexport type WireframeWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'\r\n\r\n/**\r\n * Color variants for wireframe elements\r\n */\r\nexport type WireframeColor =\r\n  | 'default'\r\n  | 'muted'\r\n  | 'subtle'\r\n  | 'primary'\r\n  | 'secondary'\r\n  | 'accent'\r\n\r\n/**\r\n * Animation variants for wireframe elements\r\n */\r\nexport type WireframeAnimation = 'none' | 'pulse' | 'shimmer' | 'typing'\r\n\r\n/**\r\n * Emphasis hierarchy for wireframe elements\r\n * Provides visual weight without relying on semantic color meanings\r\n */\r\nexport type WireframeEmphasis = 'primary' | 'secondary' | 'tertiary' | 'subtle'\r\n\r\n/**\r\n * Spacing variants for composition components\r\n */\r\nexport type WireframeSpacing = 'tight' | 'normal' | 'relaxed'\r\n\r\n/**\r\n * Direction variants for layout components\r\n */\r\nexport type WireframeDirection = 'vertical' | 'horizontal'\r\n\r\n/**\r\n * Breakpoint keys for responsive utilities\r\n */\r\nexport type Breakpoint = 'base' | 'sm' | 'md' | 'lg' | 'xl'\r\n\r\n/**\r\n * Responsive props interface for breakpoint-based styling\r\n * Allows components to accept different prop values at different breakpoints\r\n * \r\n * @example\r\n * ```tsx\r\n * <Text responsive={{ base: { size: 'sm' }, md: { size: 'lg' } }} />\r\n * ```\r\n */\r\nexport interface ResponsiveProps<T = Record<string, any>> {\r\n  base?: Partial<T>\r\n  sm?: Partial<T>\r\n  md?: Partial<T>\r\n  lg?: Partial<T>\r\n  xl?: Partial<T>\r\n}\r\n",
+      "type": "registry:lib"
+    }
+  ]
+}
