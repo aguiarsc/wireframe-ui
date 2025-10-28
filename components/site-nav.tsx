@@ -8,7 +8,9 @@ import { GithubIcon } from '@/components/icons/github'
 
 export function SiteNav() {
   const pathname = usePathname()
+  const isHome = pathname === '/'
   const isShowcase = pathname === '/showcase'
+  const isMigration = pathname === '/migration'
 
   return (
     <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
@@ -21,12 +23,30 @@ export function SiteNav() {
           </Link>
 
           <div className="flex items-center gap-4">
-            <Link
-              href={isShowcase ? '/' : '/showcase'}
-              className="hover:text-foreground/80 text-foreground/60 text-base font-medium whitespace-nowrap transition-colors"
-            >
-              {isShowcase ? 'Docs' : 'Showcase'}
-            </Link>
+            {!isHome && (
+              <Link
+                href="/"
+                className="hover:text-foreground/80 text-foreground/60 text-base font-medium whitespace-nowrap transition-colors"
+              >
+                Docs
+              </Link>
+            )}
+            {!isShowcase && (
+              <Link
+                href="/showcase"
+                className="hover:text-foreground/80 text-foreground/60 text-base font-medium whitespace-nowrap transition-colors"
+              >
+                Showcase
+              </Link>
+            )}
+            {!isMigration && (
+              <Link
+                href="/migration"
+                className="hover:text-foreground/80 text-foreground/60 text-base font-medium whitespace-nowrap transition-colors"
+              >
+                Migration
+              </Link>
+            )}
             <div className="h-7 w-px bg-foreground/20" />
             <div className="flex items-center gap-3">
               <Link
