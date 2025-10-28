@@ -11,6 +11,7 @@ export function SiteNav() {
   const isHome = pathname === '/'
   const isShowcase = pathname === '/showcase'
   const isMigration = pathname === '/migration'
+  const isComparison = pathname === '/comparison'
 
   return (
     <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
@@ -37,6 +38,14 @@ export function SiteNav() {
                 className="hover:text-foreground/80 text-foreground/60 text-base font-medium whitespace-nowrap transition-colors"
               >
                 Showcase
+              </Link>
+            )}
+            {!isComparison && (
+              <Link
+                href="/comparison"
+                className="hover:text-foreground/80 text-foreground/60 text-base font-medium whitespace-nowrap transition-colors"
+              >
+                Comparison
               </Link>
             )}
             {!isMigration && (
