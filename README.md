@@ -4,6 +4,12 @@ Wireframe components that you can copy and paste into your apps. Skip Figma. Bui
 
 ![hero](https://github.com/user-attachments/assets/6d6ab50a-a5cc-4ae5-a5fe-9bf131be252a)
 
+## Installation
+
+```bash
+npx shadcn@latest add https://wireframe-ui.vercel.app/r/text
+```
+
 ## Documentation
 
 Visit https://wireframe-ui.vercel.app to view the documentation.
