@@ -7,7 +7,9 @@
   "dependencies": [
     "vaul"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "icons"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/drawer.tsx",

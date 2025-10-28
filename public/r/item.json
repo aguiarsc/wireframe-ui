@@ -10,7 +10,8 @@
   ],
   "registryDependencies": [
     "separator",
-    "text"
+    "text",
+    "icons"
   ],
   "files": [
     {

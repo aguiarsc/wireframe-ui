@@ -10,7 +10,8 @@
   "registryDependencies": [
     "button",
     "input",
-    "textarea"
+    "textarea",
+    "icons"
   ],
   "files": [
     {

@@ -23,7 +23,7 @@
       "title": "Alert",
       "description": "Displays a callout for user attention with optional icon and variant styles.",
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/alert.tsx",
@@ -51,7 +51,7 @@
       "title": "Badge",
       "description": "Displays a badge or a component that looks like a badge with multiple variants.",
       "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/badge.tsx",
@@ -121,7 +121,7 @@
       "title": "Collapsible",
       "description": "An interactive component which expands/collapses a panel.",
       "dependencies": ["@radix-ui/react-collapsible"],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/collapsible.tsx",
@@ -149,7 +149,7 @@
       "title": "Drawer",
       "description": "A panel that slides out from the edge of the screen with support for multiple directions.",
       "dependencies": ["vaul"],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/drawer.tsx",
@@ -163,7 +163,7 @@
       "title": "Hover Card",
       "description": "For sighted users to preview content available behind a link.",
       "dependencies": ["@radix-ui/react-hover-card"],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/hover-card.tsx",
@@ -177,7 +177,7 @@
       "title": "Input",
       "description": "A text input field with support for various types and validation states.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/input.tsx",
@@ -387,7 +387,7 @@
       "title": "Tooltip",
       "description": "A popup that displays information related to an element when focused or hovered.",
       "dependencies": ["@radix-ui/react-tooltip"],
-      "registryDependencies": [],
+      "registryDependencies": ["icons"],
       "files": [
         {
           "path": "registry/new-york/ui/tooltip.tsx",
@@ -642,7 +642,7 @@
       "title": "Item",
       "description": "A flexible item component for lists with wireframe helpers for titles, descriptions, and media.",
       "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
-      "registryDependencies": ["separator", "text"],
+      "registryDependencies": ["separator", "text", "icons"],
       "files": [
         {
           "path": "registry/new-york/ui/item.tsx",
@@ -712,7 +712,7 @@
       "title": "Input Group",
       "description": "An input group component for combining inputs with addons and buttons.",
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["button", "input", "textarea"],
+      "registryDependencies": ["button", "input", "textarea", "icons"],
       "files": [
         {
           "path": "registry/new-york/ui/input-group.tsx",
@@ -782,7 +782,7 @@
       "title": "Empty State",
       "description": "An empty state component with wireframe helpers for titles, descriptions, and media.",
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["text"],
+      "registryDependencies": ["text", "icons"],
       "files": [
         {
           "path": "registry/new-york/ui/empty.tsx",

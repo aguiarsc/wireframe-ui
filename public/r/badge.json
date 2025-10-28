@@ -8,7 +8,9 @@
     "@radix-ui/react-slot",
     "class-variance-authority"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "icons"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/badge.tsx",
