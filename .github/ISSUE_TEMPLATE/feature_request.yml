@@ -1,0 +1,110 @@
+name: Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please provide as much detail as possible.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: I'm frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe the solution you'd like to see
+      placeholder: Describe your ideal solution
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature category
+      description: What type of feature is this?
+      options:
+        - New component
+        - Component enhancement
+        - Styling/theming
+        - Accessibility
+        - Performance
+        - Developer experience
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What alternatives have you considered?
+      placeholder: Describe any alternative solutions or features you've considered
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Provide examples or references from other libraries/frameworks
+      placeholder: |
+        Link to similar implementations:
+        - Example 1: ...
+        - Example 2: ...
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Describe your use case for this feature
+      placeholder: How would you use this feature in your project?
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation details
+      description: If you have ideas about how to implement this, share them here
+      placeholder: Technical details or implementation suggestions
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Critical - blocking my work
+        - High - significant impact
+        - Medium - would be nice to have
+        - Low - minor improvement
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to help implement this feature?
+      options:
+        - label: I am willing to submit a PR to implement this feature
+          required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched for similar feature requests before creating this one
+          required: true
+        - label: This feature aligns with the project's goals and philosophy
+          required: true

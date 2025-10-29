@@ -1,0 +1,164 @@
+name: Component Request
+description: Request a new component for wireframe-ui
+title: "[Component]: "
+labels: ["component-request", "enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for requesting a new component! Please provide detailed information to help me understand your needs.
+
+  - type: input
+    id: component-name
+    attributes:
+      label: Component name
+      description: What would you like to call this component?
+      placeholder: e.g., DataTable, Calendar, Timeline
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Component description
+      description: Describe what this component should do
+      placeholder: A detailed description of the component's purpose and functionality
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Describe the specific use case for this component
+      placeholder: |
+        Why do you need this component?
+        What problem does it solve?
+        How would you use it in your project?
+    validations:
+      required: true
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: API design
+      description: Describe the component's API (props, events, etc.)
+      placeholder: |
+        ```tsx
+        <ComponentName
+          prop1="value"
+          prop2={value}
+          onEvent={() => {}}
+        />
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected behavior
+      description: Describe how the component should behave
+      placeholder: |
+        - User interactions
+        - State management
+        - Keyboard navigation
+        - Screen reader support
+
+  - type: textarea
+    id: variants
+    attributes:
+      label: Variants and states
+      description: What variants or states should this component support?
+      placeholder: |
+        Variants: default, outlined, ghost
+        States: idle, loading, disabled, error
+        Sizes: sm, md, lg
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples and references
+      description: Provide links to similar components in other libraries
+      placeholder: |
+        - shadcn/ui: ...
+        - Radix UI: ...
+        - Material UI: ...
+        - Other references: ...
+
+  - type: textarea
+    id: visual-design
+    attributes:
+      label: Visual design
+      description: Describe or attach mockups showing how the component should look
+      placeholder: |
+        Attach images, links to Figma, or describe the visual design
+
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: Requirements
+      description: What are the key requirements for this component?
+      options:
+        - label: Must be fully accessible (WCAG 2.1 AA)
+          required: false
+        - label: Must be keyboard navigable
+          required: false
+        - label: Must support light and dark themes
+          required: false
+        - label: Must be mobile responsive
+          required: false
+        - label: Must follow wireframe aesthetic
+          required: false
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Complexity estimate
+      description: How complex do you think this component is?
+      options:
+        - Simple (like Badge, Avatar)
+        - Medium (like Button, Input)
+        - Complex (like Select, Dialog)
+        - Very complex (like DataTable, Calendar)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this component to you?
+      options:
+        - Critical - blocking my work
+        - High - significant impact
+        - Medium - would be nice to have
+        - Low - minor addition
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to help build this component?
+      options:
+        - label: I am willing to submit a PR to implement this component
+          required: false
+        - label: I can provide design mockups
+          required: false
+        - label: I can help with testing
+          required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched for similar component requests
+          required: true
+        - label: This component is not already available in wireframe-ui
+          required: true
+        - label: This component aligns with the wireframe aesthetic
+          required: true
