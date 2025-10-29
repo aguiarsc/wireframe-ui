@@ -1,0 +1,215 @@
+# wireframe-ui - LLM Context
+
+**Purpose:** Wireframe components for React. Skip Figma, prototype in your IDE.
+**Site:** https://wireframe-ui.vercel.app
+**Repo:** https://github.com/aguiarsc/wireframe-ui
+
+## Installation
+
+```bash
+npx shadcn@latest add https://wireframe-ui.vercel.app/r/text
+```
+
+## Core Concept
+
+**Wireframe → Production = Same structure, swap placeholders**
+
+```tsx
+// Wireframe
+<Text width="lg" />
+<Media type="image" />
+
+// Production (same layout)
+<h1>{title}</h1>
+<img src={url} alt={alt} />
+```
+
+## Key Components
+
+### Text
+```tsx
+<Text width="lg" size="xl" emphasis="primary" />
+<Text lines={3} />
+<Text size={{ base: 'sm', md: 'lg' }} /> // Responsive
+<Text.Heading level={1} />
+```
+
+**Props:** width, size, emphasis, animation, lines, pattern
+
+### Media
+```tsx
+<Media type="image" aspectRatio="video" />
+```
+
+**Props:** type (image|video|audio), aspectRatio (square|video|portrait)
+
+### Card
+```tsx
+<Card>
+  <CardHeader><Text width="lg" /></CardHeader>
+  <CardContent><Text lines={3} /></CardContent>
+</Card>
+```
+
+### Section
+```tsx
+<Section variant="hero">
+  <Section.Heading />
+  <Section.Paragraph />
+</Section>
+```
+
+**Variants:** hero, content-two-column, feature-grid
+
+### Table
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow><TableHeadWireframe width="md" /></TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow><TableCellWireframe width="lg" /></TableRow>
+  </TableBody>
+</Table>
+```
+
+### Forms
+```tsx
+<Input skeleton />
+<Button skeleton />
+<Select skeleton />
+```
+
+## Common Patterns
+
+**Dashboard Card:**
+```tsx
+<Card>
+  <CardHeader>
+    <Text width="sm" size="sm" />
+  </CardHeader>
+  <CardContent>
+    <Text width="md" emphasis="primary" size="xl" />
+  </CardContent>
+</Card>
+```
+
+**User Profile:**
+```tsx
+<div className="flex items-center gap-4">
+  <Avatar><AvatarFallback /></Avatar>
+  <Text width="md" />
+</div>
+```
+
+## Migration Example
+
+**Before (Wireframe):**
+```tsx
+function ProductCard() {
+  return (
+    <Card>
+      <Media type="image" aspectRatio="square" />
+      <CardHeader>
+        <CardTitle><Text width="lg" /></CardTitle>
+      </CardHeader>
+      <CardContent><Text lines={2} /></CardContent>
+      <CardFooter><Button skeleton /></CardFooter>
+    </Card>
+  )
+}
+```
+
+**After (Production):**
+```tsx
+function ProductCard({ product }) {
+  return (
+    <Card>
+      <img src={product.image} alt={product.name} />
+      <CardHeader>
+        <CardTitle>{product.name}</CardTitle>
+      </CardHeader>
+      <CardContent><p>{product.description}</p></CardContent>
+      <CardFooter>
+        <Button onClick={() => addToCart(product)}>Add to Cart</Button>
+      </CardFooter>
+    </Card>
+  )
+}
+```
+
+**What changed:** Placeholders → Real data. Structure stays identical.
+
+## Props Reference
+
+**Emphasis:** primary (40%), secondary (30%), tertiary (20%), quaternary (10%)
+**Animation:** pulse, shimmer, typing, none
+**Pattern:** line, striped, dotted, crosshatch, wave
+**Sizes:** xs, sm, base, lg, xl
+**Widths:** xs, sm, md, lg, xl, 2xl, 3xl, full
+
+## Responsive System
+
+```tsx
+// Old (still works)
+<Text responsive={{ base: { size: 'sm' }, md: { size: 'lg' } }} />
+
+// New (preferred)
+<Text size={{ base: 'sm', md: 'lg' }} />
+```
+
+**Breakpoints:** base (mobile), sm (640px), md (768px), lg (1024px), xl (1280px)
+
+## AI Assistant Guidelines
+
+**DO:**
+- Use wireframe components for prototyping
+- Keep component structure during migration
+- Use semantic sub-components (Text.Heading)
+- Apply responsive props
+
+**DON'T:**
+- Mix wireframe and real data
+- Add `<Text>` children: `<Text>Hello</Text>` ❌
+- Add onClick to skeleton buttons
+- Use `<Text>` in production code
+
+**Common Mistakes:**
+```tsx
+// Wrong
+<Text>Hello World</Text>
+<Button skeleton onClick={fn} />
+
+// Right
+<Text width="lg" />
+<Button skeleton />
+```
+
+## File Locations
+
+```
+registry/new-york/ui/          # Components
+registry/new-york/lib/         # Types, utils, CSS
+  ├── wireframe-types.ts       # TypeScript types
+  ├── wireframe-utils.ts       # getResponsiveClasses()
+  └── wireframe.css            # Custom styles
+```
+
+## TypeScript
+
+```typescript
+type WireframeSize = 'xs' | 'sm' | 'base' | 'lg' | 'xl'
+type WireframeEmphasis = 'primary' | 'secondary' | 'tertiary' | 'quaternary'
+
+interface ResponsiveProps<T> {
+  base?: T; sm?: T; md?: T; lg?: T; xl?: T
+}
+```
+
+## Tech Stack
+
+React 18+, Next.js 15+, TypeScript, Tailwind CSS, shadcn/ui compatible
+
+---
+
+**Philosophy:** Code-first wireframing. Fast prototyping. 85% code reuse on migration.
