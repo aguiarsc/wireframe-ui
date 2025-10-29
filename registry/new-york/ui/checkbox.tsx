@@ -6,7 +6,9 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { cn } from '@/lib/utils'
 import { CheckIcon } from '@/registry/new-york/icons'
 
-function Checkbox({ className, ...props }: React.ComponentProps<typeof CheckboxPrimitive.Root>) {
+export interface CheckboxProps extends React.ComponentProps<typeof CheckboxPrimitive.Root> {}
+
+function Checkbox({ className, ...props }: CheckboxProps) {
   return (
     <CheckboxPrimitive.Root
       data-slot="checkbox"

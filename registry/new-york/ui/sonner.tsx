@@ -5,7 +5,9 @@ import { Toaster as Sonner, type ToasterProps } from 'sonner'
 
 import { BadgeAlertIcon, CheckIcon, CircleDashedIcon, XIcon } from '@/registry/new-york/icons'
 
-const Toaster = ({ ...props }: ToasterProps) => {
+export interface ToasterComponentProps extends ToasterProps {}
+
+const Toaster = ({ ...props }: ToasterComponentProps) => {
   const { theme = 'system' } = useTheme()
 
   return (

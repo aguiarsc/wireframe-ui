@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils'
 
-function Kbd({ className, ...props }: React.ComponentProps<'kbd'>) {
+export interface KbdProps extends React.ComponentProps<'kbd'> {}
+
+function Kbd({ className, ...props }: KbdProps) {
   return (
     <kbd
       data-slot="kbd"
@@ -15,7 +17,9 @@ function Kbd({ className, ...props }: React.ComponentProps<'kbd'>) {
   )
 }
 
-function KbdGroup({ className, ...props }: React.ComponentProps<'div'>) {
+export interface KbdGroupProps extends React.ComponentProps<'div'> {}
+
+function KbdGroup({ className, ...props }: KbdGroupProps) {
   return (
     <kbd
       data-slot="kbd-group"

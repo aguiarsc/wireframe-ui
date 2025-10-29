@@ -8,7 +8,9 @@ import { Button } from "@/registry/new-york/ui/button"
 import { Input } from "@/registry/new-york/ui/input"
 import { Textarea } from "@/registry/new-york/ui/textarea"
 
-function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
+export interface InputGroupProps extends React.ComponentProps<"div"> {}
+
+function InputGroup({ className, ...props }: InputGroupProps) {
   return (
     <div
       data-slot="input-group"
@@ -57,11 +59,13 @@ const inputGroupAddonVariants = cva(
   }
 )
 
+export interface InputGroupAddonProps extends React.ComponentProps<"div">, VariantProps<typeof inputGroupAddonVariants> {}
+
 function InputGroupAddon({
   className,
   align = "inline-start",
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof inputGroupAddonVariants>) {
+}: InputGroupAddonProps) {
   return (
     <div
       role="group"
@@ -97,14 +101,15 @@ const inputGroupButtonVariants = cva(
   }
 )
 
+export interface InputGroupButtonProps extends Omit<React.ComponentProps<typeof Button>, "size">, VariantProps<typeof inputGroupButtonVariants> {}
+
 function InputGroupButton({
   className,
   type = "button",
   variant = "ghost",
   size = "xs",
   ...props
-}: Omit<React.ComponentProps<typeof Button>, "size"> &
-  VariantProps<typeof inputGroupButtonVariants>) {
+}: InputGroupButtonProps) {
   return (
     <Button
       type={type}
@@ -116,7 +121,9 @@ function InputGroupButton({
   )
 }
 
-function InputGroupText({ className, ...props }: React.ComponentProps<"span">) {
+export interface InputGroupTextProps extends React.ComponentProps<"span"> {}
+
+function InputGroupText({ className, ...props }: InputGroupTextProps) {
   return (
     <span
       className={cn(
@@ -128,10 +135,12 @@ function InputGroupText({ className, ...props }: React.ComponentProps<"span">) {
   )
 }
 
+export interface InputGroupInputProps extends React.ComponentProps<typeof Input> {}
+
 function InputGroupInput({
   className,
   ...props
-}: React.ComponentProps<typeof Input>) {
+}: InputGroupInputProps) {
   return (
     <Input
       data-slot="input-group-control"
@@ -144,10 +153,12 @@ function InputGroupInput({
   )
 }
 
+export interface InputGroupTextareaProps extends React.ComponentProps<typeof Textarea> {}
+
 function InputGroupTextarea({
   className,
   ...props
-}: React.ComponentProps<typeof Textarea>) {
+}: InputGroupTextareaProps) {
   return (
     <Textarea
       data-slot="input-group-control"

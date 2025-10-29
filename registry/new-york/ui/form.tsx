@@ -73,7 +73,9 @@ const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 )
 
-function FormItem({ className, ...props }: React.ComponentProps<"div">) {
+export interface FormItemProps extends React.ComponentProps<"div"> {}
+
+function FormItem({ className, ...props }: FormItemProps) {
   const id = React.useId()
 
   return (
@@ -87,10 +89,12 @@ function FormItem({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
+export interface FormLabelProps extends React.ComponentProps<typeof LabelPrimitive.Root> {}
+
 function FormLabel({
   className,
   ...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
+}: FormLabelProps) {
   const { error, formItemId } = useFormField()
 
   return (
@@ -104,7 +108,9 @@ function FormLabel({
   )
 }
 
-function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
+export interface FormControlProps extends React.ComponentProps<typeof Slot> {}
+
+function FormControl({ ...props }: FormControlProps) {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
   return (
@@ -122,7 +128,9 @@ function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
   )
 }
 
-function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
+export interface FormDescriptionProps extends React.ComponentProps<"p"> {}
+
+function FormDescription({ className, ...props }: FormDescriptionProps) {
   const { formDescriptionId } = useFormField()
 
   return (
@@ -135,7 +143,9 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
   )
 }
 
-function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
+export interface FormMessageProps extends React.ComponentProps<"p"> {}
+
+function FormMessage({ className, ...props }: FormMessageProps) {
   const { error, formMessageId } = useFormField()
   const body = error ? String(error?.message ?? "") : props.children
 

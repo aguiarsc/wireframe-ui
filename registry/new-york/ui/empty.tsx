@@ -3,7 +3,9 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { Text } from "@/registry/new-york/ui/text"
 
-function Empty({ className, ...props }: React.ComponentProps<"div">) {
+export interface EmptyProps extends React.ComponentProps<"div"> {}
+
+function Empty({ className, ...props }: EmptyProps) {
   return (
     <div
       data-slot="empty"
@@ -16,7 +18,9 @@ function Empty({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function EmptyHeader({ className, ...props }: React.ComponentProps<"div">) {
+export interface EmptyHeaderProps extends React.ComponentProps<"div"> {}
+
+function EmptyHeader({ className, ...props }: EmptyHeaderProps) {
   return (
     <div
       data-slot="empty-header"
@@ -44,11 +48,13 @@ const emptyMediaVariants = cva(
   }
 )
 
+export interface EmptyMediaProps extends React.ComponentProps<"div">, VariantProps<typeof emptyMediaVariants> {}
+
 function EmptyMedia({
   className,
   variant = "default",
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof emptyMediaVariants>) {
+}: EmptyMediaProps) {
   return (
     <div
       data-slot="empty-icon"
@@ -59,7 +65,9 @@ function EmptyMedia({
   )
 }
 
-function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
+export interface EmptyTitleProps extends React.ComponentProps<"div"> {}
+
+function EmptyTitle({ className, ...props }: EmptyTitleProps) {
   return (
     <div
       data-slot="empty-title"
@@ -69,7 +77,9 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
+export interface EmptyDescriptionProps extends React.ComponentProps<"p"> {}
+
+function EmptyDescription({ className, ...props }: EmptyDescriptionProps) {
   return (
     <div
       data-slot="empty-description"
@@ -82,7 +92,9 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
   )
 }
 
-function EmptyContent({ className, ...props }: React.ComponentProps<"div">) {
+export interface EmptyContentProps extends React.ComponentProps<"div"> {}
+
+function EmptyContent({ className, ...props }: EmptyContentProps) {
   return (
     <div
       data-slot="empty-content"

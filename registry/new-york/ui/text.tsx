@@ -2,7 +2,10 @@ import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
-import { getResponsiveClasses, getHideOnClasses } from '@/lib/wireframe-utils'
+import {
+  getResponsiveClasses,
+  getHideOnClasses,
+} from '@/registry/new-york/lib/wireframe-utils'
 import type {
   WireframeAnimation,
   WireframeEmphasis,
@@ -74,7 +77,10 @@ export interface TextProps
   truncate?: boolean
   animate?: WireframeAnimation
   emphasis?: WireframeEmphasis
-  responsive?: ResponsiveProps<{ size?: string; width?: string }>
+  responsive?: ResponsiveProps<{
+    size?: NonNullable<VariantProps<typeof textVariants>['size']>
+    width?: NonNullable<VariantProps<typeof textVariants>['width']>
+  }>
   hideOn?: ('sm' | 'md' | 'lg' | 'xl')[]
 }
 

@@ -19,11 +19,13 @@ const alertVariants = cva(
   }
 )
 
+export interface AlertProps extends React.ComponentProps<'div'>, VariantProps<typeof alertVariants> {}
+
 function Alert({
   className,
   variant,
   ...props
-}: React.ComponentProps<'div'> & VariantProps<typeof alertVariants>) {
+}: AlertProps) {
   return (
     <div
       data-slot="alert"
@@ -34,13 +36,17 @@ function Alert({
   )
 }
 
-function AlertTitle({ className, ...props }: React.ComponentProps<'div'>) {
+export interface AlertTitleProps extends React.ComponentProps<'div'> {}
+
+function AlertTitle({ className, ...props }: AlertTitleProps) {
   return (
     <div data-slot="alert-title" className={cn('col-start-2 font-medium', className)} {...props} />
   )
 }
 
-function AlertDescription({ className, ...props }: React.ComponentProps<'div'>) {
+export interface AlertDescriptionProps extends React.ComponentProps<'div'> {}
+
+function AlertDescription({ className, ...props }: AlertDescriptionProps) {
   return (
     <div
       data-slot="alert-description"

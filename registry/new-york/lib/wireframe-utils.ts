@@ -6,8 +6,17 @@ import type { ResponsiveProps } from '@/registry/new-york/lib/wireframe-types'
  * @param propName - The CSS property name to generate classes for (e.g., 'w' for width, 'h' for height)
  * @returns Space-separated string of responsive classes
  */
-export function getResponsiveClasses(
-  responsive?: ResponsiveProps<Record<string, any>>,
+export function getResponsiveClasses<T extends Record<string, string | number>>(
+  responsive: ResponsiveProps<T>,
+  propName?: string
+): string
+export function getResponsiveClasses(responsive: undefined, propName?: string): ''
+export function getResponsiveClasses<T extends Record<string, string | number>>(
+  responsive: ResponsiveProps<T> | undefined,
+  propName?: string
+): string
+export function getResponsiveClasses<T extends Record<string, string | number>>(
+  responsive: ResponsiveProps<T> | undefined,
   propName?: string
 ): string {
   if (!responsive) return ''
@@ -47,7 +56,9 @@ export function getResponsiveClasses(
  * @param hideOn - Array of breakpoint names where the element should be hidden
  * @returns Space-separated string of hidden classes
  */
-export function getHideOnClasses(hideOn?: ('sm' | 'md' | 'lg' | 'xl')[]): string {
+export function getHideOnClasses(
+  hideOn: ReadonlyArray<'sm' | 'md' | 'lg' | 'xl'> | undefined
+): string {
   if (!hideOn || hideOn.length === 0) return ''
 
   return hideOn.map((breakpoint) => `${breakpoint}:hidden`).join(' ')

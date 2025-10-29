@@ -6,7 +6,9 @@ import { cn } from "@/lib/utils"
 import { Separator } from "@/registry/new-york/ui/separator"
 import { Text } from "@/registry/new-york/ui/text"
 
-function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
+export interface ItemGroupProps extends React.ComponentProps<"div"> {}
+
+function ItemGroup({ className, ...props }: ItemGroupProps) {
   return (
     <div
       role="list"
@@ -17,10 +19,12 @@ function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
+export interface ItemSeparatorProps extends React.ComponentProps<typeof Separator> {}
+
 function ItemSeparator({
   className,
   ...props
-}: React.ComponentProps<typeof Separator>) {
+}: ItemSeparatorProps) {
   return (
     <Separator
       data-slot="item-separator"
@@ -52,14 +56,17 @@ const itemVariants = cva(
   }
 )
 
+export interface ItemProps extends React.ComponentProps<"div">, VariantProps<typeof itemVariants> {
+  asChild?: boolean
+}
+
 function Item({
   className,
   variant = "default",
   size = "default",
   asChild = false,
   ...props
-}: React.ComponentProps<"div"> &
-  VariantProps<typeof itemVariants> & { asChild?: boolean }) {
+}: ItemProps) {
   const Comp = asChild ? Slot : "div"
   return (
     <Comp
@@ -89,11 +96,13 @@ const itemMediaVariants = cva(
   }
 )
 
+export interface ItemMediaProps extends React.ComponentProps<"div">, VariantProps<typeof itemMediaVariants> {}
+
 function ItemMedia({
   className,
   variant = "default",
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof itemMediaVariants>) {
+}: ItemMediaProps) {
   return (
     <div
       data-slot="item-media"
@@ -104,7 +113,9 @@ function ItemMedia({
   )
 }
 
-function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
+export interface ItemContentProps extends React.ComponentProps<"div"> {}
+
+function ItemContent({ className, ...props }: ItemContentProps) {
   return (
     <div
       data-slot="item-content"
@@ -117,7 +128,9 @@ function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
+export interface ItemTitleProps extends React.ComponentProps<"div"> {}
+
+function ItemTitle({ className, ...props }: ItemTitleProps) {
   return (
     <div
       data-slot="item-title"
@@ -130,7 +143,9 @@ function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
+export interface ItemDescriptionProps extends React.ComponentProps<"p"> {}
+
+function ItemDescription({ className, ...props }: ItemDescriptionProps) {
   return (
     <p
       data-slot="item-description"
@@ -144,7 +159,9 @@ function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
   )
 }
 
-function ItemActions({ className, ...props }: React.ComponentProps<"div">) {
+export interface ItemActionsProps extends React.ComponentProps<"div"> {}
+
+function ItemActions({ className, ...props }: ItemActionsProps) {
   return (
     <div
       data-slot="item-actions"
@@ -154,7 +171,9 @@ function ItemActions({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function ItemHeader({ className, ...props }: React.ComponentProps<"div">) {
+export interface ItemHeaderProps extends React.ComponentProps<"div"> {}
+
+function ItemHeader({ className, ...props }: ItemHeaderProps) {
   return (
     <div
       data-slot="item-header"
@@ -167,7 +186,9 @@ function ItemHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function ItemFooter({ className, ...props }: React.ComponentProps<"div">) {
+export interface ItemFooterProps extends React.ComponentProps<"div"> {}
+
+function ItemFooter({ className, ...props }: ItemFooterProps) {
   return (
     <div
       data-slot="item-footer"
