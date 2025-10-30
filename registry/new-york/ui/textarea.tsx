@@ -3,21 +3,51 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Default maximum length for skeleton textarea text
+ */
+const DEFAULT_SKELETON_MAX_LENGTH = 100
+
+/**
+ * Default number of skeleton lines to display
+ */
+const DEFAULT_SKELETON_LINES = 3
+
+/**
+ * Approximate characters per line for width calculations
+ */
+const CHARS_PER_LINE = 40
+
+/**
+ * Width calculation thresholds for last line
+ */
+const LAST_LINE_WIDTH_THRESHOLD_SMALL = 10
+const LAST_LINE_WIDTH_THRESHOLD_MEDIUM = 20
+const LAST_LINE_WIDTH_THRESHOLD_LARGE = 30
+
 export interface TextareaProps extends React.ComponentProps<'textarea'> {
   /**
    * Visual variant of the textarea
    * @default 'default'
    */
   variant?: 'default' | 'wireframe'
+  /**
+   * Maximum character length for skeleton mode
+   * @default 100
+   */
   skeletonMaxLength?: number
+  /**
+   * Number of skeleton lines to display
+   * @default 3
+   */
   skeletonLines?: number
 }
 
 function Textarea({
   className,
   variant = 'default',
-  skeletonMaxLength = 100,
-  skeletonLines = 3,
+  skeletonMaxLength = DEFAULT_SKELETON_MAX_LENGTH,
+  skeletonLines = DEFAULT_SKELETON_LINES,
   ...props
 }: TextareaProps) {
   const [value, setValue] = React.useState('')
@@ -28,18 +58,16 @@ function Textarea({
   // Calculate how many lines to show based on character count
   const getVisibleLines = () => {
     if (value.length === 0) return skeletonLines
-    const charsPerLine = 40
-    return Math.min(Math.ceil(value.length / charsPerLine), skeletonLines)
+    return Math.min(Math.ceil(value.length / CHARS_PER_LINE), skeletonLines)
   }
 
   // Calculate width for the last line
   const getLastLineWidth = () => {
-    const charsPerLine = 40
-    const remainder = value.length % charsPerLine
+    const remainder = value.length % CHARS_PER_LINE
     if (remainder === 0) return 'w-full'
-    if (remainder < 10) return 'w-16'
-    if (remainder < 20) return 'w-32'
-    if (remainder < 30) return 'w-48'
+    if (remainder < LAST_LINE_WIDTH_THRESHOLD_SMALL) return 'w-16'
+    if (remainder < LAST_LINE_WIDTH_THRESHOLD_MEDIUM) return 'w-32'
+    if (remainder < LAST_LINE_WIDTH_THRESHOLD_LARGE) return 'w-48'
     return 'w-64'
   }
 

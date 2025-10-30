@@ -4,12 +4,28 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { AlignCenterIcon } from '@/registry/new-york/icons'
 
+/**
+ * Default maximum length for skeleton input text
+ */
+const DEFAULT_SKELETON_MAX_LENGTH = 20
+
+/**
+ * Width calculation thresholds for skeleton input
+ */
+const WIDTH_THRESHOLD_SMALL = 5
+const WIDTH_THRESHOLD_MEDIUM = 10
+const WIDTH_THRESHOLD_LARGE = 15
+
 export interface InputProps extends React.ComponentProps<'input'> {
   /**
    * Visual variant of the input
    * @default 'default'
    */
   variant?: 'default' | 'wireframe'
+  /**
+   * Maximum character length for skeleton mode
+   * @default 20
+   */
   skeletonMaxLength?: number
   skeletonIcon?: React.ReactNode
 }
@@ -18,7 +34,7 @@ function Input({
   className,
   type,
   variant = 'default',
-  skeletonMaxLength = 20,
+  skeletonMaxLength = DEFAULT_SKELETON_MAX_LENGTH,
   skeletonIcon,
   ...props
 }: InputProps) {
@@ -30,9 +46,9 @@ function Input({
   // Calculate width based on input length
   const getSkeletonWidth = () => {
     if (value.length === 0) return 'w-48'
-    if (value.length < 5) return 'w-16'
-    if (value.length < 10) return 'w-24'
-    if (value.length < 15) return 'w-32'
+    if (value.length < WIDTH_THRESHOLD_SMALL) return 'w-16'
+    if (value.length < WIDTH_THRESHOLD_MEDIUM) return 'w-24'
+    if (value.length < WIDTH_THRESHOLD_LARGE) return 'w-32'
     return 'w-48'
   }
 
