@@ -17,7 +17,7 @@ function BreadcrumbList({ className, ...props }: BreadcrumbListProps) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        'text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm wrap-break-word sm:gap-2.5',
+        'text-muted-foreground flex flex-wrap items-center gap-2 text-sm wrap-break-word sm:gap-3',
         className
       )}
       {...props}
@@ -31,7 +31,7 @@ function BreadcrumbItem({ className, ...props }: BreadcrumbItemProps) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn('inline-flex items-center gap-1.5', className)}
+      className={cn('inline-flex items-center gap-2', className)}
       {...props}
     />
   )
