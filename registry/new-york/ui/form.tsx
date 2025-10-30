@@ -175,7 +175,3 @@ export {
   FormMessage,
   FormField,
 }
-
-
-// REMOVE AFTER COMPELTION:
-// DEPENDENCIES: pnpm add @radix-ui/react-label @radix-ui/react-slot react-hook-form @hookform/resolvers zod

@@ -42,3 +42,7 @@ next-env.d.ts
 
 # validation reports
 registry-validation-report.md
+
+# Agent
+.kiro
+.kiro/*
