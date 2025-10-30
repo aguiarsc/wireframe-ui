@@ -1,72 +1,55 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
+import * as React from 'react'
+import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 
-import { cn } from "@/lib/utils"
-import { CheckIcon, ChevronRightIcon, CircleDashedIcon } from "@/registry/new-york/icons"
-import { Text } from "@/registry/new-york/ui/text"
+import { cn } from '@/lib/utils'
+import { CheckIcon, ChevronRightIcon, CircleDashedIcon } from '@/registry/new-york/icons'
+import { Text } from '@/registry/new-york/ui/text'
 
 export interface ContextMenuProps extends React.ComponentProps<typeof ContextMenuPrimitive.Root> {}
 
-function ContextMenu({
-  ...props
-}: ContextMenuProps) {
+function ContextMenu({ ...props }: ContextMenuProps) {
   return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />
 }
 
-export interface ContextMenuTriggerProps extends React.ComponentProps<typeof ContextMenuPrimitive.Trigger> {}
+export interface ContextMenuTriggerProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Trigger> {}
 
-function ContextMenuTrigger({
-  ...props
-}: ContextMenuTriggerProps) {
-  return (
-    <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
-  )
+function ContextMenuTrigger({ ...props }: ContextMenuTriggerProps) {
+  return <ContextMenuPrimitive.Trigger data-slot="context-menu-trigger" {...props} />
 }
 
-export interface ContextMenuGroupProps extends React.ComponentProps<typeof ContextMenuPrimitive.Group> {}
+export interface ContextMenuGroupProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Group> {}
 
-function ContextMenuGroup({
-  ...props
-}: ContextMenuGroupProps) {
-  return (
-    <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
-  )
+function ContextMenuGroup({ ...props }: ContextMenuGroupProps) {
+  return <ContextMenuPrimitive.Group data-slot="context-menu-group" {...props} />
 }
 
-export interface ContextMenuPortalProps extends React.ComponentProps<typeof ContextMenuPrimitive.Portal> {}
+export interface ContextMenuPortalProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Portal> {}
 
-function ContextMenuPortal({
-  ...props
-}: ContextMenuPortalProps) {
-  return (
-    <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
-  )
+function ContextMenuPortal({ ...props }: ContextMenuPortalProps) {
+  return <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
 }
 
-export interface ContextMenuSubProps extends React.ComponentProps<typeof ContextMenuPrimitive.Sub> {}
+export interface ContextMenuSubProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Sub> {}
 
-function ContextMenuSub({
-  ...props
-}: ContextMenuSubProps) {
+function ContextMenuSub({ ...props }: ContextMenuSubProps) {
   return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} />
 }
 
-export interface ContextMenuRadioGroupProps extends React.ComponentProps<typeof ContextMenuPrimitive.RadioGroup> {}
+export interface ContextMenuRadioGroupProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.RadioGroup> {}
 
-function ContextMenuRadioGroup({
-  ...props
-}: ContextMenuRadioGroupProps) {
-  return (
-    <ContextMenuPrimitive.RadioGroup
-      data-slot="context-menu-radio-group"
-      {...props}
-    />
-  )
+function ContextMenuRadioGroup({ ...props }: ContextMenuRadioGroupProps) {
+  return <ContextMenuPrimitive.RadioGroup data-slot="context-menu-radio-group" {...props} />
 }
 
-export interface ContextMenuSubTriggerProps extends React.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> {
+export interface ContextMenuSubTriggerProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.SubTrigger> {
   inset?: boolean
 }
 
@@ -92,17 +75,15 @@ function ContextMenuSubTrigger({
   )
 }
 
-export interface ContextMenuSubContentProps extends React.ComponentProps<typeof ContextMenuPrimitive.SubContent> {}
+export interface ContextMenuSubContentProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.SubContent> {}
 
-function ContextMenuSubContent({
-  className,
-  ...props
-}: ContextMenuSubContentProps) {
+function ContextMenuSubContent({ className, ...props }: ContextMenuSubContentProps) {
   return (
     <ContextMenuPrimitive.SubContent
       data-slot="context-menu-sub-content"
       className={cn(
-        "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-hidden rounded-md border p-1 shadow-lg",
+        'bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-hidden rounded-md border p-1 shadow-lg',
         className
       )}
       {...props}
@@ -110,18 +91,16 @@ function ContextMenuSubContent({
   )
 }
 
-export interface ContextMenuContentProps extends React.ComponentProps<typeof ContextMenuPrimitive.Content> {}
+export interface ContextMenuContentProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Content> {}
 
-function ContextMenuContent({
-  className,
-  ...props
-}: ContextMenuContentProps) {
+function ContextMenuContent({ className, ...props }: ContextMenuContentProps) {
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         data-slot="context-menu-content"
         className={cn(
-          "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--radix-context-menu-content-available-height) min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md",
+          'bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--radix-context-menu-content-available-height) min-w-32 origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md',
           className
         )}
         {...props}
@@ -130,15 +109,16 @@ function ContextMenuContent({
   )
 }
 
-export interface ContextMenuItemProps extends React.ComponentProps<typeof ContextMenuPrimitive.Item> {
+export interface ContextMenuItemProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Item> {
   inset?: boolean
-  variant?: "default" | "destructive"
+  variant?: 'default' | 'destructive'
 }
 
 function ContextMenuItem({
   className,
   inset,
-  variant = "default",
+  variant = 'default',
   ...props
 }: ContextMenuItemProps) {
   return (
@@ -155,7 +135,8 @@ function ContextMenuItem({
   )
 }
 
-export interface ContextMenuCheckboxItemProps extends React.ComponentProps<typeof ContextMenuPrimitive.CheckboxItem> {}
+export interface ContextMenuCheckboxItemProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.CheckboxItem> {}
 
 function ContextMenuCheckboxItem({
   className,
@@ -183,13 +164,10 @@ function ContextMenuCheckboxItem({
   )
 }
 
-export interface ContextMenuRadioItemProps extends React.ComponentProps<typeof ContextMenuPrimitive.RadioItem> {}
+export interface ContextMenuRadioItemProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.RadioItem> {}
 
-function ContextMenuRadioItem({
-  className,
-  children,
-  ...props
-}: ContextMenuRadioItemProps) {
+function ContextMenuRadioItem({ className, children, ...props }: ContextMenuRadioItemProps) {
   return (
     <ContextMenuPrimitive.RadioItem
       data-slot="context-menu-radio-item"
@@ -209,56 +187,42 @@ function ContextMenuRadioItem({
   )
 }
 
-export interface ContextMenuLabelProps extends React.ComponentProps<typeof ContextMenuPrimitive.Label> {
+export interface ContextMenuLabelProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Label> {
   inset?: boolean
 }
 
-function ContextMenuLabel({
-  className,
-  inset,
-  ...props
-}: ContextMenuLabelProps) {
+function ContextMenuLabel({ className, inset, ...props }: ContextMenuLabelProps) {
   return (
     <ContextMenuPrimitive.Label
       data-slot="context-menu-label"
       data-inset={inset}
-      className={cn(
-        "text-foreground px-2 py-1.5 text-sm font-medium data-inset:pl-8",
-        className
-      )}
+      className={cn('text-foreground px-2 py-1.5 text-sm font-medium data-inset:pl-8', className)}
       {...props}
     />
   )
 }
 
-export interface ContextMenuSeparatorProps extends React.ComponentProps<typeof ContextMenuPrimitive.Separator> {}
+export interface ContextMenuSeparatorProps
+  extends React.ComponentProps<typeof ContextMenuPrimitive.Separator> {}
 
-function ContextMenuSeparator({
-  className,
-  ...props
-}: ContextMenuSeparatorProps) {
+function ContextMenuSeparator({ className, ...props }: ContextMenuSeparatorProps) {
   return (
     <ContextMenuPrimitive.Separator
       data-slot="context-menu-separator"
-      className={cn("bg-border -mx-1 my-1 h-px", className)}
+      className={cn('bg-border -mx-1 my-1 h-px', className)}
       {...props}
     />
   )
 }
 
-export interface ContextMenuShortcutProps extends React.ComponentProps<"span"> {}
+export interface ContextMenuShortcutProps extends React.ComponentProps<'span'> {}
 
-function ContextMenuShortcut({
-  className,
-  ...props
-}: ContextMenuShortcutProps) {
+function ContextMenuShortcut({ className, ...props }: ContextMenuShortcutProps) {
   return (
     <span
       data-slot="context-menu-shortcut"
-      className={cn(
-        "text-muted-foreground ml-auto text-xs tracking-widest",
-        className
-      )}
+      className={cn('text-muted-foreground ml-auto text-xs tracking-widest', className)}
       {...props}
     />
   )
@@ -266,15 +230,12 @@ function ContextMenuShortcut({
 
 // Wireframe helper components
 function ContextMenuItemWireframe({
-  width = "md",
+  width = 'md',
   className,
   ...props
-}: Omit<
-  React.ComponentProps<typeof ContextMenuPrimitive.Item>,
-  "children"
-> & {
-  width?: "xs" | "sm" | "md" | "lg" | "xl"
-  variant?: "default" | "destructive"
+}: Omit<React.ComponentProps<typeof ContextMenuPrimitive.Item>, 'children'> & {
+  width?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  variant?: 'default' | 'destructive'
 }) {
   return (
     <ContextMenuItem className={className} {...props}>
@@ -284,14 +245,11 @@ function ContextMenuItemWireframe({
 }
 
 function ContextMenuLabelWireframe({
-  width = "sm",
+  width = 'sm',
   className,
   ...props
-}: Omit<
-  React.ComponentProps<typeof ContextMenuPrimitive.Label>,
-  "children"
-> & {
-  width?: "xs" | "sm" | "md" | "lg"
+}: Omit<React.ComponentProps<typeof ContextMenuPrimitive.Label>, 'children'> & {
+  width?: 'xs' | 'sm' | 'md' | 'lg'
   inset?: boolean
 }) {
   return (

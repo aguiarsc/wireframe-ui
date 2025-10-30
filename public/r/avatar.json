@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Avatar",
   "description": "An image element with a fallback for representing the user.",
-  "dependencies": [
-    "@radix-ui/react-avatar"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-avatar"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/avatar.tsx",

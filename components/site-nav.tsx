@@ -58,7 +58,7 @@ export function SiteNav() {
                 Migration
               </Link>
             )}
-            <div className="h-7 w-px bg-foreground/20" />
+            <div className="bg-foreground/20 h-7 w-px" />
             <div className="flex items-center gap-2 lg:gap-3">
               <Link
                 href="https://github.com/aguiarsc/wireframe-ui"
@@ -119,7 +119,7 @@ export function SiteNav() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="border-t bg-background md:hidden">
+        <div className="bg-background border-t md:hidden">
           <nav className="container mx-auto flex flex-col space-y-1 px-4 py-4">
             {!isHome && (
               <Link

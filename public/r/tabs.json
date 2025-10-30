@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Tabs",
   "description": "A set of layered sections of content with tab triggers for switching between them.",
-  "dependencies": [
-    "@radix-ui/react-tabs"
-  ],
+  "dependencies": ["@radix-ui/react-tabs"],
   "registryDependencies": [],
   "files": [
     {

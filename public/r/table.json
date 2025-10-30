@@ -5,9 +5,7 @@
   "title": "Table",
   "description": "A data table component with wireframe helpers for headers and cells.",
   "dependencies": [],
-  "registryDependencies": [
-    "text"
-  ],
+  "registryDependencies": ["text"],
   "files": [
     {
       "path": "registry/new-york/ui/table.tsx",

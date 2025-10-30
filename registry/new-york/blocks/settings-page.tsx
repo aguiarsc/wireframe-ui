@@ -37,19 +37,19 @@ export function SettingsPage() {
       <Tabs defaultValue="profile" className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="profile" className="gap-2">
-            <UserIcon size={16} className="shrink-0 text-muted-foreground" />
+            <UserIcon size={16} className="text-muted-foreground shrink-0" />
             <span className="hidden sm:inline">
               <Text width="xs" />
             </span>
           </TabsTrigger>
           <TabsTrigger value="account" className="gap-2">
-            <LockIcon size={16} className="shrink-0 text-muted-foreground" />
+            <LockIcon size={16} className="text-muted-foreground shrink-0" />
             <span className="hidden sm:inline">
               <Text width="xs" />
             </span>
           </TabsTrigger>
           <TabsTrigger value="notifications" className="gap-2">
-            <BellIcon size={16} className="shrink-0 text-muted-foreground" />
+            <BellIcon size={16} className="text-muted-foreground shrink-0" />
             <span className="hidden sm:inline">
               <Text width="sm" />
             </span>
@@ -178,7 +178,7 @@ export function SettingsPage() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden border-destructive">
+          <Card className="border-destructive overflow-hidden">
             <CardHeader>
               <CardTitle>
                 <Text width="md" />

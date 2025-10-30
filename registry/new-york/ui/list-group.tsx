@@ -35,7 +35,7 @@ const ListGroup = React.forwardRef<HTMLUListElement, ListGroupProps>(
       <ul
         ref={ref}
         data-slot="list-group"
-        className={cn('flex flex-col list-none', spacingMap[spacing], className)}
+        className={cn('flex list-none flex-col', spacingMap[spacing], className)}
         {...props}
       >
         {Array.from({ length: items }).map((_, i) => (

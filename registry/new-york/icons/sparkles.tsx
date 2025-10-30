@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import type { Variants } from 'motion/react'
+import { motion, useAnimation } from 'motion/react'
+import type { HTMLAttributes } from 'react'
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 export interface SparklesIconHandle {
-  startAnimation: () => void;
-  stopAnimation: () => void;
+  startAnimation: () => void
+  stopAnimation: () => void
 }
 
 interface SparklesIconProps extends HTMLAttributes<HTMLDivElement> {
-  size?: number;
+  size?: number
 }
 
 const sparkleVariants: Variants = {
@@ -28,7 +28,7 @@ const sparkleVariants: Variants = {
       bounce: 0.3,
     },
   },
-};
+}
 
 const starVariants: Variants = {
   initial: {
@@ -46,52 +46,52 @@ const starVariants: Variants = {
       mass: 0.4,
     },
   }),
-};
+}
 
 const SparklesIcon = forwardRef<SparklesIconHandle, SparklesIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const starControls = useAnimation();
-    const sparkleControls = useAnimation();
-    const isControlledRef = useRef(false);
+    const starControls = useAnimation()
+    const sparkleControls = useAnimation()
+    const isControlledRef = useRef(false)
 
     useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+      isControlledRef.current = true
 
       return {
         startAnimation: () => {
-          sparkleControls.start('hover');
-          starControls.start('blink', { delay: 1 });
+          sparkleControls.start('hover')
+          starControls.start('blink', { delay: 1 })
         },
         stopAnimation: () => {
-          sparkleControls.start('initial');
-          starControls.start('initial');
+          sparkleControls.start('initial')
+          starControls.start('initial')
         },
-      };
-    });
+      }
+    })
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          sparkleControls.start('hover');
-          starControls.start('blink', { delay: 1 });
+          sparkleControls.start('hover')
+          starControls.start('blink', { delay: 1 })
         } else {
-          onMouseEnter?.(e);
+          onMouseEnter?.(e)
         }
       },
       [onMouseEnter, sparkleControls, starControls]
-    );
+    )
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          sparkleControls.start('initial');
-          starControls.start('initial');
+          sparkleControls.start('initial')
+          starControls.start('initial')
         } else {
-          onMouseLeave?.(e);
+          onMouseLeave?.(e)
         }
       },
       [sparkleControls, starControls, onMouseLeave]
-    );
+    )
 
     return (
       <div
@@ -116,32 +116,16 @@ const SparklesIcon = forwardRef<SparklesIconHandle, SparklesIconProps>(
             variants={sparkleVariants}
             animate={sparkleControls}
           />
-          <motion.path
-            d="M20 3v4"
-            variants={starVariants}
-            animate={starControls}
-          />
-          <motion.path
-            d="M22 5h-4"
-            variants={starVariants}
-            animate={starControls}
-          />
-          <motion.path
-            d="M4 17v2"
-            variants={starVariants}
-            animate={starControls}
-          />
-          <motion.path
-            d="M5 18H3"
-            variants={starVariants}
-            animate={starControls}
-          />
+          <motion.path d="M20 3v4" variants={starVariants} animate={starControls} />
+          <motion.path d="M22 5h-4" variants={starVariants} animate={starControls} />
+          <motion.path d="M4 17v2" variants={starVariants} animate={starControls} />
+          <motion.path d="M5 18H3" variants={starVariants} animate={starControls} />
         </svg>
       </div>
-    );
+    )
   }
-);
+)
 
-SparklesIcon.displayName = 'SparklesIcon';
+SparklesIcon.displayName = 'SparklesIcon'
 
-export { SparklesIcon };
+export { SparklesIcon }

@@ -28,14 +28,11 @@ const toggleVariants = cva(
   }
 )
 
-export interface ToggleProps extends React.ComponentProps<typeof TogglePrimitive.Root>, VariantProps<typeof toggleVariants> {}
+export interface ToggleProps
+  extends React.ComponentProps<typeof TogglePrimitive.Root>,
+    VariantProps<typeof toggleVariants> {}
 
-function Toggle({
-  className,
-  variant,
-  size,
-  ...props
-}: ToggleProps) {
+function Toggle({ className, variant, size, ...props }: ToggleProps) {
   return (
     <TogglePrimitive.Root
       data-slot="toggle"

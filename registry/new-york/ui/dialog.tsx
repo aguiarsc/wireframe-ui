@@ -32,10 +32,7 @@ function DialogClose({ ...props }: DialogCloseProps) {
 
 export interface DialogOverlayProps extends React.ComponentProps<typeof DialogPrimitive.Overlay> {}
 
-function DialogOverlay({
-  className,
-  ...props
-}: DialogOverlayProps) {
+function DialogOverlay({ className, ...props }: DialogOverlayProps) {
   return (
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
@@ -120,12 +117,10 @@ function DialogTitle({ className, ...props }: DialogTitleProps) {
   )
 }
 
-export interface DialogDescriptionProps extends React.ComponentProps<typeof DialogPrimitive.Description> {}
+export interface DialogDescriptionProps
+  extends React.ComponentProps<typeof DialogPrimitive.Description> {}
 
-function DialogDescription({
-  className,
-  ...props
-}: DialogDescriptionProps) {
+function DialogDescription({ className, ...props }: DialogDescriptionProps) {
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"

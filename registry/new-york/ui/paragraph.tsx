@@ -3,8 +3,7 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { Text, type TextProps } from '@/registry/new-york/ui/text'
 
-export interface ParagraphProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> {
+export interface ParagraphProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> {
   lines?: number
   lastLineWidth?: TextProps['width']
   size?: TextProps['size']

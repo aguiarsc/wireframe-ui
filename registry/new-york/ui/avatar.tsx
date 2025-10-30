@@ -33,12 +33,10 @@ function AvatarImage({ className, ...props }: AvatarImageProps) {
   )
 }
 
-export interface AvatarFallbackProps extends React.ComponentProps<typeof AvatarPrimitive.Fallback> {}
+export interface AvatarFallbackProps
+  extends React.ComponentProps<typeof AvatarPrimitive.Fallback> {}
 
-function AvatarFallback({
-  className,
-  ...props
-}: AvatarFallbackProps) {
+function AvatarFallback({ className, ...props }: AvatarFallbackProps) {
   return (
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"

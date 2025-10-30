@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Tooltip",
   "description": "A popup that displays information related to an element when focused or hovered.",
-  "dependencies": [
-    "@radix-ui/react-tooltip"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-tooltip"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/tooltip.tsx",

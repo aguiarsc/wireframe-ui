@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Text",
   "description": "A skeleton text placeholder component that renders thin animated lines for text content.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "wireframe-types",
-    "wireframe-utils",
-    "wireframe"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["wireframe-types", "wireframe-utils", "wireframe"],
   "files": [
     {
       "path": "registry/new-york/ui/text.tsx",

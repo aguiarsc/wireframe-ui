@@ -66,13 +66,17 @@ export function ProductGrid() {
           <Card key={i} className="group overflow-hidden">
             <div className="relative">
               <Media type="image" className="aspect-square w-full" />
-              <div className="absolute right-2 top-2 flex gap-2">
-                <Button size="icon" variant="secondary" className="h-8 w-8 opacity-0 transition-opacity group-hover:opacity-100">
+              <div className="absolute top-2 right-2 flex gap-2">
+                <Button
+                  size="icon"
+                  variant="secondary"
+                  className="h-8 w-8 opacity-0 transition-opacity group-hover:opacity-100"
+                >
                   <HeartIcon size={16} className="text-muted-foreground" />
                 </Button>
               </div>
               {i % 3 === 0 && (
-                <Badge className="absolute left-2 top-2">
+                <Badge className="absolute top-2 left-2">
                   <Text width="xs" />
                 </Badge>
               )}
@@ -91,7 +95,9 @@ export function ProductGrid() {
                   <SparklesIcon
                     key={star}
                     size={14}
-                    className={star <= 4 ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'}
+                    className={
+                      star <= 4 ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'
+                    }
                   />
                 ))}
                 <Text width="xs" color="muted" size="xs" className="ml-1" />

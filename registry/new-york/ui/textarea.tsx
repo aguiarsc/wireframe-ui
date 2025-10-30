@@ -72,10 +72,7 @@ function Textarea({
             Array.from({ length: skeletonLines }).map((_, i) => (
               <span
                 key={i}
-                className={cn(
-                  'wireframe-line h-3.5',
-                  i === skeletonLines - 1 ? 'w-3/4' : 'w-full'
-                )}
+                className={cn('wireframe-line h-3.5', i === skeletonLines - 1 ? 'w-3/4' : 'w-full')}
               />
             ))}
           {showTypingSkeleton &&

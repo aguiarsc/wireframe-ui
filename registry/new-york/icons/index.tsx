@@ -21,14 +21,20 @@ export { ClipboardCheckIcon, type ClipboardCheckIconHandle } from './copy-check'
 export { CursorClickIcon } from './cursor'
 export { DollarSignIcon, type DollarSignIconHandle } from './dollar-sign'
 export { GalleryThumbnailsIcon, type GalleryThumbnailsIconHandle } from './gallery-thumbnails-icon'
-export { GalleryVerticalEndIcon, type GalleryVerticalEndIconHandle } from './gallery-vertical-end-icon'
+export {
+  GalleryVerticalEndIcon,
+  type GalleryVerticalEndIconHandle,
+} from './gallery-vertical-end-icon'
 export { HeartIcon, type HeartIconHandle } from './heart'
 export { IdCardIcon, type IdCardIconHandle } from './id-card-icon'
 export { LinkIcon, type LinkIconHandle } from './link'
 export { LockIcon, type LockIconHandle } from './lock'
 export { MailCheckIcon, type MailCheckIconHandle } from './mail-check'
 export { MapPinIcon, type MapPinIconHandle } from './map-pin'
-export { MessageCircleDashedIcon, type MessageCircleDashedIconHandle } from './message-circle-dashed-icon'
+export {
+  MessageCircleDashedIcon,
+  type MessageCircleDashedIconHandle,
+} from './message-circle-dashed-icon'
 export { MessageCircleIcon, type MessageCircleIconHandle } from './message-circle'
 export { PanelLeftCloseIcon } from './panel-left-close'
 export { PanelLeftOpenIcon } from './panel-left-open'

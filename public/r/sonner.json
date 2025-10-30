@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Sonner",
   "description": "An opinionated toast component for React with beautiful animations and icons.",
-  "dependencies": [
-    "sonner",
-    "next-themes"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["sonner", "next-themes"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/sonner.tsx",

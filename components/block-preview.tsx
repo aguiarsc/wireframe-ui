@@ -56,7 +56,7 @@ export function BlockPreview({
                 {components.map((component) => (
                   <code
                     key={component}
-                    className="bg-muted text-foreground rounded px-2 py-1 text-xs font-mono"
+                    className="bg-muted text-foreground rounded px-2 py-1 font-mono text-xs"
                   >
                     {component}
                   </code>

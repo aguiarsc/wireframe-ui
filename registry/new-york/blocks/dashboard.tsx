@@ -1,11 +1,6 @@
 'use client'
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/registry/new-york/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/registry/new-york/ui/card'
 import { Text } from '@/registry/new-york/ui/text'
 import { ChartWireframe } from '@/registry/new-york/ui/chart'
 import { Badge } from '@/registry/new-york/ui/badge'

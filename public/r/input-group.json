@@ -4,15 +4,8 @@
   "type": "registry:ui",
   "title": "Input Group",
   "description": "An input group component for combining inputs with addons and buttons.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "button",
-    "input",
-    "textarea",
-    "icons"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["button", "input", "textarea", "icons"],
   "files": [
     {
       "path": "registry/new-york/ui/input-group.tsx",

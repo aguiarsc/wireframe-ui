@@ -4,14 +4,8 @@
   "type": "registry:ui",
   "title": "Carousel",
   "description": "A carousel component with wireframe helper for slide content.",
-  "dependencies": [
-    "embla-carousel-react"
-  ],
-  "registryDependencies": [
-    "button",
-    "text",
-    "icons"
-  ],
+  "dependencies": ["embla-carousel-react"],
+  "registryDependencies": ["button", "text", "icons"],
   "files": [
     {
       "path": "registry/new-york/ui/carousel.tsx",

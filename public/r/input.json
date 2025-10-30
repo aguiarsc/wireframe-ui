@@ -5,9 +5,7 @@
   "title": "Input",
   "description": "A text input field with support for various types and validation states.",
   "dependencies": [],
-  "registryDependencies": [
-    "icons"
-  ],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/input.tsx",

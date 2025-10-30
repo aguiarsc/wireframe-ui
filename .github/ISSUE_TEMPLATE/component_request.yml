@@ -1,7 +1,7 @@
 name: Component Request
 description: Request a new component for wireframe-ui
-title: "[Component]: "
-labels: ["component-request", "enhancement", "triage"]
+title: '[Component]: '
+labels: ['component-request', 'enhancement', 'triage']
 body:
   - type: markdown
     attributes:

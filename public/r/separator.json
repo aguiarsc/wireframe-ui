@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Separator",
   "description": "Visually or semantically separates content with horizontal or vertical orientation.",
-  "dependencies": [
-    "@radix-ui/react-separator"
-  ],
+  "dependencies": ["@radix-ui/react-separator"],
   "registryDependencies": [],
   "files": [
     {

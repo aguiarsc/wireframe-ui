@@ -16,9 +16,7 @@ export default function ShowcasePage() {
       <SiteNav />
       <div className="container mx-auto flex min-h-svh flex-col gap-16 px-4 py-16 sm:px-6 lg:px-8">
         <header className="flex max-w-3xl flex-col gap-4">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Blocks
-          </h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Blocks</h1>
           <p className="text-muted-foreground text-base sm:text-lg">
             Pre-built, complex component compositions that demonstrate real-world usage patterns.
             Install these blocks via CLI to quickly scaffold complete UI patterns in your wireframe
@@ -42,7 +40,16 @@ export default function ShowcasePage() {
             title="Login Form"
             description="Authentication form with email/password inputs and social login options"
             installCommand="login-form"
-            components={['button', 'card', 'input', 'label', 'text', 'separator', 'checkbox', 'icons']}
+            components={[
+              'button',
+              'card',
+              'input',
+              'label',
+              'text',
+              'separator',
+              'checkbox',
+              'icons',
+            ]}
           >
             <LoginForm />
           </BlockPreview>
@@ -92,7 +99,17 @@ export default function ShowcasePage() {
             title="Product Grid"
             description="E-commerce product listing with search, filters, and product cards"
             installCommand="product-grid"
-            components={['card', 'text', 'badge', 'button', 'media', 'heading', 'select', 'input', 'icons']}
+            components={[
+              'card',
+              'text',
+              'badge',
+              'button',
+              'media',
+              'heading',
+              'select',
+              'input',
+              'icons',
+            ]}
           >
             <ProductGrid />
           </BlockPreview>
@@ -102,7 +119,18 @@ export default function ShowcasePage() {
             title="Profile Page"
             description="User profile with avatar, bio, stats, and tabbed content"
             installCommand="profile-page"
-            components={['card', 'text', 'badge', 'button', 'avatar', 'separator', 'tabs', 'media', 'item', 'icons']}
+            components={[
+              'card',
+              'text',
+              'badge',
+              'button',
+              'avatar',
+              'separator',
+              'tabs',
+              'media',
+              'item',
+              'icons',
+            ]}
           >
             <ProfilePage />
           </BlockPreview>
@@ -112,7 +140,20 @@ export default function ShowcasePage() {
             title="Settings Page"
             description="Multi-tab settings interface for profile, account, and notifications"
             installCommand="settings-page"
-            components={['button', 'card', 'input', 'label', 'text', 'separator', 'switch', 'tabs', 'avatar', 'textarea', 'select', 'icons']}
+            components={[
+              'button',
+              'card',
+              'input',
+              'label',
+              'text',
+              'separator',
+              'switch',
+              'tabs',
+              'avatar',
+              'textarea',
+              'select',
+              'icons',
+            ]}
           >
             <SettingsPage />
           </BlockPreview>

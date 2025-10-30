@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Dialog",
   "description": "A modal dialog that interrupts the user with important content and expects a response.",
-  "dependencies": [
-    "@radix-ui/react-dialog"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-dialog"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/dialog.tsx",

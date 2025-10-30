@@ -5,16 +5,7 @@
   "title": "Register Form",
   "description": "Multi-step registration with tabs for personal and account information",
   "dependencies": [],
-  "registryDependencies": [
-    "button",
-    "card",
-    "input",
-    "label",
-    "text",
-    "checkbox",
-    "tabs",
-    "icons"
-  ],
+  "registryDependencies": ["button", "card", "input", "label", "text", "checkbox", "tabs", "icons"],
   "files": [
     {
       "path": "registry/new-york/blocks/register-form.tsx",

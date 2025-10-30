@@ -14,10 +14,7 @@ function Accordion(props: AccordionProps) {
 
 export interface AccordionItemProps extends React.ComponentProps<typeof AccordionPrimitive.Item> {}
 
-function AccordionItem({
-  className,
-  ...props
-}: AccordionItemProps) {
+function AccordionItem({ className, ...props }: AccordionItemProps) {
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
@@ -27,13 +24,10 @@ function AccordionItem({
   )
 }
 
-export interface AccordionTriggerProps extends React.ComponentProps<typeof AccordionPrimitive.Trigger> {}
+export interface AccordionTriggerProps
+  extends React.ComponentProps<typeof AccordionPrimitive.Trigger> {}
 
-function AccordionTrigger({
-  className,
-  children,
-  ...props
-}: AccordionTriggerProps) {
+function AccordionTrigger({ className, children, ...props }: AccordionTriggerProps) {
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
@@ -45,7 +39,10 @@ function AccordionTrigger({
         {...props}
       >
         <div className="flex size-4 shrink-0 items-center justify-center">
-          <ChevronDownIcon size={16} className="text-muted-foreground transition-transform duration-200" />
+          <ChevronDownIcon
+            size={16}
+            className="text-muted-foreground transition-transform duration-200"
+          />
         </div>
         {children}
       </AccordionPrimitive.Trigger>
@@ -53,13 +50,10 @@ function AccordionTrigger({
   )
 }
 
-export interface AccordionContentProps extends React.ComponentProps<typeof AccordionPrimitive.Content> {}
+export interface AccordionContentProps
+  extends React.ComponentProps<typeof AccordionPrimitive.Content> {}
 
-function AccordionContent({
-  className,
-  children,
-  ...props
-}: AccordionContentProps) {
+function AccordionContent({ className, children, ...props }: AccordionContentProps) {
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"

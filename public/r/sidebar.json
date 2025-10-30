@@ -4,19 +4,8 @@
   "type": "registry:ui",
   "title": "Sidebar",
   "description": "A collapsible sidebar component with wireframe helpers for menu items and labels.",
-  "dependencies": [
-    "@radix-ui/react-slot",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "button",
-    "input",
-    "separator",
-    "sheet",
-    "text",
-    "tooltip",
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "registryDependencies": ["button", "input", "separator", "sheet", "text", "tooltip", "icons"],
   "files": [
     {
       "path": "registry/new-york/ui/sidebar.tsx",

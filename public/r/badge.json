@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Badge",
   "description": "Displays a badge or a component that looks like a badge with multiple variants.",
-  "dependencies": [
-    "@radix-ui/react-slot",
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/badge.tsx",

@@ -51,15 +51,15 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
             </div>
@@ -94,23 +94,23 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="xl" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="sm" size="sm" />
               </div>
             </div>
@@ -140,19 +140,19 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="shrink-0 text-muted-foreground mt-0.5" />
+                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="xl" size="sm" />
               </div>
             </div>

@@ -2,10 +2,7 @@ import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
-import {
-  getResponsiveClasses,
-  getHideOnClasses,
-} from '@/registry/new-york/lib/wireframe-utils'
+import { getResponsiveClasses, getHideOnClasses } from '@/registry/new-york/lib/wireframe-utils'
 import type {
   WireframeAnimation,
   WireframeEmphasis,
@@ -86,18 +83,7 @@ export interface TextProps
 
 const TextComponent = React.forwardRef<HTMLSpanElement, TextProps>(
   (
-    {
-      className,
-      size,
-      width,
-      color,
-      animate,
-      emphasis,
-      truncate,
-      responsive,
-      hideOn,
-      ...props
-    },
+    { className, size, width, color, animate, emphasis, truncate, responsive, hideOn, ...props },
     ref
   ) => {
     // Emphasis takes priority over color when both are provided

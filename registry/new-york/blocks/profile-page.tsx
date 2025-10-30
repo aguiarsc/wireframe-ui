@@ -1,11 +1,6 @@
 'use client'
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/registry/new-york/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/registry/new-york/ui/card'
 import { Text } from '@/registry/new-york/ui/text'
 import { Badge } from '@/registry/new-york/ui/badge'
 import { Button } from '@/registry/new-york/ui/button'
@@ -59,15 +54,15 @@ export function ProfilePage() {
               </div>
               <div className="flex flex-wrap gap-3 lg:gap-4">
                 <div className="flex items-center gap-1.5">
-                  <MapPinIcon size={16} className="shrink-0 text-muted-foreground" />
+                  <MapPinIcon size={16} className="text-muted-foreground shrink-0" />
                   <Text width="sm" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <LinkIcon size={16} className="shrink-0 text-muted-foreground" />
+                  <LinkIcon size={16} className="text-muted-foreground shrink-0" />
                   <Text width="md" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CalendarDaysIcon size={16} className="shrink-0 text-muted-foreground" />
+                  <CalendarDaysIcon size={16} className="text-muted-foreground shrink-0" />
                   <Text width="sm" size="sm" />
                 </div>
               </div>

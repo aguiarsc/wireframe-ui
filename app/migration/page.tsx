@@ -14,7 +14,11 @@ import { Input } from '@/registry/new-york/ui/input'
 import { Label } from '@/registry/new-york/ui/label'
 import { Text } from '@/registry/new-york/ui/text'
 import { Badge } from '@/registry/new-york/ui/badge'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/registry/new-york/ui/collapsible'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/registry/new-york/ui/collapsible'
 import { CheckIcon, ChevronDownIcon } from '@/registry/new-york/icons'
 
 export default function MigrationPage() {
@@ -22,91 +26,119 @@ export default function MigrationPage() {
     <>
       <SiteNav />
       <div className="container mx-auto max-w-6xl space-y-12 px-4 py-8 sm:space-y-16 sm:px-6 sm:py-12 lg:px-8">
-      {/* Hero Section */}
-      <section className="space-y-3 text-center sm:space-y-4">
-        <Badge variant="outline" className="mx-auto">Migration Guide</Badge>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Wireframe to Production</h1>
-        <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
-          See how wireframe components transform into production code. Same structure, real content.
-        </p>
-      </section>
-
-      {/* Key Stats */}
-      <div className="grid gap-4 sm:gap-8 md:grid-cols-2">
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-xs font-medium text-muted-foreground sm:text-sm">Code Reuse</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold sm:text-3xl">85%</div>
-            <p className="text-xs text-muted-foreground">Structure stays unchanged</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-xs font-medium text-muted-foreground sm:text-sm">Conversion</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold sm:text-3xl">15%</div>
-            <p className="text-xs text-muted-foreground">Placeholders → real content</p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Quick Reference */}
-      <section className="space-y-4 sm:space-y-6">
-        <div className="space-y-2">
-          <h2 className="text-xl font-bold sm:text-2xl">Quick Reference</h2>
-          <p className="text-sm text-muted-foreground sm:text-base">Common component conversions at a glance</p>
-        </div>
-        
-        <div className="overflow-x-auto rounded-lg border">
-          <table className="w-full min-w-[500px]">
-            <thead className="border-b bg-muted/50">
-              <tr>
-                <th className="p-2 text-left text-xs font-medium sm:p-4 sm:text-sm">Wireframe</th>
-                <th className="p-2 text-left text-xs font-medium sm:p-4 sm:text-sm">Production</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y">
-              <tr>
-                <td className="p-2 sm:p-4"><InlineCode code='<Text width="lg" />' /></td>
-                <td className="p-2 sm:p-4"><InlineCode code='<h1>{title}</h1>' /></td>
-              </tr>
-              <tr>
-                <td className="p-2 sm:p-4"><InlineCode code='<Media type="image" />' /></td>
-                <td className="p-2 sm:p-4"><InlineCode code='<img src={url} alt={alt} />' /></td>
-              </tr>
-              <tr>
-                <td className="p-2 sm:p-4"><InlineCode code='<ItemTitleWireframe />' /></td>
-                <td className="p-2 sm:p-4"><InlineCode code='<ItemTitle>{name}</ItemTitle>' /></td>
-              </tr>
-              <tr>
-                <td className="p-2 sm:p-4"><InlineCode code='<Input variant="wireframe" />' /></td>
-                <td className="p-2 sm:p-4"><InlineCode code='<Input value={val} onChange={fn} />' /></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Real-World Example */}
-      <section className="space-y-4 sm:space-y-6">
-        <div className="space-y-2">
-          <h2 className="text-xl font-bold sm:text-2xl">Real-World Example: Login Form</h2>
-          <p className="text-sm text-muted-foreground sm:text-base">
-            Complete login form showing full conversion from wireframe to production
+        {/* Hero Section */}
+        <section className="space-y-3 text-center sm:space-y-4">
+          <Badge variant="outline" className="mx-auto">
+            Migration Guide
+          </Badge>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Wireframe to Production</h1>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-base sm:text-lg">
+            See how wireframe components transform into production code. Same structure, real
+            content.
           </p>
+        </section>
+
+        {/* Key Stats */}
+        <div className="grid gap-4 sm:gap-8 md:grid-cols-2">
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-muted-foreground text-xs font-medium sm:text-sm">
+                Code Reuse
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold sm:text-3xl">85%</div>
+              <p className="text-muted-foreground text-xs">Structure stays unchanged</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-muted-foreground text-xs font-medium sm:text-sm">
+                Conversion
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold sm:text-3xl">15%</div>
+              <p className="text-muted-foreground text-xs">Placeholders → real content</p>
+            </CardContent>
+          </Card>
         </div>
 
-        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Badge variant="secondary">Wireframe</Badge>
-              <span className="text-sm text-muted-foreground">Pure placeholder</span>
-            </div>
-            <LoginFormWireframe />
-            <CollapsibleCode code={`<Card className="w-full">
+        {/* Quick Reference */}
+        <section className="space-y-4 sm:space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold sm:text-2xl">Quick Reference</h2>
+            <p className="text-muted-foreground text-sm sm:text-base">
+              Common component conversions at a glance
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-lg border">
+            <table className="w-full min-w-[500px]">
+              <thead className="bg-muted/50 border-b">
+                <tr>
+                  <th className="p-2 text-left text-xs font-medium sm:p-4 sm:text-sm">Wireframe</th>
+                  <th className="p-2 text-left text-xs font-medium sm:p-4 sm:text-sm">
+                    Production
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y">
+                <tr>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code='<Text width="lg" />' />
+                  </td>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code="<h1>{title}</h1>" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code='<Media type="image" />' />
+                  </td>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code="<img src={url} alt={alt} />" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code="<ItemTitleWireframe />" />
+                  </td>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code="<ItemTitle>{name}</ItemTitle>" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code='<Input variant="wireframe" />' />
+                  </td>
+                  <td className="p-2 sm:p-4">
+                    <InlineCode code="<Input value={val} onChange={fn} />" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Real-World Example */}
+        <section className="space-y-4 sm:space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-xl font-bold sm:text-2xl">Real-World Example: Login Form</h2>
+            <p className="text-muted-foreground text-sm sm:text-base">
+              Complete login form showing full conversion from wireframe to production
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Badge variant="secondary">Wireframe</Badge>
+                <span className="text-muted-foreground text-sm">Pure placeholder</span>
+              </div>
+              <LoginFormWireframe />
+              <CollapsibleCode
+                code={`<Card className="w-full">
   <CardHeader>
     <CardTitle><Text width="md" /></CardTitle>
     <CardDescription>
@@ -122,16 +154,18 @@ export default function MigrationPage() {
       <Text width="sm" />
     </Button>
   </CardContent>
-</Card>`} />
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Badge>Production</Badge>
-              <span className="text-sm text-muted-foreground">Fully functional</span>
+</Card>`}
+              />
             </div>
-            <LoginFormProduction />
-            <CollapsibleCode code={`const [email, setEmail] = useState('')
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Badge>Production</Badge>
+                <span className="text-muted-foreground text-sm">Fully functional</span>
+              </div>
+              <LoginFormProduction />
+              <CollapsibleCode
+                code={`const [email, setEmail] = useState('')
 const [isLoading, setIsLoading] = useState(false)
 
 const handleSubmit = (e: React.FormEvent) => {
@@ -167,33 +201,40 @@ return (
       </form>
     </CardContent>
   </Card>
-)`} />
+)`}
+              />
+            </div>
           </div>
-        </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-sm sm:text-base">
-              <CheckIcon size={18} className="sm:h-5 sm:w-5" />
-              What Changed
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2 text-xs sm:text-sm">
-            <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
-              <span className="font-medium">Removed:</span>
-              <span className="text-muted-foreground">3 <code>{'<Text>'}</code> components, <code>skeleton</code> prop</span>
-            </div>
-            <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
-              <span className="font-medium">Added:</span>
-              <span className="text-muted-foreground">State hooks, event handlers, form logic</span>
-            </div>
-            <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
-              <span className="font-medium">Unchanged:</span>
-              <span className="text-muted-foreground">Card structure, layout, spacing, classes</span>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-sm sm:text-base">
+                <CheckIcon size={18} className="sm:h-5 sm:w-5" />
+                What Changed
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-xs sm:text-sm">
+              <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
+                <span className="font-medium">Removed:</span>
+                <span className="text-muted-foreground">
+                  3 <code>{'<Text>'}</code> components, <code>skeleton</code> prop
+                </span>
+              </div>
+              <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
+                <span className="font-medium">Added:</span>
+                <span className="text-muted-foreground">
+                  State hooks, event handlers, form logic
+                </span>
+              </div>
+              <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
+                <span className="font-medium">Unchanged:</span>
+                <span className="text-muted-foreground">
+                  Card structure, layout, spacing, classes
+                </span>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </>
   )
@@ -216,10 +257,10 @@ function CodeBlock({ code }: { code: string }) {
   }, [code])
 
   return (
-    <div className="overflow-hidden rounded-lg border bg-muted/50">
+    <div className="bg-muted/50 overflow-hidden rounded-lg border">
       {highlightedCode ? (
         <div
-          className="text-[10px] sm:text-xs [&_pre]:m-0 [&_pre]:p-2 sm:[&_pre]:p-4 [&_pre]:bg-transparent! [&_pre]:overflow-x-auto"
+          className="text-[10px] sm:text-xs [&_pre]:m-0 [&_pre]:overflow-x-auto [&_pre]:bg-transparent! [&_pre]:p-2 sm:[&_pre]:p-4"
           dangerouslySetInnerHTML={{ __html: highlightedCode }}
         />
       ) : (
@@ -249,7 +290,7 @@ function InlineCode({ code }: { code: string }) {
 
   return highlightedCode ? (
     <div
-      className="text-[10px] sm:text-sm [&_pre]:m-0 [&_pre]:p-0 [&_pre]:bg-transparent! [&_code]:bg-transparent!"
+      className="text-[10px] sm:text-sm [&_code]:bg-transparent! [&_pre]:m-0 [&_pre]:bg-transparent! [&_pre]:p-0"
       dangerouslySetInnerHTML={{ __html: highlightedCode }}
     />
   ) : (
@@ -270,11 +311,12 @@ function CollapsibleCode({ code }: { code: string }) {
         if (contentRef.current) {
           const rect = contentRef.current.getBoundingClientRect()
           const absoluteTop = window.pageYOffset + rect.top
-          const scrollToPosition = absoluteTop + contentRef.current.offsetHeight - window.innerHeight + 32
-          
+          const scrollToPosition =
+            absoluteTop + contentRef.current.offsetHeight - window.innerHeight + 32
+
           window.scrollTo({
             top: scrollToPosition,
-            behavior: 'smooth'
+            behavior: 'smooth',
           })
         }
       }, 100)
@@ -284,9 +326,12 @@ function CollapsibleCode({ code }: { code: string }) {
   return (
     <Collapsible open={isOpen} onOpenChange={handleOpenChange}>
       <CollapsibleTrigger asChild>
-        <Button variant="outline" size="sm" className="w-full justify-between group">
+        <Button variant="outline" size="sm" className="group w-full justify-between">
           <span className="text-xs">View Code</span>
-          <ChevronDownIcon size={16} className="transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          <ChevronDownIcon
+            size={16}
+            className="transition-transform duration-200 group-data-[state=open]:rotate-180"
+          />
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent className="mt-2" ref={contentRef}>
@@ -301,15 +346,23 @@ function LoginFormWireframe() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle><Text width="md" /></CardTitle>
-        <CardDescription><Text width="lg" color="muted" /></CardDescription>
+        <CardTitle>
+          <Text width="md" />
+        </CardTitle>
+        <CardDescription>
+          <Text width="lg" color="muted" />
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label><Text width="xs" /></Label>
+          <Label>
+            <Text width="xs" />
+          </Label>
           <Input variant="wireframe" />
         </div>
-        <Button className="w-full"><Text width="sm" /></Button>
+        <Button className="w-full">
+          <Text width="sm" />
+        </Button>
       </CardContent>
     </Card>
   )

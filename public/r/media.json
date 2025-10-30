@@ -5,9 +5,7 @@
   "title": "Media",
   "description": "A container for displaying images and videos with loading states and fallback placeholders.",
   "dependencies": [],
-  "registryDependencies": [
-    "icons"
-  ],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/media.tsx",

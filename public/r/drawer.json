@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Drawer",
   "description": "A panel that slides out from the edge of the screen with support for multiple directions.",
-  "dependencies": [
-    "vaul"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["vaul"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/drawer.tsx",

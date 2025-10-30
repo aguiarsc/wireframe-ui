@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Breadcrumb",
   "description": "Displays the path to the current resource using a hierarchy of links.",
-  "dependencies": [
-    "@radix-ui/react-slot"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-slot"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/breadcrumb.tsx",

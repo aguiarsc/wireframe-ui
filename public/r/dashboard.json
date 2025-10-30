@@ -5,15 +5,7 @@
   "title": "Dashboard",
   "description": "Admin dashboard with stat cards, charts, recent activity, and data table",
   "dependencies": [],
-  "registryDependencies": [
-    "card",
-    "text",
-    "chart",
-    "badge",
-    "table",
-    "avatar",
-    "icons"
-  ],
+  "registryDependencies": ["card", "text", "chart", "badge", "table", "avatar", "icons"],
   "files": [
     {
       "path": "registry/new-york/blocks/dashboard.tsx",

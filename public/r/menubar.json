@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Menubar",
   "description": "A visually persistent menu common in desktop applications with nested menus and items.",
-  "dependencies": [
-    "@radix-ui/react-menubar"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-menubar"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/menubar.tsx",

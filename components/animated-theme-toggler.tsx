@@ -78,7 +78,11 @@ export const AnimatedThemeToggler = ({
 
   return (
     <button ref={buttonRef} onClick={toggleTheme} className={cn(className)} {...props}>
-      <ContrastIcon ref={iconRef} onMouseEnter={(e) => e.stopPropagation()} onMouseLeave={(e) => e.stopPropagation()} />
+      <ContrastIcon
+        ref={iconRef}
+        onMouseEnter={(e) => e.stopPropagation()}
+        onMouseLeave={(e) => e.stopPropagation()}
+      />
       <span className="sr-only">Toggle theme</span>
     </button>
   )

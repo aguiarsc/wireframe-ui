@@ -11,13 +11,15 @@ function HoverCard({ ...props }: HoverCardProps) {
   return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
 }
 
-export interface HoverCardTriggerProps extends React.ComponentProps<typeof HoverCardPrimitive.Trigger> {}
+export interface HoverCardTriggerProps
+  extends React.ComponentProps<typeof HoverCardPrimitive.Trigger> {}
 
 function HoverCardTrigger({ ...props }: HoverCardTriggerProps) {
   return <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
 }
 
-export interface HoverCardContentProps extends React.ComponentProps<typeof HoverCardPrimitive.Content> {}
+export interface HoverCardContentProps
+  extends React.ComponentProps<typeof HoverCardPrimitive.Content> {}
 
 function HoverCardContent({
   className,

@@ -1,17 +1,17 @@
-'use client';
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
+'use client'
+import type { Variants } from 'motion/react'
+import { motion, useAnimation } from 'motion/react'
+import type { HTMLAttributes } from 'react'
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 export interface ArrowRightIconHandle {
-  startAnimation: () => void;
-  stopAnimation: () => void;
+  startAnimation: () => void
+  stopAnimation: () => void
 }
 
 interface ArrowRightIconProps extends HTMLAttributes<HTMLDivElement> {
-  size?: number;
+  size?: number
 }
 
 const pathVariants: Variants = {
@@ -22,7 +22,7 @@ const pathVariants: Variants = {
       duration: 0.4,
     },
   },
-};
+}
 
 const secondaryPathVariants: Variants = {
   normal: { d: 'm12 5 7 7-7 7', translateX: 0 },
@@ -33,43 +33,43 @@ const secondaryPathVariants: Variants = {
       duration: 0.4,
     },
   },
-};
+}
 
 const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const controls = useAnimation();
-    const isControlledRef = useRef(false);
+    const controls = useAnimation()
+    const isControlledRef = useRef(false)
 
     useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+      isControlledRef.current = true
 
       return {
         startAnimation: () => controls.start('animate'),
         stopAnimation: () => controls.start('normal'),
-      };
-    });
+      }
+    })
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('animate');
+          controls.start('animate')
         } else {
-          onMouseEnter?.(e);
+          onMouseEnter?.(e)
         }
       },
       [controls, onMouseEnter]
-    );
+    )
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          controls.start('normal');
+          controls.start('normal')
         } else {
-          onMouseLeave?.(e);
+          onMouseLeave?.(e)
         }
       },
       [controls, onMouseLeave]
-    );
+    )
 
     return (
       <div
@@ -89,22 +89,14 @@ const ArrowRightIcon = forwardRef<ArrowRightIconHandle, ArrowRightIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <motion.path
-            d="M5 12h14"
-            variants={pathVariants}
-            animate={controls}
-          />
-          <motion.path
-            d="m12 5 7 7-7 7"
-            variants={secondaryPathVariants}
-            animate={controls}
-          />
+          <motion.path d="M5 12h14" variants={pathVariants} animate={controls} />
+          <motion.path d="m12 5 7 7-7 7" variants={secondaryPathVariants} animate={controls} />
         </svg>
       </div>
-    );
+    )
   }
-);
+)
 
-ArrowRightIcon.displayName = 'ArrowRightIcon';
+ArrowRightIcon.displayName = 'ArrowRightIcon'
 
-export { ArrowRightIcon };
+export { ArrowRightIcon }

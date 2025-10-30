@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Icons",
   "description": "A collection of icons for wireframe components.",
-  "dependencies": [
-    "motion"
-  ],
+  "dependencies": ["motion"],
   "registryDependencies": [],
   "files": [
     {

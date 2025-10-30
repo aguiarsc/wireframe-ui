@@ -1,6 +1,6 @@
 /**
  * Wireframe Type Definitions
- * 
+ *
  * TypeScript type definitions for wireframe components.
  * These types are used across the wireframe-ui component library.
  */
@@ -21,13 +21,7 @@ export type WireframeWidth = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 /**
  * Color variants for wireframe elements
  */
-export type WireframeColor =
-  | 'default'
-  | 'muted'
-  | 'subtle'
-  | 'primary'
-  | 'secondary'
-  | 'accent'
+export type WireframeColor = 'default' | 'muted' | 'subtle' | 'primary' | 'secondary' | 'accent'
 
 /**
  * Animation variants for wireframe elements
@@ -75,7 +69,7 @@ export const WIREFRAME_EMPHASIS = ['primary', 'secondary', 'tertiary', 'subtle']
 /**
  * Responsive props interface for breakpoint-based styling
  * Allows components to accept different prop values at different breakpoints
- * 
+ *
  * @example
  * ```tsx
  * <Text responsive={{ base: { size: 'sm' }, md: { size: 'lg' } }} />
@@ -118,9 +112,7 @@ export interface ResponsiveDimensionProps extends ResponsiveSizeProps, Responsiv
 /**
  * Extract variant props from CVA variant function
  */
-export type ExtractVariantProps<T> = T extends (...args: any[]) => any
-  ? VariantProps<T>
-  : never
+export type ExtractVariantProps<T> = T extends (...args: any[]) => any ? VariantProps<T> : never
 
 /**
  * Merge two prop types, with the second type taking precedence

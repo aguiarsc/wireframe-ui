@@ -5,9 +5,7 @@
   "title": "Heading",
   "description": "A composition component that renders appropriately sized Text based on heading level (1-6).",
   "dependencies": [],
-  "registryDependencies": [
-    "text"
-  ],
+  "registryDependencies": ["text"],
   "files": [
     {
       "path": "registry/new-york/ui/heading.tsx",

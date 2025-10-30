@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Context Menu",
   "description": "A context menu component with wireframe helpers for menu items and labels.",
-  "dependencies": [
-    "@radix-ui/react-context-menu"
-  ],
-  "registryDependencies": [
-    "text",
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-context-menu"],
+  "registryDependencies": ["text", "icons"],
   "files": [
     {
       "path": "registry/new-york/ui/context-menu.tsx",

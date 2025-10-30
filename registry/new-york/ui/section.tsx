@@ -23,11 +23,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(
           ref={ref}
           data-slot="section"
           data-variant="hero"
-          className={cn(
-            'flex flex-col items-center text-center',
-            spacingMap[spacing],
-            className
-          )}
+          className={cn('flex flex-col items-center text-center', spacingMap[spacing], className)}
           {...props}
         >
           <Heading level={1} />

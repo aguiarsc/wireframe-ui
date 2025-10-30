@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import type { Variants } from 'motion/react'
+import { motion, useAnimation } from 'motion/react'
+import type { HTMLAttributes } from 'react'
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 export interface GithubIconHandle {
-  startAnimation: () => void;
-  stopAnimation: () => void;
+  startAnimation: () => void
+  stopAnimation: () => void
 }
 
 interface GithubIconProps extends HTMLAttributes<HTMLDivElement> {
-  size?: number;
+  size?: number
 }
 
 const bodyVariants: Variants = {
@@ -32,7 +32,7 @@ const bodyVariants: Variants = {
       duration: 0.4,
     },
   },
-};
+}
 
 const tailVariants: Variants = {
   normal: {
@@ -58,54 +58,54 @@ const tailVariants: Variants = {
       repeat: Infinity,
     },
   },
-};
+}
 
 const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const bodyControls = useAnimation();
-    const tailControls = useAnimation();
-    const isControlledRef = useRef(false);
+    const bodyControls = useAnimation()
+    const tailControls = useAnimation()
+    const isControlledRef = useRef(false)
 
     useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+      isControlledRef.current = true
 
       return {
         startAnimation: async () => {
-          bodyControls.start('animate');
-          await tailControls.start('draw');
-          tailControls.start('wag');
+          bodyControls.start('animate')
+          await tailControls.start('draw')
+          tailControls.start('wag')
         },
         stopAnimation: () => {
-          bodyControls.start('normal');
-          tailControls.start('normal');
+          bodyControls.start('normal')
+          tailControls.start('normal')
         },
-      };
-    });
+      }
+    })
 
     const handleMouseEnter = useCallback(
       async (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          bodyControls.start('animate');
-          await tailControls.start('draw');
-          tailControls.start('wag');
+          bodyControls.start('animate')
+          await tailControls.start('draw')
+          tailControls.start('wag')
         } else {
-          onMouseEnter?.(e);
+          onMouseEnter?.(e)
         }
       },
       [bodyControls, onMouseEnter, tailControls]
-    );
+    )
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          bodyControls.start('normal');
-          tailControls.start('normal');
+          bodyControls.start('normal')
+          tailControls.start('normal')
         } else {
-          onMouseLeave?.(e);
+          onMouseLeave?.(e)
         }
       },
       [bodyControls, tailControls, onMouseLeave]
-    );
+    )
 
     return (
       <div
@@ -139,10 +139,10 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
           />
         </svg>
       </div>
-    );
+    )
   }
-);
+)
 
-GithubIcon.displayName = 'GithubIcon';
+GithubIcon.displayName = 'GithubIcon'
 
-export { GithubIcon };
+export { GithubIcon }

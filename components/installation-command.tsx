@@ -19,7 +19,10 @@ const packageManagers = [
 
 export function InstallationCommand({ name }: InstallationCommandProps) {
   const [activeTab, setActiveTab] = React.useState('pnpm')
-  const copyIconRef = React.useRef<{ startAnimation: () => void; stopAnimation: () => void } | null>(null)
+  const copyIconRef = React.useRef<{
+    startAnimation: () => void
+    stopAnimation: () => void
+  } | null>(null)
 
   const getCommandParts = (pm: string) => {
     const baseCommand = `shadcn@latest add https://wireframe-ui.vercel.app/r/${name}.json`
@@ -59,7 +62,12 @@ export function InstallationCommand({ name }: InstallationCommandProps) {
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-black dark:bg-white">
-            <TerminalIcon size={14} className="text-white dark:text-black" onMouseEnter={(e) => e.stopPropagation()} onMouseLeave={(e) => e.stopPropagation()} />
+            <TerminalIcon
+              size={14}
+              className="text-white dark:text-black"
+              onMouseEnter={(e) => e.stopPropagation()}
+              onMouseLeave={(e) => e.stopPropagation()}
+            />
           </div>
           <TabsList className="h-7">
             {packageManagers.map((pm) => (
@@ -75,7 +83,12 @@ export function InstallationCommand({ name }: InstallationCommandProps) {
           className="hover:bg-muted h-7 w-7 p-0"
           onClick={copyToClipboard}
         >
-          <ClipboardCheckIcon ref={copyIconRef} size={14} onMouseEnter={(e) => e.stopPropagation()} onMouseLeave={(e) => e.stopPropagation()} />
+          <ClipboardCheckIcon
+            ref={copyIconRef}
+            size={14}
+            onMouseEnter={(e) => e.stopPropagation()}
+            onMouseLeave={(e) => e.stopPropagation()}
+          />
           <span className="sr-only">Copy</span>
         </Button>
       </div>

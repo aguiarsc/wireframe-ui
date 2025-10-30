@@ -7,14 +7,7 @@ import { cn } from '@/lib/utils'
 
 export interface SliderProps extends React.ComponentProps<typeof SliderPrimitive.Root> {}
 
-function Slider({
-  className,
-  defaultValue,
-  value,
-  min = 0,
-  max = 100,
-  ...props
-}: SliderProps) {
+function Slider({ className, defaultValue, value, min = 0, max = 100, ...props }: SliderProps) {
   const _values = React.useMemo(
     () => (Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max]),
     [value, defaultValue, min, max]

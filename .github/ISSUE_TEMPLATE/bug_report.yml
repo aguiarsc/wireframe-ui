@@ -1,7 +1,7 @@
 name: Bug Report
 description: Report a bug or unexpected behavior
-title: "[Bug]: "
-labels: ["bug", "triage"]
+title: '[Bug]: '
+labels: ['bug', 'triage']
 body:
   - type: markdown
     attributes:
@@ -114,7 +114,7 @@ body:
       value: |
         - OS: 
         - Node version: 
-        - Framework: 
+        - Framework:
     validations:
       required: true
 

@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Select",
   "description": "Displays a list of options for the user to pick from with keyboard navigation support.",
-  "dependencies": [
-    "@radix-ui/react-select"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["@radix-ui/react-select"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/select.tsx",

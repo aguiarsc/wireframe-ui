@@ -5,10 +5,7 @@
   "title": "Pagination",
   "description": "Pagination with page navigation, next and previous links.",
   "dependencies": [],
-  "registryDependencies": [
-    "button",
-    "icons"
-  ],
+  "registryDependencies": ["button", "icons"],
   "files": [
     {
       "path": "registry/new-york/ui/pagination.tsx",

@@ -28,12 +28,7 @@ export interface SelectTriggerProps extends React.ComponentProps<typeof SelectPr
   size?: 'sm' | 'default'
 }
 
-function SelectTrigger({
-  className,
-  size = 'default',
-  children,
-  ...props
-}: SelectTriggerProps) {
+function SelectTrigger({ className, size = 'default', children, ...props }: SelectTriggerProps) {
   return (
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
@@ -105,11 +100,7 @@ function SelectLabel({ className, ...props }: SelectLabelProps) {
 
 export interface SelectItemProps extends React.ComponentProps<typeof SelectPrimitive.Item> {}
 
-function SelectItem({
-  className,
-  children,
-  ...props
-}: SelectItemProps) {
+function SelectItem({ className, children, ...props }: SelectItemProps) {
   return (
     <SelectPrimitive.Item
       data-slot="select-item"
@@ -129,12 +120,10 @@ function SelectItem({
   )
 }
 
-export interface SelectSeparatorProps extends React.ComponentProps<typeof SelectPrimitive.Separator> {}
+export interface SelectSeparatorProps
+  extends React.ComponentProps<typeof SelectPrimitive.Separator> {}
 
-function SelectSeparator({
-  className,
-  ...props
-}: SelectSeparatorProps) {
+function SelectSeparator({ className, ...props }: SelectSeparatorProps) {
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
@@ -144,12 +133,10 @@ function SelectSeparator({
   )
 }
 
-export interface SelectScrollUpButtonProps extends React.ComponentProps<typeof SelectPrimitive.ScrollUpButton> {}
+export interface SelectScrollUpButtonProps
+  extends React.ComponentProps<typeof SelectPrimitive.ScrollUpButton> {}
 
-function SelectScrollUpButton({
-  className,
-  ...props
-}: SelectScrollUpButtonProps) {
+function SelectScrollUpButton({ className, ...props }: SelectScrollUpButtonProps) {
   return (
     <SelectPrimitive.ScrollUpButton
       data-slot="select-scroll-up-button"
@@ -161,12 +148,10 @@ function SelectScrollUpButton({
   )
 }
 
-export interface SelectScrollDownButtonProps extends React.ComponentProps<typeof SelectPrimitive.ScrollDownButton> {}
+export interface SelectScrollDownButtonProps
+  extends React.ComponentProps<typeof SelectPrimitive.ScrollDownButton> {}
 
-function SelectScrollDownButton({
-  className,
-  ...props
-}: SelectScrollDownButtonProps) {
+function SelectScrollDownButton({ className, ...props }: SelectScrollDownButtonProps) {
   return (
     <SelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"

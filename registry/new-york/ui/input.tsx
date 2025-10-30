@@ -68,15 +68,10 @@ function Input({
           <div className="pointer-events-auto">
             {skeletonIcon || <AlignCenterIcon size={16} className="text-muted-foreground" />}
           </div>
-          {showSkeleton && (
-            <span className="wireframe-line h-3.5 w-48" />
-          )}
+          {showSkeleton && <span className="wireframe-line h-3.5 w-48" />}
           {showTypingSkeleton && (
             <span
-              className={cn(
-                'wireframe-line h-3.5 transition-all duration-200',
-                getSkeletonWidth()
-              )}
+              className={cn('wireframe-line h-3.5 transition-all duration-200', getSkeletonWidth())}
             />
           )}
         </div>

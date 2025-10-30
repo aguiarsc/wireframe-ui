@@ -1,9 +1,9 @@
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+import { Slot } from '@radix-ui/react-slot'
+import { cva, type VariantProps } from 'class-variance-authority'
 
-import { cn } from "@/lib/utils"
-import { Separator } from "@/registry/new-york/ui/separator"
-import { Text } from "@/registry/new-york/ui/text"
+import { cn } from '@/lib/utils'
+import { Separator } from '@/registry/new-york/ui/separator'
+import { Text } from '@/registry/new-york/ui/text'
 
 const buttonGroupVariants = cva(
   "flex w-fit items-stretch [&>*]:focus-visible:z-10 [&>*]:focus-visible:relative [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md has-[>[data-slot=button-group]]:gap-2",
@@ -11,24 +11,22 @@ const buttonGroupVariants = cva(
     variants: {
       orientation: {
         horizontal:
-          "[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none",
+          '[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none',
         vertical:
-          "flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none",
+          'flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none',
       },
     },
     defaultVariants: {
-      orientation: "horizontal",
+      orientation: 'horizontal',
     },
   }
 )
 
-export interface ButtonGroupProps extends React.ComponentProps<"div">, VariantProps<typeof buttonGroupVariants> {}
+export interface ButtonGroupProps
+  extends React.ComponentProps<'div'>,
+    VariantProps<typeof buttonGroupVariants> {}
 
-function ButtonGroup({
-  className,
-  orientation,
-  ...props
-}: ButtonGroupProps) {
+function ButtonGroup({ className, orientation, ...props }: ButtonGroupProps) {
   return (
     <div
       role="group"
@@ -40,16 +38,12 @@ function ButtonGroup({
   )
 }
 
-export interface ButtonGroupTextProps extends React.ComponentProps<"div"> {
+export interface ButtonGroupTextProps extends React.ComponentProps<'div'> {
   asChild?: boolean
 }
 
-function ButtonGroupText({
-  className,
-  asChild = false,
-  ...props
-}: ButtonGroupTextProps) {
-  const Comp = asChild ? Slot : "div"
+function ButtonGroupText({ className, asChild = false, ...props }: ButtonGroupTextProps) {
+  const Comp = asChild ? Slot : 'div'
 
   return (
     <Comp
@@ -66,7 +60,7 @@ export interface ButtonGroupSeparatorProps extends React.ComponentProps<typeof S
 
 function ButtonGroupSeparator({
   className,
-  orientation = "vertical",
+  orientation = 'vertical',
   ...props
 }: ButtonGroupSeparatorProps) {
   return (
@@ -74,7 +68,7 @@ function ButtonGroupSeparator({
       data-slot="button-group-separator"
       orientation={orientation}
       className={cn(
-        "bg-input relative m-0! self-stretch data-[orientation=vertical]:h-auto",
+        'bg-input relative m-0! self-stretch data-[orientation=vertical]:h-auto',
         className
       )}
       {...props}
@@ -84,11 +78,11 @@ function ButtonGroupSeparator({
 
 // Wireframe helper component
 function ButtonGroupTextWireframe({
-  width = "sm",
+  width = 'sm',
   className,
   ...props
-}: Omit<React.ComponentProps<"div">, "children"> & {
-  width?: "xs" | "sm" | "md" | "lg"
+}: Omit<React.ComponentProps<'div'>, 'children'> & {
+  width?: 'xs' | 'sm' | 'md' | 'lg'
 }) {
   return (
     <ButtonGroupText className={className} {...props}>

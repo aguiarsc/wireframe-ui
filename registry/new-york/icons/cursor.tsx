@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
-import type { HTMLAttributes } from 'react';
-import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
+import type { Variants } from 'motion/react'
+import { motion, useAnimation } from 'motion/react'
+import type { HTMLAttributes } from 'react'
+import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
 export interface CursorClickIconHandle {
-  startAnimation: () => void;
-  stopAnimation: () => void;
+  startAnimation: () => void
+  stopAnimation: () => void
 }
 
 interface CursorClickIconProps extends HTMLAttributes<HTMLDivElement> {
-  size?: number;
+  size?: number
 }
 
 const cursorVariants: Variants = {
@@ -25,7 +25,7 @@ const cursorVariants: Variants = {
       bounce: 0.3,
     },
   },
-};
+}
 
 const lineVariants: Variants = {
   initial: { opacity: 1, x: 0, y: 0 },
@@ -40,52 +40,52 @@ const lineVariants: Variants = {
       mass: 0.4,
     },
   }),
-};
+}
 
 const CursorClickIcon = forwardRef<CursorClickIconHandle, CursorClickIconProps>(
   ({ onMouseEnter, onMouseLeave, className, size = 28, ...props }, ref) => {
-    const clickControls = useAnimation();
-    const cursorControls = useAnimation();
-    const isControlledRef = useRef(false);
+    const clickControls = useAnimation()
+    const cursorControls = useAnimation()
+    const isControlledRef = useRef(false)
 
     useImperativeHandle(ref, () => {
-      isControlledRef.current = true;
+      isControlledRef.current = true
 
       return {
         startAnimation: () => {
-          cursorControls.start('hover');
-          clickControls.start('spread', { delay: 1.3 });
+          cursorControls.start('hover')
+          clickControls.start('spread', { delay: 1.3 })
         },
         stopAnimation: () => {
-          cursorControls.start('initial');
-          clickControls.start('initial');
+          cursorControls.start('initial')
+          clickControls.start('initial')
         },
-      };
-    });
+      }
+    })
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          cursorControls.start('hover');
-          clickControls.start('spread', { delay: 1.3 });
+          cursorControls.start('hover')
+          clickControls.start('spread', { delay: 1.3 })
         } else {
-          onMouseEnter?.(e);
+          onMouseEnter?.(e)
         }
       },
       [clickControls, cursorControls, onMouseEnter]
-    );
+    )
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isControlledRef.current) {
-          cursorControls.start('initial');
-          clickControls.start('initial');
+          cursorControls.start('initial')
+          clickControls.start('initial')
         } else {
-          onMouseLeave?.(e);
+          onMouseLeave?.(e)
         }
       },
       [cursorControls, clickControls, onMouseLeave]
-    );
+    )
 
     return (
       <div
@@ -136,10 +136,10 @@ const CursorClickIcon = forwardRef<CursorClickIconHandle, CursorClickIconProps>(
           />
         </svg>
       </div>
-    );
+    )
   }
-);
+)
 
-CursorClickIcon.displayName = 'CursorClickIcon';
+CursorClickIcon.displayName = 'CursorClickIcon'
 
-export { CursorClickIcon };
+export { CursorClickIcon }

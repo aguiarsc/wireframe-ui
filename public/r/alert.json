@@ -4,12 +4,8 @@
   "type": "registry:ui",
   "title": "Alert",
   "description": "Displays a callout for user attention with optional icon and variant styles.",
-  "dependencies": [
-    "class-variance-authority"
-  ],
-  "registryDependencies": [
-    "icons"
-  ],
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": ["icons"],
   "files": [
     {
       "path": "registry/new-york/ui/alert.tsx",
