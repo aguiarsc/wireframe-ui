@@ -42,7 +42,7 @@ export function ContactForm() {
               </Label>
               <Input
                 id="contact-name"
-                skeleton
+                variant="wireframe"
                 skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
               />
             </div>
@@ -52,7 +52,7 @@ export function ContactForm() {
               </Label>
               <Input
                 id="contact-email"
-                skeleton
+                variant="wireframe"
                 skeletonIcon={<MailCheckIcon size={16} className="text-muted-foreground" />}
               />
             </div>
@@ -84,7 +84,7 @@ export function ContactForm() {
             <Label htmlFor="message">
               <Text width="xs" />
             </Label>
-            <Textarea id="message" skeleton skeletonLines={5} />
+            <Textarea id="message" variant="wireframe" skeletonLines={5} />
           </div>
           <div className="flex justify-end gap-2">
             <Button variant="outline">

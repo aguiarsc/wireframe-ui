@@ -615,7 +615,7 @@ export default function Home() {
                 description="A text input field with support for various types and validation states."
               >
                 <Input
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
                   className="w-full"
                 />
@@ -709,7 +709,7 @@ export default function Home() {
                   </Label>
                   <Input
                     id="email"
-                    skeleton
+                    variant="wireframe"
                     skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
                   />
                 </div>
@@ -1118,7 +1118,7 @@ export default function Home() {
                 title="Textarea"
                 description="A multi-line text input field with auto-resizing support."
               >
-                <Textarea skeleton skeletonLines={3} className="w-full" />
+                <Textarea variant="wireframe" skeletonLines={3} className="w-full" />
               </ComponentPreview>
 
               <ComponentPreview

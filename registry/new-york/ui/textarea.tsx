@@ -9,10 +9,6 @@ export interface TextareaProps extends React.ComponentProps<'textarea'> {
    * @default 'default'
    */
   variant?: 'default' | 'wireframe'
-  /**
-   * @deprecated Use variant="wireframe" instead
-   */
-  skeleton?: boolean
   skeletonMaxLength?: number
   skeletonLines?: number
 }
@@ -20,7 +16,6 @@ export interface TextareaProps extends React.ComponentProps<'textarea'> {
 function Textarea({
   className,
   variant = 'default',
-  skeleton = false,
   skeletonMaxLength = 100,
   skeletonLines = 3,
   ...props
@@ -28,8 +23,7 @@ function Textarea({
   const [value, setValue] = React.useState('')
   const [isFocused, setIsFocused] = React.useState(false)
 
-  // variant="wireframe" sets skeleton mode, maintaining backward compatibility
-  const isSkeletonMode = variant === 'wireframe' || skeleton
+  const isSkeletonMode = variant === 'wireframe'
 
   // Calculate how many lines to show based on character count
   const getVisibleLines = () => {

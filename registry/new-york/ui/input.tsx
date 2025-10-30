@@ -10,10 +10,6 @@ export interface InputProps extends React.ComponentProps<'input'> {
    * @default 'default'
    */
   variant?: 'default' | 'wireframe'
-  /**
-   * @deprecated Use variant="wireframe" instead
-   */
-  skeleton?: boolean
   skeletonMaxLength?: number
   skeletonIcon?: React.ReactNode
 }
@@ -22,7 +18,6 @@ function Input({
   className,
   type,
   variant = 'default',
-  skeleton = false,
   skeletonMaxLength = 20,
   skeletonIcon,
   ...props
@@ -30,8 +25,7 @@ function Input({
   const [value, setValue] = React.useState('')
   const [isFocused, setIsFocused] = React.useState(false)
 
-  // variant="wireframe" sets skeleton mode, maintaining backward compatibility
-  const isSkeletonMode = variant === 'wireframe' || skeleton
+  const isSkeletonMode = variant === 'wireframe'
 
   // Calculate width based on input length
   const getSkeletonWidth = () => {

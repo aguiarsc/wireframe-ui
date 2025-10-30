@@ -46,7 +46,7 @@ export function RegisterForm() {
                 </Label>
                 <Input
                   id="firstname"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<UserIcon size={16} className="text-muted-foreground" />}
                 />
               </div>
@@ -56,7 +56,7 @@ export function RegisterForm() {
                 </Label>
                 <Input
                   id="lastname"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<UserIcon size={16} className="text-muted-foreground" />}
                 />
               </div>
@@ -66,7 +66,7 @@ export function RegisterForm() {
                 </Label>
                 <Input
                   id="email-reg"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<MailCheckIcon size={16} className="text-muted-foreground" />}
                 />
               </div>
@@ -78,7 +78,7 @@ export function RegisterForm() {
                 </Label>
                 <Input
                   id="password-reg"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
                 />
               </div>
@@ -88,7 +88,7 @@ export function RegisterForm() {
                 </Label>
                 <Input
                   id="confirm-password"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
                 />
               </div>

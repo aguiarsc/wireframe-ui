@@ -36,7 +36,7 @@ export function ProductGrid() {
         <div className="flex gap-2">
           <div className="relative flex-1 md:w-64">
             <Input
-              skeleton
+              variant="wireframe"
               skeletonIcon={<SearchIcon size={16} className="text-muted-foreground" />}
             />
           </div>

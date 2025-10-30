@@ -36,7 +36,7 @@ export function LoginForm() {
             </Label>
             <Input
               id="email"
-              skeleton
+              variant="wireframe"
               skeletonIcon={<MailCheckIcon size={16} className="text-muted-foreground" />}
             />
           </div>
@@ -46,7 +46,7 @@ export function LoginForm() {
             </Label>
             <Input
               id="password"
-              skeleton
+              variant="wireframe"
               skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
             />
           </div>

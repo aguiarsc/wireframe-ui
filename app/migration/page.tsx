@@ -82,7 +82,7 @@ export default function MigrationPage() {
                 <td className="p-2 sm:p-4"><InlineCode code='<ItemTitle>{name}</ItemTitle>' /></td>
               </tr>
               <tr>
-                <td className="p-2 sm:p-4"><InlineCode code='<Input skeleton />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<Input variant="wireframe" />' /></td>
                 <td className="p-2 sm:p-4"><InlineCode code='<Input value={val} onChange={fn} />' /></td>
               </tr>
             </tbody>
@@ -116,7 +116,7 @@ export default function MigrationPage() {
   <CardContent className="space-y-4">
     <div className="space-y-2">
       <Label><Text width="xs" /></Label>
-      <Input skeleton />
+      <Input variant="wireframe" />
     </div>
     <Button className="w-full">
       <Text width="sm" />
@@ -307,7 +307,7 @@ function LoginFormWireframe() {
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label><Text width="xs" /></Label>
-          <Input skeleton />
+          <Input variant="wireframe" />
         </div>
         <Button className="w-full"><Text width="sm" /></Button>
       </CardContent>

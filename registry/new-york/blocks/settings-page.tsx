@@ -86,7 +86,7 @@ export function SettingsPage() {
                   </Label>
                   <Input
                     id="firstname"
-                    skeleton
+                    variant="wireframe"
                     skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
                   />
                 </div>
@@ -96,7 +96,7 @@ export function SettingsPage() {
                   </Label>
                   <Input
                     id="lastname"
-                    skeleton
+                    variant="wireframe"
                     skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
                   />
                 </div>
@@ -105,7 +105,7 @@ export function SettingsPage() {
                 <Label htmlFor="bio">
                   <Text width="xs" />
                 </Label>
-                <Textarea id="bio" skeleton skeletonLines={3} />
+                <Textarea id="bio" variant="wireframe" skeletonLines={3} />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="language">
@@ -151,7 +151,7 @@ export function SettingsPage() {
                 </Label>
                 <Input
                   id="current-password"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
                 />
               </div>
@@ -161,7 +161,7 @@ export function SettingsPage() {
                 </Label>
                 <Input
                   id="new-password"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
                 />
               </div>
@@ -171,7 +171,7 @@ export function SettingsPage() {
                 </Label>
                 <Input
                   id="confirm-new-password"
-                  skeleton
+                  variant="wireframe"
                   skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
                 />
               </div>

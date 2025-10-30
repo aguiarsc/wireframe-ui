@@ -75,7 +75,7 @@ npx shadcn@latest add https://wireframe-ui.vercel.app/r/text
 
 ### Forms
 ```tsx
-<Input skeleton />
+<Input variant="wireframe" />
 <Button skeleton />
 <Select skeleton />
 ```
@@ -114,7 +114,7 @@ function ProductCard() {
         <CardTitle><Text width="lg" /></CardTitle>
       </CardHeader>
       <CardContent><Text lines={2} /></CardContent>
-      <CardFooter><Button skeleton /></CardFooter>
+      <CardFooter><Button variant="wireframe" /></CardFooter>
     </Card>
   )
 }
@@ -178,11 +178,11 @@ function ProductCard({ product }) {
 ```tsx
 // Wrong
 <Text>Hello World</Text>
-<Button skeleton onClick={fn} />
+<Input variant="wireframe" onClick={fn} />
 
 // Right
 <Text width="lg" />
-<Button skeleton />
+<Input variant="wireframe" />
 ```
 
 ## File Locations
