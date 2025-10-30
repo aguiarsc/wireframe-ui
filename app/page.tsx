@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { toast } from 'sonner'
 import { ComponentPreview } from '@/components/component-preview'
-import { ComponentGrid } from '@/components/component-grid'
+import { ComponentGridWrapper } from '@/components/component-grid-wrapper'
 import { SiteNav } from '@/components/site-nav'
 import {
   AlignCenterIcon,
@@ -404,7 +404,7 @@ export default function Home() {
           </p>
         </header>
         <main className="flex flex-1 flex-col gap-12">
-          <ComponentGrid components={COMPONENTS}>
+          <ComponentGridWrapper components={COMPONENTS}>
             <ComponentPreview
               name="accordion"
               title="Accordion"
@@ -1382,7 +1382,7 @@ export default function Home() {
                 </TooltipContent>
               </Tooltip>
             </ComponentPreview>
-          </ComponentGrid>
+          </ComponentGridWrapper>
         </main>
       </div>
     </>
