@@ -80,8 +80,15 @@ class RegistryValidator {
     const content = fs.readFileSync(filePath, 'utf-8')
     const imports: string[] = []
 
-    // Match import statements
-    const importRegex = /import\s+(?:(?:\{[^}]*\}|\*\s+as\s+\w+|\w+)\s+from\s+)?['"]([^'"]+)['"]/g
+    // Match import statements including:
+    // - Named imports: import { foo } from 'pkg'
+    // - Default imports: import foo from 'pkg'
+    // - Namespace imports: import * as foo from 'pkg'
+    // - Type imports: import type { foo } from 'pkg'
+    // - Hook imports: import useHook from 'pkg' or import { useHook } from 'pkg'
+    // - Mixed imports: import foo, { bar } from 'pkg'
+    const importRegex =
+      /import\s+(?:type\s+)?(?:[\w$]+(?:\s*,\s*)?)?(?:\{[^}]*\}|\*\s+as\s+\w+)?\s+from\s+['"]([^'"]+)['"]/g
     let match
 
     while ((match = importRegex.exec(content)) !== null) {
@@ -95,7 +102,7 @@ class RegistryValidator {
         continue
       }
 
-      // Extract package name (handle scoped packages)
+      // Extract package name (handle scoped packages and subpaths)
       let packageName = importPath
       if (importPath.startsWith('@')) {
         const parts = importPath.split('/')
@@ -239,56 +246,60 @@ class RegistryValidator {
     this.registry.items.forEach((item) => {
       if (!item.files) return
 
+      // For components with multiple files (like icons), collect imports from ALL files
+      const allActualImports = new Set<string>()
+
       item.files.forEach((file) => {
         const filePath = path.join(process.cwd(), file.path)
         if (!fs.existsSync(filePath)) return
 
-        const actualImports = this.extractImports(filePath)
-        const declaredDeps = item.dependencies || []
+        const fileImports = this.extractImports(filePath)
+        fileImports.forEach((imp) => allActualImports.add(imp))
+      })
 
-        // Check for missing dependencies
-        const missingDeps = actualImports.filter((imp) => !declaredDeps.includes(imp))
-        missingDeps.forEach((dep) => {
+      const actualImports = Array.from(allActualImports).sort()
+      const declaredDeps = item.dependencies || []
+
+      // Check for missing dependencies
+      const missingDeps = actualImports.filter((imp) => !declaredDeps.includes(imp))
+      missingDeps.forEach((dep) => {
+        this.addIssue({
+          severity: 'critical',
+          category: 'Missing Dependency',
+          component: item.name,
+          message: `Component imports "${dep}" but it's not declared in dependencies`,
+          suggestion: `Add "${dep}" to the dependencies array in registry.json`,
+        })
+      })
+
+      // Check for unused dependencies
+      // Note: For multi-file components, a dependency might be used in some files but not others
+      const unusedDeps = declaredDeps.filter((dep) => !actualImports.includes(dep))
+      unusedDeps.forEach((dep) => {
+        this.addIssue({
+          severity: 'warning',
+          category: 'Unused Dependency',
+          component: item.name,
+          message: `Component declares "${dep}" but doesn't import it in any file`,
+          suggestion: `Remove "${dep}" from the dependencies array or use it in the component`,
+        })
+      })
+
+      // Check if dependencies exist in package.json
+      actualImports.forEach((dep) => {
+        const allDeps = {
+          ...this.packageJson.dependencies,
+          ...this.packageJson.devDependencies,
+        }
+        if (!allDeps[dep]) {
           this.addIssue({
             severity: 'critical',
-            category: 'Missing Dependency',
+            category: 'Package Missing',
             component: item.name,
-            message: `Component imports "${dep}" but it's not declared in dependencies`,
-            file: file.path,
-            suggestion: `Add "${dep}" to the dependencies array in registry.json`,
+            message: `Component imports "${dep}" but it's not in package.json`,
+            suggestion: `Add "${dep}" to package.json dependencies`,
           })
-        })
-
-        // Check for unused dependencies
-        const unusedDeps = declaredDeps.filter((dep) => !actualImports.includes(dep))
-        unusedDeps.forEach((dep) => {
-          this.addIssue({
-            severity: 'warning',
-            category: 'Unused Dependency',
-            component: item.name,
-            message: `Component declares "${dep}" but doesn't import it`,
-            file: file.path,
-            suggestion: `Remove "${dep}" from the dependencies array or use it in the component`,
-          })
-        })
-
-        // Check if dependencies exist in package.json
-        actualImports.forEach((dep) => {
-          const allDeps = {
-            ...this.packageJson.dependencies,
-            ...this.packageJson.devDependencies,
-          }
-          if (!allDeps[dep]) {
-            this.addIssue({
-              severity: 'critical',
-              category: 'Package Missing',
-              component: item.name,
-              message: `Component imports "${dep}" but it's not in package.json`,
-              file: file.path,
-              suggestion: `Add "${dep}" to package.json dependencies`,
-            })
-          }
-        })
+        }
       })
     })
   }
