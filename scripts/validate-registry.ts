@@ -331,6 +331,8 @@ class RegistryValidator {
     const typeToDirectory: Record<string, string> = {
       'registry:ui': 'registry/new-york/ui',
       'registry:icons': 'registry/new-york/icons',
+      'registry:block': 'registry/new-york/blocks',
+      'registry:lib': 'registry/new-york/lib',
     }
 
     this.registry.items.forEach((item) => {
@@ -343,7 +345,7 @@ class RegistryValidator {
           category: 'Type Mapping',
           component: item.name,
           message: `Unknown component type "${item.type}"`,
-          suggestion: 'Use one of: registry:ui, registry:icons',
+          suggestion: 'Use one of: registry:ui, registry:icons, registry:block, registry:lib',
         })
         return
       }

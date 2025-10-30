@@ -13,11 +13,11 @@ import { Label } from '@/registry/new-york/ui/label'
 import { Text } from '@/registry/new-york/ui/text'
 import { Checkbox } from '@/registry/new-york/ui/checkbox'
 import { UserIcon } from '@/registry/new-york/icons'
-import { LockIcon } from '@/components/icons/lock'
-import { MailCheckIcon } from '@/components/icons/mail-check'
+import { LockIcon } from '@/registry/new-york/icons/lock'
+import { MailCheckIcon } from '@/registry/new-york/icons/mail-check'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs'
 
-export function RegisterFormShowcase() {
+export function RegisterForm() {
   return (
     <div className="flex min-h-[700px] w-full items-center justify-center p-4">
       <Card className="w-full max-w-md">

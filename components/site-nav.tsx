@@ -9,7 +9,7 @@ import { GithubIcon } from '@/components/icons/github'
 export function SiteNav() {
   const pathname = usePathname()
   const isHome = pathname === '/'
-  const isShowcase = pathname === '/showcase'
+  const isBlocks = pathname === '/blocks'
   const isMigration = pathname === '/migration'
   const isComparison = pathname === '/comparison'
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
@@ -34,12 +34,12 @@ export function SiteNav() {
                 Docs
               </Link>
             )}
-            {!isShowcase && (
+            {!isBlocks && (
               <Link
-                href="/showcase"
+                href="/blocks"
                 className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors lg:text-base"
               >
-                Showcase
+                Blocks
               </Link>
             )}
             {!isComparison && (
@@ -130,13 +130,13 @@ export function SiteNav() {
                 Docs
               </Link>
             )}
-            {!isShowcase && (
+            {!isBlocks && (
               <Link
-                href="/showcase"
+                href="/blocks"
                 onClick={() => setMobileMenuOpen(false)}
                 className="hover:bg-accent rounded-md px-3 py-2 text-base font-medium transition-colors"
               >
-                Showcase
+                Blocks
               </Link>
             )}
             {!isComparison && (

@@ -7,10 +7,10 @@ import { Badge } from '@/registry/new-york/ui/badge'
 import { Media } from '@/registry/new-york/ui/media'
 import { Stack } from '@/registry/new-york/ui/stack'
 import { CheckIcon } from '@/registry/new-york/icons'
-import { PlayIcon } from '@/components/icons/play'
-import { SparklesIcon } from '@/components/icons/sparkles'
+import { PlayIcon } from '@/registry/new-york/icons/play'
+import { SparklesIcon } from '@/registry/new-york/icons/sparkles'
 
-export function HeroSectionShowcase() {
+export function HeroSection() {
   return (
     <div className="container mx-auto px-4 py-16 lg:py-24">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">

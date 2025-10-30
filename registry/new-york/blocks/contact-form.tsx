@@ -20,9 +20,9 @@ import {
   SelectValue,
 } from '@/registry/new-york/ui/select'
 import { AlignCenterIcon } from '@/registry/new-york/icons'
-import { MailCheckIcon } from '@/components/icons/mail-check'
+import { MailCheckIcon } from '@/registry/new-york/icons/mail-check'
 
-export function ContactFormShowcase() {
+export function ContactForm() {
   return (
     <div className="container mx-auto flex min-h-[700px] items-center justify-center p-4">
       <Card className="w-full max-w-2xl">

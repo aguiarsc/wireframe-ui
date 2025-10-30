@@ -21,33 +21,33 @@ import {
   ItemMedia,
   ItemTitleWireframe,
 } from '@/registry/new-york/ui/item'
-import { CalendarDaysIcon } from '@/components/icons/calendar-days'
-import { LinkIcon } from '@/components/icons/link'
-import { MapPinIcon } from '@/components/icons/map-pin'
-import { MessageCircleIcon } from '@/components/icons/message-circle'
-import { UserRoundPlusIcon } from '@/components/icons/user-round-plus'
+import { CalendarDaysIcon } from '@/registry/new-york/icons/calendar-days'
+import { LinkIcon } from '@/registry/new-york/icons/link'
+import { MapPinIcon } from '@/registry/new-york/icons/map-pin'
+import { MessageCircleIcon } from '@/registry/new-york/icons/message-circle'
+import { UserRoundPlusIcon } from '@/registry/new-york/icons/user-round-plus'
 
-export function ProfilePageShowcase() {
+export function ProfilePage() {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 p-6">
-      <Card>
-        <CardContent className="p-6">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
-            <Avatar className="h-24 w-24">
+    <div className="container mx-auto max-w-5xl space-y-4 p-4 lg:space-y-6 lg:p-6">
+      <Card className="overflow-hidden">
+        <CardContent className="p-4 lg:p-6">
+          <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+            <Avatar className="h-20 w-20 shrink-0 lg:h-24 lg:w-24">
               <AvatarFallback />
             </Avatar>
-            <div className="flex-1 space-y-4">
+            <div className="min-w-0 flex-1 space-y-4">
               <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-                <div className="space-y-2">
-                  <Text width="lg" emphasis="primary" size="xl" />
+                <div className="min-w-0 space-y-2">
+                  <Text width="lg" emphasis="primary" size="lg" />
                   <Text width="md" color="muted" size="sm" />
                 </div>
-                <div className="flex gap-2">
-                  <Button variant="outline">
+                <div className="flex shrink-0 gap-2">
+                  <Button variant="outline" size="sm">
                     <MessageCircleIcon size={16} className="text-muted-foreground" />
                     <Text width="xs" />
                   </Button>
-                  <Button>
+                  <Button size="sm">
                     <UserRoundPlusIcon size={16} className="text-muted-foreground" />
                     <Text width="xs" />
                   </Button>
@@ -57,21 +57,21 @@ export function ProfilePageShowcase() {
                 <Text width="full" />
                 <Text width="xl" color="muted" />
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 lg:gap-4">
                 <div className="flex items-center gap-1.5">
-                  <MapPinIcon size={16} className="text-muted-foreground" />
+                  <MapPinIcon size={16} className="shrink-0 text-muted-foreground" />
                   <Text width="sm" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <LinkIcon size={16} className="text-muted-foreground" />
+                  <LinkIcon size={16} className="shrink-0 text-muted-foreground" />
                   <Text width="md" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CalendarDaysIcon size={16} className="text-muted-foreground" />
+                  <CalendarDaysIcon size={16} className="shrink-0 text-muted-foreground" />
                   <Text width="sm" size="sm" />
                 </div>
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3 lg:gap-4">
                 <div className="flex items-center gap-1">
                   <Text width="xs" emphasis="primary" size="sm" />
                   <Text width="sm" color="muted" size="sm" />
@@ -105,14 +105,14 @@ export function ProfilePageShowcase() {
 
         <TabsContent value="posts" className="space-y-4">
           {[1, 2, 3].map((i) => (
-            <Card key={i}>
+            <Card key={i} className="overflow-hidden">
               <CardHeader>
-                <div className="flex items-start gap-4">
-                  <Avatar>
+                <div className="flex items-start gap-3 lg:gap-4">
+                  <Avatar className="shrink-0">
                     <AvatarFallback />
                   </Avatar>
-                  <div className="flex-1 space-y-1">
-                    <div className="flex items-center gap-2">
+                  <div className="min-w-0 flex-1 space-y-1">
+                    <div className="flex flex-wrap items-center gap-2">
                       <Text width="md" emphasis="primary" size="sm" />
                       <Badge variant="secondary">
                         <Text width="xs" />
@@ -130,7 +130,7 @@ export function ProfilePageShowcase() {
                 </div>
                 {i % 2 === 0 && <Media type="image" className="aspect-video w-full rounded-lg" />}
                 <Separator />
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-2 lg:gap-4">
                   <Button variant="ghost" size="sm">
                     <Text width="xs" />
                   </Button>
@@ -157,22 +157,22 @@ export function ProfilePageShowcase() {
         </TabsContent>
 
         <TabsContent value="activity" className="space-y-4">
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader>
               <CardTitle>
                 <Text width="md" />
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="overflow-x-auto">
               <ItemGroup>
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Item key={i}>
+                  <Item key={i} className="min-w-[280px]">
                     <ItemMedia variant="icon">
-                      <Avatar>
+                      <Avatar className="shrink-0">
                         <AvatarFallback />
                       </Avatar>
                     </ItemMedia>
-                    <ItemContent>
+                    <ItemContent className="min-w-0">
                       <ItemTitleWireframe width="lg" />
                       <ItemDescriptionWireframe width="sm" />
                     </ItemContent>

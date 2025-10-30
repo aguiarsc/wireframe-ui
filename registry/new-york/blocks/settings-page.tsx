@@ -24,34 +24,40 @@ import {
   SelectValue,
 } from '@/registry/new-york/ui/select'
 import { AlignCenterIcon, BellIcon, UserIcon } from '@/registry/new-york/icons'
-import { LockIcon } from '@/components/icons/lock'
+import { LockIcon } from '@/registry/new-york/icons/lock'
 
-export function SettingsPageShowcase() {
+export function SettingsPage() {
   return (
-    <div className="container mx-auto max-w-4xl space-y-6 p-6">
+    <div className="container mx-auto max-w-4xl space-y-4 p-4 lg:space-y-6 lg:p-6">
       <div className="space-y-1">
-        <Text width="lg" emphasis="primary" size="xl" />
+        <Text width="lg" emphasis="primary" size="lg" />
         <Text width="xl" color="muted" size="sm" />
       </div>
 
       <Tabs defaultValue="profile" className="w-full">
-        <TabsList>
-          <TabsTrigger value="profile">
-            <UserIcon size={16} className="text-muted-foreground" />
-            <Text width="xs" />
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="profile" className="gap-2">
+            <UserIcon size={16} className="shrink-0 text-muted-foreground" />
+            <span className="hidden sm:inline">
+              <Text width="xs" />
+            </span>
           </TabsTrigger>
-          <TabsTrigger value="account">
-            <LockIcon size={16} className="text-muted-foreground" />
-            <Text width="xs" />
+          <TabsTrigger value="account" className="gap-2">
+            <LockIcon size={16} className="shrink-0 text-muted-foreground" />
+            <span className="hidden sm:inline">
+              <Text width="xs" />
+            </span>
           </TabsTrigger>
-          <TabsTrigger value="notifications">
-            <BellIcon size={16} className="text-muted-foreground" />
-            <Text width="sm" />
+          <TabsTrigger value="notifications" className="gap-2">
+            <BellIcon size={16} className="shrink-0 text-muted-foreground" />
+            <span className="hidden sm:inline">
+              <Text width="sm" />
+            </span>
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="profile" className="space-y-4">
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader>
               <CardTitle>
                 <Text width="md" />
@@ -62,10 +68,10 @@ export function SettingsPageShowcase() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="flex items-center gap-4">
-                <Avatar className="h-20 w-20">
+                <Avatar className="h-16 w-16 shrink-0 lg:h-20 lg:w-20">
                   <AvatarFallback />
                 </Avatar>
-                <div className="space-y-2">
+                <div className="min-w-0 space-y-2">
                   <Button variant="outline" size="sm">
                     <Text width="xs" />
                   </Button>
@@ -129,7 +135,7 @@ export function SettingsPageShowcase() {
         </TabsContent>
 
         <TabsContent value="account" className="space-y-4">
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader>
               <CardTitle>
                 <Text width="md" />
@@ -172,7 +178,7 @@ export function SettingsPageShowcase() {
             </CardContent>
           </Card>
 
-          <Card className="border-destructive">
+          <Card className="overflow-hidden border-destructive">
             <CardHeader>
               <CardTitle>
                 <Text width="md" />
@@ -182,7 +188,7 @@ export function SettingsPageShowcase() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button variant="destructive">
+              <Button variant="destructive" size="sm">
                 <Text width="sm" />
               </Button>
             </CardContent>
@@ -190,7 +196,7 @@ export function SettingsPageShowcase() {
         </TabsContent>
 
         <TabsContent value="notifications" className="space-y-4">
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader>
               <CardTitle>
                 <Text width="md" />
@@ -200,47 +206,47 @@ export function SettingsPageShowcase() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="min-w-0 flex-1 space-y-0.5">
                   <Text width="md" emphasis="primary" size="sm" />
                   <Text width="xl" color="muted" size="xs" />
                 </div>
-                <Switch defaultChecked />
+                <Switch defaultChecked className="shrink-0" />
               </div>
               <Separator />
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="min-w-0 flex-1 space-y-0.5">
                   <Text width="sm" emphasis="primary" size="sm" />
                   <Text width="lg" color="muted" size="xs" />
                 </div>
-                <Switch />
+                <Switch className="shrink-0" />
               </div>
               <Separator />
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="min-w-0 flex-1 space-y-0.5">
                   <Text width="lg" emphasis="primary" size="sm" />
                   <Text width="full" color="muted" size="xs" />
                 </div>
-                <Switch defaultChecked />
+                <Switch defaultChecked className="shrink-0" />
               </div>
               <Separator />
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="min-w-0 flex-1 space-y-0.5">
                   <Text width="md" emphasis="primary" size="sm" />
                   <Text width="xl" color="muted" size="xs" />
                 </div>
-                <Switch />
+                <Switch className="shrink-0" />
               </div>
             </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
 
-      <div className="flex justify-end gap-2">
-        <Button variant="outline">
+      <div className="flex flex-wrap justify-end gap-2">
+        <Button variant="outline" size="sm">
           <Text width="xs" />
         </Button>
-        <Button>
+        <Button size="sm">
           <Text width="sm" />
         </Button>
       </div>

@@ -14,10 +14,10 @@ import { Text } from '@/registry/new-york/ui/text'
 import { Separator } from '@/registry/new-york/ui/separator'
 import { Checkbox } from '@/registry/new-york/ui/checkbox'
 
-import { LockIcon } from '@/components/icons/lock'
-import { MailCheckIcon } from '@/components/icons/mail-check'
+import { LockIcon } from '@/registry/new-york/icons/lock'
+import { MailCheckIcon } from '@/registry/new-york/icons/mail-check'
 
-export function LoginFormShowcase() {
+export function LoginForm() {
   return (
     <div className="flex min-h-[600px] w-full items-center justify-center p-4">
       <Card className="w-full max-w-md">

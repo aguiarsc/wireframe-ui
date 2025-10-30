@@ -20,12 +20,12 @@ import {
   SelectValue,
 } from '@/registry/new-york/ui/select'
 import { Input } from '@/registry/new-york/ui/input'
-import { HeartIcon } from '@/components/icons/heart'
-import { SearchIcon } from '@/components/icons/search'
-import { CartIcon } from '@/components/icons/cart'
-import { SparklesIcon } from '@/components/icons/sparkles'
+import { HeartIcon } from '@/registry/new-york/icons/heart'
+import { SearchIcon } from '@/registry/new-york/icons/search'
+import { CartIcon } from '@/registry/new-york/icons/cart'
+import { SparklesIcon } from '@/registry/new-york/icons/sparkles'
 
-export function ProductGridShowcase() {
+export function ProductGrid() {
   return (
     <div className="container mx-auto space-y-8 p-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
