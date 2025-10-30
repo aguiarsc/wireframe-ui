@@ -16,6 +16,7 @@ interface ComponentPreviewProps {
   children: React.ReactNode
   dependencies?: string[]
   className?: string
+  searchQuery?: string
 }
 
 export function ComponentPreview({
