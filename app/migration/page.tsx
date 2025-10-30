@@ -21,69 +21,69 @@ export default function MigrationPage() {
   return (
     <>
       <SiteNav />
-      <div className="container mx-auto max-w-6xl space-y-16 py-12">
+      <div className="container mx-auto max-w-6xl space-y-12 px-4 py-8 sm:space-y-16 sm:px-6 sm:py-12 lg:px-8">
       {/* Hero Section */}
-      <section className="space-y-4 text-center">
+      <section className="space-y-3 text-center sm:space-y-4">
         <Badge variant="outline" className="mx-auto">Migration Guide</Badge>
-        <h1 className="text-4xl font-bold tracking-tight">Wireframe to Production</h1>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Wireframe to Production</h1>
+        <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
           See how wireframe components transform into production code. Same structure, real content.
         </p>
       </section>
 
       {/* Key Stats */}
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-8 md:grid-cols-2">
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Code Reuse</CardTitle>
+            <CardTitle className="text-xs font-medium text-muted-foreground sm:text-sm">Code Reuse</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">85%</div>
+            <div className="text-2xl font-bold sm:text-3xl">85%</div>
             <p className="text-xs text-muted-foreground">Structure stays unchanged</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-muted-foreground">Conversion</CardTitle>
+            <CardTitle className="text-xs font-medium text-muted-foreground sm:text-sm">Conversion</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">15%</div>
+            <div className="text-2xl font-bold sm:text-3xl">15%</div>
             <p className="text-xs text-muted-foreground">Placeholders → real content</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Quick Reference */}
-      <section className="space-y-6">
+      <section className="space-y-4 sm:space-y-6">
         <div className="space-y-2">
-          <h2 className="text-2xl font-bold">Quick Reference</h2>
-          <p className="text-muted-foreground">Common component conversions at a glance</p>
+          <h2 className="text-xl font-bold sm:text-2xl">Quick Reference</h2>
+          <p className="text-sm text-muted-foreground sm:text-base">Common component conversions at a glance</p>
         </div>
         
-        <div className="overflow-hidden rounded-lg border">
-          <table className="w-full">
+        <div className="overflow-x-auto rounded-lg border">
+          <table className="w-full min-w-[500px]">
             <thead className="border-b bg-muted/50">
               <tr>
-                <th className="p-4 text-left text-sm font-medium">Wireframe</th>
-                <th className="p-4 text-left text-sm font-medium">Production</th>
+                <th className="p-2 text-left text-xs font-medium sm:p-4 sm:text-sm">Wireframe</th>
+                <th className="p-2 text-left text-xs font-medium sm:p-4 sm:text-sm">Production</th>
               </tr>
             </thead>
             <tbody className="divide-y">
               <tr>
-                <td className="p-4"><InlineCode code='<Text width="lg" />' /></td>
-                <td className="p-4"><InlineCode code='<h1>{title}</h1>' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<Text width="lg" />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<h1>{title}</h1>' /></td>
               </tr>
               <tr>
-                <td className="p-4"><InlineCode code='<Media type="image" />' /></td>
-                <td className="p-4"><InlineCode code='<img src={url} alt={alt} />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<Media type="image" />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<img src={url} alt={alt} />' /></td>
               </tr>
               <tr>
-                <td className="p-4"><InlineCode code='<ItemTitleWireframe />' /></td>
-                <td className="p-4"><InlineCode code='<ItemTitle>{name}</ItemTitle>' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<ItemTitleWireframe />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<ItemTitle>{name}</ItemTitle>' /></td>
               </tr>
               <tr>
-                <td className="p-4"><InlineCode code='<Input skeleton />' /></td>
-                <td className="p-4"><InlineCode code='<Input value={val} onChange={fn} />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<Input skeleton />' /></td>
+                <td className="p-2 sm:p-4"><InlineCode code='<Input value={val} onChange={fn} />' /></td>
               </tr>
             </tbody>
           </table>
@@ -91,15 +91,15 @@ export default function MigrationPage() {
       </section>
 
       {/* Real-World Example */}
-      <section className="space-y-6">
+      <section className="space-y-4 sm:space-y-6">
         <div className="space-y-2">
-          <h2 className="text-2xl font-bold">Real-World Example: Login Form</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-xl font-bold sm:text-2xl">Real-World Example: Login Form</h2>
+          <p className="text-sm text-muted-foreground sm:text-base">
             Complete login form showing full conversion from wireframe to production
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Badge variant="secondary">Wireframe</Badge>
@@ -173,21 +173,21 @@ return (
 
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <CheckIcon size={20} />
+            <CardTitle className="flex items-center gap-2 text-sm sm:text-base">
+              <CheckIcon size={18} className="sm:h-5 sm:w-5" />
               What Changed
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-sm">
-            <div className="flex gap-2">
+          <CardContent className="space-y-2 text-xs sm:text-sm">
+            <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
               <span className="font-medium">Removed:</span>
               <span className="text-muted-foreground">3 <code>{'<Text>'}</code> components, <code>skeleton</code> prop</span>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
               <span className="font-medium">Added:</span>
               <span className="text-muted-foreground">State hooks, event handlers, form logic</span>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
               <span className="font-medium">Unchanged:</span>
               <span className="text-muted-foreground">Card structure, layout, spacing, classes</span>
             </div>
@@ -216,15 +216,15 @@ function CodeBlock({ code }: { code: string }) {
   }, [code])
 
   return (
-    <div className="rounded-lg border bg-muted/50 overflow-hidden">
+    <div className="overflow-hidden rounded-lg border bg-muted/50">
       {highlightedCode ? (
         <div
-          className="text-xs [&_pre]:m-0 [&_pre]:p-4 [&_pre]:bg-transparent! [&_pre]:overflow-x-auto"
+          className="text-[10px] sm:text-xs [&_pre]:m-0 [&_pre]:p-2 sm:[&_pre]:p-4 [&_pre]:bg-transparent! [&_pre]:overflow-x-auto"
           dangerouslySetInnerHTML={{ __html: highlightedCode }}
         />
       ) : (
-        <pre className="p-4 overflow-x-auto">
-          <code className="text-xs">{code}</code>
+        <pre className="overflow-x-auto p-2 sm:p-4">
+          <code className="text-[10px] sm:text-xs">{code}</code>
         </pre>
       )}
     </div>
@@ -249,11 +249,11 @@ function InlineCode({ code }: { code: string }) {
 
   return highlightedCode ? (
     <div
-      className="text-sm [&_pre]:m-0 [&_pre]:p-0 [&_pre]:bg-transparent! [&_code]:bg-transparent!"
+      className="text-[10px] sm:text-sm [&_pre]:m-0 [&_pre]:p-0 [&_pre]:bg-transparent! [&_code]:bg-transparent!"
       dangerouslySetInnerHTML={{ __html: highlightedCode }}
     />
   ) : (
-    <code className="font-mono text-sm">{code}</code>
+    <code className="font-mono text-[10px] sm:text-sm">{code}</code>
   )
 }
 
