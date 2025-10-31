@@ -60,7 +60,7 @@ function HoverCardWireframeExample({
     <HoverCard>
       <HoverCardTrigger asChild>
         <Button variant="outline">
-          {triggerIcon || <IdentificationIcon className="size-5 text-muted-foreground" />}
+          {triggerIcon || <IdentificationIcon className="text-muted-foreground size-5" />}
           <Text width="xs" />
         </Button>
       </HoverCardTrigger>

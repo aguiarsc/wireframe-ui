@@ -51,15 +51,15 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
             </div>
@@ -94,23 +94,23 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="xl" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="sm" size="sm" />
               </div>
             </div>
@@ -140,19 +140,19 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="text-muted-foreground mt-0.5 size-4 shrink-0" />
                 <Text width="xl" size="sm" />
               </div>
             </div>

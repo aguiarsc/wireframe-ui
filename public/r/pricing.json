@@ -4,17 +4,8 @@
   "type": "registry:block",
   "title": "Pricing",
   "description": "Three-tier pricing cards with features and highlighted popular plan",
-  "dependencies": [
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "button",
-    "card",
-    "text",
-    "badge",
-    "separator",
-    "heading"
-  ],
+  "dependencies": ["@heroicons/react"],
+  "registryDependencies": ["button", "card", "text", "badge", "separator", "heading"],
   "files": [
     {
       "path": "registry/new-york/blocks/pricing.tsx",

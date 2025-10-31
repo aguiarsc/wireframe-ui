@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Label",
   "description": "Renders an accessible label associated with form controls.",
-  "dependencies": [
-    "@radix-ui/react-label"
-  ],
+  "dependencies": ["@radix-ui/react-label"],
   "registryDependencies": [],
   "files": [
     {

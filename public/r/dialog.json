@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Dialog",
   "description": "A modal dialog that interrupts the user with important content and expects a response.",
-  "dependencies": [
-    "@radix-ui/react-dialog",
-    "@heroicons/react"
-  ],
+  "dependencies": ["@radix-ui/react-dialog", "@heroicons/react"],
   "registryDependencies": [],
   "files": [
     {

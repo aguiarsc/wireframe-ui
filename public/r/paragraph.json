@@ -5,9 +5,7 @@
   "title": "Paragraph",
   "description": "A composition component that renders multiple Text lines to simulate paragraph content.",
   "dependencies": [],
-  "registryDependencies": [
-    "text"
-  ],
+  "registryDependencies": ["text"],
   "files": [
     {
       "path": "registry/new-york/ui/paragraph.tsx",

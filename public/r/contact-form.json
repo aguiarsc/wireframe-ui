@@ -4,18 +4,8 @@
   "type": "registry:block",
   "title": "Contact Form",
   "description": "Professional contact form with name, email, subject, and message fields",
-  "dependencies": [
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "button",
-    "card",
-    "input",
-    "label",
-    "text",
-    "textarea",
-    "select"
-  ],
+  "dependencies": ["@heroicons/react"],
+  "registryDependencies": ["button", "card", "input", "label", "text", "textarea", "select"],
   "files": [
     {
       "path": "registry/new-york/blocks/contact-form.tsx",

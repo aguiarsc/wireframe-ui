@@ -4,11 +4,7 @@
   "type": "registry:ui",
   "title": "Sonner",
   "description": "An opinionated toast component for React with beautiful animations and icons.",
-  "dependencies": [
-    "sonner",
-    "next-themes",
-    "@heroicons/react"
-  ],
+  "dependencies": ["sonner", "next-themes", "@heroicons/react"],
   "registryDependencies": [],
   "files": [
     {

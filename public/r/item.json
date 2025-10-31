@@ -4,15 +4,8 @@
   "type": "registry:ui",
   "title": "Item",
   "description": "A flexible item component for lists with wireframe helpers for titles, descriptions, and media.",
-  "dependencies": [
-    "@radix-ui/react-slot",
-    "class-variance-authority",
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "separator",
-    "text"
-  ],
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "@heroicons/react"],
+  "registryDependencies": ["separator", "text"],
   "files": [
     {
       "path": "registry/new-york/ui/item.tsx",

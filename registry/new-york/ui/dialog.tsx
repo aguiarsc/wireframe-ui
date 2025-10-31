@@ -150,7 +150,7 @@ function DialogWireframeExample({
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="outline">
-          {triggerIcon || <ChatBubbleLeftEllipsisIcon className="size-5 text-muted-foreground" />}
+          {triggerIcon || <ChatBubbleLeftEllipsisIcon className="text-muted-foreground size-5" />}
           <Text width="sm" />
         </Button>
       </DialogTrigger>

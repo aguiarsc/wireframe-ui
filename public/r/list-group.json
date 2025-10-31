@@ -5,9 +5,7 @@
   "title": "ListGroup",
   "description": "A composition component that renders list items with Text placeholders for wireframe prototyping.",
   "dependencies": [],
-  "registryDependencies": [
-    "text"
-  ],
+  "registryDependencies": ["text"],
   "files": [
     {
       "path": "registry/new-york/ui/list-group.tsx",

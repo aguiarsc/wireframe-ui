@@ -4,9 +4,7 @@
   "type": "registry:block",
   "title": "Settings Page",
   "description": "Multi-tab settings interface for profile, account, and notifications",
-  "dependencies": [
-    "@heroicons/react"
-  ],
+  "dependencies": ["@heroicons/react"],
   "registryDependencies": [
     "button",
     "card",

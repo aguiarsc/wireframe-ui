@@ -27,7 +27,7 @@ const ThemeIcon = forwardRef<
     <Icon
       className={cn(
         'size-5 transition-transform duration-300',
-        isAnimating && 'rotate-180 scale-110',
+        isAnimating && 'scale-110 rotate-180',
         className
       )}
     />

@@ -74,7 +74,7 @@ function TooltipWireframeExample({
     <Tooltip>
       <TooltipTrigger asChild>
         <Button variant="outline">
-          {triggerIcon || <QuestionMarkCircleIcon className="size-5 text-muted-foreground" />}
+          {triggerIcon || <QuestionMarkCircleIcon className="text-muted-foreground size-5" />}
           <Text width="xs" />
         </Button>
       </TooltipTrigger>

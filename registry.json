@@ -696,15 +696,7 @@
       "title": "Login Form",
       "description": "Authentication form with email/password inputs and social login options",
       "dependencies": ["@heroicons/react"],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label",
-        "text",
-        "separator",
-        "checkbox"
-      ],
+      "registryDependencies": ["button", "card", "input", "label", "text", "separator", "checkbox"],
       "files": [
         {
           "path": "registry/new-york/blocks/login-form.tsx",
@@ -719,15 +711,7 @@
       "title": "Register Form",
       "description": "Multi-step registration with tabs for personal and account information",
       "dependencies": ["@heroicons/react"],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label",
-        "text",
-        "checkbox",
-        "tabs"
-      ],
+      "registryDependencies": ["button", "card", "input", "label", "text", "checkbox", "tabs"],
       "files": [
         {
           "path": "registry/new-york/blocks/register-form.tsx",
@@ -742,15 +726,7 @@
       "title": "Contact Form",
       "description": "Professional contact form with name, email, subject, and message fields",
       "dependencies": ["@heroicons/react"],
-      "registryDependencies": [
-        "button",
-        "card",
-        "input",
-        "label",
-        "text",
-        "textarea",
-        "select"
-      ],
+      "registryDependencies": ["button", "card", "input", "label", "text", "textarea", "select"],
       "files": [
         {
           "path": "registry/new-york/blocks/contact-form.tsx",

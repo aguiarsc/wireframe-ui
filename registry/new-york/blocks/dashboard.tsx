@@ -41,7 +41,7 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <CurrencyDollarIcon className="size-6 text-muted-foreground" />
+            <CurrencyDollarIcon className="text-muted-foreground size-6" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
@@ -59,7 +59,7 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <UsersIcon className="size-6 text-muted-foreground" />
+            <UsersIcon className="text-muted-foreground size-6" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
@@ -77,7 +77,7 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <ChartBarIcon className="size-6 text-muted-foreground" />
+            <ChartBarIcon className="text-muted-foreground size-6" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
@@ -95,7 +95,7 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <ArrowTrendingUpIcon className="size-6 text-muted-foreground" />
+            <ArrowTrendingUpIcon className="text-muted-foreground size-6" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">

@@ -41,11 +41,11 @@ export function ProfilePage() {
                 </div>
                 <div className="flex shrink-0 gap-2">
                   <Button variant="outline" size="sm">
-                    <ChatBubbleLeftIcon className="size-5 text-muted-foreground" />
+                    <ChatBubbleLeftIcon className="text-muted-foreground size-5" />
                     <Text width="xs" />
                   </Button>
                   <Button size="sm">
-                    <UserPlusIcon className="size-5 text-muted-foreground" />
+                    <UserPlusIcon className="text-muted-foreground size-5" />
                     <Text width="xs" />
                   </Button>
                 </div>
@@ -56,15 +56,15 @@ export function ProfilePage() {
               </div>
               <div className="flex flex-wrap gap-3 lg:gap-4">
                 <div className="flex items-center gap-1.5">
-                  <MapPinIcon className="size-5 text-muted-foreground shrink-0" />
+                  <MapPinIcon className="text-muted-foreground size-5 shrink-0" />
                   <Text width="sm" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <LinkIcon className="size-5 text-muted-foreground shrink-0" />
+                  <LinkIcon className="text-muted-foreground size-5 shrink-0" />
                   <Text width="md" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CalendarDaysIcon className="size-5 text-muted-foreground shrink-0" />
+                  <CalendarDaysIcon className="text-muted-foreground size-5 shrink-0" />
                   <Text width="sm" size="sm" />
                 </div>
               </div>

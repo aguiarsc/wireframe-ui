@@ -3,7 +3,13 @@
 import { useTheme } from 'next-themes'
 import { Toaster as Sonner, type ToasterProps } from 'sonner'
 
-import { ExclamationTriangleIcon, CheckIcon, ArrowPathIcon, XMarkIcon, BellIcon } from '@heroicons/react/24/outline'
+import {
+  ExclamationTriangleIcon,
+  CheckIcon,
+  ArrowPathIcon,
+  XMarkIcon,
+  BellIcon,
+} from '@heroicons/react/24/outline'
 import { toast } from 'sonner'
 import { Button } from '@/registry/new-york/ui/button'
 import { Text } from '@/registry/new-york/ui/text'

@@ -140,7 +140,7 @@ function DrawerWireframeExample({
     <Drawer>
       <DrawerTrigger asChild>
         <Button variant="outline">
-          {triggerIcon || <RectangleStackIcon className="size-5 text-muted-foreground" />}
+          {triggerIcon || <RectangleStackIcon className="text-muted-foreground size-5" />}
           <Text width="sm" />
         </Button>
       </DrawerTrigger>

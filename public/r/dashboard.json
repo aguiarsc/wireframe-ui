@@ -4,17 +4,8 @@
   "type": "registry:block",
   "title": "Dashboard",
   "description": "Admin dashboard with stat cards, charts, recent activity, and data table",
-  "dependencies": [
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "card",
-    "text",
-    "chart",
-    "badge",
-    "table",
-    "avatar"
-  ],
+  "dependencies": ["@heroicons/react"],
+  "registryDependencies": ["card", "text", "chart", "badge", "table", "avatar"],
   "files": [
     {
       "path": "registry/new-york/blocks/dashboard.tsx",

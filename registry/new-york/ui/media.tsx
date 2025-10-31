@@ -44,11 +44,11 @@ function Media({
     onError?.()
   }
 
-  const ImageIcon = () => <PhotoIcon className="size-12 text-muted-foreground/30" />
+  const ImageIcon = () => <PhotoIcon className="text-muted-foreground/30 size-12" />
 
-  const VideoIcon = () => <HandThumbUpIcon className="size-12 text-muted-foreground/30" />
+  const VideoIcon = () => <HandThumbUpIcon className="text-muted-foreground/30 size-12" />
 
-  const AudioIcon = () => <MusicalNoteIcon className="size-12 text-muted-foreground/30" />
+  const AudioIcon = () => <MusicalNoteIcon className="text-muted-foreground/30 size-12" />
 
   return (
     <div

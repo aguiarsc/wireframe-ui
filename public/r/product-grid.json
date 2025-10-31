@@ -4,9 +4,7 @@
   "type": "registry:block",
   "title": "Product Grid",
   "description": "E-commerce product listing with search, filters, and product cards",
-  "dependencies": [
-    "@heroicons/react"
-  ],
+  "dependencies": ["@heroicons/react"],
   "registryDependencies": [
     "card",
     "text",

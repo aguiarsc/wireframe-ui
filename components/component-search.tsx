@@ -35,7 +35,7 @@ export function ComponentSearch({ value, onChange, placeholder }: ComponentSearc
   return (
     <div className="relative w-full">
       <div className="relative flex items-center">
-        <MagnifyingGlassIcon className="size-4 text-muted-foreground absolute left-3" />
+        <MagnifyingGlassIcon className="text-muted-foreground absolute left-3 size-4" />
         <Input
           ref={inputRef}
           type="text"
@@ -53,7 +53,7 @@ export function ComponentSearch({ value, onChange, placeholder }: ComponentSearc
               className="h-6 w-6 p-0"
               aria-label="Clear search"
             >
-              <XMarkIcon className="size-3.5 text-muted-foreground" />
+              <XMarkIcon className="text-muted-foreground size-3.5" />
             </Button>
           )}
           <KbdGroup className="hidden sm:flex">

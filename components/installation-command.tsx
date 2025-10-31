@@ -10,7 +10,11 @@ import { cn } from '@/lib/utils'
 // Wrapper component to provide animation interface for clipboard icon
 const ClipboardCheckIcon = forwardRef<
   { startAnimation: () => void; stopAnimation: () => void },
-  { className?: string; onMouseEnter?: (e: React.MouseEvent) => void; onMouseLeave?: (e: React.MouseEvent) => void }
+  {
+    className?: string
+    onMouseEnter?: (e: React.MouseEvent) => void
+    onMouseLeave?: (e: React.MouseEvent) => void
+  }
 >(({ className, onMouseEnter, onMouseLeave }, ref) => {
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -37,7 +41,11 @@ ClipboardCheckIcon.displayName = 'ClipboardCheckIcon'
 // Wrapper component for terminal icon
 const TerminalIcon = forwardRef<
   HTMLElement,
-  { className?: string; onMouseEnter?: (e: React.MouseEvent) => void; onMouseLeave?: (e: React.MouseEvent) => void }
+  {
+    className?: string
+    onMouseEnter?: (e: React.MouseEvent) => void
+    onMouseLeave?: (e: React.MouseEvent) => void
+  }
 >(({ className, onMouseEnter, onMouseLeave }) => {
   return (
     <CommandLineIcon

@@ -220,7 +220,7 @@ function ItemMediaWireframe({
       {children || (
         <>
           {variant === 'icon' && <div className="wireframe-block size-4" />}
-          {variant === 'image' && <MusicalNoteIcon className="size-6 text-muted-foreground" />}
+          {variant === 'image' && <MusicalNoteIcon className="text-muted-foreground size-6" />}
         </>
       )}
     </ItemMedia>

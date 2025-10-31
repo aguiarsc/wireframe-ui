@@ -4,9 +4,7 @@
   "type": "registry:block",
   "title": "Profile Page",
   "description": "User profile with avatar, bio, stats, and tabbed content",
-  "dependencies": [
-    "@heroicons/react"
-  ],
+  "dependencies": ["@heroicons/react"],
   "registryDependencies": [
     "card",
     "text",

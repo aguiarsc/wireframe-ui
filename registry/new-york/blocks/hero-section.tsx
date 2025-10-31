@@ -14,7 +14,7 @@ export function HeroSection() {
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="flex flex-col justify-center space-y-6">
           <Badge className="w-fit">
-            <SparklesIcon className="size-3 text-muted-foreground" />
+            <SparklesIcon className="text-muted-foreground size-3" />
             <Text width="sm" />
           </Badge>
           <div className="space-y-4">
@@ -29,21 +29,21 @@ export function HeroSection() {
               <Text width="sm" />
             </Button>
             <Button size="lg" variant="outline">
-              <PlayIcon className="size-4 text-muted-foreground" />
+              <PlayIcon className="text-muted-foreground size-4" />
               <Text width="sm" />
             </Button>
           </div>
           <div className="flex flex-col gap-3 pt-4">
             <div className="flex items-center gap-2">
-              <CheckIcon className="size-4 text-muted-foreground" />
+              <CheckIcon className="text-muted-foreground size-4" />
               <Text width="lg" size="sm" />
             </div>
             <div className="flex items-center gap-2">
-              <CheckIcon className="size-4 text-muted-foreground" />
+              <CheckIcon className="text-muted-foreground size-4" />
               <Text width="md" size="sm" />
             </div>
             <div className="flex items-center gap-2">
-              <CheckIcon className="size-4 text-muted-foreground" />
+              <CheckIcon className="text-muted-foreground size-4" />
               <Text width="xl" size="sm" />
             </div>
           </div>

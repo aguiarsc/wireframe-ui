@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Avatar",
   "description": "An image element with a fallback for representing the user.",
-  "dependencies": [
-    "@radix-ui/react-avatar",
-    "@heroicons/react"
-  ],
+  "dependencies": ["@radix-ui/react-avatar", "@heroicons/react"],
   "registryDependencies": [],
   "files": [
     {

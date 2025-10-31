@@ -4,18 +4,8 @@
   "type": "registry:block",
   "title": "Register Form",
   "description": "Multi-step registration with tabs for personal and account information",
-  "dependencies": [
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "button",
-    "card",
-    "input",
-    "label",
-    "text",
-    "checkbox",
-    "tabs"
-  ],
+  "dependencies": ["@heroicons/react"],
+  "registryDependencies": ["button", "card", "input", "label", "text", "checkbox", "tabs"],
   "files": [
     {
       "path": "registry/new-york/blocks/register-form.tsx",

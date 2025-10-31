@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Menubar",
   "description": "A visually persistent menu common in desktop applications with nested menus and items.",
-  "dependencies": [
-    "@radix-ui/react-menubar",
-    "@heroicons/react"
-  ],
+  "dependencies": ["@radix-ui/react-menubar", "@heroicons/react"],
   "registryDependencies": [],
   "files": [
     {

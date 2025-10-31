@@ -4,17 +4,8 @@
   "type": "registry:block",
   "title": "Hero Section",
   "description": "Landing page hero with badge, heading, CTA buttons, and feature list",
-  "dependencies": [
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "button",
-    "text",
-    "heading",
-    "badge",
-    "media",
-    "stack"
-  ],
+  "dependencies": ["@heroicons/react"],
+  "registryDependencies": ["button", "text", "heading", "badge", "media", "stack"],
   "files": [
     {
       "path": "registry/new-york/blocks/hero-section.tsx",

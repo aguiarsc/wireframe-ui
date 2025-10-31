@@ -254,7 +254,7 @@ function MenubarWireframeExample({ menuCount = 2 }: MenubarWireframeExampleProps
         <MenubarMenu key={i}>
           <MenubarTrigger>
             <Text width="xs" />
-            <ChevronDownIcon className="size-4 text-muted-foreground ml-auto" />
+            <ChevronDownIcon className="text-muted-foreground ml-auto size-4" />
           </MenubarTrigger>
           <MenubarContent>
             <MenubarItem>

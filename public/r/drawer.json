@@ -4,10 +4,7 @@
   "type": "registry:ui",
   "title": "Drawer",
   "description": "A panel that slides out from the edge of the screen with support for multiple directions.",
-  "dependencies": [
-    "vaul",
-    "@heroicons/react"
-  ],
+  "dependencies": ["vaul", "@heroicons/react"],
   "registryDependencies": [],
   "files": [
     {

@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Empty State",
   "description": "An empty state component with wireframe helpers for titles, descriptions, and media.",
-  "dependencies": [
-    "class-variance-authority",
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "text"
-  ],
+  "dependencies": ["class-variance-authority", "@heroicons/react"],
+  "registryDependencies": ["text"],
   "files": [
     {
       "path": "registry/new-york/ui/empty.tsx",

@@ -99,7 +99,7 @@ export function ProductGrid() {
                     className={
                       star <= 4
                         ? 'size-3.5 fill-yellow-400 text-yellow-400'
-                        : 'size-3.5 text-muted-foreground'
+                        : 'text-muted-foreground size-3.5'
                     }
                   />
                 ))}

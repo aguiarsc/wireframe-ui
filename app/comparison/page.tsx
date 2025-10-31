@@ -165,7 +165,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <CheckIcon className="size-4"/>
+                  <CheckIcon className="size-4" />
                   Use shadcn/ui Skeleton
                 </CardTitle>
               </CardHeader>
@@ -198,7 +198,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <CheckIcon className="size-4"/>
+                  <CheckIcon className="size-4" />
                   Use wireframe-ui
                 </CardTitle>
               </CardHeader>
@@ -241,7 +241,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <XIcon className="size-4"/>
+                  <XIcon className="size-4" />
                   wireframe-ui Weaknesses
                 </CardTitle>
               </CardHeader>
@@ -258,7 +258,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <XIcon className="size-4"/>
+                  <XIcon className="size-4" />
                   Skeleton Weaknesses
                 </CardTitle>
               </CardHeader>

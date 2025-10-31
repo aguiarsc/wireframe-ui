@@ -4,18 +4,8 @@
   "type": "registry:block",
   "title": "Login Form",
   "description": "Authentication form with email/password inputs and social login options",
-  "dependencies": [
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "button",
-    "card",
-    "input",
-    "label",
-    "text",
-    "separator",
-    "checkbox"
-  ],
+  "dependencies": ["@heroicons/react"],
+  "registryDependencies": ["button", "card", "input", "label", "text", "separator", "checkbox"],
   "files": [
     {
       "path": "registry/new-york/blocks/login-form.tsx",

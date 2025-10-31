@@ -209,7 +209,7 @@ return (
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base">
-                <CheckIcon className="size-4"/>
+                <CheckIcon className="size-4" />
                 What Changed
               </CardTitle>
             </CardHeader>
@@ -328,9 +328,7 @@ function CollapsibleCode({ code }: { code: string }) {
       <CollapsibleTrigger asChild>
         <Button variant="outline" size="sm" className="group w-full justify-between">
           <span className="text-xs">View Code</span>
-          <ChevronDownIcon
-            className="size-4 transition-transform duration-200 group-data-[state=open]:rotate-180"
-          />
+          <ChevronDownIcon className="size-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent className="mt-2" ref={contentRef}>

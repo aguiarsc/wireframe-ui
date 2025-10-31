@@ -4,13 +4,8 @@
   "type": "registry:ui",
   "title": "Sheet",
   "description": "A slide-out panel component with wireframe helpers for titles and descriptions.",
-  "dependencies": [
-    "@radix-ui/react-dialog",
-    "@heroicons/react"
-  ],
-  "registryDependencies": [
-    "text"
-  ],
+  "dependencies": ["@radix-ui/react-dialog", "@heroicons/react"],
+  "registryDependencies": ["text"],
   "files": [
     {
       "path": "registry/new-york/ui/sheet.tsx",
