@@ -4,8 +4,14 @@
   "type": "registry:ui",
   "title": "Field Components",
   "description": "Form field components with wireframe helpers for labels and descriptions.",
-  "dependencies": ["class-variance-authority"],
-  "registryDependencies": ["label", "separator", "text"],
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "label",
+    "separator",
+    "text"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/file.tsx",

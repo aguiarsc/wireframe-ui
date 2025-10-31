@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 
 import { cn } from '@/lib/utils'
-import { UserIcon } from '@/registry/new-york/icons'
+import { UserIcon } from '@heroicons/react/24/outline'
 
 export interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {}
 
@@ -47,8 +47,8 @@ function AvatarFallback({ className, ...props }: AvatarFallbackProps) {
       {...props}
     >
       {props.children || (
-        <div className="bg-muted-foreground/30 relative flex size-7 items-center justify-center overflow-hidden rounded-full">
-          <UserIcon size={28} className="text-muted-foreground/60" />
+        <div className="bg-muted-foreground/30 relative flex size-6 items-center justify-center overflow-hidden rounded-full">
+          <UserIcon className="text-muted-foreground/60" />
         </div>
       )}
     </AvatarPrimitive.Fallback>

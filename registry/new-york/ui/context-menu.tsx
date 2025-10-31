@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 
 import { cn } from '@/lib/utils'
-import { CheckIcon, ChevronRightIcon, CircleDashedIcon } from '@/registry/new-york/icons'
+import { CheckIcon, ChevronRightIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { Text } from '@/registry/new-york/ui/text'
 
 export interface ContextMenuProps extends React.ComponentProps<typeof ContextMenuPrimitive.Root> {}
@@ -156,7 +156,7 @@ function ContextMenuCheckboxItem({
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <CheckIcon size={24} />
+          <CheckIcon />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -179,7 +179,7 @@ function ContextMenuRadioItem({ className, children, ...props }: ContextMenuRadi
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <ContextMenuPrimitive.ItemIndicator>
-          <CircleDashedIcon size={24} className="fill-current" />
+          <ArrowPathIcon className="fill-current" />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {children}

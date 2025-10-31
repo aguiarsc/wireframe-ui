@@ -4,7 +4,9 @@ import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 
 import { cn } from '@/lib/utils'
-import { XIcon } from '@/registry/new-york/icons'
+import { XMarkIcon, ChatBubbleLeftEllipsisIcon } from '@heroicons/react/24/outline'
+import { Button } from '@/registry/new-york/ui/button'
+import { Text } from '@/registry/new-york/ui/text'
 
 export interface DialogProps extends React.ComponentProps<typeof DialogPrimitive.Root> {}
 
@@ -72,7 +74,7 @@ function DialogContent({
             data-slot="dialog-close"
             className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
           >
-            <XIcon />
+            <XMarkIcon className="size-4" />
             <span className="sr-only">Close</span>
           </DialogPrimitive.Close>
         )}
@@ -130,6 +132,43 @@ function DialogDescription({ className, ...props }: DialogDescriptionProps) {
   )
 }
 
+// Wireframe helper component
+export interface DialogWireframeExampleProps {
+  triggerIcon?: React.ReactNode
+  triggerText?: string
+  titleWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  descriptionWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+}
+
+function DialogWireframeExample({
+  triggerIcon,
+  triggerText,
+  titleWidth = 'md',
+  descriptionWidth = 'full',
+}: DialogWireframeExampleProps) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">
+          {triggerIcon || <ChatBubbleLeftEllipsisIcon className="size-5 text-muted-foreground" />}
+          <Text width="sm" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>
+            <Text width={titleWidth} />
+          </DialogTitle>
+          <DialogDescription className="space-y-2">
+            <Text width={descriptionWidth} color="muted" className="block" />
+            <Text width="lg" color="muted" className="block" />
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
 export {
   Dialog,
   DialogClose,
@@ -141,4 +180,5 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
+  DialogWireframeExample,
 }

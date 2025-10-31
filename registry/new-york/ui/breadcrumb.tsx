@@ -2,7 +2,8 @@ import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 
 import { cn } from '@/lib/utils'
-import { ChevronRightIcon, WavesIcon } from '@/registry/new-york/icons'
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
 
 export interface BreadcrumbProps extends React.ComponentProps<'nav'> {}
 
@@ -79,7 +80,7 @@ function BreadcrumbSeparator({ children, className, ...props }: BreadcrumbSepara
       className={cn('[&>svg]:size-3.5', className)}
       {...props}
     >
-      {children ?? <ChevronRightIcon size={16} />}
+      {children ?? <ChevronRightIcon />}
     </li>
   )
 }
@@ -95,7 +96,7 @@ function BreadcrumbEllipsis({ className, ...props }: BreadcrumbEllipsisProps) {
       className={cn('flex size-9 items-center justify-center', className)}
       {...props}
     >
-      <WavesIcon size={16} />
+      <EllipsisHorizontalIcon />
       <span className="sr-only">More</span>
     </span>
   )

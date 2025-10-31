@@ -16,11 +16,13 @@ import {
   ItemMedia,
   ItemTitleWireframe,
 } from '@/registry/new-york/ui/item'
-import { CalendarDaysIcon } from '@/registry/new-york/icons/calendar-days'
-import { LinkIcon } from '@/registry/new-york/icons/link'
-import { MapPinIcon } from '@/registry/new-york/icons/map-pin'
-import { MessageCircleIcon } from '@/registry/new-york/icons/message-circle'
-import { UserRoundPlusIcon } from '@/registry/new-york/icons/user-round-plus'
+import {
+  CalendarDaysIcon,
+  LinkIcon,
+  MapPinIcon,
+  ChatBubbleLeftIcon,
+  UserPlusIcon,
+} from '@heroicons/react/24/outline'
 
 export function ProfilePage() {
   return (
@@ -39,11 +41,11 @@ export function ProfilePage() {
                 </div>
                 <div className="flex shrink-0 gap-2">
                   <Button variant="outline" size="sm">
-                    <MessageCircleIcon size={16} className="text-muted-foreground" />
+                    <ChatBubbleLeftIcon className="size-5 text-muted-foreground" />
                     <Text width="xs" />
                   </Button>
                   <Button size="sm">
-                    <UserRoundPlusIcon size={16} className="text-muted-foreground" />
+                    <UserPlusIcon className="size-5 text-muted-foreground" />
                     <Text width="xs" />
                   </Button>
                 </div>
@@ -54,15 +56,15 @@ export function ProfilePage() {
               </div>
               <div className="flex flex-wrap gap-3 lg:gap-4">
                 <div className="flex items-center gap-1.5">
-                  <MapPinIcon size={16} className="text-muted-foreground shrink-0" />
+                  <MapPinIcon className="size-5 text-muted-foreground shrink-0" />
                   <Text width="sm" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <LinkIcon size={16} className="text-muted-foreground shrink-0" />
+                  <LinkIcon className="size-5 text-muted-foreground shrink-0" />
                   <Text width="md" size="sm" />
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CalendarDaysIcon size={16} className="text-muted-foreground shrink-0" />
+                  <CalendarDaysIcon className="size-5 text-muted-foreground shrink-0" />
                   <Text width="sm" size="sm" />
                 </div>
               </div>

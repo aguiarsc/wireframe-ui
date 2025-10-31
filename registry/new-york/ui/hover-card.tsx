@@ -4,6 +4,9 @@ import * as React from 'react'
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
 
 import { cn } from '@/lib/utils'
+import { IdentificationIcon } from '@heroicons/react/24/outline'
+import { Button } from '@/registry/new-york/ui/button'
+import { Text } from '@/registry/new-york/ui/text'
 
 export interface HoverCardProps extends React.ComponentProps<typeof HoverCardPrimitive.Root> {}
 
@@ -43,4 +46,33 @@ function HoverCardContent({
   )
 }
 
-export { HoverCard, HoverCardTrigger, HoverCardContent }
+// Wireframe helper component
+export interface HoverCardWireframeExampleProps {
+  triggerIcon?: React.ReactNode
+  contentWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+}
+
+function HoverCardWireframeExample({
+  triggerIcon,
+  contentWidth = 'md',
+}: HoverCardWireframeExampleProps) {
+  return (
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <Button variant="outline">
+          {triggerIcon || <IdentificationIcon className="size-5 text-muted-foreground" />}
+          <Text width="xs" />
+        </Button>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-80">
+        <div className="space-y-2">
+          <Text width={contentWidth} />
+          <Text width="full" color="muted" />
+          <Text width="lg" color="muted" />
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
+}
+
+export { HoverCard, HoverCardTrigger, HoverCardContent, HoverCardWireframeExample }

@@ -4,7 +4,10 @@
   "type": "registry:ui",
   "title": "Button",
   "description": "Displays a button or a component that looks like a button with multiple variants and sizes.",
-  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
   "registryDependencies": [],
   "files": [
     {

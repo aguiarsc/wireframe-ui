@@ -19,8 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/registry/new-york/ui/select'
-import { AlignCenterIcon } from '@/registry/new-york/icons'
-import { MailCheckIcon } from '@/registry/new-york/icons/mail-check'
+import { Bars3Icon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export function ContactForm() {
   return (
@@ -43,7 +42,7 @@ export function ContactForm() {
               <Input
                 id="contact-name"
                 variant="wireframe"
-                skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
+                skeletonIcon={<Bars3Icon className="text-muted-foreground" />}
               />
             </div>
             <div className="space-y-2">
@@ -53,7 +52,7 @@ export function ContactForm() {
               <Input
                 id="contact-email"
                 variant="wireframe"
-                skeletonIcon={<MailCheckIcon size={16} className="text-muted-foreground" />}
+                skeletonIcon={<EnvelopeIcon className="text-muted-foreground" />}
               />
             </div>
           </div>

@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
 
 import { cn } from '@/lib/utils'
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@/registry/new-york/icons'
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 
 export interface SelectProps extends React.ComponentProps<typeof SelectPrimitive.Root> {}
 
@@ -41,7 +41,7 @@ function SelectTrigger({ className, size = 'default', children, ...props }: Sele
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon size={24} className="opacity-50" />
+        <ChevronDownIcon className="opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -112,7 +112,7 @@ function SelectItem({ className, children, ...props }: SelectItemProps) {
     >
       <span className="absolute right-2 flex size-3.5 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon size={24} />
+          <CheckIcon />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -143,7 +143,7 @@ function SelectScrollUpButton({ className, ...props }: SelectScrollUpButtonProps
       className={cn('flex cursor-default items-center justify-center py-1', className)}
       {...props}
     >
-      <ChevronUpIcon size={24} />
+      <ChevronUpIcon />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -158,7 +158,7 @@ function SelectScrollDownButton({ className, ...props }: SelectScrollDownButtonP
       className={cn('flex cursor-default items-center justify-center py-1', className)}
       {...props}
     >
-      <ChevronDownIcon size={24} />
+      <ChevronDownIcon />
     </SelectPrimitive.ScrollDownButton>
   )
 }

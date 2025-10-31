@@ -5,7 +5,11 @@
   "title": "Section",
   "description": "A composition component with preset variants for common layout patterns (hero, content-two-column, feature-grid).",
   "dependencies": [],
-  "registryDependencies": ["text", "paragraph", "heading"],
+  "registryDependencies": [
+    "text",
+    "paragraph",
+    "heading"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/section.tsx",

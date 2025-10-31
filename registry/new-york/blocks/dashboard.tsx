@@ -13,12 +13,14 @@ import {
   TableRow,
 } from '@/registry/new-york/ui/table'
 import { Avatar, AvatarFallback } from '@/registry/new-york/ui/avatar'
-import { ArrowUpIcon } from '@/registry/new-york/icons/arrow-up'
-import { ArrowDownIcon } from '@/registry/new-york/icons/arrow-down'
-import { TrendingUpIcon } from '@/registry/new-york/icons/trending-up'
-import { UsersIcon } from '@/registry/new-york/icons/users'
-import { DollarSignIcon } from '@/registry/new-york/icons/dollar-sign'
-import { ActivityIcon } from '@/registry/new-york/icons/activity'
+import {
+  ArrowUpIcon,
+  ArrowDownIcon,
+  ArrowTrendingUpIcon,
+  UsersIcon,
+  CurrencyDollarIcon,
+  ChartBarIcon,
+} from '@heroicons/react/24/outline'
 
 export function Dashboard() {
   return (
@@ -39,13 +41,13 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <DollarSignIcon size={16} className="text-muted-foreground" />
+            <CurrencyDollarIcon className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
               <Text width="md" emphasis="primary" size="xl" />
               <div className="flex items-center gap-1">
-                <ArrowUpIcon size={12} className="text-green-500" />
+                <ArrowUpIcon className="size-4 text-green-500" />
                 <Text width="xs" size="xs" color="muted" />
               </div>
             </div>
@@ -57,13 +59,13 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <UsersIcon size={16} className="text-muted-foreground" />
+            <UsersIcon className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
               <Text width="sm" emphasis="primary" size="xl" />
               <div className="flex items-center gap-1">
-                <ArrowUpIcon size={12} className="text-green-500" />
+                <ArrowUpIcon className="size-4 text-green-500" />
                 <Text width="xs" size="xs" color="muted" />
               </div>
             </div>
@@ -75,13 +77,13 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <ActivityIcon size={16} className="text-muted-foreground" />
+            <ChartBarIcon className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
               <Text width="md" emphasis="primary" size="xl" />
               <div className="flex items-center gap-1">
-                <ArrowDownIcon size={12} className="text-red-500" />
+                <ArrowDownIcon className="size-4 text-red-500" />
                 <Text width="xs" size="xs" color="muted" />
               </div>
             </div>
@@ -93,13 +95,13 @@ export function Dashboard() {
             <CardTitle className="text-sm font-medium">
               <Text width="sm" size="sm" />
             </CardTitle>
-            <TrendingUpIcon size={16} className="text-muted-foreground" />
+            <ArrowTrendingUpIcon className="size-6 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="space-y-1">
               <Text width="lg" emphasis="primary" size="xl" />
               <div className="flex items-center gap-1">
-                <ArrowUpIcon size={12} className="text-green-500" />
+                <ArrowUpIcon className="size-4 text-green-500" />
                 <Text width="xs" size="xs" color="muted" />
               </div>
             </div>

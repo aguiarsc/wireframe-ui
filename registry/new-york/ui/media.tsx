@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
-import { AudioLinesIcon, ClapIcon, GalleryThumbnailsIcon } from '@/registry/new-york/icons'
+import { MusicalNoteIcon, HandThumbUpIcon, PhotoIcon } from '@heroicons/react/24/outline'
 
 export interface MediaProps extends React.ComponentProps<'div'> {
   src?: string
@@ -44,11 +44,11 @@ function Media({
     onError?.()
   }
 
-  const ImageIcon = () => <GalleryThumbnailsIcon size={96} className="text-muted-foreground/30" />
+  const ImageIcon = () => <PhotoIcon className="size-12 text-muted-foreground/30" />
 
-  const VideoIcon = () => <ClapIcon size={96} className="text-muted-foreground/30" />
+  const VideoIcon = () => <HandThumbUpIcon className="size-12 text-muted-foreground/30" />
 
-  const AudioIcon = () => <AudioLinesIcon size={96} className="text-muted-foreground/30" />
+  const AudioIcon = () => <MusicalNoteIcon className="size-12 text-muted-foreground/30" />
 
   return (
     <div

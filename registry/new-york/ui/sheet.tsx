@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 
 import { cn } from '@/lib/utils'
-import { XIcon } from '@/registry/new-york/icons'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import { Text } from '@/registry/new-york/ui/text'
 
 export interface SheetProps extends React.ComponentProps<typeof SheetPrimitive.Root> {}
@@ -72,7 +72,7 @@ function SheetContent({ className, children, side = 'right', ...props }: SheetCo
       >
         {children}
         <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
-          <XIcon size={24} />
+          <XMarkIcon className="size-6" />
           <span className="sr-only">Close</span>
         </SheetPrimitive.Close>
       </SheetPrimitive.Content>

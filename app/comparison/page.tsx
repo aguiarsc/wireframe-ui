@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/registry/new-york/ui/card'
 import { Badge } from '@/registry/new-york/ui/badge'
-import { CheckIcon, XIcon } from '@/registry/new-york/icons'
+import { CheckIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline'
 
 export default function ComparisonPage() {
   return (
@@ -165,7 +165,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <CheckIcon size={18} className="sm:h-5 sm:w-5" />
+                  <CheckIcon className="size-4"/>
                   Use shadcn/ui Skeleton
                 </CardTitle>
               </CardHeader>
@@ -198,7 +198,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <CheckIcon size={18} className="sm:h-5 sm:w-5" />
+                  <CheckIcon className="size-4"/>
                   Use wireframe-ui
                 </CardTitle>
               </CardHeader>
@@ -241,7 +241,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <XIcon size={16} className="sm:h-[18px] sm:w-[18px]" />
+                  <XIcon className="size-4"/>
                   wireframe-ui Weaknesses
                 </CardTitle>
               </CardHeader>
@@ -258,7 +258,7 @@ export default function ComparisonPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-base sm:text-lg">
-                  <XIcon size={16} className="sm:h-[18px] sm:w-[18px]" />
+                  <XIcon className="size-4"/>
                   Skeleton Weaknesses
                 </CardTitle>
               </CardHeader>

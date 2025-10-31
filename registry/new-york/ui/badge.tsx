@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { CheckIcon } from '@heroicons/react/24/outline'
 
 import { cn } from '@/lib/utils'
+import { Text } from '@/registry/new-york/ui/text'
 
 const badgeVariants = cva(
   'inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden',
@@ -36,4 +38,27 @@ function Badge({ className, variant, asChild = false, ...props }: BadgeProps) {
   return <Comp data-slot="badge" className={cn(badgeVariants({ variant }), className)} {...props} />
 }
 
-export { Badge, badgeVariants }
+// Wireframe helper component
+export interface BadgeWireframeProps
+  extends Omit<BadgeProps, 'children'>,
+    VariantProps<typeof badgeVariants> {
+  icon?: React.ReactNode
+  width?: 'xs' | 'sm' | 'md' | 'lg'
+}
+
+function BadgeWireframe({
+  variant = 'default',
+  icon,
+  width = 'xs',
+  className,
+  ...props
+}: BadgeWireframeProps) {
+  return (
+    <Badge variant={variant} className={className} {...props}>
+      {icon || <CheckIcon className="text-muted-foreground" />}
+      <Text width={width} />
+    </Badge>
+  )
+}
+
+export { Badge, badgeVariants, BadgeWireframe }

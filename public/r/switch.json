@@ -4,7 +4,9 @@
   "type": "registry:ui",
   "title": "Switch",
   "description": "A control that allows the user to toggle between checked and unchecked states.",
-  "dependencies": ["@radix-ui/react-switch"],
+  "dependencies": [
+    "@radix-ui/react-switch"
+  ],
   "registryDependencies": [],
   "files": [
     {

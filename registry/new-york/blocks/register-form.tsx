@@ -12,9 +12,7 @@ import { Input } from '@/registry/new-york/ui/input'
 import { Label } from '@/registry/new-york/ui/label'
 import { Text } from '@/registry/new-york/ui/text'
 import { Checkbox } from '@/registry/new-york/ui/checkbox'
-import { UserIcon } from '@/registry/new-york/icons'
-import { LockIcon } from '@/registry/new-york/icons/lock'
-import { MailCheckIcon } from '@/registry/new-york/icons/mail-check'
+import { UserIcon, LockClosedIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs'
 
 export function RegisterForm() {
@@ -47,7 +45,7 @@ export function RegisterForm() {
                 <Input
                   id="firstname"
                   variant="wireframe"
-                  skeletonIcon={<UserIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<UserIcon className="text-muted-foreground" />}
                 />
               </div>
               <div className="space-y-2">
@@ -57,7 +55,7 @@ export function RegisterForm() {
                 <Input
                   id="lastname"
                   variant="wireframe"
-                  skeletonIcon={<UserIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<UserIcon className="text-muted-foreground" />}
                 />
               </div>
               <div className="space-y-2">
@@ -67,7 +65,7 @@ export function RegisterForm() {
                 <Input
                   id="email-reg"
                   variant="wireframe"
-                  skeletonIcon={<MailCheckIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<EnvelopeIcon className="text-muted-foreground" />}
                 />
               </div>
             </TabsContent>
@@ -79,7 +77,7 @@ export function RegisterForm() {
                 <Input
                   id="password-reg"
                   variant="wireframe"
-                  skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<LockClosedIcon className="text-muted-foreground" />}
                 />
               </div>
               <div className="space-y-2">
@@ -89,7 +87,7 @@ export function RegisterForm() {
                 <Input
                   id="confirm-password"
                   variant="wireframe"
-                  skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<LockClosedIcon className="text-muted-foreground" />}
                 />
               </div>
               <div className="flex items-start space-x-2">

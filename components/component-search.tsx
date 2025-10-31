@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { Input } from '@/registry/new-york/ui/input'
 import { Kbd, KbdGroup } from '@/registry/new-york/ui/kbd'
-import { SearchIcon, XIcon } from '@/registry/new-york/icons'
+import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/registry/new-york/ui/button'
 
 interface ComponentSearchProps {
@@ -35,7 +35,7 @@ export function ComponentSearch({ value, onChange, placeholder }: ComponentSearc
   return (
     <div className="relative w-full">
       <div className="relative flex items-center">
-        <SearchIcon size={16} className="text-muted-foreground absolute left-3" />
+        <MagnifyingGlassIcon className="size-4 text-muted-foreground absolute left-3" />
         <Input
           ref={inputRef}
           type="text"
@@ -53,7 +53,7 @@ export function ComponentSearch({ value, onChange, placeholder }: ComponentSearc
               className="h-6 w-6 p-0"
               aria-label="Clear search"
             >
-              <XIcon size={14} className="text-muted-foreground" />
+              <XMarkIcon className="size-3.5 text-muted-foreground" />
             </Button>
           )}
           <KbdGroup className="hidden sm:flex">

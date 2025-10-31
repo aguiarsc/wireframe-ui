@@ -1,10 +1,54 @@
 'use client'
 
 import * as React from 'react'
+import { forwardRef, useImperativeHandle, useState } from 'react'
 import { Button } from '@/registry/new-york/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs'
-import { ClipboardCheckIcon } from '@/components/icons/copy-check'
-import { TerminalIcon } from '@/components/icons/terminal'
+import { ClipboardDocumentCheckIcon, CommandLineIcon } from '@heroicons/react/24/outline'
+import { cn } from '@/lib/utils'
+
+// Wrapper component to provide animation interface for clipboard icon
+const ClipboardCheckIcon = forwardRef<
+  { startAnimation: () => void; stopAnimation: () => void },
+  { className?: string; onMouseEnter?: (e: React.MouseEvent) => void; onMouseLeave?: (e: React.MouseEvent) => void }
+>(({ className, onMouseEnter, onMouseLeave }, ref) => {
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    startAnimation: () => setIsAnimating(true),
+    stopAnimation: () => setIsAnimating(false),
+  }))
+
+  return (
+    <ClipboardDocumentCheckIcon
+      className={cn(
+        'size-5 transition-all duration-200',
+        isAnimating && 'scale-110 text-green-500',
+        className
+      )}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    />
+  )
+})
+
+ClipboardCheckIcon.displayName = 'ClipboardCheckIcon'
+
+// Wrapper component for terminal icon
+const TerminalIcon = forwardRef<
+  HTMLElement,
+  { className?: string; onMouseEnter?: (e: React.MouseEvent) => void; onMouseLeave?: (e: React.MouseEvent) => void }
+>(({ className, onMouseEnter, onMouseLeave }) => {
+  return (
+    <CommandLineIcon
+      className={cn('size-5', className)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    />
+  )
+})
+
+TerminalIcon.displayName = 'TerminalIcon'
 
 interface InstallationCommandProps {
   name: string
@@ -63,7 +107,6 @@ export function InstallationCommand({ name }: InstallationCommandProps) {
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-black dark:bg-white">
             <TerminalIcon
-              size={14}
               className="text-white dark:text-black"
               onMouseEnter={(e) => e.stopPropagation()}
               onMouseLeave={(e) => e.stopPropagation()}
@@ -85,7 +128,6 @@ export function InstallationCommand({ name }: InstallationCommandProps) {
         >
           <ClipboardCheckIcon
             ref={copyIconRef}
-            size={14}
             onMouseEnter={(e) => e.stopPropagation()}
             onMouseLeave={(e) => e.stopPropagation()}
           />

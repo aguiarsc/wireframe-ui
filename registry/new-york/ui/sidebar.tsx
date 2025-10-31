@@ -6,7 +6,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
-import { PanelLeftCloseIcon, PanelLeftOpenIcon } from '@/registry/new-york/icons'
+import { Bars3Icon, Bars3BottomLeftIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/registry/new-york/ui/button'
 import { Input } from '@/registry/new-york/ui/input'
 import { Separator } from '@/registry/new-york/ui/separator'
@@ -266,7 +266,7 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
       }}
       {...props}
     >
-      {state === 'expanded' ? <PanelLeftCloseIcon size={24} /> : <PanelLeftOpenIcon size={24} />}
+      {state === 'expanded' ? <Bars3Icon /> : <Bars3BottomLeftIcon />}
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )

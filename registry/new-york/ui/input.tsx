@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { cn } from '@/lib/utils'
-import { AlignCenterIcon } from '@/registry/new-york/icons'
+import { Bars3Icon } from '@heroicons/react/24/outline'
 
 /**
  * Default maximum length for skeleton input text
@@ -82,7 +82,7 @@ function Input({
         />
         <div className="pointer-events-none absolute inset-0 flex items-center gap-2 px-3">
           <div className="pointer-events-auto">
-            {skeletonIcon || <AlignCenterIcon size={16} className="text-muted-foreground" />}
+            {skeletonIcon || <Bars3Icon className="text-muted-foreground" />}
           </div>
           {showSkeleton && <span className="wireframe-line h-3.5 w-48" />}
           {showTypingSkeleton && (

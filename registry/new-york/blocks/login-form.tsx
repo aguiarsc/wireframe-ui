@@ -14,8 +14,7 @@ import { Text } from '@/registry/new-york/ui/text'
 import { Separator } from '@/registry/new-york/ui/separator'
 import { Checkbox } from '@/registry/new-york/ui/checkbox'
 
-import { LockIcon } from '@/registry/new-york/icons/lock'
-import { MailCheckIcon } from '@/registry/new-york/icons/mail-check'
+import { LockClosedIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export function LoginForm() {
   return (
@@ -37,7 +36,7 @@ export function LoginForm() {
             <Input
               id="email"
               variant="wireframe"
-              skeletonIcon={<MailCheckIcon size={16} className="text-muted-foreground" />}
+              skeletonIcon={<EnvelopeIcon className="text-muted-foreground" />}
             />
           </div>
           <div className="space-y-2">
@@ -47,7 +46,7 @@ export function LoginForm() {
             <Input
               id="password"
               variant="wireframe"
-              skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
+              skeletonIcon={<LockClosedIcon className="text-muted-foreground" />}
             />
           </div>
           <div className="flex items-center justify-between">

@@ -4,6 +4,9 @@ import * as React from 'react'
 import { Drawer as DrawerPrimitive } from 'vaul'
 
 import { cn } from '@/lib/utils'
+import { RectangleStackIcon } from '@heroicons/react/24/outline'
+import { Button } from '@/registry/new-york/ui/button'
+import { Text } from '@/registry/new-york/ui/text'
 
 export type DrawerProps = React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Root>
 
@@ -121,6 +124,47 @@ function DrawerDescription({ className, ...props }: DrawerDescriptionProps) {
   )
 }
 
+// Wireframe helper component
+export interface DrawerWireframeExampleProps {
+  triggerIcon?: React.ReactNode
+  titleWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  descriptionWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+}
+
+function DrawerWireframeExample({
+  triggerIcon,
+  titleWidth = 'md',
+  descriptionWidth = 'lg',
+}: DrawerWireframeExampleProps) {
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="outline">
+          {triggerIcon || <RectangleStackIcon className="size-5 text-muted-foreground" />}
+          <Text width="sm" />
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>
+            <Text width={titleWidth} />
+          </DrawerTitle>
+          <DrawerDescription>
+            <Text width={descriptionWidth} color="muted" className="block" />
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <DrawerClose asChild>
+            <Button variant="outline">
+              <Text width="xs" />
+            </Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+
 export {
   Drawer,
   DrawerPortal,
@@ -132,4 +176,5 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
+  DrawerWireframeExample,
 }

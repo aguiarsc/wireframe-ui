@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 
 import { cn } from '@/lib/utils'
-import { CheckIcon } from '@/registry/new-york/icons'
+import { CheckIcon } from '@heroicons/react/24/outline'
 
 export interface CheckboxProps extends React.ComponentProps<typeof CheckboxPrimitive.Root> {}
 
@@ -20,9 +20,9 @@ function Checkbox({ className, ...props }: CheckboxProps) {
     >
       <CheckboxPrimitive.Indicator
         data-slot="checkbox-indicator"
-        className="text-muted-foreground grid place-content-center transition-none [&>div]:pointer-events-auto"
+        className="text-muted-foreground grid place-content-center transition-none"
       >
-        <CheckIcon size={16} className="pointer-events-auto" />
+        <CheckIcon className="size-4 pointer-events-auto" />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )

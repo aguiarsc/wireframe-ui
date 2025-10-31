@@ -4,8 +4,12 @@
   "type": "registry:ui",
   "title": "Chart",
   "description": "Chart components built on recharts with wireframe placeholder helper.",
-  "dependencies": ["recharts"],
-  "registryDependencies": ["text"],
+  "dependencies": [
+    "recharts"
+  ],
+  "registryDependencies": [
+    "text"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/chart.tsx",

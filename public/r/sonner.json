@@ -4,12 +4,16 @@
   "type": "registry:ui",
   "title": "Sonner",
   "description": "An opinionated toast component for React with beautiful animations and icons.",
-  "dependencies": ["sonner", "next-themes"],
-  "registryDependencies": ["icons"],
+  "dependencies": [
+    "sonner",
+    "next-themes",
+    "@heroicons/react"
+  ],
+  "registryDependencies": [],
   "files": [
     {
       "path": "registry/new-york/ui/sonner.tsx",
-      "content": "'use client'\r\n\r\nimport { useTheme } from 'next-themes'\r\nimport { Toaster as Sonner, type ToasterProps } from 'sonner'\r\n\r\nimport { BadgeAlertIcon, CheckIcon, CircleDashedIcon, XIcon } from '@/registry/new-york/icons'\r\n\r\nexport interface ToasterComponentProps extends ToasterProps {}\r\n\r\nconst Toaster = ({ ...props }: ToasterComponentProps) => {\r\n  const { theme = 'system' } = useTheme()\r\n\r\n  return (\r\n    <Sonner\r\n      theme={theme as ToasterProps['theme']}\r\n      className=\"toaster group\"\r\n      icons={{\r\n        success: <CheckIcon size={24} />,\r\n        info: <CircleDashedIcon size={24} />,\r\n        warning: <BadgeAlertIcon size={24} />,\r\n        error: <XIcon size={24} />,\r\n        loading: <CircleDashedIcon size={24} className=\"animate-spin\" />,\r\n      }}\r\n      style={\r\n        {\r\n          '--normal-bg': 'var(--popover)',\r\n          '--normal-text': 'var(--popover-foreground)',\r\n          '--normal-border': 'var(--border)',\r\n          '--border-radius': 'var(--radius)',\r\n        } as React.CSSProperties\r\n      }\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nexport { Toaster }\r\n",
+      "content": "'use client'\r\n\r\nimport { useTheme } from 'next-themes'\r\nimport { Toaster as Sonner, type ToasterProps } from 'sonner'\r\n\r\nimport { ExclamationTriangleIcon, CheckIcon, ArrowPathIcon, XMarkIcon, BellIcon } from '@heroicons/react/24/outline'\r\nimport { toast } from 'sonner'\r\nimport { Button } from '@/registry/new-york/ui/button'\r\nimport { Text } from '@/registry/new-york/ui/text'\r\n\r\nexport interface ToasterComponentProps extends ToasterProps {}\r\n\r\nconst Toaster = ({ ...props }: ToasterComponentProps) => {\r\n  const { theme = 'system' } = useTheme()\r\n\r\n  return (\r\n    <Sonner\r\n      theme={theme as ToasterProps['theme']}\r\n      className=\"toaster group\"\r\n      icons={{\r\n        success: <CheckIcon />,\r\n        info: <ArrowPathIcon />,\r\n        warning: <ExclamationTriangleIcon />,\r\n        error: <XMarkIcon />,\r\n        loading: <ArrowPathIcon className=\"animate-spin\" />,\r\n      }}\r\n      style={\r\n        {\r\n          '--normal-bg': 'var(--popover)',\r\n          '--normal-text': 'var(--popover-foreground)',\r\n          '--normal-border': 'var(--border)',\r\n          '--border-radius': 'var(--radius)',\r\n        } as React.CSSProperties\r\n      }\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\n// Wireframe helper component\r\nexport interface SonnerWireframeExampleProps {\r\n  triggerIcon?: React.ReactNode\r\n}\r\n\r\nfunction SonnerWireframeExample({ triggerIcon }: SonnerWireframeExampleProps) {\r\n  return (\r\n    <Button\r\n      variant=\"outline\"\r\n      onClick={() =>\r\n        toast(\r\n          <div className=\"flex items-center gap-2\">\r\n            <Text width=\"md\" />\r\n          </div>,\r\n          {\r\n            description: (\r\n              <div className=\"space-y-1\">\r\n                <Text width=\"lg\" color=\"muted\" className=\"block\" />\r\n                <Text width=\"sm\" color=\"muted\" className=\"block\" />\r\n              </div>\r\n            ),\r\n          }\r\n        )\r\n      }\r\n    >\r\n      {triggerIcon || <BellIcon className=\"text-muted-foreground\" />}\r\n      <Text width=\"xs\" />\r\n    </Button>\r\n  )\r\n}\r\n\r\nexport { Toaster, SonnerWireframeExample }\r\n",
       "type": "registry:ui"
     }
   ]

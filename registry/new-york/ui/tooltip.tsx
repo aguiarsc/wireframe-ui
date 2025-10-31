@@ -4,6 +4,9 @@ import * as React from 'react'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 
 import { cn } from '@/lib/utils'
+import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import { Button } from '@/registry/new-york/ui/button'
+import { Text } from '@/registry/new-york/ui/text'
 
 export interface TooltipProviderProps
   extends React.ComponentProps<typeof TooltipPrimitive.Provider> {}
@@ -57,4 +60,29 @@ function TooltipContent({ className, sideOffset = 0, children, ...props }: Toolt
   )
 }
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+// Wireframe helper component
+export interface TooltipWireframeExampleProps {
+  triggerIcon?: React.ReactNode
+  contentWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+}
+
+function TooltipWireframeExample({
+  triggerIcon,
+  contentWidth = 'sm',
+}: TooltipWireframeExampleProps) {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline">
+          {triggerIcon || <QuestionMarkCircleIcon className="size-5 text-muted-foreground" />}
+          <Text width="xs" />
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <Text width={contentWidth} className="bg-background/30" />
+      </TooltipContent>
+    </Tooltip>
+  )
+}
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, TooltipWireframeExample }

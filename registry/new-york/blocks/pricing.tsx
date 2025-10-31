@@ -11,7 +11,7 @@ import {
 import { Text } from '@/registry/new-york/ui/text'
 import { Badge } from '@/registry/new-york/ui/badge'
 import { Separator } from '@/registry/new-york/ui/separator'
-import { CheckIcon } from '@/registry/new-york/icons'
+import { CheckIcon } from '@heroicons/react/24/outline'
 import { Heading } from '@/registry/new-york/ui/heading'
 
 export function Pricing() {
@@ -51,15 +51,15 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
             </div>
@@ -94,23 +94,23 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="xl" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="sm" size="sm" />
               </div>
             </div>
@@ -140,19 +140,19 @@ export function Pricing() {
             <Separator />
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="full" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="lg" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="md" size="sm" />
               </div>
               <div className="flex items-start gap-2">
-                <CheckIcon size={16} className="text-muted-foreground mt-0.5 shrink-0" />
+                <CheckIcon className="size-4 text-muted-foreground mt-0.5 shrink-0" />
                 <Text width="xl" size="sm" />
               </div>
             </div>

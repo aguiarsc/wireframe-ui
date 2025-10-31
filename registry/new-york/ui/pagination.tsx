@@ -1,7 +1,8 @@
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
-import { ChevronLeftIcon, ChevronRightIcon, WavesIcon } from '@/registry/new-york/icons'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
 import { Button, buttonVariants } from '@/registry/new-york/ui/button'
 
 export interface PaginationProps extends React.ComponentProps<'nav'> {}
@@ -98,10 +99,10 @@ function PaginationEllipsis({ className, ...props }: PaginationEllipsisProps) {
     <span
       aria-hidden
       data-slot="pagination-ellipsis"
-      className={cn('flex size-9 items-center justify-center', className)}
+      className={cn('flex size-7 items-center justify-center', className)}
       {...props}
     >
-      <WavesIcon size={16} className="text-muted-foreground" />
+      <EllipsisHorizontalIcon className="text-muted-foreground" />
       <span className="sr-only">More pages</span>
     </span>
   )

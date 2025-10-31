@@ -4,7 +4,7 @@ import * as React from 'react'
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
 
 import { cn } from '@/lib/utils'
-import { ArrowLeftIcon, ArrowRightIcon } from '@/registry/new-york/icons'
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/registry/new-york/ui/button'
 import { Text } from '@/registry/new-york/ui/text'
 

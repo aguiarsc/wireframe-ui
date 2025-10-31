@@ -5,7 +5,9 @@
   "title": "Wireframe Utilities",
   "description": "Utility functions for wireframe components including responsive class generation and visibility helpers.",
   "dependencies": [],
-  "registryDependencies": ["wireframe-types"],
+  "registryDependencies": [
+    "wireframe-types"
+  ],
   "files": [
     {
       "path": "registry/new-york/lib/wireframe-utils.ts",

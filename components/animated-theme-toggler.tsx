@@ -4,10 +4,37 @@ https://magicui.design/docs/components/animated-theme-toggler
 
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, forwardRef, useImperativeHandle } from 'react'
 import { flushSync } from 'react-dom'
 import { cn } from '@/lib/utils'
-import { ContrastIcon } from '@/components/icons/contrast'
+import { SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+
+// Wrapper component to provide animation interface for theme icons
+const ThemeIcon = forwardRef<
+  { startAnimation: () => void; stopAnimation: () => void },
+  { isDark: boolean; className?: string }
+>(({ isDark, className }, ref) => {
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    startAnimation: () => setIsAnimating(true),
+    stopAnimation: () => setIsAnimating(false),
+  }))
+
+  const Icon = isDark ? MoonIcon : SunIcon
+
+  return (
+    <Icon
+      className={cn(
+        'size-5 transition-transform duration-300',
+        isAnimating && 'rotate-180 scale-110',
+        className
+      )}
+    />
+  )
+})
+
+ThemeIcon.displayName = 'ThemeIcon'
 
 interface AnimatedThemeTogglerProps extends React.ComponentPropsWithoutRef<'button'> {
   duration?: number
@@ -78,11 +105,7 @@ export const AnimatedThemeToggler = ({
 
   return (
     <button ref={buttonRef} onClick={toggleTheme} className={cn(className)} {...props}>
-      <ContrastIcon
-        ref={iconRef}
-        onMouseEnter={(e) => e.stopPropagation()}
-        onMouseLeave={(e) => e.stopPropagation()}
-      />
+      <ThemeIcon ref={iconRef} isDark={isDark} />
       <span className="sr-only">Toggle theme</span>
     </button>
   )

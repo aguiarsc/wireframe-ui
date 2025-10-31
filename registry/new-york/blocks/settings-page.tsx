@@ -23,8 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/registry/new-york/ui/select'
-import { AlignCenterIcon, BellIcon, UserIcon } from '@/registry/new-york/icons'
-import { LockIcon } from '@/registry/new-york/icons/lock'
+import { Bars3Icon, BellIcon, UserIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 
 export function SettingsPage() {
   return (
@@ -37,19 +36,19 @@ export function SettingsPage() {
       <Tabs defaultValue="profile" className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="profile" className="gap-2">
-            <UserIcon size={16} className="text-muted-foreground shrink-0" />
+            <UserIcon className="text-muted-foreground shrink-0" />
             <span className="hidden sm:inline">
               <Text width="xs" />
             </span>
           </TabsTrigger>
           <TabsTrigger value="account" className="gap-2">
-            <LockIcon size={16} className="text-muted-foreground shrink-0" />
+            <LockClosedIcon className="text-muted-foreground shrink-0" />
             <span className="hidden sm:inline">
               <Text width="xs" />
             </span>
           </TabsTrigger>
           <TabsTrigger value="notifications" className="gap-2">
-            <BellIcon size={16} className="text-muted-foreground shrink-0" />
+            <BellIcon className="text-muted-foreground shrink-0" />
             <span className="hidden sm:inline">
               <Text width="sm" />
             </span>
@@ -87,7 +86,7 @@ export function SettingsPage() {
                   <Input
                     id="firstname"
                     variant="wireframe"
-                    skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
+                    skeletonIcon={<Bars3Icon className="text-muted-foreground" />}
                   />
                 </div>
                 <div className="space-y-2">
@@ -97,7 +96,7 @@ export function SettingsPage() {
                   <Input
                     id="lastname"
                     variant="wireframe"
-                    skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
+                    skeletonIcon={<Bars3Icon className="text-muted-foreground" />}
                   />
                 </div>
               </div>
@@ -152,7 +151,7 @@ export function SettingsPage() {
                 <Input
                   id="current-password"
                   variant="wireframe"
-                  skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<LockClosedIcon className="text-muted-foreground" />}
                 />
               </div>
               <div className="space-y-2">
@@ -162,7 +161,7 @@ export function SettingsPage() {
                 <Input
                   id="new-password"
                   variant="wireframe"
-                  skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<LockClosedIcon className="text-muted-foreground" />}
                 />
               </div>
               <div className="space-y-2">
@@ -172,7 +171,7 @@ export function SettingsPage() {
                 <Input
                   id="confirm-new-password"
                   variant="wireframe"
-                  skeletonIcon={<LockIcon size={16} className="text-muted-foreground" />}
+                  skeletonIcon={<LockClosedIcon className="text-muted-foreground" />}
                 />
               </div>
             </CardContent>

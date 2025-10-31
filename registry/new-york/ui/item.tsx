@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { MusicalNoteIcon } from '@heroicons/react/24/outline'
 
 import { cn } from '@/lib/utils'
 import { Separator } from '@/registry/new-york/ui/separator'
@@ -209,14 +210,19 @@ function ItemDescriptionWireframe({
 }
 
 function ItemMediaWireframe({
-  variant = 'icon',
+  variant = 'image',
   className,
+  children,
   ...props
-}: Omit<React.ComponentProps<'div'>, 'children'> & VariantProps<typeof itemMediaVariants>) {
+}: React.ComponentProps<'div'> & VariantProps<typeof itemMediaVariants>) {
   return (
     <ItemMedia variant={variant} className={className} {...props}>
-      {variant === 'icon' && <div className="wireframe-block size-4" />}
-      {variant === 'image' && <div className="wireframe-block size-full" />}
+      {children || (
+        <>
+          {variant === 'icon' && <div className="wireframe-block size-4" />}
+          {variant === 'image' && <MusicalNoteIcon className="size-6 text-muted-foreground" />}
+        </>
+      )}
     </ItemMedia>
   )
 }

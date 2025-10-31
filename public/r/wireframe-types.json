@@ -4,7 +4,9 @@
   "type": "registry:lib",
   "title": "Wireframe Types",
   "description": "TypeScript type definitions for wireframe components.",
-  "dependencies": ["class-variance-authority"],
+  "dependencies": [
+    "class-variance-authority"
+  ],
   "registryDependencies": [],
   "files": [
     {

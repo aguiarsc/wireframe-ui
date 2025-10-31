@@ -19,7 +19,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/registry/new-york/ui/collapsible'
-import { CheckIcon, ChevronDownIcon } from '@/registry/new-york/icons'
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 
 export default function MigrationPage() {
   return (
@@ -209,7 +209,7 @@ return (
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-sm sm:text-base">
-                <CheckIcon size={18} className="sm:h-5 sm:w-5" />
+                <CheckIcon className="size-4"/>
                 What Changed
               </CardTitle>
             </CardHeader>
@@ -329,8 +329,7 @@ function CollapsibleCode({ code }: { code: string }) {
         <Button variant="outline" size="sm" className="group w-full justify-between">
           <span className="text-xs">View Code</span>
           <ChevronDownIcon
-            size={16}
-            className="transition-transform duration-200 group-data-[state=open]:rotate-180"
+            className="size-4 transition-transform duration-200 group-data-[state=open]:rotate-180"
           />
         </Button>
       </CollapsibleTrigger>

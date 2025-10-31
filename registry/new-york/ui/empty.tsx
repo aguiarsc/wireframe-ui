@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority'
+import { PhotoIcon } from '@heroicons/react/24/outline'
 
 import { cn } from '@/lib/utils'
 import { Text } from '@/registry/new-york/ui/text'
@@ -134,11 +135,12 @@ function EmptyDescriptionWireframe({
 function EmptyMediaWireframe({
   variant = 'icon',
   className,
+  children,
   ...props
-}: Omit<React.ComponentProps<'div'>, 'children'> & VariantProps<typeof emptyMediaVariants>) {
+}: React.ComponentProps<'div'> & VariantProps<typeof emptyMediaVariants>) {
   return (
     <EmptyMedia variant={variant} className={className} {...props}>
-      <div className="wireframe-block size-6" />
+      {children || <PhotoIcon className="text-muted-foreground" />}
     </EmptyMedia>
   )
 }

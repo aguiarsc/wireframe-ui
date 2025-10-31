@@ -20,10 +20,12 @@ import {
   SelectValue,
 } from '@/registry/new-york/ui/select'
 import { Input } from '@/registry/new-york/ui/input'
-import { HeartIcon } from '@/registry/new-york/icons/heart'
-import { SearchIcon } from '@/registry/new-york/icons/search'
-import { CartIcon } from '@/registry/new-york/icons/cart'
-import { SparklesIcon } from '@/registry/new-york/icons/sparkles'
+import {
+  HeartIcon,
+  MagnifyingGlassIcon,
+  ShoppingCartIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline'
 
 export function ProductGrid() {
   return (
@@ -37,7 +39,7 @@ export function ProductGrid() {
           <div className="relative flex-1 md:w-64">
             <Input
               variant="wireframe"
-              skeletonIcon={<SearchIcon size={16} className="text-muted-foreground" />}
+              skeletonIcon={<MagnifyingGlassIcon className="text-muted-foreground" />}
             />
           </div>
           <Select>
@@ -72,7 +74,7 @@ export function ProductGrid() {
                   variant="secondary"
                   className="h-8 w-8 opacity-0 transition-opacity group-hover:opacity-100"
                 >
-                  <HeartIcon size={16} className="text-muted-foreground" />
+                  <HeartIcon className="text-muted-foreground" />
                 </Button>
               </div>
               {i % 3 === 0 && (
@@ -94,9 +96,10 @@ export function ProductGrid() {
                 {[1, 2, 3, 4, 5].map((star) => (
                   <SparklesIcon
                     key={star}
-                    size={14}
                     className={
-                      star <= 4 ? 'fill-yellow-400 text-yellow-400' : 'text-muted-foreground'
+                      star <= 4
+                        ? 'size-3.5 fill-yellow-400 text-yellow-400'
+                        : 'size-3.5 text-muted-foreground'
                     }
                   />
                 ))}
@@ -106,7 +109,7 @@ export function ProductGrid() {
             <CardContent className="flex items-center justify-between p-4 pt-0">
               <Text width="sm" emphasis="primary" size="lg" />
               <Button size="sm">
-                <CartIcon size={14} className="text-muted-foreground" />
+                <ShoppingCartIcon className="text-muted-foreground" />
                 <Text width="xs" />
               </Button>
             </CardContent>

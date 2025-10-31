@@ -1,23 +1,10 @@
 'use client'
 
 import * as React from 'react'
-import { toast } from 'sonner'
 import { ComponentPreview } from '@/components/component-preview'
 import { ComponentGridWrapper } from '@/components/component-grid-wrapper'
 import { SiteNav } from '@/components/site-nav'
-import {
-  AlignCenterIcon,
-  AudioLinesIcon,
-  BadgeAlertIcon,
-  BellIcon,
-  CheckIcon,
-  ChevronDownIcon,
-  CircleHelpIcon,
-  GalleryThumbnailsIcon,
-  GalleryVerticalEndIcon,
-  IdCardIcon,
-  MessageCircleDashedIcon,
-} from '@/registry/new-york/icons'
+
 import {
   Accordion,
   AccordionContent,
@@ -25,7 +12,7 @@ import {
   AccordionTrigger,
 } from '@/registry/new-york/ui/accordion'
 import { Text } from '@/registry/new-york/ui/text'
-import { Alert, AlertDescription, AlertTitle } from '@/registry/new-york/ui/alert'
+import { AlertWireframe } from '@/registry/new-york/ui/alert'
 import { Avatar, AvatarFallback } from '@/registry/new-york/ui/avatar'
 import { Button } from '@/registry/new-york/ui/button'
 import {
@@ -36,33 +23,11 @@ import {
   CardTitle,
 } from '@/registry/new-york/ui/card'
 import { Checkbox } from '@/registry/new-york/ui/checkbox'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/registry/new-york/ui/dialog'
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from '@/registry/new-york/ui/drawer'
+import { DialogWireframeExample } from '@/registry/new-york/ui/dialog'
+import { DrawerWireframeExample } from '@/registry/new-york/ui/drawer'
 import { Input } from '@/registry/new-york/ui/input'
 import { Label } from '@/registry/new-york/ui/label'
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from '@/registry/new-york/ui/menubar'
+import { MenubarWireframeExample } from '@/registry/new-york/ui/menubar'
 import {
   Select,
   SelectContent,
@@ -76,8 +41,9 @@ import { Switch } from '@/registry/new-york/ui/switch'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs'
 import { Textarea } from '@/registry/new-york/ui/textarea'
 import { Toggle } from '@/registry/new-york/ui/toggle'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/registry/new-york/ui/tooltip'
-import { Badge } from '@/registry/new-york/ui/badge'
+import { TooltipWireframeExample } from '@/registry/new-york/ui/tooltip'
+import { BadgeWireframe } from '@/registry/new-york/ui/badge'
+import { SonnerWireframeExample } from '@/registry/new-york/ui/sonner'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -87,24 +53,20 @@ import {
   BreadcrumbSeparator,
 } from '@/registry/new-york/ui/breadcrumb'
 import { ButtonGroup, ButtonGroupTextWireframe } from '@/registry/new-york/ui/button-group'
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/registry/new-york/ui/collapsible'
+import { CollapsibleWireframeExample } from '@/registry/new-york/ui/collapsible'
 import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItemWireframe,
   ContextMenuTrigger,
 } from '@/registry/new-york/ui/context-menu'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/registry/new-york/ui/hover-card'
+import { HoverCardWireframeExample } from '@/registry/new-york/ui/hover-card'
 import {
   Item,
   ItemContent,
   ItemDescriptionWireframe,
   ItemGroup,
-  ItemMedia,
+  ItemMediaWireframe,
   ItemTitleWireframe,
 } from '@/registry/new-york/ui/item'
 import {
@@ -152,7 +114,7 @@ import {
   Empty,
   EmptyDescriptionWireframe,
   EmptyHeader,
-  EmptyMedia,
+  EmptyMediaWireframe,
   EmptyTitleWireframe,
 } from '@/registry/new-york/ui/empty'
 import {
@@ -457,18 +419,7 @@ export default function Home() {
               description="Displays a callout for user attention with optional icon and variant styles."
               dependencies={['class-variance-authority']}
             >
-              <Alert>
-                <BadgeAlertIcon size={24} className="text-muted-foreground" />
-                <AlertTitle>
-                  <Text width="lg" truncate />
-                </AlertTitle>
-                <AlertDescription>
-                  <div className="space-y-1.5">
-                    <Text width="full" color="muted" truncate />
-                    <Text width="xl" color="muted" truncate />
-                  </div>
-                </AlertDescription>
-              </Alert>
+              <AlertWireframe />
             </ComponentPreview>
 
             <ComponentPreview
@@ -489,16 +440,9 @@ export default function Home() {
               dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
             >
               <div className="flex flex-wrap gap-2">
-                <Badge>
-                  <CheckIcon size={12} className="text-muted-foreground" />
-                  <Text width="xs" />
-                </Badge>
-                <Badge variant="secondary">
-                  <Text width="xs" />
-                </Badge>
-                <Badge variant="outline">
-                  <Text width="xs" />
-                </Badge>
+                <BadgeWireframe />
+                <BadgeWireframe variant="secondary" icon={null} />
+                <BadgeWireframe variant="outline" icon={null} />
               </div>
             </ComponentPreview>
 
@@ -678,22 +622,7 @@ export default function Home() {
               description="An interactive component which expands/collapses a panel."
               dependencies={['@radix-ui/react-collapsible']}
             >
-              <Collapsible className="w-full">
-                <CollapsibleTrigger asChild>
-                  <Button variant="outline" className="w-full justify-between">
-                    <Text width="sm" />
-                    <ChevronDownIcon size={24} className="text-muted-foreground" />
-                  </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-2 space-y-2">
-                  <div className="border-input bg-card rounded-lg border p-3">
-                    <Text width="full" color="muted" />
-                  </div>
-                  <div className="border-input bg-card rounded-lg border p-3">
-                    <Text width="lg" color="muted" />
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
+              <CollapsibleWireframeExample />
             </ComponentPreview>
 
             <ComponentPreview
@@ -722,25 +651,7 @@ export default function Home() {
               description="A modal dialog that interrupts the user with important content and expects a response."
               dependencies={['@radix-ui/react-dialog']}
             >
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button variant="outline">
-                    <MessageCircleDashedIcon size={16} className="text-muted-foreground" />
-                    <Text width="sm" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>
-                      <Text width="md" />
-                    </DialogTitle>
-                    <DialogDescription className="space-y-2">
-                      <Text width="full" color="muted" className="block" />
-                      <Text width="lg" color="muted" className="block" />
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
+              <DialogWireframeExample />
             </ComponentPreview>
 
             <ComponentPreview
@@ -749,31 +660,7 @@ export default function Home() {
               description="A panel that slides out from the edge of the screen with support for multiple directions."
               dependencies={['vaul']}
             >
-              <Drawer>
-                <DrawerTrigger asChild>
-                  <Button variant="outline">
-                    <GalleryVerticalEndIcon size={16} className="text-muted-foreground" />
-                    <Text width="sm" />
-                  </Button>
-                </DrawerTrigger>
-                <DrawerContent>
-                  <DrawerHeader>
-                    <DrawerTitle>
-                      <Text width="md" />
-                    </DrawerTitle>
-                    <DrawerDescription>
-                      <Text width="lg" color="muted" className="block" />
-                    </DrawerDescription>
-                  </DrawerHeader>
-                  <DrawerFooter>
-                    <DrawerClose asChild>
-                      <Button variant="outline">
-                        <Text width="xs" />
-                      </Button>
-                    </DrawerClose>
-                  </DrawerFooter>
-                </DrawerContent>
-              </Drawer>
+              <DrawerWireframeExample />
             </ComponentPreview>
 
             <ComponentPreview
@@ -784,9 +671,7 @@ export default function Home() {
             >
               <Empty className="border">
                 <EmptyHeader>
-                  <EmptyMedia>
-                    <GalleryThumbnailsIcon size={32} className="text-muted-foreground" />
-                  </EmptyMedia>
+                  <EmptyMediaWireframe />
                   <EmptyTitleWireframe width="md" />
                   <EmptyDescriptionWireframe width="lg" />
                 </EmptyHeader>
@@ -819,21 +704,7 @@ export default function Home() {
               description="For sighted users to preview content available behind a link."
               dependencies={['@radix-ui/react-hover-card']}
             >
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <Button variant="outline">
-                    <IdCardIcon size={16} className="text-muted-foreground" />
-                    <Text width="xs" />
-                  </Button>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-80">
-                  <div className="space-y-2">
-                    <Text width="md" />
-                    <Text width="full" color="muted" />
-                    <Text width="lg" color="muted" />
-                  </div>
-                </HoverCardContent>
-              </HoverCard>
+              <HoverCardWireframeExample />
             </ComponentPreview>
 
             <ComponentPreview
@@ -841,11 +712,7 @@ export default function Home() {
               title="Input"
               description="A text input field with support for various types and validation states."
             >
-              <Input
-                variant="wireframe"
-                skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
-                className="w-full"
-              />
+              <Input variant="wireframe" className="w-full" />
             </ComponentPreview>
 
             <ComponentPreview
@@ -877,27 +744,21 @@ export default function Home() {
             >
               <ItemGroup className="w-full">
                 <Item>
-                  <ItemMedia variant="image">
-                    <AudioLinesIcon size={16} className="text-muted-foreground" />
-                  </ItemMedia>
+                  <ItemMediaWireframe variant="image" />
                   <ItemContent>
                     <ItemTitleWireframe width="md" />
                     <ItemDescriptionWireframe width="lg" />
                   </ItemContent>
                 </Item>
                 <Item>
-                  <ItemMedia variant="image">
-                    <AudioLinesIcon size={16} className="text-muted-foreground" />
-                  </ItemMedia>
+                  <ItemMediaWireframe variant="image" />
                   <ItemContent>
                     <ItemTitleWireframe width="sm" />
                     <ItemDescriptionWireframe width="xl" />
                   </ItemContent>
                 </Item>
                 <Item>
-                  <ItemMedia variant="image">
-                    <AudioLinesIcon size={16} className="text-muted-foreground" />
-                  </ItemMedia>
+                  <ItemMediaWireframe variant="image" />
                   <ItemContent>
                     <ItemTitleWireframe width="lg" />
                     <ItemDescriptionWireframe width="md" />
@@ -934,11 +795,7 @@ export default function Home() {
                 <Label htmlFor="email">
                   <Text width="xs" />
                 </Label>
-                <Input
-                  id="email"
-                  variant="wireframe"
-                  skeletonIcon={<AlignCenterIcon size={16} className="text-muted-foreground" />}
-                />
+                <Input id="email" variant="wireframe" />
               </div>
             </ComponentPreview>
 
@@ -971,42 +828,7 @@ export default function Home() {
               description="A visually persistent menu common in desktop applications with nested menus and items."
               dependencies={['@radix-ui/react-menubar']}
             >
-              <Menubar>
-                <MenubarMenu>
-                  <MenubarTrigger>
-                    <Text width="xs" />
-                    <ChevronDownIcon size={24} className="text-muted-foreground ml-auto" />
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      <Text width="sm" />
-                    </MenubarItem>
-                    <MenubarItem>
-                      <Text width="md" />
-                    </MenubarItem>
-                    <MenubarItem>
-                      <Text width="sm" />
-                    </MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                  <MenubarTrigger>
-                    <Text width="xs" />
-                    <ChevronDownIcon size={24} className="text-muted-foreground ml-auto" />
-                  </MenubarTrigger>
-                  <MenubarContent>
-                    <MenubarItem>
-                      <Text width="xs" />
-                    </MenubarItem>
-                    <MenubarItem>
-                      <Text width="sm" />
-                    </MenubarItem>
-                    <MenubarItem>
-                      <Text width="md" />
-                    </MenubarItem>
-                  </MenubarContent>
-                </MenubarMenu>
-              </Menubar>
+              <MenubarWireframeExample />
             </ComponentPreview>
 
             <ComponentPreview
@@ -1206,27 +1028,7 @@ export default function Home() {
               description="An opinionated toast component for React with beautiful animations and icons."
               dependencies={['sonner', 'next-themes']}
             >
-              <Button
-                variant="outline"
-                onClick={() =>
-                  toast(
-                    <div className="flex items-center gap-2">
-                      <Text width="md" />
-                    </div>,
-                    {
-                      description: (
-                        <div className="space-y-1">
-                          <Text width="lg" color="muted" className="block" />
-                          <Text width="sm" color="muted" className="block" />
-                        </div>
-                      ),
-                    }
-                  )
-                }
-              >
-                <BellIcon size={16} className="text-muted-foreground" />
-                <Text width="xs" />
-              </Button>
+              <SonnerWireframeExample />
             </ComponentPreview>
 
             <ComponentPreview
@@ -1370,17 +1172,7 @@ export default function Home() {
               description="A popup that displays information related to an element when focused or hovered."
               dependencies={['@radix-ui/react-tooltip']}
             >
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="outline">
-                    <CircleHelpIcon size={16} className="text-muted-foreground" />
-                    <Text width="xs" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <Text width="sm" className="bg-background/30" />
-                </TooltipContent>
-              </Tooltip>
+              <TooltipWireframeExample />
             </ComponentPreview>
           </ComponentGridWrapper>
         </main>

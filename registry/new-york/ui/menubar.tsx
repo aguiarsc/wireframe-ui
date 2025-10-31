@@ -4,7 +4,9 @@ import * as React from 'react'
 import * as MenubarPrimitive from '@radix-ui/react-menubar'
 
 import { cn } from '@/lib/utils'
-import { CheckIcon, ChevronRightIcon, CircleDashedIcon } from '@/registry/new-york/icons'
+import { CheckIcon, ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
+import { Text } from '@/registry/new-york/ui/text'
 
 export interface MenubarProps extends React.ComponentProps<typeof MenubarPrimitive.Root> {}
 
@@ -125,7 +127,7 @@ function MenubarCheckboxItem({ className, children, checked, ...props }: Menubar
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <MenubarPrimitive.ItemIndicator>
-          <CheckIcon size={24} />
+          <CheckIcon className="size-6" />
         </MenubarPrimitive.ItemIndicator>
       </span>
       {children}
@@ -148,7 +150,7 @@ function MenubarRadioItem({ className, children, ...props }: MenubarRadioItemPro
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
         <MenubarPrimitive.ItemIndicator>
-          <CircleDashedIcon size={24} className="fill-current" />
+          <ArrowPathIcon className="size-6 fill-current" />
         </MenubarPrimitive.ItemIndicator>
       </span>
       {children}
@@ -219,7 +221,7 @@ function MenubarSubTrigger({ className, inset, children, ...props }: MenubarSubT
       {...props}
     >
       {children}
-      <ChevronRightIcon className="ml-auto h-4 w-4" />
+      <ChevronRightIcon className="ml-auto size-4" />
     </MenubarPrimitive.SubTrigger>
   )
 }
@@ -240,6 +242,37 @@ function MenubarSubContent({ className, ...props }: MenubarSubContentProps) {
   )
 }
 
+// Wireframe helper component
+export interface MenubarWireframeExampleProps {
+  menuCount?: number
+}
+
+function MenubarWireframeExample({ menuCount = 2 }: MenubarWireframeExampleProps) {
+  return (
+    <Menubar>
+      {Array.from({ length: menuCount }).map((_, i) => (
+        <MenubarMenu key={i}>
+          <MenubarTrigger>
+            <Text width="xs" />
+            <ChevronDownIcon className="size-4 text-muted-foreground ml-auto" />
+          </MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem>
+              <Text width="sm" />
+            </MenubarItem>
+            <MenubarItem>
+              <Text width="md" />
+            </MenubarItem>
+            <MenubarItem>
+              <Text width="sm" />
+            </MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      ))}
+    </Menubar>
+  )
+}
+
 export {
   Menubar,
   MenubarPortal,
@@ -257,4 +290,5 @@ export {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
+  MenubarWireframeExample,
 }

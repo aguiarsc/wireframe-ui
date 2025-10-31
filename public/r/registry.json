@@ -8,8 +8,8 @@
       "type": "registry:ui",
       "title": "Accordion",
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
-      "dependencies": ["@radix-ui/react-accordion"],
-      "registryDependencies": ["text", "icons"],
+      "dependencies": ["@radix-ui/react-accordion", "@heroicons/react"],
+      "registryDependencies": ["text"],
       "files": [
         {
           "path": "registry/new-york/ui/accordion.tsx",
@@ -22,8 +22,8 @@
       "type": "registry:ui",
       "title": "Alert",
       "description": "Displays a callout for user attention with optional icon and variant styles.",
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["class-variance-authority", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/alert.tsx",
@@ -36,8 +36,8 @@
       "type": "registry:ui",
       "title": "Avatar",
       "description": "An image element with a fallback for representing the user.",
-      "dependencies": ["@radix-ui/react-avatar"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-avatar", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/avatar.tsx",
@@ -50,8 +50,8 @@
       "type": "registry:ui",
       "title": "Badge",
       "description": "Displays a badge or a component that looks like a badge with multiple variants.",
-      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/badge.tsx",
@@ -64,8 +64,8 @@
       "type": "registry:ui",
       "title": "Breadcrumb",
       "description": "Displays the path to the current resource using a hierarchy of links.",
-      "dependencies": ["@radix-ui/react-slot"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-slot", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/breadcrumb.tsx",
@@ -106,8 +106,8 @@
       "type": "registry:ui",
       "title": "Checkbox",
       "description": "A control that allows the user to toggle between checked and not checked.",
-      "dependencies": ["@radix-ui/react-checkbox"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-checkbox", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/checkbox.tsx",
@@ -120,8 +120,8 @@
       "type": "registry:ui",
       "title": "Collapsible",
       "description": "An interactive component which expands/collapses a panel.",
-      "dependencies": ["@radix-ui/react-collapsible"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-collapsible", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/collapsible.tsx",
@@ -134,8 +134,8 @@
       "type": "registry:ui",
       "title": "Dialog",
       "description": "A modal dialog that interrupts the user with important content and expects a response.",
-      "dependencies": ["@radix-ui/react-dialog"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-dialog", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/dialog.tsx",
@@ -148,8 +148,8 @@
       "type": "registry:ui",
       "title": "Drawer",
       "description": "A panel that slides out from the edge of the screen with support for multiple directions.",
-      "dependencies": ["vaul"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["vaul", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/drawer.tsx",
@@ -162,8 +162,8 @@
       "type": "registry:ui",
       "title": "Hover Card",
       "description": "For sighted users to preview content available behind a link.",
-      "dependencies": ["@radix-ui/react-hover-card"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-hover-card", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/hover-card.tsx",
@@ -176,8 +176,8 @@
       "type": "registry:ui",
       "title": "Input",
       "description": "A text input field with support for various types and validation states.",
-      "dependencies": [],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/input.tsx",
@@ -190,8 +190,8 @@
       "type": "registry:ui",
       "title": "Media",
       "description": "A container for displaying images and videos with loading states and fallback placeholders.",
-      "dependencies": [],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/media.tsx",
@@ -232,8 +232,8 @@
       "type": "registry:ui",
       "title": "Menubar",
       "description": "A visually persistent menu common in desktop applications with nested menus and items.",
-      "dependencies": ["@radix-ui/react-menubar"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-menubar", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/menubar.tsx",
@@ -246,8 +246,8 @@
       "type": "registry:ui",
       "title": "Pagination",
       "description": "Pagination with page navigation, next and previous links.",
-      "dependencies": [],
-      "registryDependencies": ["button", "icons"],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["button"],
       "files": [
         {
           "path": "registry/new-york/ui/pagination.tsx",
@@ -260,8 +260,8 @@
       "type": "registry:ui",
       "title": "Select",
       "description": "Displays a list of options for the user to pick from with keyboard navigation support.",
-      "dependencies": ["@radix-ui/react-select"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-select", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/select.tsx",
@@ -316,8 +316,8 @@
       "type": "registry:ui",
       "title": "Sonner",
       "description": "An opinionated toast component for React with beautiful animations and icons.",
-      "dependencies": ["sonner", "next-themes"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["sonner", "next-themes", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/sonner.tsx",
@@ -386,222 +386,12 @@
       "type": "registry:ui",
       "title": "Tooltip",
       "description": "A popup that displays information related to an element when focused or hovered.",
-      "dependencies": ["@radix-ui/react-tooltip"],
-      "registryDependencies": ["icons"],
+      "dependencies": ["@radix-ui/react-tooltip", "@heroicons/react"],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/new-york/ui/tooltip.tsx",
           "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "icons",
-      "type": "registry:ui",
-      "title": "Icons",
-      "description": "A collection of icons for wireframe components.",
-      "dependencies": ["motion"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "registry/new-york/icons/index.tsx",
-          "type": "registry:component",
-          "target": "components/icons/index.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/activity.tsx",
-          "type": "registry:component",
-          "target": "components/icons/activity.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/arrow-down.tsx",
-          "type": "registry:component",
-          "target": "components/icons/arrow-down.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/arrow-left.tsx",
-          "type": "registry:component",
-          "target": "components/icons/arrow-left.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/arrow-right.tsx",
-          "type": "registry:component",
-          "target": "components/icons/arrow-right.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/arrow-up.tsx",
-          "type": "registry:component",
-          "target": "components/icons/arrow-up.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/audio-lines-icon.tsx",
-          "type": "registry:component",
-          "target": "components/icons/audio-lines-icon.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/badge-alert.tsx",
-          "type": "registry:component",
-          "target": "components/icons/badge-alert.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/calendar-days.tsx",
-          "type": "registry:component",
-          "target": "components/icons/calendar-days.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/cart.tsx",
-          "type": "registry:component",
-          "target": "components/icons/cart.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/check.tsx",
-          "type": "registry:component",
-          "target": "components/icons/check.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/chevron-down.tsx",
-          "type": "registry:component",
-          "target": "components/icons/chevron-down.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/chevron-left.tsx",
-          "type": "registry:component",
-          "target": "components/icons/chevron-left.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/chevron-right.tsx",
-          "type": "registry:component",
-          "target": "components/icons/chevron-right.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/chevron-up.tsx",
-          "type": "registry:component",
-          "target": "components/icons/chevron-up.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/circle-dashed.tsx",
-          "type": "registry:component",
-          "target": "components/icons/circle-dashed.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/clap-icon.tsx",
-          "type": "registry:component",
-          "target": "components/icons/clap-icon.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/copy-check.tsx",
-          "type": "registry:component",
-          "target": "components/icons/copy-check.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/cursor.tsx",
-          "type": "registry:component",
-          "target": "components/icons/cursor.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/dollar-sign.tsx",
-          "type": "registry:component",
-          "target": "components/icons/dollar-sign.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/gallery-thumbnails-icon.tsx",
-          "type": "registry:component",
-          "target": "components/icons/gallery-thumbnails-icon.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/heart.tsx",
-          "type": "registry:component",
-          "target": "components/icons/heart.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/link.tsx",
-          "type": "registry:component",
-          "target": "components/icons/link.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/lock.tsx",
-          "type": "registry:component",
-          "target": "components/icons/lock.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/mail-check.tsx",
-          "type": "registry:component",
-          "target": "components/icons/mail-check.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/map-pin.tsx",
-          "type": "registry:component",
-          "target": "components/icons/map-pin.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/message-circle.tsx",
-          "type": "registry:component",
-          "target": "components/icons/message-circle.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/panel-left-close.tsx",
-          "type": "registry:component",
-          "target": "components/icons/panel-left-close.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/panel-left-open.tsx",
-          "type": "registry:component",
-          "target": "components/icons/panel-left-open.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/play.tsx",
-          "type": "registry:component",
-          "target": "components/icons/play.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/plus.tsx",
-          "type": "registry:component",
-          "target": "components/icons/plus.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/search.tsx",
-          "type": "registry:component",
-          "target": "components/icons/search.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/sparkles.tsx",
-          "type": "registry:component",
-          "target": "components/icons/sparkles.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/square-pen.tsx",
-          "type": "registry:component",
-          "target": "components/icons/square-pen.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/trending-up.tsx",
-          "type": "registry:component",
-          "target": "components/icons/trending-up.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/user-icon.tsx",
-          "type": "registry:component",
-          "target": "components/icons/user-icon.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/user-round-plus.tsx",
-          "type": "registry:component",
-          "target": "components/icons/user-round-plus.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/users.tsx",
-          "type": "registry:component",
-          "target": "components/icons/users.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/waves.tsx",
-          "type": "registry:component",
-          "target": "components/icons/waves.tsx"
-        },
-        {
-          "path": "registry/new-york/icons/x.tsx",
-          "type": "registry:component",
-          "target": "components/icons/x.tsx"
         }
       ]
     },
@@ -736,8 +526,8 @@
       "type": "registry:ui",
       "title": "Item",
       "description": "A flexible item component for lists with wireframe helpers for titles, descriptions, and media.",
-      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
-      "registryDependencies": ["separator", "text", "icons"],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "@heroicons/react"],
+      "registryDependencies": ["separator", "text"],
       "files": [
         {
           "path": "registry/new-york/ui/item.tsx",
@@ -750,8 +540,8 @@
       "type": "registry:ui",
       "title": "Context Menu",
       "description": "A context menu component with wireframe helpers for menu items and labels.",
-      "dependencies": ["@radix-ui/react-context-menu"],
-      "registryDependencies": ["text", "icons"],
+      "dependencies": ["@radix-ui/react-context-menu", "@heroicons/react"],
+      "registryDependencies": ["text"],
       "files": [
         {
           "path": "registry/new-york/ui/context-menu.tsx",
@@ -778,8 +568,8 @@
       "type": "registry:ui",
       "title": "Carousel",
       "description": "A carousel component with wireframe helper for slide content.",
-      "dependencies": ["embla-carousel-react"],
-      "registryDependencies": ["button", "text", "icons"],
+      "dependencies": ["embla-carousel-react", "@heroicons/react"],
+      "registryDependencies": ["button", "text"],
       "files": [
         {
           "path": "registry/new-york/ui/carousel.tsx",
@@ -807,7 +597,7 @@
       "title": "Input Group",
       "description": "An input group component for combining inputs with addons and buttons.",
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["button", "input", "textarea", "icons"],
+      "registryDependencies": ["button", "input", "textarea"],
       "files": [
         {
           "path": "registry/new-york/ui/input-group.tsx",
@@ -834,8 +624,8 @@
       "type": "registry:ui",
       "title": "Sheet",
       "description": "A slide-out panel component with wireframe helpers for titles and descriptions.",
-      "dependencies": ["@radix-ui/react-dialog"],
-      "registryDependencies": ["text", "icons"],
+      "dependencies": ["@radix-ui/react-dialog", "@heroicons/react"],
+      "registryDependencies": ["text"],
       "files": [
         {
           "path": "registry/new-york/ui/sheet.tsx",
@@ -848,8 +638,8 @@
       "type": "registry:ui",
       "title": "Sidebar",
       "description": "A collapsible sidebar component with wireframe helpers for menu items and labels.",
-      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
-      "registryDependencies": ["button", "input", "separator", "sheet", "text", "tooltip", "icons"],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "@heroicons/react"],
+      "registryDependencies": ["button", "input", "separator", "sheet", "text", "tooltip"],
       "files": [
         {
           "path": "registry/new-york/ui/sidebar.tsx",
@@ -876,8 +666,8 @@
       "type": "registry:ui",
       "title": "Empty State",
       "description": "An empty state component with wireframe helpers for titles, descriptions, and media.",
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["text", "icons"],
+      "dependencies": ["class-variance-authority", "@heroicons/react"],
+      "registryDependencies": ["text"],
       "files": [
         {
           "path": "registry/new-york/ui/empty.tsx",
@@ -890,8 +680,8 @@
       "type": "registry:block",
       "title": "Hero Section",
       "description": "Landing page hero with badge, heading, CTA buttons, and feature list",
-      "dependencies": [],
-      "registryDependencies": ["button", "text", "heading", "badge", "media", "stack", "icons"],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["button", "text", "heading", "badge", "media", "stack"],
       "files": [
         {
           "path": "registry/new-york/blocks/hero-section.tsx",
@@ -905,7 +695,7 @@
       "type": "registry:block",
       "title": "Login Form",
       "description": "Authentication form with email/password inputs and social login options",
-      "dependencies": [],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "button",
         "card",
@@ -913,8 +703,7 @@
         "label",
         "text",
         "separator",
-        "checkbox",
-        "icons"
+        "checkbox"
       ],
       "files": [
         {
@@ -929,7 +718,7 @@
       "type": "registry:block",
       "title": "Register Form",
       "description": "Multi-step registration with tabs for personal and account information",
-      "dependencies": [],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "button",
         "card",
@@ -937,8 +726,7 @@
         "label",
         "text",
         "checkbox",
-        "tabs",
-        "icons"
+        "tabs"
       ],
       "files": [
         {
@@ -953,7 +741,7 @@
       "type": "registry:block",
       "title": "Contact Form",
       "description": "Professional contact form with name, email, subject, and message fields",
-      "dependencies": [],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "button",
         "card",
@@ -961,8 +749,7 @@
         "label",
         "text",
         "textarea",
-        "select",
-        "icons"
+        "select"
       ],
       "files": [
         {
@@ -977,8 +764,8 @@
       "type": "registry:block",
       "title": "Dashboard",
       "description": "Admin dashboard with stat cards, charts, recent activity, and data table",
-      "dependencies": [],
-      "registryDependencies": ["card", "text", "chart", "badge", "table", "avatar", "icons"],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["card", "text", "chart", "badge", "table", "avatar"],
       "files": [
         {
           "path": "registry/new-york/blocks/dashboard.tsx",
@@ -992,8 +779,8 @@
       "type": "registry:block",
       "title": "Pricing",
       "description": "Three-tier pricing cards with features and highlighted popular plan",
-      "dependencies": [],
-      "registryDependencies": ["button", "card", "text", "badge", "separator", "heading", "icons"],
+      "dependencies": ["@heroicons/react"],
+      "registryDependencies": ["button", "card", "text", "badge", "separator", "heading"],
       "files": [
         {
           "path": "registry/new-york/blocks/pricing.tsx",
@@ -1007,7 +794,7 @@
       "type": "registry:block",
       "title": "Product Grid",
       "description": "E-commerce product listing with search, filters, and product cards",
-      "dependencies": [],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "card",
         "text",
@@ -1016,8 +803,7 @@
         "media",
         "heading",
         "select",
-        "input",
-        "icons"
+        "input"
       ],
       "files": [
         {
@@ -1032,7 +818,7 @@
       "type": "registry:block",
       "title": "Profile Page",
       "description": "User profile with avatar, bio, stats, and tabbed content",
-      "dependencies": [],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "card",
         "text",
@@ -1042,8 +828,7 @@
         "separator",
         "tabs",
         "media",
-        "item",
-        "icons"
+        "item"
       ],
       "files": [
         {
@@ -1058,7 +843,7 @@
       "type": "registry:block",
       "title": "Settings Page",
       "description": "Multi-tab settings interface for profile, account, and notifications",
-      "dependencies": [],
+      "dependencies": ["@heroicons/react"],
       "registryDependencies": [
         "button",
         "card",
@@ -1070,8 +855,7 @@
         "tabs",
         "avatar",
         "textarea",
-        "select",
-        "icons"
+        "select"
       ],
       "files": [
         {
