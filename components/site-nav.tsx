@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { AnimatedThemeToggler } from '@/components/animated-theme-toggler'
 
@@ -34,9 +35,13 @@ export function SiteNav() {
       <div className="container mx-auto h-16 px-4 sm:h-20 sm:px-6 lg:px-8">
         <div className="flex h-full items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold sm:text-3xl lg:text-4xl">
-              wireframe<span className="text-muted-foreground">-ui</span>
-            </span>
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={48}
+              height={48}
+              className="h-10 w-10 dark:invert sm:h-12 sm:w-12"
+            />
           </Link>
 
           {/* Desktop Navigation */}
