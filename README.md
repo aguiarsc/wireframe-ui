@@ -6,13 +6,23 @@ Wireframe components that you can copy and paste into your apps. Skip Figma. Bui
 
 ## Installation
 
+### In your initialized project, install shadcn/ui with the following command:
+
 ```bash
-npx shadcn@latest add https://wireframe-ui.vercel.app/r/text
+pnpm dlx shadcn@latest init
 ```
+
+### Then you can start with this registry installing components:
+
+```bash
+pnpm dlx shadcn@latest add https://wireframe-ui.vercel.app/r/accordion.json
+```
+
+See docs page to see full component list and its installation commands.
 
 ## Documentation
 
-Visit https://wireframe-ui.vercel.app to view the documentation.
+Visit https://wireframe-ui.vercel.app to view the documentation and explore blocks. Also, there's a small section regarding production migration.
 
 ## License
 
