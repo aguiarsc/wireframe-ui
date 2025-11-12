@@ -4,8 +4,18 @@
   "type": "registry:block",
   "title": "Contact Form",
   "description": "Professional contact form with name, email, subject, and message fields",
-  "dependencies": ["@heroicons/react"],
-  "registryDependencies": ["button", "card", "input", "label", "text", "textarea", "select"],
+  "dependencies": [
+    "@heroicons/react"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/button.json",
+    "https://wireframe-ui.vercel.app/r/card.json",
+    "https://wireframe-ui.vercel.app/r/input.json",
+    "https://wireframe-ui.vercel.app/r/label.json",
+    "https://wireframe-ui.vercel.app/r/text.json",
+    "https://wireframe-ui.vercel.app/r/textarea.json",
+    "https://wireframe-ui.vercel.app/r/select.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/blocks/contact-form.tsx",

@@ -4,8 +4,18 @@
   "type": "registry:block",
   "title": "Login Form",
   "description": "Authentication form with email/password inputs and social login options",
-  "dependencies": ["@heroicons/react"],
-  "registryDependencies": ["button", "card", "input", "label", "text", "separator", "checkbox"],
+  "dependencies": [
+    "@heroicons/react"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/button.json",
+    "https://wireframe-ui.vercel.app/r/card.json",
+    "https://wireframe-ui.vercel.app/r/input.json",
+    "https://wireframe-ui.vercel.app/r/label.json",
+    "https://wireframe-ui.vercel.app/r/text.json",
+    "https://wireframe-ui.vercel.app/r/separator.json",
+    "https://wireframe-ui.vercel.app/r/checkbox.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/blocks/login-form.tsx",

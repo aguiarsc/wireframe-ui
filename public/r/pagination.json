@@ -4,8 +4,12 @@
   "type": "registry:ui",
   "title": "Pagination",
   "description": "Pagination with page navigation, next and previous links.",
-  "dependencies": ["@heroicons/react"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "@heroicons/react"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/button.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/pagination.tsx",

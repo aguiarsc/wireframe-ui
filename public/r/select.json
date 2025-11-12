@@ -4,7 +4,10 @@
   "type": "registry:ui",
   "title": "Select",
   "description": "Displays a list of options for the user to pick from with keyboard navigation support.",
-  "dependencies": ["@radix-ui/react-select", "@heroicons/react"],
+  "dependencies": [
+    "@radix-ui/react-select",
+    "@heroicons/react"
+  ],
   "registryDependencies": [],
   "files": [
     {

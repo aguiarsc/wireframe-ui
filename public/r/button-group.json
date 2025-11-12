@@ -4,8 +4,14 @@
   "type": "registry:ui",
   "title": "Button Group",
   "description": "A button group component with wireframe helper for text labels.",
-  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
-  "registryDependencies": ["separator", "text"],
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/separator.json",
+    "https://wireframe-ui.vercel.app/r/text.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/button-group.tsx",

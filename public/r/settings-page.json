@@ -4,19 +4,21 @@
   "type": "registry:block",
   "title": "Settings Page",
   "description": "Multi-tab settings interface for profile, account, and notifications",
-  "dependencies": ["@heroicons/react"],
+  "dependencies": [
+    "@heroicons/react"
+  ],
   "registryDependencies": [
-    "button",
-    "card",
-    "input",
-    "label",
-    "text",
-    "separator",
-    "switch",
-    "tabs",
-    "avatar",
-    "textarea",
-    "select"
+    "https://wireframe-ui.vercel.app/r/button.json",
+    "https://wireframe-ui.vercel.app/r/card.json",
+    "https://wireframe-ui.vercel.app/r/input.json",
+    "https://wireframe-ui.vercel.app/r/label.json",
+    "https://wireframe-ui.vercel.app/r/text.json",
+    "https://wireframe-ui.vercel.app/r/separator.json",
+    "https://wireframe-ui.vercel.app/r/switch.json",
+    "https://wireframe-ui.vercel.app/r/tabs.json",
+    "https://wireframe-ui.vercel.app/r/avatar.json",
+    "https://wireframe-ui.vercel.app/r/textarea.json",
+    "https://wireframe-ui.vercel.app/r/select.json"
   ],
   "files": [
     {

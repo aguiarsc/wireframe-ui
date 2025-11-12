@@ -4,7 +4,10 @@
   "type": "registry:ui",
   "title": "Collapsible",
   "description": "An interactive component which expands/collapses a panel.",
-  "dependencies": ["@radix-ui/react-collapsible", "@heroicons/react"],
+  "dependencies": [
+    "@radix-ui/react-collapsible",
+    "@heroicons/react"
+  ],
   "registryDependencies": [],
   "files": [
     {

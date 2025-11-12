@@ -5,7 +5,11 @@
   "title": "Section",
   "description": "A composition component with preset variants for common layout patterns (hero, content-two-column, feature-grid).",
   "dependencies": [],
-  "registryDependencies": ["text", "paragraph", "heading"],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/text.json",
+    "https://wireframe-ui.vercel.app/r/paragraph.json",
+    "https://wireframe-ui.vercel.app/r/heading.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/section.tsx",

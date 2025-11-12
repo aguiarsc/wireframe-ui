@@ -17,7 +17,7 @@
     "type-check": "tsc --noEmit",
     "audit:security": "pnpm audit --audit-level=moderate",
     "prepare": "husky",
-    "registry:build": "shadcn build",
+    "registry:build": "shadcn build && tsx scripts/fix-registry-urls.ts",
     "validate:registry": "tsx scripts/validate-registry.ts",
     "validate": "pnpm validate:registry && tsc --noEmit"
   },

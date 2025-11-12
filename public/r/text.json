@@ -4,8 +4,14 @@
   "type": "registry:ui",
   "title": "Text",
   "description": "A skeleton text placeholder component that renders thin animated lines for text content.",
-  "dependencies": ["class-variance-authority"],
-  "registryDependencies": ["wireframe-types", "wireframe-utils", "wireframe"],
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/wireframe-types.json",
+    "https://wireframe-ui.vercel.app/r/wireframe-utils.json",
+    "https://wireframe-ui.vercel.app/r/wireframe.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/text.tsx",

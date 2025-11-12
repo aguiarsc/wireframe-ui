@@ -4,8 +4,14 @@
   "type": "registry:ui",
   "title": "Form",
   "description": "Form components built on top of react-hook-form for managing form state.",
-  "dependencies": ["@radix-ui/react-label", "@radix-ui/react-slot", "react-hook-form"],
-  "registryDependencies": ["label"],
+  "dependencies": [
+    "@radix-ui/react-label",
+    "@radix-ui/react-slot",
+    "react-hook-form"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/label.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/form.tsx",

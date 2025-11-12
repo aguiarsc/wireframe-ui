@@ -4,7 +4,10 @@
   "type": "registry:ui",
   "title": "Breadcrumb",
   "description": "Displays the path to the current resource using a hierarchy of links.",
-  "dependencies": ["@radix-ui/react-slot", "@heroicons/react"],
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "@heroicons/react"
+  ],
   "registryDependencies": [],
   "files": [
     {

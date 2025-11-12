@@ -4,8 +4,19 @@
   "type": "registry:ui",
   "title": "Sidebar",
   "description": "A collapsible sidebar component with wireframe helpers for menu items and labels.",
-  "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "@heroicons/react"],
-  "registryDependencies": ["button", "input", "separator", "sheet", "text", "tooltip"],
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "@heroicons/react"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/button.json",
+    "https://wireframe-ui.vercel.app/r/input.json",
+    "https://wireframe-ui.vercel.app/r/separator.json",
+    "https://wireframe-ui.vercel.app/r/sheet.json",
+    "https://wireframe-ui.vercel.app/r/text.json",
+    "https://wireframe-ui.vercel.app/r/tooltip.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/sidebar.tsx",

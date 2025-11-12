@@ -4,8 +4,14 @@
   "type": "registry:ui",
   "title": "Input Group",
   "description": "An input group component for combining inputs with addons and buttons.",
-  "dependencies": ["class-variance-authority"],
-  "registryDependencies": ["button", "input", "textarea"],
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [
+    "https://wireframe-ui.vercel.app/r/button.json",
+    "https://wireframe-ui.vercel.app/r/input.json",
+    "https://wireframe-ui.vercel.app/r/textarea.json"
+  ],
   "files": [
     {
       "path": "registry/new-york/ui/input-group.tsx",
