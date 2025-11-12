@@ -2,27 +2,35 @@
 
 Wireframe components that you can copy and paste into your apps. Skip Figma. Build mockups directly in your IDE.
 
-![hero](https://github.com/user-attachments/assets/6d6ab50a-a5cc-4ae5-a5fe-9bf131be252a)
+![hero](https://github.com/user-attachments/assets/b8848f71-f4d7-46ca-89a1-b1ecf14c1901)
 
 ## Installation
 
-### In your initialized project, install shadcn/ui with the following command:
+Initialize shadcn/ui in your project:
 
 ```bash
 pnpm dlx shadcn@latest init
 ```
 
-### Then you can start with this registry installing components:
+Install components from the registry:
 
 ```bash
 pnpm dlx shadcn@latest add https://wireframe-ui.vercel.app/r/accordion.json
 ```
 
-See docs page to see full component list and its installation commands.
+Dependencies, styles, and types are installed automatically.
+
+> [!IMPORTANT]
+> Add this import to your `globals.css` file:
+> ```css
+> @import "../lib/wireframe.css";
+> ```
+
+Visit the [documentation](https://wireframe-ui.vercel.app) for the full component list and installation commands.
 
 ## Documentation
 
-Visit https://wireframe-ui.vercel.app to view the documentation and explore blocks. Also, there's a small section regarding production migration.
+Visit https://wireframe-ui.vercel.app to view the documentation, explore blocks, and learn about production migration.
 
 ## License
 
