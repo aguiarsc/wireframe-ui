@@ -24,10 +24,9 @@ function GithubIcon({ className, size = 24 }: { className?: string; size?: numbe
 
 export function SiteNav() {
   const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isComponents = pathname === '/components'
   const isBlocks = pathname === '/blocks'
-  const isMigration = pathname === '/migration'
-  const isComparison = pathname === '/comparison'
+  const isDocs = pathname === '/docs'
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
 
   return (
@@ -46,38 +45,30 @@ export function SiteNav() {
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-2 md:flex lg:gap-4">
-            {!isHome && (
-              <Link
-                href="/"
-                className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors lg:text-base"
-              >
-                Docs
-              </Link>
-            )}
-            {!isBlocks && (
-              <Link
-                href="/blocks"
-                className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors lg:text-base"
-              >
-                Blocks
-              </Link>
-            )}
-            {!isComparison && (
-              <Link
-                href="/comparison"
-                className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors lg:text-base"
-              >
-                Comparison
-              </Link>
-            )}
-            {!isMigration && (
-              <Link
-                href="/migration"
-                className="hover:text-foreground/80 text-foreground/60 text-sm font-medium transition-colors lg:text-base"
-              >
-                Migration
-              </Link>
-            )}
+            <Link
+              href="/components"
+              className={`text-sm font-medium transition-colors lg:text-base ${
+                isComponents ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/80'
+              }`}
+            >
+              Components
+            </Link>
+            <Link
+              href="/blocks"
+              className={`text-sm font-medium transition-colors lg:text-base ${
+                isBlocks ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/80'
+              }`}
+            >
+              Blocks
+            </Link>
+            <Link
+              href="/docs"
+              className={`text-sm font-medium transition-colors lg:text-base ${
+                isDocs ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/80'
+              }`}
+            >
+              Docs
+            </Link>
             <div className="bg-foreground/20 h-7 w-px" />
             <div className="flex items-center gap-2 lg:gap-3">
               <Link
@@ -141,42 +132,33 @@ export function SiteNav() {
       {mobileMenuOpen && (
         <div className="bg-background border-t md:hidden">
           <nav className="container mx-auto flex flex-col space-y-1 px-4 py-4">
-            {!isHome && (
-              <Link
-                href="/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="hover:bg-accent rounded-md px-3 py-2 text-base font-medium transition-colors"
-              >
-                Docs
-              </Link>
-            )}
-            {!isBlocks && (
-              <Link
-                href="/blocks"
-                onClick={() => setMobileMenuOpen(false)}
-                className="hover:bg-accent rounded-md px-3 py-2 text-base font-medium transition-colors"
-              >
-                Blocks
-              </Link>
-            )}
-            {!isComparison && (
-              <Link
-                href="/comparison"
-                onClick={() => setMobileMenuOpen(false)}
-                className="hover:bg-accent rounded-md px-3 py-2 text-base font-medium transition-colors"
-              >
-                Comparison
-              </Link>
-            )}
-            {!isMigration && (
-              <Link
-                href="/migration"
-                onClick={() => setMobileMenuOpen(false)}
-                className="hover:bg-accent rounded-md px-3 py-2 text-base font-medium transition-colors"
-              >
-                Migration
-              </Link>
-            )}
+            <Link
+              href="/components"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                isComponents ? 'bg-accent' : 'hover:bg-accent'
+              }`}
+            >
+              Components
+            </Link>
+            <Link
+              href="/blocks"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                isBlocks ? 'bg-accent' : 'hover:bg-accent'
+              }`}
+            >
+              Blocks
+            </Link>
+            <Link
+              href="/docs"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                isDocs ? 'bg-accent' : 'hover:bg-accent'
+              }`}
+            >
+              Docs
+            </Link>
           </nav>
         </div>
       )}

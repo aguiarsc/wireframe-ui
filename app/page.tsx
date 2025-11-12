@@ -1,1181 +1,314 @@
 'use client'
 
-import * as React from 'react'
-import { ComponentPreview } from '@/components/component-preview'
-import { ComponentGridWrapper } from '@/components/component-grid-wrapper'
+import Link from 'next/link'
 import { SiteNav } from '@/components/site-nav'
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/registry/new-york/ui/accordion'
-import { Text } from '@/registry/new-york/ui/text'
-import { AlertWireframe } from '@/registry/new-york/ui/alert'
-import { Avatar, AvatarFallback } from '@/registry/new-york/ui/avatar'
 import { Button } from '@/registry/new-york/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/registry/new-york/ui/card'
-import { Checkbox } from '@/registry/new-york/ui/checkbox'
-import { DialogWireframeExample } from '@/registry/new-york/ui/dialog'
-import { DrawerWireframeExample } from '@/registry/new-york/ui/drawer'
-import { Input } from '@/registry/new-york/ui/input'
-import { Label } from '@/registry/new-york/ui/label'
-import { MenubarWireframeExample } from '@/registry/new-york/ui/menubar'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/registry/new-york/ui/select'
+import { Card, CardContent } from '@/registry/new-york/ui/card'
+import { Badge } from '@/registry/new-york/ui/badge'
 import { Separator } from '@/registry/new-york/ui/separator'
+import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
 
-import { Switch } from '@/registry/new-york/ui/switch'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/new-york/ui/tabs'
-import { Textarea } from '@/registry/new-york/ui/textarea'
-import { Toggle } from '@/registry/new-york/ui/toggle'
-import { TooltipWireframeExample } from '@/registry/new-york/ui/tooltip'
-import { BadgeWireframe } from '@/registry/new-york/ui/badge'
-import { SonnerWireframeExample } from '@/registry/new-york/ui/sonner'
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from '@/registry/new-york/ui/breadcrumb'
-import { ButtonGroup, ButtonGroupTextWireframe } from '@/registry/new-york/ui/button-group'
-import { CollapsibleWireframeExample } from '@/registry/new-york/ui/collapsible'
-import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItemWireframe,
-  ContextMenuTrigger,
-} from '@/registry/new-york/ui/context-menu'
-import { HoverCardWireframeExample } from '@/registry/new-york/ui/hover-card'
-import {
-  Item,
-  ItemContent,
-  ItemDescriptionWireframe,
-  ItemGroup,
-  ItemMediaWireframe,
-  ItemTitleWireframe,
-} from '@/registry/new-york/ui/item'
-import {
-  Table,
-  TableBody,
-  TableCellWireframe,
-  TableHeadWireframe,
-  TableHeader,
-  TableRow,
-} from '@/registry/new-york/ui/table'
-import { Kbd, KbdGroup } from '@/registry/new-york/ui/kbd'
-import { Media } from '@/registry/new-york/ui/media'
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/registry/new-york/ui/pagination'
-import { Heading } from '@/registry/new-york/ui/heading'
-import { ListGroup } from '@/registry/new-york/ui/list-group'
-import { Paragraph } from '@/registry/new-york/ui/paragraph'
-import { Section } from '@/registry/new-york/ui/section'
-import { Slider } from '@/registry/new-york/ui/slider'
-import { Stack } from '@/registry/new-york/ui/stack'
-import {
-  Sheet,
-  SheetContent,
-  SheetDescriptionWireframe,
-  SheetHeader,
-  SheetTitleWireframe,
-  SheetTrigger,
-} from '@/registry/new-york/ui/sheet'
-import { ChartWireframe } from '@/registry/new-york/ui/chart'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/registry/new-york/ui/carousel'
-import {
-  Empty,
-  EmptyDescriptionWireframe,
-  EmptyHeader,
-  EmptyMediaWireframe,
-  EmptyTitleWireframe,
-} from '@/registry/new-york/ui/empty'
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-  InputGroupText,
-} from '@/registry/new-york/ui/input-group'
-
-const COMPONENTS = [
-  {
-    name: 'accordion',
-    title: 'Accordion',
-    description:
-      'A vertically stacked set of interactive headings that each reveal a section of content.',
-  },
-  {
-    name: 'alert',
-    title: 'Alert',
-    description: 'Displays a callout for user attention with optional icon and variant styles.',
-  },
-  {
-    name: 'avatar',
-    title: 'Avatar',
-    description: 'An image element with a fallback for representing the user.',
-  },
-  {
-    name: 'badge',
-    title: 'Badge',
-    description: 'Displays a badge or a component that looks like a badge with multiple variants.',
-  },
-  {
-    name: 'breadcrumb',
-    title: 'Breadcrumb',
-    description: 'Displays the path to the current resource using a hierarchy of links.',
-  },
-  {
-    name: 'button',
-    title: 'Button',
-    description:
-      'Displays a button or a component that looks like a button with multiple variants and sizes.',
-  },
-  {
-    name: 'button-group',
-    title: 'Button Group',
-    description: 'A button group component with wireframe helper for text labels.',
-  },
-  {
-    name: 'card',
-    title: 'Card',
-    description: 'A container for displaying content with header, footer, and action sections.',
-  },
-  {
-    name: 'carousel',
-    title: 'Carousel',
-    description: 'A carousel component with wireframe helper for slide content.',
-  },
-  {
-    name: 'chart',
-    title: 'Chart',
-    description: 'Chart components with wireframe placeholder helper.',
-  },
-  {
-    name: 'checkbox',
-    title: 'Checkbox',
-    description: 'A control that allows the user to toggle between checked and not checked.',
-  },
-  {
-    name: 'collapsible',
-    title: 'Collapsible',
-    description: 'An interactive component which expands/collapses a panel.',
-  },
-  {
-    name: 'context-menu',
-    title: 'Context Menu',
-    description: 'A context menu component with wireframe helpers for menu items.',
-  },
-  {
-    name: 'dialog',
-    title: 'Dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
-  },
-  {
-    name: 'drawer',
-    title: 'Drawer',
-    description:
-      'A panel that slides out from the edge of the screen with support for multiple directions.',
-  },
-  {
-    name: 'empty',
-    title: 'Empty State',
-    description: 'An empty state component with wireframe helpers.',
-  },
-  {
-    name: 'heading',
-    title: 'Heading',
-    description:
-      'A composition component that renders appropriately sized Text based on heading level (1-6).',
-  },
-  {
-    name: 'hover-card',
-    title: 'Hover Card',
-    description: 'For sighted users to preview content available behind a link.',
-  },
-  {
-    name: 'input',
-    title: 'Input',
-    description: 'A text input field with support for various types and validation states.',
-  },
-  {
-    name: 'input-group',
-    title: 'Input Group',
-    description: 'An input group component for combining inputs with addons.',
-  },
-  {
-    name: 'item',
-    title: 'Item',
-    description: 'A flexible item component for lists with wireframe helpers.',
-  },
-  {
-    name: 'kbd',
-    title: 'Kbd',
-    description: 'Displays keyboard shortcuts or keys with proper styling.',
-  },
-  {
-    name: 'label',
-    title: 'Label',
-    description: 'Renders an accessible label associated with form controls.',
-  },
-  {
-    name: 'list-group',
-    title: 'ListGroup',
-    description:
-      'A composition component that renders list items with Text placeholders for wireframe prototyping.',
-  },
-  {
-    name: 'media',
-    title: 'Media',
-    description:
-      'A container for displaying images, videos, and audio with loading states and fallback placeholders.',
-  },
-  {
-    name: 'menubar',
-    title: 'Menubar',
-    description:
-      'A visually persistent menu common in desktop applications with nested menus and items.',
-  },
-  {
-    name: 'pagination',
-    title: 'Pagination',
-    description: 'Pagination with page navigation, next and previous links.',
-  },
-  {
-    name: 'paragraph',
-    title: 'Paragraph',
-    description:
-      'A composition component that renders multiple Text lines to simulate paragraph content.',
-  },
-  {
-    name: 'section',
-    title: 'Section',
-    description: 'A composition component with preset variants for common layout patterns.',
-  },
-  {
-    name: 'select',
-    title: 'Select',
-    description:
-      'Displays a list of options for the user to pick from with keyboard navigation support.',
-  },
-  {
-    name: 'separator',
-    title: 'Separator',
-    description:
-      'Visually or semantically separates content with horizontal or vertical orientation.',
-  },
-  {
-    name: 'sheet',
-    title: 'Sheet',
-    description: 'A slide-out panel component with wireframe helpers for titles and descriptions.',
-  },
-  {
-    name: 'sidebar',
-    title: 'Sidebar',
-    description:
-      'A collapsible sidebar component with wireframe helpers for menu items and labels.',
-  },
-  {
-    name: 'slider',
-    title: 'Slider',
-    description: 'An input where the user selects a value from within a given range.',
-  },
-  {
-    name: 'stack',
-    title: 'Stack',
-    description:
-      'A layout primitive for arranging wireframe elements with configurable spacing and direction.',
-  },
-  {
-    name: 'switch',
-    title: 'Switch',
-    description: 'A control that allows the user to toggle between checked and unchecked states.',
-  },
-  {
-    name: 'table',
-    title: 'Table',
-    description: 'A data table component with wireframe helpers for headers and cells.',
-  },
-  {
-    name: 'tabs',
-    title: 'Tabs',
-    description:
-      'A set of layered sections of content with tab triggers for switching between them.',
-  },
-  {
-    name: 'text',
-    title: 'Text',
-    description:
-      'A skeleton text placeholder component that renders thin animated lines for text content.',
-  },
-  {
-    name: 'textarea',
-    title: 'Textarea',
-    description: 'A multi-line text input field with auto-resizing support.',
-  },
-  {
-    name: 'toggle',
-    title: 'Toggle',
-    description: 'A two-state button that can be either on or off with multiple variants.',
-  },
-  {
-    name: 'tooltip',
-    title: 'Tooltip',
-    description: 'A popup that displays information related to an element when focused or hovered.',
-  },
-]
-
-export default function Home() {
+export default function LandingPage() {
   return (
     <>
       <SiteNav />
-      <div className="container mx-auto flex min-h-svh flex-col gap-16 px-4 py-16 sm:px-6 lg:px-8">
-        <header className="flex max-w-3xl flex-col gap-4">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Wireframe in your code. Ship with confidence.
-          </h1>
-          <p className="text-muted-foreground text-base sm:text-lg">
-            Skip Figma. Build mockups directly in your IDE with copy-paste wireframe components.
+      <div className="container mx-auto flex min-h-svh flex-col px-4 py-12 sm:px-6 lg:px-8">
+        {/* Hero Section with Component Showcase */}
+        <section className="flex flex-col items-center gap-8 py-24 sm:py-32 lg:py-40 min-h-[85vh] justify-center">
+          <Badge variant="outline" className="animate-in fade-in slide-in-from-bottom-3 duration-500">
+            <SparklesIcon className="mr-1.5 size-3" />
+            wireframe-ui
+          </Badge>
+
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 flex max-w-4xl flex-col gap-6 text-center">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              Wireframe in your code.
+              <br />
+              <span className="text-muted-foreground">Ship with confidence.</span>
+            </h1>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
+              Skip Figma. Build mockups directly in your IDE with copy-paste wireframe components.
+              Prototype fast, migrate faster.
+            </p>
+          </div>
+
+          <div className="animate-in fade-in slide-in-from-bottom-5 duration-1000 flex flex-wrap gap-4 justify-center">
+            <Button asChild size="lg">
+              <Link href="/components">
+                Browse Components
+                <ArrowRightIcon className="ml-2 size-4" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/docs">Get Started</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* Tech Stack */}
+        <section className="flex flex-col items-center gap-8 py-12 sm:py-16">
+          <p className="text-muted-foreground text-sm font-medium uppercase tracking-wider">
+            Built with modern technologies
           </p>
-        </header>
-        <main className="flex flex-1 flex-col gap-12">
-          <ComponentGridWrapper components={COMPONENTS}>
-            <ComponentPreview
-              name="accordion"
-              title="Accordion"
-              description="A vertically stacked set of interactive headings that each reveal a section of content."
-              dependencies={['@radix-ui/react-accordion']}
-            >
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>
-                    <div className="min-w-0 flex-1">
-                      <Text width="lg" color="default" truncate />
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="space-y-2">
-                      <Text width="full" color="muted" />
-                      <Text width="xl" color="muted" />
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>
-                    <div className="min-w-0 flex-1">
-                      <Text width="xl" color="default" truncate />
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="space-y-2">
-                      <Text width="full" color="subtle" />
-                      <Text width="lg" color="muted" />
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>
-                    <div className="min-w-0 flex-1">
-                      <Text width="md" color="default" truncate />
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <Text width="full" color="muted" />
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </ComponentPreview>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+            {/* React */}
+            <div className="flex flex-col items-center gap-2">
+              <svg viewBox="0 0 24 24" className="size-12 sm:size-14" fill="currentColor">
+                <path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 0 1-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9c-.6 0-1.17 0-1.71.03-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03.6 0 1.17 0 1.71-.03.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26s-1.18-1.63-3.28-2.26c-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26s1.18 1.63 3.28 2.26c.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7.64-.35.83-1.82.32-3.96-.77.16-1.58.28-2.4.36-.48.67-.99 1.31-1.51 1.9M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m2.89-4.04C9.38 4.2 8 3.62 7.37 4c-.63.35-.82 1.82-.31 3.96a22.7 22.7 0 0 1 2.4-.36c.48-.67.99-1.31 1.51-1.9z" />
+              </svg>
+              <span className="text-xs font-medium">React</span>
+            </div>
 
-            <ComponentPreview
-              name="alert"
-              title="Alert"
-              description="Displays a callout for user attention with optional icon and variant styles."
-              dependencies={['class-variance-authority']}
-            >
-              <AlertWireframe />
-            </ComponentPreview>
+            {/* TypeScript */}
+            <div className="flex flex-col items-center gap-2">
+              <svg viewBox="0 0 24 24" className="size-12 sm:size-14" fill="currentColor">
+                <path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z" />
+              </svg>
+              <span className="text-xs font-medium">TypeScript</span>
+            </div>
 
-            <ComponentPreview
-              name="avatar"
-              title="Avatar"
-              description="An image element with a fallback for representing the user."
-              dependencies={['@radix-ui/react-avatar']}
-            >
-              <Avatar>
-                <AvatarFallback />
-              </Avatar>
-            </ComponentPreview>
+            {/* Tailwind CSS */}
+            <div className="flex flex-col items-center gap-2">
+              <svg viewBox="0 0 24 24" className="size-12 sm:size-14" fill="currentColor">
+                <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
+              </svg>
+              <span className="text-xs font-medium">Tailwind CSS</span>
+            </div>
 
-            <ComponentPreview
-              name="badge"
-              title="Badge"
-              description="Displays a badge or a component that looks like a badge with multiple variants."
-              dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
-            >
-              <div className="flex flex-wrap gap-2">
-                <BadgeWireframe />
-                <BadgeWireframe variant="secondary" icon={null} />
-                <BadgeWireframe variant="outline" icon={null} />
-              </div>
-            </ComponentPreview>
+            {/* shadcn/ui */}
+            <div className="flex flex-col items-center gap-2">
+              <svg viewBox="0 0 256 256" className="size-12 sm:size-14" fill="none">
+                <line
+                  x1="208"
+                  y1="128"
+                  x2="128"
+                  y2="208"
+                  stroke="currentColor"
+                  strokeWidth="32"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <line
+                  x1="192"
+                  y1="40"
+                  x2="40"
+                  y2="192"
+                  stroke="currentColor"
+                  strokeWidth="32"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="text-xs font-medium">shadcn/ui</span>
+            </div>
+          </div>
+        </section>
 
-            <ComponentPreview
-              name="breadcrumb"
-              title="Breadcrumb"
-              description="Displays the path to the current resource using a hierarchy of links."
-              dependencies={['@radix-ui/react-slot']}
-            >
-              <Breadcrumb>
-                <BreadcrumbList>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink href="#">
-                      <Text width="xs" />
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator />
-                  <BreadcrumbItem>
-                    <BreadcrumbLink href="#">
-                      <Text width="sm" />
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator />
-                  <BreadcrumbItem>
-                    <BreadcrumbPage>
-                      <Text width="xs" />
-                    </BreadcrumbPage>
-                  </BreadcrumbItem>
-                </BreadcrumbList>
-              </Breadcrumb>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="button"
-              title="Button"
-              description="Displays a button or a component that looks like a button with multiple variants and sizes."
-              dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
-            >
-              <div className="flex flex-wrap gap-2">
-                <Button>
-                  <Text width="sm" />
-                </Button>
-                <Button variant="secondary">
-                  <Text width="sm" />
-                </Button>
-                <Button variant="outline">
-                  <Text width="sm" />
-                </Button>
-                <Button variant="ghost">
-                  <Text width="sm" />
-                </Button>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="button-group"
-              title="Button Group"
-              description="A button group component with wireframe helper for text labels."
-              dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
-            >
-              <div className="space-y-4">
-                <ButtonGroup>
-                  <Button variant="outline">
-                    <Text width="xs" />
-                  </Button>
-                  <Button variant="outline">
-                    <Text width="xs" />
-                  </Button>
-                  <Button variant="outline">
-                    <Text width="xs" />
-                  </Button>
-                </ButtonGroup>
-                <ButtonGroup>
-                  <ButtonGroupTextWireframe width="sm" />
-                  <Button variant="outline">
-                    <Text width="xs" />
-                  </Button>
-                </ButtonGroup>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="card"
-              title="Card"
-              description="A container for displaying content with header, footer, and action sections."
-            >
-              <Card className="w-full">
-                <CardHeader>
-                  <CardTitle>
-                    <Text width="md" truncate />
-                  </CardTitle>
-                  <CardDescription>
-                    <Text width="lg" color="muted" truncate />
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+        {/* Bento Box Features */}
+        <section className="py-12 sm:py-16">
+          <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Large Feature - 100% Free */}
+            <Card className="sm:col-span-2 lg:col-span-2 lg:row-span-2 border-primary/50">
+              <CardContent className="flex h-full flex-col justify-center p-8 sm:p-12">
+                <div className="space-y-4">
+                  <div className="text-6xl font-bold sm:text-7xl lg:text-8xl">100%</div>
                   <div className="space-y-2">
-                    <Text width="full" color="muted" truncate />
-                    <Text width="xl" color="muted" truncate />
-                  </div>
-                </CardContent>
-              </Card>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="carousel"
-              title="Carousel"
-              description="A carousel component with wireframe helper for slide content."
-              dependencies={['embla-carousel-react']}
-            >
-              <Carousel className="w-full max-w-xs">
-                <CarouselContent>
-                  <CarouselItem>
-                    <div className="space-y-2">
-                      <Media type="image" className="aspect-video w-full" />
-                      <Text width="lg" emphasis="primary" />
-                      <Text width="full" color="muted" size="sm" />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="space-y-2">
-                      <Media type="image" className="aspect-video w-full" />
-                      <Text width="md" emphasis="primary" />
-                      <Text width="xl" color="muted" size="sm" />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="space-y-2">
-                      <Media type="image" className="aspect-video w-full" />
-                      <Text width="xl" emphasis="primary" />
-                      <Text width="lg" color="muted" size="sm" />
-                    </div>
-                  </CarouselItem>
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="chart"
-              title="Chart"
-              description="Chart components with wireframe placeholder helper."
-              dependencies={['recharts']}
-            >
-              <ChartWireframe variant="bar" />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="checkbox"
-              title="Checkbox"
-              description="A control that allows the user to toggle between checked and not checked."
-              dependencies={['@radix-ui/react-checkbox']}
-            >
-              <div className="flex flex-col divide-y">
-                <div className="flex items-center space-x-3 pb-3">
-                  <Checkbox id="terms1" defaultChecked />
-                  <label htmlFor="terms1" className="flex-1">
-                    <Text width="full" />
-                  </label>
-                </div>
-                <div className="flex items-center space-x-3 pt-3">
-                  <Checkbox id="terms2" defaultChecked />
-                  <label htmlFor="terms2" className="flex-1">
-                    <div className="space-y-1.5">
-                      <Text width="full" />
-                      <Text width="md" color="muted" size="sm" />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="collapsible"
-              title="Collapsible"
-              description="An interactive component which expands/collapses a panel."
-              dependencies={['@radix-ui/react-collapsible']}
-            >
-              <CollapsibleWireframeExample />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="context-menu"
-              title="Context Menu"
-              description="A context menu component with wireframe helpers for menu items."
-              dependencies={['@radix-ui/react-context-menu']}
-            >
-              <ContextMenu>
-                <ContextMenuTrigger asChild>
-                  <div className="border-input flex h-32 w-full items-center justify-center rounded-md border border-dashed">
-                    <Text width="sm" color="muted" />
-                  </div>
-                </ContextMenuTrigger>
-                <ContextMenuContent className="w-48">
-                  <ContextMenuItemWireframe width="md" />
-                  <ContextMenuItemWireframe width="sm" />
-                  <ContextMenuItemWireframe width="lg" />
-                </ContextMenuContent>
-              </ContextMenu>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="dialog"
-              title="Dialog"
-              description="A modal dialog that interrupts the user with important content and expects a response."
-              dependencies={['@radix-ui/react-dialog']}
-            >
-              <DialogWireframeExample />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="drawer"
-              title="Drawer"
-              description="A panel that slides out from the edge of the screen with support for multiple directions."
-              dependencies={['vaul']}
-            >
-              <DrawerWireframeExample />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="empty"
-              title="Empty State"
-              description="An empty state component with wireframe helpers."
-              dependencies={['class-variance-authority']}
-            >
-              <Empty className="border">
-                <EmptyHeader>
-                  <EmptyMediaWireframe />
-                  <EmptyTitleWireframe width="md" />
-                  <EmptyDescriptionWireframe width="lg" />
-                </EmptyHeader>
-                <div className="flex gap-2">
-                  <Button>
-                    <Text width="sm" />
-                  </Button>
-                  <Button variant="outline">
-                    <Text width="sm" />
-                  </Button>
-                </div>
-              </Empty>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="heading"
-              title="Heading"
-              description="A composition component that renders appropriately sized Text based on heading level (1-6)."
-            >
-              <div className="space-y-4">
-                <Heading level={1} />
-                <Heading level={2} />
-                <Heading level={3} />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="hover-card"
-              title="Hover Card"
-              description="For sighted users to preview content available behind a link."
-              dependencies={['@radix-ui/react-hover-card']}
-            >
-              <HoverCardWireframeExample />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="input"
-              title="Input"
-              description="A text input field with support for various types and validation states."
-            >
-              <Input variant="wireframe" className="w-full" />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="input-group"
-              title="Input Group"
-              description="An input group component for combining inputs with addons."
-              dependencies={['class-variance-authority']}
-            >
-              <div className="space-y-4">
-                <InputGroup>
-                  <InputGroupInput variant="wireframe" />
-                </InputGroup>
-                <InputGroup>
-                  <InputGroupInput variant="wireframe" />
-                  <InputGroupAddon align="inline-end">
-                    <InputGroupText>
-                      <Text width="xs" size="sm" />
-                    </InputGroupText>
-                  </InputGroupAddon>
-                </InputGroup>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="item"
-              title="Item"
-              description="A flexible item component for lists with wireframe helpers."
-              dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
-            >
-              <ItemGroup className="w-full">
-                <Item>
-                  <ItemMediaWireframe variant="image" />
-                  <ItemContent>
-                    <ItemTitleWireframe width="md" />
-                    <ItemDescriptionWireframe width="lg" />
-                  </ItemContent>
-                </Item>
-                <Item>
-                  <ItemMediaWireframe variant="image" />
-                  <ItemContent>
-                    <ItemTitleWireframe width="sm" />
-                    <ItemDescriptionWireframe width="xl" />
-                  </ItemContent>
-                </Item>
-                <Item>
-                  <ItemMediaWireframe variant="image" />
-                  <ItemContent>
-                    <ItemTitleWireframe width="lg" />
-                    <ItemDescriptionWireframe width="md" />
-                  </ItemContent>
-                </Item>
-              </ItemGroup>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="kbd"
-              title="Kbd"
-              description="Displays keyboard shortcuts or keys with proper styling."
-            >
-              <div className="flex flex-wrap gap-2">
-                <Kbd>⌘</Kbd>
-                <Kbd>⇧</Kbd>
-                <Kbd>⌥</Kbd>
-                <Kbd>⌃</Kbd>
-                <KbdGroup>
-                  <Kbd>⌘</Kbd>
-                  <span className="text-muted-foreground">+</span>
-                  <Kbd>K</Kbd>
-                </KbdGroup>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="label"
-              title="Label"
-              description="Renders an accessible label associated with form controls."
-              dependencies={['@radix-ui/react-label']}
-            >
-              <div className="space-y-2">
-                <Label htmlFor="email">
-                  <Text width="xs" />
-                </Label>
-                <Input id="email" variant="wireframe" />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="list-group"
-              title="ListGroup"
-              description="A composition component that renders list items with Text placeholders for wireframe prototyping."
-            >
-              <div className="space-y-4">
-                <ListGroup items={3} variant="bullet" />
-                <ListGroup items={3} variant="number" />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="media"
-              title="Media"
-              description="A container for displaying images, videos, and audio with loading states and fallback placeholders."
-            >
-              <div className="grid grid-cols-3 gap-4">
-                <Media type="image" className="h-32 w-full" />
-                <Media type="video" className="h-32 w-full" />
-                <Media type="audio" className="h-32 w-full" />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="menubar"
-              title="Menubar"
-              description="A visually persistent menu common in desktop applications with nested menus and items."
-              dependencies={['@radix-ui/react-menubar']}
-            >
-              <MenubarWireframeExample />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="pagination"
-              title="Pagination"
-              description="Pagination with page navigation, next and previous links."
-              dependencies={[]}
-            >
-              <Pagination>
-                <PaginationContent>
-                  <PaginationItem>
-                    <PaginationPrevious href="#">
-                      <Text width="xs" className="hidden sm:block" />
-                    </PaginationPrevious>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#" isActive>
-                      <Text width="xs" />
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#">
-                      <Text width="xs" />
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationLink href="#">
-                      <Text width="xs" />
-                    </PaginationLink>
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationEllipsis />
-                  </PaginationItem>
-                  <PaginationItem>
-                    <PaginationNext href="#">
-                      <Text width="xs" className="hidden sm:block" />
-                    </PaginationNext>
-                  </PaginationItem>
-                </PaginationContent>
-              </Pagination>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="paragraph"
-              title="Paragraph"
-              description="A composition component that renders multiple Text lines to simulate paragraph content."
-            >
-              <div className="space-y-4">
-                <Paragraph lines={3} />
-                <Paragraph lines={4} spacing="relaxed" />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="section"
-              title="Section"
-              description="A composition component with preset variants for common layout patterns (hero, content-two-column, feature-grid)."
-            >
-              <div className="space-y-8">
-                <Section variant="hero" spacing="tight" />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="select"
-              title="Select"
-              description="Displays a list of options for the user to pick from with keyboard navigation support."
-              dependencies={['@radix-ui/react-select']}
-            >
-              <Select>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue>
-                    <Text width="sm" />
-                  </SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="item1">
-                    <Text width="md" />
-                  </SelectItem>
-                  <SelectItem value="item2">
-                    <Text width="sm" />
-                  </SelectItem>
-                  <SelectItem value="item3">
-                    <Text width="lg" />
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="separator"
-              title="Separator"
-              description="Visually or semantically separates content with horizontal or vertical orientation."
-              dependencies={['@radix-ui/react-separator']}
-            >
-              <div className="w-full space-y-2">
-                <Text width="xs" />
-                <Separator />
-                <Text width="xs" />
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="sheet"
-              title="Sheet"
-              description="A slide-out panel component with wireframe helpers."
-              dependencies={['@radix-ui/react-dialog']}
-            >
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline">
-                    <Text width="sm" />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent>
-                  <SheetHeader>
-                    <SheetTitleWireframe width="md" />
-                    <SheetDescriptionWireframe width="lg" />
-                  </SheetHeader>
-                  <div className="space-y-4 py-4">
-                    <Text width="full" />
-                    <Text width="xl" />
-                    <Text width="lg" />
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="sidebar"
-              title="Sidebar"
-              description="A composable sidebar component with wireframe helpers for navigation."
-              dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
-            >
-              <div className="border-input flex h-80 w-full overflow-hidden rounded-lg border">
-                <div className="bg-sidebar text-sidebar-foreground flex w-64 flex-col border-r">
-                  <div className="flex flex-col gap-2 p-2">
-                    <div className="flex items-center gap-2 rounded-md p-2">
-                      <Avatar>
-                        <AvatarFallback />
-                      </Avatar>
-                      <div className="flex flex-1 flex-col gap-1">
-                        <Text width="sm" size="sm" emphasis="primary" />
-                        <Text width="xs" size="xs" color="muted" />
-                      </div>
-                    </div>
-                  </div>
-                  <Separator />
-                  <div className="flex flex-1 flex-col gap-2 p-2">
-                    <div className="px-2 py-1.5">
-                      <Text width="xs" size="xs" color="muted" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex items-center gap-2 rounded-md px-2 py-1.5">
-                        <Text width="sm" size="sm" />
-                      </div>
-                      <div className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex items-center gap-2 rounded-md px-2 py-1.5">
-                        <Text width="md" size="sm" />
-                      </div>
-                      <div className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex items-center gap-2 rounded-md px-2 py-1.5">
-                        <Text width="sm" size="sm" />
-                      </div>
-                    </div>
-                    <Separator className="my-2" />
-                    <div className="px-2 py-1.5">
-                      <Text width="xs" size="xs" color="muted" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex items-center gap-2 rounded-md px-2 py-1.5">
-                        <Text width="lg" size="sm" />
-                      </div>
-                      <div className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex items-center gap-2 rounded-md px-2 py-1.5">
-                        <Text width="sm" size="sm" />
-                      </div>
-                    </div>
+                    <h3 className="text-2xl font-bold sm:text-3xl">Free & Open Source</h3>
+                    <p className="text-muted-foreground text-base sm:text-lg">
+                      Loved by developers around the world. MIT licensed, use it anywhere.
+                    </p>
                   </div>
                 </div>
-                <div className="bg-muted/20 flex flex-1 flex-col items-center justify-center gap-2 p-4">
-                  <Text width="lg" emphasis="secondary" />
-                  <Text width="full" color="muted" size="sm" />
-                </div>
-              </div>
-            </ComponentPreview>
+              </CardContent>
+            </Card>
 
-            <ComponentPreview
-              name="slider"
-              title="Slider"
-              description="An input where the user selects a value from within a given range."
-              dependencies={['@radix-ui/react-slider']}
-            >
-              <Slider defaultValue={[50]} max={100} step={1} className="w-full" />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="sonner"
-              title="Sonner"
-              description="An opinionated toast component for React with beautiful animations and icons."
-              dependencies={['sonner', 'next-themes']}
-            >
-              <SonnerWireframeExample />
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="stack"
-              title="Stack"
-              description="A layout primitive for arranging wireframe elements with configurable spacing and direction."
-            >
-              <div className="space-y-4">
-                <Stack direction="vertical" spacing="md">
-                  <Text width="lg" />
-                  <Text width="md" />
-                  <Text width="xl" />
-                </Stack>
-                <Stack direction="horizontal" spacing="sm">
-                  <Text width="sm" />
-                  <Text width="sm" />
-                  <Text width="sm" />
-                </Stack>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="switch"
-              title="Switch"
-              description="A control that allows the user to toggle between checked and unchecked states."
-              dependencies={['@radix-ui/react-switch']}
-            >
-              <div className="flex items-center space-x-2">
-                <Switch id="airplane-mode" defaultChecked />
-                <Label htmlFor="airplane-mode">
-                  <Text width="sm" />
-                </Label>
-              </div>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="table"
-              title="Table"
-              description="A data table component with wireframe helpers for headers and cells."
-            >
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHeadWireframe width="sm" />
-                    <TableHeadWireframe width="md" />
-                    <TableHeadWireframe width="sm" />
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCellWireframe width="sm" />
-                    <TableCellWireframe width="lg" />
-                    <TableCellWireframe width="xs" />
-                  </TableRow>
-                  <TableRow>
-                    <TableCellWireframe width="sm" />
-                    <TableCellWireframe width="md" />
-                    <TableCellWireframe width="xs" />
-                  </TableRow>
-                  <TableRow>
-                    <TableCellWireframe width="sm" />
-                    <TableCellWireframe width="xl" />
-                    <TableCellWireframe width="xs" />
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="tabs"
-              title="Tabs"
-              description="A set of layered sections of content with tab triggers for switching between them."
-              dependencies={['@radix-ui/react-tabs']}
-            >
-              <Tabs defaultValue="account" className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="account">
-                    <Text width="xs" />
-                  </TabsTrigger>
-                  <TabsTrigger value="password">
-                    <Text width="sm" />
-                  </TabsTrigger>
-                </TabsList>
-                <TabsContent value="account" className="space-y-2">
-                  <Text width="full" color="muted" />
-                  <Text width="lg" color="muted" />
-                </TabsContent>
-                <TabsContent value="password" className="space-y-2">
-                  <Text width="full" color="muted" />
-                  <Text width="md" color="muted" />
-                </TabsContent>
-              </Tabs>
-            </ComponentPreview>
-
-            <ComponentPreview
-              name="text"
-              title="Text"
-              description="A wireframe text placeholder with animation and emphasis variants for rapid prototyping."
-            >
-              <div className="space-y-4">
+            {/* 40+ Components */}
+            <Card className="hover:border-primary transition-colors">
+              <CardContent className="flex h-full flex-col justify-center p-6">
                 <div className="space-y-2">
-                  <Text width="md" emphasis="primary" />
-                  <Text width="lg" emphasis="secondary" />
-                  <Text width="full" emphasis="tertiary" />
+                  <div className="text-4xl font-bold">40+</div>
+                  <h3 className="font-semibold">Components</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Complete wireframe library ready to use
+                  </p>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* 85% Code Reuse */}
+            <Card className="hover:border-primary transition-colors">
+              <CardContent className="flex h-full flex-col justify-center p-6">
                 <div className="space-y-2">
-                  <Text width="lg" animate="pulse" />
-                  <Text width="md" animate="shimmer" />
-                  <Text width="xl" animate="shimmer" />
+                  <div className="text-4xl font-bold">85%</div>
+                  <h3 className="font-semibold">Code Reuse</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Structure stays unchanged in production
+                  </p>
                 </div>
-              </div>
-            </ComponentPreview>
+              </CardContent>
+            </Card>
 
-            <ComponentPreview
-              name="textarea"
-              title="Textarea"
-              description="A multi-line text input field with auto-resizing support."
-            >
-              <Textarea variant="wireframe" skeletonLines={3} className="w-full" />
-            </ComponentPreview>
+            {/* TypeScript */}
+            <Card className="hover:border-primary transition-colors">
+              <CardContent className="flex h-full flex-col justify-center p-6">
+                <div className="space-y-2">
+                  <CheckIcon className="size-8 text-primary" />
+                  <h3 className="font-semibold">TypeScript First</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Full type safety and IntelliSense support
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
 
-            <ComponentPreview
-              name="toggle"
-              title="Toggle"
-              description="A two-state button that can be either on or off with multiple variants."
-              dependencies={['@radix-ui/react-toggle', 'class-variance-authority']}
-            >
-              <div className="flex gap-2">
-                <Toggle defaultPressed>
-                  <Text width="xs" />
-                </Toggle>
-                <Toggle variant="outline">
-                  <Text width="xs" />
-                </Toggle>
-              </div>
-            </ComponentPreview>
+            {/* Accessible */}
+            <Card className="hover:border-primary transition-colors">
+              <CardContent className="flex h-full flex-col justify-center p-6">
+                <div className="space-y-2">
+                  <CheckIcon className="size-8 text-primary" />
+                  <h3 className="font-semibold">Accessible</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Built on Radix UI primitives for accessibility
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
 
-            <ComponentPreview
-              name="tooltip"
-              title="Tooltip"
-              description="A popup that displays information related to an element when focused or hovered."
-              dependencies={['@radix-ui/react-tooltip']}
-            >
-              <TooltipWireframeExample />
-            </ComponentPreview>
-          </ComponentGridWrapper>
-        </main>
+            {/* Customizable */}
+            <Card className="hover:border-primary transition-colors">
+              <CardContent className="flex h-full flex-col justify-center p-6">
+                <div className="space-y-2">
+                  <CheckIcon className="size-8 text-primary" />
+                  <h3 className="font-semibold">Customizable</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Fully themeable with CSS variables
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="flex flex-col items-center gap-6 py-12 sm:py-16">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Ready to start prototyping?
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Get started in minutes with our CLI
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button asChild size="lg">
+              <Link href="/docs">Get Started</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link href="/components">Browse Components</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="mt-auto pt-12">
+          <Separator className="mb-8" />
+          <div className="grid gap-8 pb-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold">Product</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link href="/components" className="hover:text-foreground transition-colors">
+                    Components
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blocks" className="hover:text-foreground transition-colors">
+                    Blocks
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs" className="hover:text-foreground transition-colors">
+                    Documentation
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold">Resources</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <Link href="/comparison" className="hover:text-foreground transition-colors">
+                    Comparison
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/migration" className="hover:text-foreground transition-colors">
+                    Migration Guide
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold">Community</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a
+                    href="https://github.com/aguiarsc/wireframe-ui"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    GitHub
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-sm font-semibold">Legal</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a
+                    href="https://github.com/aguiarsc/wireframe-ui/blob/main/LICENSE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-foreground transition-colors"
+                  >
+                    MIT License
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <Separator className="mb-6" />
+
+          <div className="flex flex-col items-center justify-between gap-4 pb-8 sm:flex-row">
+            <p className="text-muted-foreground text-sm">
+              Built by{' '}
+              <a
+                href="https://github.com/aguiarsc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground font-medium transition-colors"
+              >
+                Aguiar
+              </a>
+              . The source code is available on{' '}
+              <a
+                href="https://github.com/aguiarsc/wireframe-ui"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground font-medium transition-colors"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          </div>
+        </footer>
       </div>
     </>
   )
