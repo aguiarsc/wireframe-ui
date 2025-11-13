@@ -163,29 +163,24 @@ TextComponent.displayName = 'Text'
 const TextHeading = React.forwardRef<HTMLSpanElement, Omit<TextProps, 'size' | 'width'>>(
   (props, ref) => <TextComponent ref={ref} size="xl" width="lg" {...props} />
 )
-TextHeading.displayName = 'Text.Heading'
+TextHeading.displayName = 'TextHeading'
 
 const TextParagraph = React.forwardRef<HTMLSpanElement, Omit<TextProps, 'size' | 'width'>>(
   (props, ref) => <TextComponent ref={ref} size="base" width="full" {...props} />
 )
-TextParagraph.displayName = 'Text.Paragraph'
+TextParagraph.displayName = 'TextParagraph'
 
 const TextCaption = React.forwardRef<HTMLSpanElement, Omit<TextProps, 'size' | 'color'>>(
   (props, ref) => <TextComponent ref={ref} size="sm" color="muted" {...props} />
 )
-TextCaption.displayName = 'Text.Caption'
+TextCaption.displayName = 'TextCaption'
 
 const TextLabel = React.forwardRef<HTMLSpanElement, Omit<TextProps, 'size' | 'width'>>(
   (props, ref) => <TextComponent ref={ref} size="sm" width="sm" {...props} />
 )
-TextLabel.displayName = 'Text.Label'
+TextLabel.displayName = 'TextLabel'
 
-// Export main component with compound components
-export const Text = Object.assign(TextComponent, {
-  Heading: TextHeading,
-  Paragraph: TextParagraph,
-  Caption: TextCaption,
-  Label: TextLabel,
-})
+// Export as named exports (consistent with other components)
+const Text = TextComponent
 
-export { textVariants }
+export { Text, TextHeading, TextParagraph, TextCaption, TextLabel, textVariants }
