@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { SiteNav } from '@/components/site-nav'
 import {
@@ -18,6 +19,38 @@ import {
   DocumentTextIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline'
+
+// Code Highlight Component
+function CodeBlock({ code, lang = 'bash' }: { code: string; lang?: string }) {
+  const [highlightedCode, setHighlightedCode] = useState<string>('')
+
+  useEffect(() => {
+    const highlightCode = async () => {
+      const { codeToHtml } = await import('shiki')
+      const html = await codeToHtml(code, {
+        lang,
+        theme: 'catppuccin-macchiato',
+      })
+      setHighlightedCode(html)
+    }
+    highlightCode()
+  }, [code, lang])
+
+  return (
+    <div className="bg-muted/50 overflow-hidden rounded-lg border">
+      {highlightedCode ? (
+        <div
+          className="text-xs [&_pre]:m-0 [&_pre]:overflow-x-auto [&_pre]:bg-transparent! [&_pre]:p-4"
+          dangerouslySetInnerHTML={{ __html: highlightedCode }}
+        />
+      ) : (
+        <pre className="overflow-x-auto p-4">
+          <code className="text-xs">{code}</code>
+        </pre>
+      )}
+    </div>
+  )
+}
 
 export default function DocsPage() {
   return (
@@ -62,15 +95,11 @@ export default function DocsPage() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <p className="text-sm font-medium">1. Initialize shadcn/ui (if not already done)</p>
-                  <div className="bg-muted rounded-lg p-4 font-mono text-sm">
-                    npx shadcn@latest init
-                  </div>
+                  <CodeBlock code="npx shadcn@latest init" />
                 </div>
                 <div className="space-y-2">
                   <p className="text-sm font-medium">2. Add wireframe components</p>
-                  <div className="bg-muted rounded-lg p-4 font-mono text-sm">
-                    npx shadcn@latest add https://wireframe-ui.com/r/text.json
-                  </div>
+                  <CodeBlock code="npx shadcn@latest add https://wireframe-ui.com/r/text.json" />
                   <p className="text-xs text-muted-foreground">
                     Replace &quot;text&quot; with any component name from the registry
                   </p>
@@ -83,10 +112,7 @@ export default function DocsPage() {
                 <CardTitle className="text-lg">Install Multiple Components</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <div className="bg-muted rounded-lg p-4 font-mono text-sm">
-                  npx shadcn@latest add https://wireframe-ui.com/r/text.json
-                  https://wireframe-ui.com/r/button.json https://wireframe-ui.com/r/card.json
-                </div>
+                <CodeBlock code="npx shadcn@latest add https://wireframe-ui.com/r/text.json https://wireframe-ui.com/r/button.json https://wireframe-ui.com/r/card.json" />
               </CardContent>
             </Card>
 
@@ -98,9 +124,7 @@ export default function DocsPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2">
-                <div className="bg-muted rounded-lg p-4 font-mono text-sm">
-                  npx shadcn@latest add https://wireframe-ui.com/r/blocks/login-form.json
-                </div>
+                <CodeBlock code="npx shadcn@latest add https://wireframe-ui.com/r/blocks/login-form.json" />
                 <Button asChild variant="link" className="p-0 h-auto">
                   <Link href="/blocks">View all available blocks →</Link>
                 </Button>
@@ -129,34 +153,37 @@ export default function DocsPage() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <p className="text-sm font-medium">1. Import wireframe components</p>
-                  <div className="bg-muted rounded-lg p-4 font-mono text-sm overflow-x-auto">
-                    {`import { Text } from '@/components/ui/text'
+                  <CodeBlock
+                    lang="tsx"
+                    code={`import { Text } from '@/components/ui/text'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
-                  </div>
+                  />
                 </div>
                 <div className="space-y-2">
                   <p className="text-sm font-medium">2. Use in your components</p>
-                  <div className="bg-muted rounded-lg p-4 font-mono text-sm overflow-x-auto">
-                    {`<Card>
+                  <CodeBlock
+                    lang="tsx"
+                    code={`<Card>
   <CardHeader>
     <CardTitle>
       <Text width="md" />
     </CardTitle>
   </CardHeader>
 </Card>`}
-                  </div>
+                  />
                 </div>
                 <div className="space-y-2">
                   <p className="text-sm font-medium">3. Migrate to production</p>
-                  <div className="bg-muted rounded-lg p-4 font-mono text-sm overflow-x-auto">
-                    {`<Card>
+                  <CodeBlock
+                    lang="tsx"
+                    code={`<Card>
   <CardHeader>
     <CardTitle>
       {title}
     </CardTitle>
   </CardHeader>
 </Card>`}
-                  </div>
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -286,9 +313,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
                   <p className="text-sm text-muted-foreground">
                     All components are available at:
                   </p>
-                  <div className="bg-muted rounded-lg p-3 font-mono text-xs">
-                    https://wireframe-ui.com/r/[component-name].json
-                  </div>
+                  <CodeBlock code="https://wireframe-ui.com/r/[component-name].json" />
                 </CardContent>
               </Card>
 

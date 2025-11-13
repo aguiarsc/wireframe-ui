@@ -123,6 +123,12 @@ import {
   InputGroupInput,
   InputGroupText,
 } from '@/registry/new-york/ui/input-group'
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldLabel,
+} from '@/registry/new-york/ui/file'
 
 const COMPONENTS = [
   {
@@ -208,6 +214,16 @@ const COMPONENTS = [
     name: 'empty',
     title: 'Empty State',
     description: 'An empty state component with wireframe helpers.',
+  },
+  {
+    name: 'field',
+    title: 'Field',
+    description: 'Form field components with wireframe helpers for labels and descriptions.',
+  },
+  {
+    name: 'form',
+    title: 'Form',
+    description: 'Form components built on react-hook-form for managing form state.',
   },
   {
     name: 'heading',
@@ -372,6 +388,14 @@ export default function Home() {
               title="Accordion"
               description="A vertically stacked set of interactive headings that each reveal a section of content."
               dependencies={['@radix-ui/react-accordion']}
+              apiProps={[
+                { name: 'type', type: '"single" | "multiple"', description: 'Determines whether one or multiple items can be opened at the same time.' },
+                { name: 'collapsible', type: 'boolean', description: 'When type is "single", allows closing content when clicking trigger for an open item.' },
+                { name: 'defaultValue', type: 'string | string[]', description: 'The value of the item to expand when initially rendered.' },
+                { name: 'value', type: 'string | string[]', description: 'The controlled value of the item to expand.' },
+                { name: 'onValueChange', type: '(value: string | string[]) => void', description: 'Event handler called when the expanded state changes.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the accordion.' },
+              ]}
             >
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
@@ -418,6 +442,9 @@ export default function Home() {
               title="Alert"
               description="Displays a callout for user attention with optional icon and variant styles."
               dependencies={['class-variance-authority']}
+              apiProps={[
+                { name: 'variant', type: '"default" | "destructive"', description: 'The visual style variant of the alert.' },
+              ]}
             >
               <AlertWireframe />
             </ComponentPreview>
@@ -427,6 +454,10 @@ export default function Home() {
               title="Avatar"
               description="An image element with a fallback for representing the user."
               dependencies={['@radix-ui/react-avatar']}
+              apiProps={[
+                { name: 'src', type: 'string', description: 'The source URL of the avatar image.' },
+                { name: 'alt', type: 'string', description: 'Alternative text for the avatar image.' },
+              ]}
             >
               <Avatar>
                 <AvatarFallback />
@@ -438,6 +469,10 @@ export default function Home() {
               title="Badge"
               description="Displays a badge or a component that looks like a badge with multiple variants."
               dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
+              apiProps={[
+                { name: 'variant', type: '"default" | "secondary" | "outline" | "destructive"', description: 'The visual style variant of the badge.' },
+                { name: 'asChild', type: 'boolean', description: 'Change the default rendered element for the one passed as a child.' },
+              ]}
             >
               <div className="flex flex-wrap gap-2">
                 <BadgeWireframe />
@@ -451,6 +486,9 @@ export default function Home() {
               title="Breadcrumb"
               description="Displays the path to the current resource using a hierarchy of links."
               dependencies={['@radix-ui/react-slot']}
+              apiProps={[
+                { name: 'asChild', type: 'boolean', description: 'For BreadcrumbLink: Change the default rendered element for the one passed as a child.' },
+              ]}
             >
               <Breadcrumb>
                 <BreadcrumbList>
@@ -480,6 +518,12 @@ export default function Home() {
               title="Button"
               description="Displays a button or a component that looks like a button with multiple variants and sizes."
               dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
+              apiProps={[
+                { name: 'variant', type: '"default" | "outline" | "ghost" | "destructive" | "secondary" | "link"', description: 'The visual style variant of the button.' },
+                { name: 'size', type: '"default" | "sm" | "lg" | "icon"', description: 'The size of the button.' },
+                { name: 'asChild', type: 'boolean', description: 'Change the default rendered element for the one passed as a child.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the button.' },
+              ]}
             >
               <div className="flex flex-wrap gap-2">
                 <Button>
@@ -502,6 +546,9 @@ export default function Home() {
               title="Button Group"
               description="A button group component with wireframe helper for text labels."
               dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
+              apiProps={[
+                { name: 'orientation', type: '"horizontal" | "vertical"', description: 'The orientation of the button group.' },
+              ]}
             >
               <div className="space-y-4">
                 <ButtonGroup>
@@ -528,6 +575,9 @@ export default function Home() {
               name="card"
               title="Card"
               description="A container for displaying content with header, footer, and action sections."
+              apiProps={[
+                { name: 'wireframe', type: '"compact" | "detailed" | "none"', description: 'Controls the spacing and padding of the card and its children.' },
+              ]}
             >
               <Card className="w-full">
                 <CardHeader>
@@ -552,6 +602,12 @@ export default function Home() {
               title="Carousel"
               description="A carousel component with wireframe helper for slide content."
               dependencies={['embla-carousel-react']}
+              apiProps={[
+                { name: 'orientation', type: '"horizontal" | "vertical"', description: 'The orientation of the carousel.' },
+                { name: 'opts', type: 'CarouselOptions', description: 'Options to pass to the Embla Carousel instance.' },
+                { name: 'plugins', type: 'CarouselPlugin[]', description: 'Plugins to pass to the Embla Carousel instance.' },
+                { name: 'setApi', type: '(api: CarouselApi) => void', description: 'Callback to get the Embla Carousel API instance.' },
+              ]}
             >
               <Carousel className="w-full max-w-xs">
                 <CarouselContent>
@@ -587,6 +643,10 @@ export default function Home() {
               title="Chart"
               description="Chart components with wireframe placeholder helper."
               dependencies={['recharts']}
+              apiProps={[
+                { name: 'config', type: 'ChartConfig', description: 'Configuration object for chart colors and labels.' },
+                { name: 'id', type: 'string', description: 'Optional unique identifier for the chart.' },
+              ]}
             >
               <ChartWireframe variant="bar" />
             </ComponentPreview>
@@ -596,6 +656,12 @@ export default function Home() {
               title="Checkbox"
               description="A control that allows the user to toggle between checked and not checked."
               dependencies={['@radix-ui/react-checkbox']}
+              apiProps={[
+                { name: 'checked', type: 'boolean | "indeterminate"', description: 'The controlled checked state of the checkbox.' },
+                { name: 'defaultChecked', type: 'boolean', description: 'The checked state when initially rendered.' },
+                { name: 'onCheckedChange', type: '(checked: boolean) => void', description: 'Event handler called when the checked state changes.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the checkbox.' },
+              ]}
             >
               <div className="flex flex-col divide-y">
                 <div className="flex items-center space-x-3 pb-3">
@@ -621,6 +687,12 @@ export default function Home() {
               title="Collapsible"
               description="An interactive component which expands/collapses a panel."
               dependencies={['@radix-ui/react-collapsible']}
+              apiProps={[
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the collapsible.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the collapsible.' },
+              ]}
             >
               <CollapsibleWireframeExample />
             </ComponentPreview>
@@ -630,6 +702,10 @@ export default function Home() {
               title="Context Menu"
               description="A context menu component with wireframe helpers for menu items."
               dependencies={['@radix-ui/react-context-menu']}
+              apiProps={[
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'modal', type: 'boolean', description: 'Whether the context menu is modal.' },
+              ]}
             >
               <ContextMenu>
                 <ContextMenuTrigger asChild>
@@ -650,6 +726,12 @@ export default function Home() {
               title="Dialog"
               description="A modal dialog that interrupts the user with important content and expects a response."
               dependencies={['@radix-ui/react-dialog']}
+              apiProps={[
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the dialog.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'modal', type: 'boolean', description: 'Whether the dialog is modal (blocks interaction with the rest of the page).' },
+              ]}
             >
               <DialogWireframeExample />
             </ComponentPreview>
@@ -659,6 +741,12 @@ export default function Home() {
               title="Drawer"
               description="A panel that slides out from the edge of the screen with support for multiple directions."
               dependencies={['vaul']}
+              apiProps={[
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the drawer.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'direction', type: '"top" | "right" | "bottom" | "left"', description: 'The direction from which the drawer slides out.' },
+              ]}
             >
               <DrawerWireframeExample />
             </ComponentPreview>
@@ -668,6 +756,9 @@ export default function Home() {
               title="Empty State"
               description="An empty state component with wireframe helpers."
               dependencies={['class-variance-authority']}
+              apiProps={[
+                { name: 'variant', type: '"default" | "icon"', description: 'The visual style variant for EmptyMedia component.' },
+              ]}
             >
               <Empty className="border">
                 <EmptyHeader>
@@ -687,9 +778,75 @@ export default function Home() {
             </ComponentPreview>
 
             <ComponentPreview
+              name="field"
+              title="Field"
+              description="Form field components with wireframe helpers for labels and descriptions."
+              dependencies={['class-variance-authority']}
+              apiProps={[
+                { name: 'orientation', type: '"vertical" | "horizontal" | "responsive"', description: 'The layout orientation of the field.' },
+              ]}
+            >
+              <div className="space-y-4">
+                <Field orientation="vertical">
+                  <FieldLabel>
+                    <Text width="sm" size="sm" />
+                  </FieldLabel>
+                  <FieldContent>
+                    <Input variant="wireframe" />
+                    <FieldDescription>
+                      <Text width="lg" size="sm" color="muted" />
+                    </FieldDescription>
+                  </FieldContent>
+                </Field>
+                <Field orientation="horizontal">
+                  <FieldLabel>
+                    <Text width="sm" size="sm" />
+                  </FieldLabel>
+                  <FieldContent>
+                    <Input variant="wireframe" />
+                  </FieldContent>
+                </Field>
+              </div>
+            </ComponentPreview>
+
+            <ComponentPreview
+              name="form"
+              title="Form"
+              description="Form components built on react-hook-form for managing form state."
+              dependencies={['react-hook-form', '@radix-ui/react-label', '@radix-ui/react-slot']}
+              apiProps={[
+                { name: 'name', type: 'string', description: 'For FormField: The name of the field in the form.' },
+                { name: 'control', type: 'Control', description: 'For FormField: The control object from useForm hook.' },
+                { name: 'render', type: '(props) => ReactElement', description: 'For FormField: Render function that receives field props.' },
+              ]}
+            >
+              <div className="space-y-4 rounded-md border p-4">
+                <div className="space-y-2">
+                  <Label>
+                    <Text width="sm" size="sm" />
+                  </Label>
+                  <Input variant="wireframe" />
+                  <p className="text-muted-foreground text-sm">
+                    <Text width="lg" size="sm" color="muted" />
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <Label>
+                    <Text width="sm" size="sm" />
+                  </Label>
+                  <Input variant="wireframe" />
+                </div>
+              </div>
+            </ComponentPreview>
+
+            <ComponentPreview
               name="heading"
               title="Heading"
               description="A composition component that renders appropriately sized Text based on heading level (1-6)."
+              apiProps={[
+                { name: 'level', type: '1 | 2 | 3 | 4 | 5 | 6', description: 'The heading level which determines the size and semantic tag.' },
+                { name: 'as', type: '"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div"', description: 'Override the default semantic heading tag.' },
+              ]}
             >
               <div className="space-y-4">
                 <Heading level={1} />
@@ -703,6 +860,13 @@ export default function Home() {
               title="Hover Card"
               description="For sighted users to preview content available behind a link."
               dependencies={['@radix-ui/react-hover-card']}
+              apiProps={[
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the hover card.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'openDelay', type: 'number', description: 'The duration from when the mouse enters the trigger until the hover card opens.' },
+                { name: 'closeDelay', type: 'number', description: 'The duration from when the mouse leaves the trigger until the hover card closes.' },
+              ]}
             >
               <HoverCardWireframeExample />
             </ComponentPreview>
@@ -711,6 +875,14 @@ export default function Home() {
               name="input"
               title="Input"
               description="A text input field with support for various types and validation states."
+              apiProps={[
+                { name: 'type', type: 'string', description: 'The type of input (text, email, password, etc.).' },
+                { name: 'placeholder', type: 'string', description: 'Placeholder text for the input.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the input.' },
+                { name: 'variant', type: '"default" | "wireframe"', description: 'The visual style variant of the input.' },
+                { name: 'skeletonMaxLength', type: 'number', description: 'Maximum character length for skeleton mode in wireframe variant.' },
+                { name: 'skeletonIcon', type: 'React.ReactNode', description: 'Custom icon to display in wireframe variant.' },
+              ]}
             >
               <Input variant="wireframe" className="w-full" />
             </ComponentPreview>
@@ -720,6 +892,9 @@ export default function Home() {
               title="Input Group"
               description="An input group component for combining inputs with addons."
               dependencies={['class-variance-authority']}
+              apiProps={[
+                { name: 'align', type: '"inline-start" | "inline-end" | "block-start" | "block-end"', description: 'For InputGroupAddon: The alignment of the addon relative to the input.' },
+              ]}
             >
               <div className="space-y-4">
                 <InputGroup>
@@ -741,6 +916,11 @@ export default function Home() {
               title="Item"
               description="A flexible item component for lists with wireframe helpers."
               dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
+              apiProps={[
+                { name: 'variant', type: '"default" | "outline" | "muted"', description: 'The visual style variant of the item.' },
+                { name: 'size', type: '"default" | "sm"', description: 'The size of the item.' },
+                { name: 'asChild', type: 'boolean', description: 'Change the default rendered element for the one passed as a child.' },
+              ]}
             >
               <ItemGroup className="w-full">
                 <Item>
@@ -790,6 +970,9 @@ export default function Home() {
               title="Label"
               description="Renders an accessible label associated with form controls."
               dependencies={['@radix-ui/react-label']}
+              apiProps={[
+                { name: 'htmlFor', type: 'string', description: 'The id of the form control this label is associated with.' },
+              ]}
             >
               <div className="space-y-2">
                 <Label htmlFor="email">
@@ -803,6 +986,13 @@ export default function Home() {
               name="list-group"
               title="ListGroup"
               description="A composition component that renders list items with Text placeholders for wireframe prototyping."
+              apiProps={[
+                { name: 'items', type: 'number', description: 'Number of list items to render.' },
+                { name: 'variant', type: '"bullet" | "number" | "none"', description: 'The style of list markers.' },
+                { name: 'size', type: '"xs" | "sm" | "base" | "lg" | "xl"', description: 'The size of the text in each item.' },
+                { name: 'itemWidth', type: '"xs" | "sm" | "md" | "lg" | "xl" | "full"', description: 'The width of text in each item.' },
+                { name: 'spacing', type: '"tight" | "normal" | "relaxed"', description: 'The spacing between list items.' },
+              ]}
             >
               <div className="space-y-4">
                 <ListGroup items={3} variant="bullet" />
@@ -814,6 +1004,15 @@ export default function Home() {
               name="media"
               title="Media"
               description="A container for displaying images, videos, and audio with loading states and fallback placeholders."
+              apiProps={[
+                { name: 'src', type: 'string', description: 'The source URL of the media.' },
+                { name: 'alt', type: 'string', description: 'Alternative text for the media.' },
+                { name: 'type', type: '"image" | "video" | "audio"', description: 'The type of media to display.' },
+                { name: 'aspectRatio', type: '"square" | "video" | "portrait" | "auto"', description: 'The aspect ratio of the media container.' },
+                { name: 'loading', type: 'boolean', description: 'Whether the media is in a loading state.' },
+                { name: 'onLoad', type: '() => void', description: 'Callback when media finishes loading.' },
+                { name: 'onError', type: '() => void', description: 'Callback when media fails to load.' },
+              ]}
             >
               <div className="grid grid-cols-3 gap-4">
                 <Media type="image" className="h-32 w-full" />
@@ -827,6 +1026,11 @@ export default function Home() {
               title="Menubar"
               description="A visually persistent menu common in desktop applications with nested menus and items."
               dependencies={['@radix-ui/react-menubar']}
+              apiProps={[
+                { name: 'value', type: 'string', description: 'The controlled value of the menu that is currently open.' },
+                { name: 'defaultValue', type: 'string', description: 'The value of the menu that should be open when initially rendered.' },
+                { name: 'onValueChange', type: '(value: string) => void', description: 'Event handler called when the value changes.' },
+              ]}
             >
               <MenubarWireframeExample />
             </ComponentPreview>
@@ -836,6 +1040,10 @@ export default function Home() {
               title="Pagination"
               description="Pagination with page navigation, next and previous links."
               dependencies={[]}
+              apiProps={[
+                { name: 'isActive', type: 'boolean', description: 'For PaginationLink: Whether the page link is currently active.' },
+                { name: 'size', type: '"default" | "sm" | "lg" | "icon"', description: 'For PaginationLink: The size of the pagination link.' },
+              ]}
             >
               <Pagination>
                 <PaginationContent>
@@ -875,6 +1083,13 @@ export default function Home() {
               name="paragraph"
               title="Paragraph"
               description="A composition component that renders multiple Text lines to simulate paragraph content."
+              apiProps={[
+                { name: 'lines', type: 'number', description: 'Number of text lines to render.' },
+                { name: 'lastLineWidth', type: '"xs" | "sm" | "md" | "lg" | "xl" | "full"', description: 'Width of the last line.' },
+                { name: 'size', type: '"xs" | "sm" | "base" | "lg" | "xl"', description: 'The size of the text lines.' },
+                { name: 'color', type: '"default" | "muted" | "subtle" | "primary" | "secondary" | "accent"', description: 'The color of the text lines.' },
+                { name: 'spacing', type: '"tight" | "normal" | "relaxed"', description: 'The spacing between lines.' },
+              ]}
             >
               <div className="space-y-4">
                 <Paragraph lines={3} />
@@ -886,6 +1101,10 @@ export default function Home() {
               name="section"
               title="Section"
               description="A composition component with preset variants for common layout patterns (hero, content-two-column, feature-grid)."
+              apiProps={[
+                { name: 'variant', type: '"hero" | "content-two-column" | "feature-grid" | "custom"', description: 'The preset layout variant to use.' },
+                { name: 'spacing', type: '"tight" | "normal" | "relaxed"', description: 'The spacing between elements in the section.' },
+              ]}
             >
               <div className="space-y-8">
                 <Section variant="hero" spacing="tight" />
@@ -897,6 +1116,15 @@ export default function Home() {
               title="Select"
               description="Displays a list of options for the user to pick from with keyboard navigation support."
               dependencies={['@radix-ui/react-select']}
+              apiProps={[
+                { name: 'value', type: 'string', description: 'The controlled value of the select.' },
+                { name: 'defaultValue', type: 'string', description: 'The value when initially rendered.' },
+                { name: 'onValueChange', type: '(value: string) => void', description: 'Event handler called when the value changes.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the select.' },
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the select.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+              ]}
             >
               <Select>
                 <SelectTrigger className="w-[180px]">
@@ -923,6 +1151,10 @@ export default function Home() {
               title="Separator"
               description="Visually or semantically separates content with horizontal or vertical orientation."
               dependencies={['@radix-ui/react-separator']}
+              apiProps={[
+                { name: 'orientation', type: '"horizontal" | "vertical"', description: 'The orientation of the separator.' },
+                { name: 'decorative', type: 'boolean', description: 'Whether the separator is purely decorative (not announced by screen readers).' },
+              ]}
             >
               <div className="w-full space-y-2">
                 <Text width="xs" />
@@ -936,6 +1168,12 @@ export default function Home() {
               title="Sheet"
               description="A slide-out panel component with wireframe helpers."
               dependencies={['@radix-ui/react-dialog']}
+              apiProps={[
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the sheet.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'side', type: '"top" | "right" | "bottom" | "left"', description: 'The side from which the sheet slides out.' },
+              ]}
             >
               <Sheet>
                 <SheetTrigger asChild>
@@ -962,6 +1200,14 @@ export default function Home() {
               title="Sidebar"
               description="A composable sidebar component with wireframe helpers for navigation."
               dependencies={['@radix-ui/react-slot', 'class-variance-authority']}
+              apiProps={[
+                { name: 'defaultOpen', type: 'boolean', description: 'For SidebarProvider: The open state when initially rendered.' },
+                { name: 'open', type: 'boolean', description: 'For SidebarProvider: The controlled open state of the sidebar.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'For SidebarProvider: Event handler called when the open state changes.' },
+                { name: 'side', type: '"left" | "right"', description: 'For Sidebar: The side where the sidebar appears.' },
+                { name: 'variant', type: '"sidebar" | "floating" | "inset"', description: 'For Sidebar: The visual variant of the sidebar.' },
+                { name: 'collapsible', type: '"offcanvas" | "icon" | "none"', description: 'For Sidebar: The collapsible behavior of the sidebar.' },
+              ]}
             >
               <div className="border-input flex h-80 w-full overflow-hidden rounded-lg border">
                 <div className="bg-sidebar text-sidebar-foreground flex w-64 flex-col border-r">
@@ -1018,6 +1264,15 @@ export default function Home() {
               title="Slider"
               description="An input where the user selects a value from within a given range."
               dependencies={['@radix-ui/react-slider']}
+              apiProps={[
+                { name: 'defaultValue', type: 'number[]', description: 'The value of the slider when initially rendered.' },
+                { name: 'value', type: 'number[]', description: 'The controlled value of the slider.' },
+                { name: 'onValueChange', type: '(value: number[]) => void', description: 'Event handler called when the value changes.' },
+                { name: 'min', type: 'number', description: 'The minimum value of the slider.' },
+                { name: 'max', type: 'number', description: 'The maximum value of the slider.' },
+                { name: 'step', type: 'number', description: 'The stepping interval.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the slider.' },
+              ]}
             >
               <Slider defaultValue={[50]} max={100} step={1} className="w-full" />
             </ComponentPreview>
@@ -1027,6 +1282,12 @@ export default function Home() {
               title="Sonner"
               description="An opinionated toast component for React with beautiful animations and icons."
               dependencies={['sonner', 'next-themes']}
+              apiProps={[
+                { name: 'position', type: '"top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"', description: 'The position where toasts will appear.' },
+                { name: 'expand', type: 'boolean', description: 'Whether toasts expand on hover.' },
+                { name: 'richColors', type: 'boolean', description: 'Whether to use rich colors for different toast types.' },
+                { name: 'closeButton', type: 'boolean', description: 'Whether to show a close button on toasts.' },
+              ]}
             >
               <SonnerWireframeExample />
             </ComponentPreview>
@@ -1035,6 +1296,12 @@ export default function Home() {
               name="stack"
               title="Stack"
               description="A layout primitive for arranging wireframe elements with configurable spacing and direction."
+              apiProps={[
+                { name: 'direction', type: '"vertical" | "horizontal"', description: 'The direction to stack children.' },
+                { name: 'spacing', type: '"xs" | "sm" | "md" | "lg" | "xl"', description: 'The spacing between children.' },
+                { name: 'align', type: '"start" | "center" | "end" | "stretch"', description: 'How children are aligned on the cross axis.' },
+                { name: 'justify', type: '"start" | "center" | "end" | "between" | "around"', description: 'How children are justified on the main axis.' },
+              ]}
             >
               <div className="space-y-4">
                 <Stack direction="vertical" spacing="md">
@@ -1055,6 +1322,12 @@ export default function Home() {
               title="Switch"
               description="A control that allows the user to toggle between checked and unchecked states."
               dependencies={['@radix-ui/react-switch']}
+              apiProps={[
+                { name: 'checked', type: 'boolean', description: 'The controlled checked state of the switch.' },
+                { name: 'defaultChecked', type: 'boolean', description: 'The checked state when initially rendered.' },
+                { name: 'onCheckedChange', type: '(checked: boolean) => void', description: 'Event handler called when the checked state changes.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the switch.' },
+              ]}
             >
               <div className="flex items-center space-x-2">
                 <Switch id="airplane-mode" defaultChecked />
@@ -1068,6 +1341,9 @@ export default function Home() {
               name="table"
               title="Table"
               description="A data table component with wireframe helpers for headers and cells."
+              apiProps={[
+                { name: 'className', type: 'string', description: 'Additional CSS classes for styling table elements.' },
+              ]}
             >
               <Table>
                 <TableHeader>
@@ -1102,6 +1378,11 @@ export default function Home() {
               title="Tabs"
               description="A set of layered sections of content with tab triggers for switching between them."
               dependencies={['@radix-ui/react-tabs']}
+              apiProps={[
+                { name: 'defaultValue', type: 'string', description: 'The value of the tab that should be active when initially rendered.' },
+                { name: 'value', type: 'string', description: 'The controlled value of the active tab.' },
+                { name: 'onValueChange', type: '(value: string) => void', description: 'Event handler called when the active tab changes.' },
+              ]}
             >
               <Tabs defaultValue="account" className="w-full">
                 <TabsList className="grid w-full grid-cols-2">
@@ -1127,6 +1408,14 @@ export default function Home() {
               name="text"
               title="Text"
               description="A wireframe text placeholder with animation and emphasis variants for rapid prototyping."
+              apiProps={[
+                { name: 'size', type: '"xs" | "sm" | "base" | "lg" | "xl"', description: 'The height/size of the text placeholder.' },
+                { name: 'width', type: '"xs" | "sm" | "md" | "lg" | "xl" | "full"', description: 'The width of the text placeholder.' },
+                { name: 'color', type: '"default" | "muted" | "subtle" | "primary" | "secondary" | "accent"', description: 'The color of the text placeholder.' },
+                { name: 'animate', type: '"none" | "pulse" | "shimmer" | "typing"', description: 'The animation style for the text placeholder.' },
+                { name: 'emphasis', type: '"primary" | "secondary" | "tertiary" | "subtle"', description: 'The emphasis level (overrides color).' },
+                { name: 'truncate', type: 'boolean', description: 'Whether to truncate the text with max-width.' },
+              ]}
             >
               <div className="space-y-4">
                 <div className="space-y-2">
@@ -1146,6 +1435,13 @@ export default function Home() {
               name="textarea"
               title="Textarea"
               description="A multi-line text input field with auto-resizing support."
+              apiProps={[
+                { name: 'placeholder', type: 'string', description: 'Placeholder text for the textarea.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the textarea.' },
+                { name: 'variant', type: '"default" | "wireframe"', description: 'The visual style variant of the textarea.' },
+                { name: 'skeletonLines', type: 'number', description: 'Number of skeleton lines to display in wireframe variant.' },
+                { name: 'skeletonMaxLength', type: 'number', description: 'Maximum character length for skeleton mode in wireframe variant.' },
+              ]}
             >
               <Textarea variant="wireframe" skeletonLines={3} className="w-full" />
             </ComponentPreview>
@@ -1155,6 +1451,14 @@ export default function Home() {
               title="Toggle"
               description="A two-state button that can be either on or off with multiple variants."
               dependencies={['@radix-ui/react-toggle', 'class-variance-authority']}
+              apiProps={[
+                { name: 'pressed', type: 'boolean', description: 'The controlled pressed state of the toggle.' },
+                { name: 'defaultPressed', type: 'boolean', description: 'The pressed state when initially rendered.' },
+                { name: 'onPressedChange', type: '(pressed: boolean) => void', description: 'Event handler called when the pressed state changes.' },
+                { name: 'variant', type: '"default" | "outline"', description: 'The visual style variant of the toggle.' },
+                { name: 'size', type: '"default" | "sm" | "lg"', description: 'The size of the toggle.' },
+                { name: 'disabled', type: 'boolean', description: 'When true, prevents the user from interacting with the toggle.' },
+              ]}
             >
               <div className="flex gap-2">
                 <Toggle defaultPressed>
@@ -1171,6 +1475,12 @@ export default function Home() {
               title="Tooltip"
               description="A popup that displays information related to an element when focused or hovered."
               dependencies={['@radix-ui/react-tooltip']}
+              apiProps={[
+                { name: 'open', type: 'boolean', description: 'The controlled open state of the tooltip.' },
+                { name: 'defaultOpen', type: 'boolean', description: 'The open state when initially rendered.' },
+                { name: 'onOpenChange', type: '(open: boolean) => void', description: 'Event handler called when the open state changes.' },
+                { name: 'delayDuration', type: 'number', description: 'The duration from when the mouse enters the trigger until the tooltip opens.' },
+              ]}
             >
               <TooltipWireframeExample />
             </ComponentPreview>

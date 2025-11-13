@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/registry/new-york/ui/card'
 import { Badge } from '@/registry/new-york/ui/badge'
 import { Separator } from '@/registry/new-york/ui/separator'
 import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { BorderBeam } from '@/components/border-beam'
 
 export default function LandingPage() {
   return (
@@ -39,8 +40,17 @@ export default function LandingPage() {
                 <ArrowRightIcon className="ml-2 size-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/docs">Get Started</Link>
+            <Button asChild variant="outline" size="lg" className="relative overflow-hidden">
+              <Link href="/docs">
+                Get Started
+                <BorderBeam
+                  size={60}
+                  duration={6}
+                  initialOffset={0}
+                  className="from-transparent via-white to-transparent"
+                  borderWidth={1}
+                />
+              </Link>
             </Button>
           </div>
         </section>
@@ -108,7 +118,7 @@ export default function LandingPage() {
         <section className="py-12 sm:py-16">
           <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {/* Large Feature - 100% Free */}
-            <Card className="sm:col-span-2 lg:col-span-2 lg:row-span-2 border-primary/50">
+            <Card className="relative sm:col-span-2 lg:col-span-2 lg:row-span-2 border-primary/50 overflow-hidden">
               <CardContent className="flex h-full flex-col justify-center p-8 sm:p-12">
                 <div className="space-y-4">
                   <div className="text-6xl font-bold sm:text-7xl lg:text-8xl">100%</div>
@@ -120,6 +130,18 @@ export default function LandingPage() {
                   </div>
                 </div>
               </CardContent>
+              <BorderBeam
+                duration={6}
+                size={400}
+                className="from-transparent via-white to-transparent"
+              />
+              <BorderBeam
+                duration={6}
+                delay={3}
+                size={400}
+                borderWidth={2}
+                className="from-transparent via-white to-transparent"
+              />
             </Card>
 
             {/* 40+ Components */}
