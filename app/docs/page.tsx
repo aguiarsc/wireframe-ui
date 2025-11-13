@@ -73,7 +73,7 @@ export default function DocsPage() {
 
         <main className="flex flex-1 flex-col gap-12 max-w-4xl mx-auto">
           {/* Installation */}
-          <section className="space-y-6">
+          <section id="installation" className="space-y-6 scroll-mt-20">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold tracking-tight flex items-center gap-2">
                 <CommandLineIcon className="size-6" />
@@ -135,7 +135,7 @@ export default function DocsPage() {
           <Separator />
 
           {/* Quick Start */}
-          <section className="space-y-6">
+          <section id="quick-start" className="space-y-6 scroll-mt-20">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold tracking-tight flex items-center gap-2">
                 <SparklesIcon className="size-6" />
@@ -192,7 +192,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
           <Separator />
 
           {/* Resources */}
-          <section className="space-y-6">
+          <section id="resources" className="space-y-6 scroll-mt-20">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold tracking-tight flex items-center gap-2">
                 <DocumentTextIcon className="size-6" />
@@ -262,7 +262,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
           <Separator />
 
           {/* LLMs.txt */}
-          <section className="space-y-6">
+          <section id="ai-friendly-documentation" className="space-y-6 scroll-mt-20">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold tracking-tight">AI-Friendly Documentation</h2>
               <p className="text-muted-foreground">
@@ -302,7 +302,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
             </div>
 
             <div className="grid gap-4">
-              <Card>
+              <Card id="registry-structure" className="scroll-mt-20">
                 <CardHeader>
                   <CardTitle className="text-base">Registry Structure</CardTitle>
                   <CardDescription>
@@ -317,7 +317,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card id="typescript-support" className="scroll-mt-20">
                 <CardHeader>
                   <CardTitle className="text-base">TypeScript Support</CardTitle>
                   <CardDescription>
@@ -332,7 +332,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'`}
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card id="styling" className="scroll-mt-20">
                 <CardHeader>
                   <CardTitle className="text-base">Styling</CardTitle>
                   <CardDescription>

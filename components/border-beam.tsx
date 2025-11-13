@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, MotionStyle, Transition } from "motion/react"
+import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 
@@ -56,14 +57,24 @@ export const BorderBeam = ({
   size = 50,
   delay = 0,
   duration = 6,
-  colorFrom = "#ffaa40",
-  colorTo = "#9c40ff",
+  colorFrom,
   transition,
   style,
   reverse = false,
   initialOffset = 0,
   borderWidth = 1,
 }: BorderBeamProps) => {
+  const { theme } = useTheme()
+  
+  // Determine beam color based on theme
+  const getBeamColor = () => {
+    if (colorFrom) return colorFrom
+    // Default: white for dark mode, black for light mode
+    return theme === 'light' ? '#000000' : '#ffffff'
+  }
+  
+  const beamColor = getBeamColor()
+  
   return (
     <div
       className="pointer-events-none absolute inset-0 rounded-[inherit] border-(length:--border-beam-width) border-transparent [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)] [mask-composite:intersect] [mask-clip:padding-box,border-box]"
@@ -76,15 +87,16 @@ export const BorderBeam = ({
       <motion.div
         className={cn(
           "absolute aspect-square",
-          "bg-gradient-to-l from-[var(--color-from)] via-[var(--color-to)] to-transparent",
+          !colorFrom && "bg-gradient-to-l from-transparent via-black to-transparent dark:via-white",
           className
         )}
         style={
           {
             width: size,
             offsetPath: `rect(0 auto auto 0 round ${size}px)`,
-            "--color-from": colorFrom,
-            "--color-to": colorTo,
+            ...(colorFrom && {
+              background: `linear-gradient(to left, transparent, ${beamColor}, transparent)`,
+            }),
             ...style,
           } as MotionStyle
         }

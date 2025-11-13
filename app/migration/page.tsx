@@ -65,7 +65,7 @@ export default function MigrationPage() {
         </div>
 
         {/* Quick Reference */}
-        <section className="space-y-4 sm:space-y-6">
+        <section id="quick-reference" className="space-y-4 sm:space-y-6 scroll-mt-20">
           <div className="space-y-2">
             <h2 className="text-xl font-bold sm:text-2xl">Quick Reference</h2>
             <p className="text-muted-foreground text-sm sm:text-base">
@@ -122,7 +122,7 @@ export default function MigrationPage() {
         </section>
 
         {/* Real-World Example */}
-        <section className="space-y-4 sm:space-y-6">
+        <section id="real-world-example" className="space-y-4 sm:space-y-6 scroll-mt-20">
           <div className="space-y-2">
             <h2 className="text-xl font-bold sm:text-2xl">Real-World Example: Login Form</h2>
             <p className="text-muted-foreground text-sm sm:text-base">

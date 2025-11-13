@@ -47,7 +47,6 @@ export default function LandingPage() {
                   size={60}
                   duration={6}
                   initialOffset={0}
-                  className="from-transparent via-white to-transparent"
                   borderWidth={1}
                 />
               </Link>
@@ -133,14 +132,12 @@ export default function LandingPage() {
               <BorderBeam
                 duration={6}
                 size={400}
-                className="from-transparent via-white to-transparent"
               />
               <BorderBeam
                 duration={6}
                 delay={3}
                 size={400}
                 borderWidth={2}
-                className="from-transparent via-white to-transparent"
               />
             </Card>
 

@@ -31,7 +31,7 @@ export function BlockPreview({
   components,
 }: BlockPreviewProps) {
   return (
-    <Card className={cn('flex flex-col bg-transparent', className)}>
+    <Card id={name} className={cn('flex flex-col bg-transparent scroll-mt-20', className)}>
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <div className="flex-1 space-y-1">

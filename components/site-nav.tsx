@@ -4,9 +4,10 @@ import * as React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
 import { AnimatedThemeToggler } from '@/components/animated-theme-toggler'
+import { SearchCommand } from '@/components/search-command'
 
-// GitHub icon (not available in Heroicons, using inline SVG)
 function GithubIcon({ className, size = 24 }: { className?: string; size?: number }) {
   return (
     <svg
@@ -28,60 +29,145 @@ export function SiteNav() {
   const isBlocks = pathname === '/blocks'
   const isDocs = pathname === '/docs'
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const [hoveredItem, setHoveredItem] = React.useState<string | null>(null)
 
   return (
-    <header className="bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
-      <div className="container mx-auto h-16 px-4 sm:h-20 sm:px-6 lg:px-8">
-        <div className="flex h-full items-center justify-between">
+    <header className="sticky top-0 z-50 w-full px-4 pt-4 sm:px-6 lg:px-8">
+      <div className="bg-background/95 supports-backdrop-filter:bg-background/60 container mx-auto rounded-full border backdrop-blur">
+        <div className="flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
+          {/* Logo - Left */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/logo.svg"
               alt="Logo"
               width={48}
               height={48}
-              className="h-10 w-10 dark:invert sm:h-12 sm:w-12"
+              className="h-8 w-8 dark:invert sm:h-10 sm:w-10"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-2 md:flex lg:gap-4">
+          {/* Desktop Navigation - Center */}
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center md:flex">
             <Link
               href="/components"
-              className={`text-sm font-medium transition-colors lg:text-base ${
-                isComponents ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/80'
-              }`}
+              className="relative px-4 py-2 text-sm font-medium transition-colors duration-300 lg:text-base"
+              style={{
+                color: isComponents ? 'hsl(var(--foreground))' : 'hsl(var(--foreground) / 0.6)',
+              }}
+              onMouseEnter={() => setHoveredItem('components')}
+              onMouseLeave={() => setHoveredItem(null)}
             >
-              Components
+              <span className="relative z-10">Components</span>
+              {hoveredItem === 'components' && (
+                <motion.div
+                  layoutId="hover-bg"
+                  className="absolute inset-0 rounded-md bg-foreground/10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              )}
+              {isComponents && (
+                <motion.div
+                  layoutId="active-underline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+              {hoveredItem === 'components' && !isComponents && (
+                <motion.div
+                  layoutId="hover-underline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
             </Link>
             <Link
               href="/blocks"
-              className={`text-sm font-medium transition-colors lg:text-base ${
-                isBlocks ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/80'
-              }`}
+              className="relative px-4 py-2 text-sm font-medium transition-colors duration-300 lg:text-base"
+              style={{
+                color: isBlocks ? 'hsl(var(--foreground))' : 'hsl(var(--foreground) / 0.6)',
+              }}
+              onMouseEnter={() => setHoveredItem('blocks')}
+              onMouseLeave={() => setHoveredItem(null)}
             >
-              Blocks
+              <span className="relative z-10">Blocks</span>
+              {hoveredItem === 'blocks' && (
+                <motion.div
+                  layoutId="hover-bg"
+                  className="absolute inset-0 rounded-md bg-foreground/10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              )}
+              {isBlocks && (
+                <motion.div
+                  layoutId="active-underline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+              {hoveredItem === 'blocks' && !isBlocks && (
+                <motion.div
+                  layoutId="hover-underline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
             </Link>
             <Link
               href="/docs"
-              className={`text-sm font-medium transition-colors lg:text-base ${
-                isDocs ? 'text-foreground' : 'text-foreground/60 hover:text-foreground/80'
-              }`}
+              className="relative px-4 py-2 text-sm font-medium transition-colors duration-300 lg:text-base"
+              style={{
+                color: isDocs ? 'hsl(var(--foreground))' : 'hsl(var(--foreground) / 0.6)',
+              }}
+              onMouseEnter={() => setHoveredItem('docs')}
+              onMouseLeave={() => setHoveredItem(null)}
             >
-              Docs
+              <span className="relative z-10">Docs</span>
+              {hoveredItem === 'docs' && (
+                <motion.div
+                  layoutId="hover-bg"
+                  className="absolute inset-0 rounded-md bg-foreground/10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                />
+              )}
+              {isDocs && (
+                <motion.div
+                  layoutId="active-underline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+              {hoveredItem === 'docs' && !isDocs && (
+                <motion.div
+                  layoutId="hover-underline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-foreground"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
             </Link>
-            <div className="bg-foreground/20 h-7 w-px" />
-            <div className="flex items-center gap-2 lg:gap-3">
-              <Link
-                href="https://github.com/aguiarsc/wireframe-ui"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-foreground/80 transition-colors"
-              >
-                <GithubIcon size={22} className="size-5.5" />
-              </Link>
-              <AnimatedThemeToggler className="text-foreground/60 hover:text-foreground/80 transition-colors" />
-            </div>
           </nav>
+
+          {/* Search, GitHub & Theme Toggler - Right */}
+          <div className="hidden items-center gap-2 md:flex lg:gap-3">
+            <SearchCommand />
+            <Link
+              href="https://github.com/aguiarsc/wireframe-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/60 hover:text-foreground/80 transition-colors"
+            >
+              <GithubIcon size={22} className="size-5.5" />
+            </Link>
+            <AnimatedThemeToggler className="text-foreground/60 hover:text-foreground/80 transition-colors" />
+          </div>
 
           {/* Mobile Navigation */}
           <div className="flex items-center gap-3 md:hidden">

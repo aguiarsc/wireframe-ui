@@ -28,7 +28,7 @@ export default function ComparisonPage() {
         </section>
 
         {/* Core Difference */}
-        <section className="space-y-4 sm:space-y-6">
+        <section id="core-difference" className="space-y-4 sm:space-y-6 scroll-mt-20">
           <div className="space-y-2">
             <h2 className="text-xl font-bold sm:text-2xl">Core Difference</h2>
             <p className="text-muted-foreground text-sm sm:text-base">
@@ -82,7 +82,7 @@ export default function ComparisonPage() {
         </section>
 
         {/* Feature Comparison */}
-        <section className="space-y-4 sm:space-y-6">
+        <section id="feature-comparison" className="space-y-4 sm:space-y-6 scroll-mt-20">
           <div className="space-y-2">
             <h2 className="text-xl font-bold sm:text-2xl">Feature Comparison</h2>
             <p className="text-muted-foreground text-sm sm:text-base">
@@ -153,7 +153,7 @@ export default function ComparisonPage() {
         </section>
 
         {/* When to Use What */}
-        <section className="space-y-4 sm:space-y-6">
+        <section id="decision-framework" className="space-y-4 sm:space-y-6 scroll-mt-20">
           <div className="space-y-2">
             <h2 className="text-xl font-bold sm:text-2xl">Decision Framework</h2>
             <p className="text-muted-foreground text-sm sm:text-base">
@@ -231,7 +231,7 @@ export default function ComparisonPage() {
         </section>
 
         {/* Honest Limitations */}
-        <section className="space-y-4 sm:space-y-6">
+        <section id="honest-assessment" className="space-y-4 sm:space-y-6 scroll-mt-20">
           <div className="space-y-2">
             <h2 className="text-xl font-bold sm:text-2xl">Honest Assessment</h2>
             <p className="text-muted-foreground text-sm sm:text-base">Every tool has trade-offs</p>
