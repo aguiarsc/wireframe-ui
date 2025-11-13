@@ -33,7 +33,7 @@ export function SiteNav() {
 
   return (
     <header className="sticky top-0 z-50 w-full px-4 pt-4 sm:px-6 lg:px-8">
-      <div className="bg-background/95 supports-backdrop-filter:bg-background/60 container mx-auto rounded-full border backdrop-blur">
+      <div className="bg-background/95 supports-backdrop-filter:bg-background/60 container mx-auto rounded-lg border backdrop-blur">
         <div className="flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
           {/* Logo - Left */}
           <Link href="/" className="flex items-center space-x-2">
