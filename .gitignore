@@ -46,6 +46,7 @@ registry-validation-report.md
 # Agent
 .kiro
 .kiro/*
+audit.md
 
 # IDE settings
 .vscode
