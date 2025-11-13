@@ -8,12 +8,43 @@ import { IdentificationIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/registry/new-york/ui/button'
 import { Text } from '@/registry/new-york/ui/text'
 
-export interface HoverCardProps extends React.ComponentProps<typeof HoverCardPrimitive.Root> {}
+/**
+ * Props for the HoverCard component.
+ * For sighted users to preview content available behind a link.
+ */
+export interface HoverCardProps extends React.ComponentProps<typeof HoverCardPrimitive.Root> {
+  /**
+   * Whether the hover card is open
+   */
+  open?: boolean
+  /**
+   * Default open state (uncontrolled)
+   */
+  defaultOpen?: boolean
+  /**
+   * Callback fired when the open state changes
+   */
+  onOpenChange?: (open: boolean) => void
+  /**
+   * Delay before showing the hover card (in milliseconds)
+   * @default 700
+   */
+  openDelay?: number
+  /**
+   * Delay before hiding the hover card (in milliseconds)
+   * @default 300
+   */
+  closeDelay?: number
+}
 
 function HoverCard({ ...props }: HoverCardProps) {
   return <HoverCardPrimitive.Root data-slot="hover-card" {...props} />
 }
 
+/**
+ * Props for the HoverCardTrigger component.
+ * Element that triggers the hover card on hover.
+ */
 export interface HoverCardTriggerProps
   extends React.ComponentProps<typeof HoverCardPrimitive.Trigger> {}
 
@@ -21,8 +52,27 @@ function HoverCardTrigger({ ...props }: HoverCardTriggerProps) {
   return <HoverCardPrimitive.Trigger data-slot="hover-card-trigger" {...props} />
 }
 
+/**
+ * Props for the HoverCardContent component.
+ * Container for the hover card's content.
+ */
 export interface HoverCardContentProps
-  extends React.ComponentProps<typeof HoverCardPrimitive.Content> {}
+  extends React.ComponentProps<typeof HoverCardPrimitive.Content> {
+  /**
+   * Alignment relative to the trigger
+   * @default 'center'
+   */
+  align?: 'start' | 'center' | 'end'
+  /**
+   * Distance from the trigger element
+   * @default 4
+   */
+  sideOffset?: number
+  /**
+   * Preferred side of the trigger to render against
+   */
+  side?: 'top' | 'right' | 'bottom' | 'left'
+}
 
 function HoverCardContent({
   className,

@@ -5,6 +5,10 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { Text } from '@/registry/new-york/ui/text'
 
+/**
+ * Props for the Table component.
+ * A data table component with wireframe helpers for headers and cells.
+ */
 export interface TableProps extends React.ComponentProps<'table'> {}
 
 function Table({ className, ...props }: TableProps) {
@@ -19,12 +23,20 @@ function Table({ className, ...props }: TableProps) {
   )
 }
 
+/**
+ * Props for the TableHeader component.
+ * Container for table header rows.
+ */
 export interface TableHeaderProps extends React.ComponentProps<'thead'> {}
 
 function TableHeader({ className, ...props }: TableHeaderProps) {
   return <thead data-slot="table-header" className={cn('[&_tr]:border-b', className)} {...props} />
 }
 
+/**
+ * Props for the TableBody component.
+ * Container for table body rows.
+ */
 export interface TableBodyProps extends React.ComponentProps<'tbody'> {}
 
 function TableBody({ className, ...props }: TableBodyProps) {
@@ -37,6 +49,10 @@ function TableBody({ className, ...props }: TableBodyProps) {
   )
 }
 
+/**
+ * Props for the TableFooter component.
+ * Container for table footer rows.
+ */
 export interface TableFooterProps extends React.ComponentProps<'tfoot'> {}
 
 function TableFooter({ className, ...props }: TableFooterProps) {
@@ -49,6 +65,10 @@ function TableFooter({ className, ...props }: TableFooterProps) {
   )
 }
 
+/**
+ * Props for the TableRow component.
+ * A table row with hover and selection states.
+ */
 export interface TableRowProps extends React.ComponentProps<'tr'> {}
 
 function TableRow({ className, ...props }: TableRowProps) {
@@ -64,6 +84,10 @@ function TableRow({ className, ...props }: TableRowProps) {
   )
 }
 
+/**
+ * Props for the TableHead component.
+ * A table header cell.
+ */
 export interface TableHeadProps extends React.ComponentProps<'th'> {}
 
 function TableHead({ className, ...props }: TableHeadProps) {
@@ -79,6 +103,10 @@ function TableHead({ className, ...props }: TableHeadProps) {
   )
 }
 
+/**
+ * Props for the TableCell component.
+ * A table data cell.
+ */
 export interface TableCellProps extends React.ComponentProps<'td'> {}
 
 function TableCell({ className, ...props }: TableCellProps) {
@@ -94,6 +122,10 @@ function TableCell({ className, ...props }: TableCellProps) {
   )
 }
 
+/**
+ * Props for the TableCaption component.
+ * A caption for the table.
+ */
 export interface TableCaptionProps extends React.ComponentProps<'caption'> {}
 
 function TableCaption({ className, ...props }: TableCaptionProps) {

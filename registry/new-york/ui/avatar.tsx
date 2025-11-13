@@ -6,6 +6,10 @@ import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import { cn } from '@/lib/utils'
 import { UserIcon } from '@heroicons/react/24/outline'
 
+/**
+ * Props for the Avatar component.
+ * An image element with a fallback for representing the user.
+ */
 export interface AvatarProps extends React.ComponentProps<typeof AvatarPrimitive.Root> {}
 
 function Avatar({ className, ...props }: AvatarProps) {
@@ -21,7 +25,20 @@ function Avatar({ className, ...props }: AvatarProps) {
   )
 }
 
-export interface AvatarImageProps extends React.ComponentProps<typeof AvatarPrimitive.Image> {}
+/**
+ * Props for the AvatarImage component.
+ * The image displayed within the avatar.
+ */
+export interface AvatarImageProps extends React.ComponentProps<typeof AvatarPrimitive.Image> {
+  /**
+   * Source URL of the avatar image
+   */
+  src?: string
+  /**
+   * Alternative text for the image
+   */
+  alt?: string
+}
 
 function AvatarImage({ className, ...props }: AvatarImageProps) {
   return (
@@ -33,6 +50,10 @@ function AvatarImage({ className, ...props }: AvatarImageProps) {
   )
 }
 
+/**
+ * Props for the AvatarFallback component.
+ * Fallback content displayed when the avatar image fails to load.
+ */
 export interface AvatarFallbackProps
   extends React.ComponentProps<typeof AvatarPrimitive.Fallback> {}
 

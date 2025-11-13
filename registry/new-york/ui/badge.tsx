@@ -26,9 +26,22 @@ const badgeVariants = cva(
   }
 )
 
+/**
+ * Props for the Badge component.
+ * Displays a badge with multiple variant styles.
+ */
 export interface BadgeProps
   extends React.ComponentProps<'span'>,
     VariantProps<typeof badgeVariants> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline'
+  /**
+   * Render as a child component (using Radix Slot)
+   * @default false
+   */
   asChild?: boolean
 }
 
@@ -38,11 +51,25 @@ function Badge({ className, variant, asChild = false, ...props }: BadgeProps) {
   return <Comp data-slot="badge" className={cn(badgeVariants({ variant }), className)} {...props} />
 }
 
-// Wireframe helper component
-export interface BadgeWireframeProps
-  extends Omit<BadgeProps, 'children'>,
-    VariantProps<typeof badgeVariants> {
+/**
+ * Props for the BadgeWireframe component.
+ * Wireframe helper that renders a badge with placeholder text and optional icon.
+ */
+export interface BadgeWireframeProps extends Omit<BadgeProps, 'children' | 'variant'> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline'
+  /**
+   * Icon to display in the badge
+   * @default <CheckIcon />
+   */
   icon?: React.ReactNode
+  /**
+   * Width of the placeholder text
+   * @default 'xs'
+   */
   width?: 'xs' | 'sm' | 'md' | 'lg'
 }
 

@@ -3,8 +3,20 @@ import * as React from 'react'
 import { Text, type TextProps } from '@/registry/new-york/ui/text'
 import { cn } from '@/lib/utils'
 
+/**
+ * Props for the Heading component.
+ * Renders a Text component sized appropriately for heading levels.
+ */
 export interface HeadingProps extends Omit<TextProps, 'size' | 'width'> {
+  /**
+   * Semantic heading level (affects size and width)
+   * @default 1
+   */
   level?: 1 | 2 | 3 | 4 | 5 | 6
+  /**
+   * HTML element to render (overrides semantic level)
+   * @default `h${level}`
+   */
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div'
 }
 

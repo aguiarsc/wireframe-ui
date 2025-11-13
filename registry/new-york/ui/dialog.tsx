@@ -8,12 +8,33 @@ import { XMarkIcon, ChatBubbleLeftEllipsisIcon } from '@heroicons/react/24/outli
 import { Button } from '@/registry/new-york/ui/button'
 import { Text } from '@/registry/new-york/ui/text'
 
-export interface DialogProps extends React.ComponentProps<typeof DialogPrimitive.Root> {}
+/**
+ * Props for the Dialog component.
+ * A modal dialog that interrupts the user with important content and expects a response.
+ */
+export interface DialogProps extends React.ComponentProps<typeof DialogPrimitive.Root> {
+  /**
+   * Whether the dialog is open
+   */
+  open?: boolean
+  /**
+   * Default open state (uncontrolled)
+   */
+  defaultOpen?: boolean
+  /**
+   * Callback fired when the open state changes
+   */
+  onOpenChange?: (open: boolean) => void
+}
 
 function Dialog({ ...props }: DialogProps) {
   return <DialogPrimitive.Root data-slot="dialog" {...props} />
 }
 
+/**
+ * Props for the DialogTrigger component.
+ * Button that opens the dialog.
+ */
 export interface DialogTriggerProps extends React.ComponentProps<typeof DialogPrimitive.Trigger> {}
 
 function DialogTrigger({ ...props }: DialogTriggerProps) {
@@ -47,7 +68,15 @@ function DialogOverlay({ className, ...props }: DialogOverlayProps) {
   )
 }
 
+/**
+ * Props for the DialogContent component.
+ * Container for the dialog's content.
+ */
 export interface DialogContentProps extends React.ComponentProps<typeof DialogPrimitive.Content> {
+  /**
+   * Whether to show the close button (X icon)
+   * @default true
+   */
   showCloseButton?: boolean
 }
 
@@ -83,6 +112,10 @@ function DialogContent({
   )
 }
 
+/**
+ * Props for the DialogHeader component.
+ * Container for dialog title and description.
+ */
 export interface DialogHeaderProps extends React.ComponentProps<'div'> {}
 
 function DialogHeader({ className, ...props }: DialogHeaderProps) {
@@ -95,6 +128,10 @@ function DialogHeader({ className, ...props }: DialogHeaderProps) {
   )
 }
 
+/**
+ * Props for the DialogFooter component.
+ * Container for dialog action buttons.
+ */
 export interface DialogFooterProps extends React.ComponentProps<'div'> {}
 
 function DialogFooter({ className, ...props }: DialogFooterProps) {
@@ -107,6 +144,10 @@ function DialogFooter({ className, ...props }: DialogFooterProps) {
   )
 }
 
+/**
+ * Props for the DialogTitle component.
+ * Accessible title for the dialog.
+ */
 export interface DialogTitleProps extends React.ComponentProps<typeof DialogPrimitive.Title> {}
 
 function DialogTitle({ className, ...props }: DialogTitleProps) {
@@ -119,6 +160,10 @@ function DialogTitle({ className, ...props }: DialogTitleProps) {
   )
 }
 
+/**
+ * Props for the DialogDescription component.
+ * Accessible description for the dialog.
+ */
 export interface DialogDescriptionProps
   extends React.ComponentProps<typeof DialogPrimitive.Description> {}
 
@@ -132,11 +177,28 @@ function DialogDescription({ className, ...props }: DialogDescriptionProps) {
   )
 }
 
-// Wireframe helper component
+/**
+ * Props for the DialogWireframeExample component.
+ * Wireframe helper that renders a complete dialog example with placeholder text.
+ */
 export interface DialogWireframeExampleProps {
+  /**
+   * Icon to display in the trigger button
+   */
   triggerIcon?: React.ReactNode
+  /**
+   * Text for the trigger button (unused, kept for compatibility)
+   */
   triggerText?: string
+  /**
+   * Width of the title placeholder text
+   * @default 'md'
+   */
   titleWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  /**
+   * Width of the description placeholder text
+   * @default 'full'
+   */
   descriptionWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
 

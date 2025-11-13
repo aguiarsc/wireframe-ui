@@ -4,6 +4,10 @@ import { PhotoIcon } from '@heroicons/react/24/outline'
 import { cn } from '@/lib/utils'
 import { Text } from '@/registry/new-york/ui/text'
 
+/**
+ * Props for the Empty component.
+ * An empty state component with wireframe helpers for titles, descriptions, and media.
+ */
 export interface EmptyProps extends React.ComponentProps<'div'> {}
 
 function Empty({ className, ...props }: EmptyProps) {
@@ -19,6 +23,10 @@ function Empty({ className, ...props }: EmptyProps) {
   )
 }
 
+/**
+ * Props for the EmptyHeader component.
+ * Container for empty state title and media.
+ */
 export interface EmptyHeaderProps extends React.ComponentProps<'div'> {}
 
 function EmptyHeader({ className, ...props }: EmptyHeaderProps) {
@@ -46,9 +54,19 @@ const emptyMediaVariants = cva(
   }
 )
 
+/**
+ * Props for the EmptyMedia component.
+ * Icon or image for the empty state.
+ */
 export interface EmptyMediaProps
   extends React.ComponentProps<'div'>,
-    VariantProps<typeof emptyMediaVariants> {}
+    VariantProps<typeof emptyMediaVariants> {
+  /**
+   * Media variant style
+   * @default 'default'
+   */
+  variant?: 'default' | 'icon'
+}
 
 function EmptyMedia({ className, variant = 'default', ...props }: EmptyMediaProps) {
   return (
@@ -61,6 +79,10 @@ function EmptyMedia({ className, variant = 'default', ...props }: EmptyMediaProp
   )
 }
 
+/**
+ * Props for the EmptyTitle component.
+ * Title text for the empty state.
+ */
 export interface EmptyTitleProps extends React.ComponentProps<'div'> {}
 
 function EmptyTitle({ className, ...props }: EmptyTitleProps) {
@@ -73,6 +95,10 @@ function EmptyTitle({ className, ...props }: EmptyTitleProps) {
   )
 }
 
+/**
+ * Props for the EmptyDescription component.
+ * Description text for the empty state.
+ */
 export interface EmptyDescriptionProps extends React.ComponentProps<'p'> {}
 
 function EmptyDescription({ className, ...props }: EmptyDescriptionProps) {
@@ -88,6 +114,10 @@ function EmptyDescription({ className, ...props }: EmptyDescriptionProps) {
   )
 }
 
+/**
+ * Props for the EmptyContent component.
+ * Container for empty state actions and additional content.
+ */
 export interface EmptyContentProps extends React.ComponentProps<'div'> {}
 
 function EmptyContent({ className, ...props }: EmptyContentProps) {
@@ -137,7 +167,7 @@ function EmptyMediaWireframe({
   className,
   children,
   ...props
-}: React.ComponentProps<'div'> & VariantProps<typeof emptyMediaVariants>) {
+}: React.ComponentProps<'div'> & { variant?: 'default' | 'icon' }) {
   return (
     <EmptyMedia variant={variant} className={className} {...props}>
       {children || <PhotoIcon className="text-muted-foreground" />}

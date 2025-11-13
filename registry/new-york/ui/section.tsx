@@ -4,8 +4,24 @@ import { cn } from '@/lib/utils'
 import { Heading } from '@/registry/new-york/ui/heading'
 import { Paragraph } from '@/registry/new-york/ui/paragraph'
 
+/**
+ * Props for the Section component.
+ * A composition component with preset variants for common layout patterns.
+ */
 export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+  /**
+   * Preset layout variant
+   * - 'hero': Centered content with heading, paragraph, and CTA buttons
+   * - 'content-two-column': Two-column layout with text and media
+   * - 'feature-grid': Three-column grid of features
+   * - 'custom': Flexible layout (renders children as-is)
+   * @default 'custom'
+   */
   variant?: 'hero' | 'content-two-column' | 'feature-grid' | 'custom'
+  /**
+   * Gap between section elements
+   * @default 'normal'
+   */
   spacing?: 'tight' | 'normal' | 'relaxed'
 }
 

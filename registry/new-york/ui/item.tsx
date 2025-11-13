@@ -7,6 +7,10 @@ import { cn } from '@/lib/utils'
 import { Separator } from '@/registry/new-york/ui/separator'
 import { Text } from '@/registry/new-york/ui/text'
 
+/**
+ * Props for the ItemGroup component.
+ * Container for grouping multiple Item components.
+ */
 export interface ItemGroupProps extends React.ComponentProps<'div'> {}
 
 function ItemGroup({ className, ...props }: ItemGroupProps) {
@@ -20,6 +24,10 @@ function ItemGroup({ className, ...props }: ItemGroupProps) {
   )
 }
 
+/**
+ * Props for the ItemSeparator component.
+ * Horizontal separator between items in a group.
+ */
 export interface ItemSeparatorProps extends React.ComponentProps<typeof Separator> {}
 
 function ItemSeparator({ className, ...props }: ItemSeparatorProps) {
@@ -54,7 +62,25 @@ const itemVariants = cva(
   }
 )
 
+/**
+ * Props for the Item component.
+ * A flexible item component for lists with wireframe helpers for titles, descriptions, and media.
+ */
 export interface ItemProps extends React.ComponentProps<'div'>, VariantProps<typeof itemVariants> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'outline' | 'muted'
+  /**
+   * Size variant
+   * @default 'default'
+   */
+  size?: 'default' | 'sm'
+  /**
+   * Render as a child component (using Radix Slot)
+   * @default false
+   */
   asChild?: boolean
 }
 
@@ -93,9 +119,19 @@ const itemMediaVariants = cva(
   }
 )
 
+/**
+ * Props for the ItemMedia component.
+ * Container for item media (icon or image).
+ */
 export interface ItemMediaProps
   extends React.ComponentProps<'div'>,
-    VariantProps<typeof itemMediaVariants> {}
+    VariantProps<typeof itemMediaVariants> {
+  /**
+   * Media variant style
+   * @default 'default'
+   */
+  variant?: 'default' | 'icon' | 'image'
+}
 
 function ItemMedia({ className, variant = 'default', ...props }: ItemMediaProps) {
   return (
@@ -108,6 +144,10 @@ function ItemMedia({ className, variant = 'default', ...props }: ItemMediaProps)
   )
 }
 
+/**
+ * Props for the ItemContent component.
+ * Container for item title and description.
+ */
 export interface ItemContentProps extends React.ComponentProps<'div'> {}
 
 function ItemContent({ className, ...props }: ItemContentProps) {
@@ -120,6 +160,10 @@ function ItemContent({ className, ...props }: ItemContentProps) {
   )
 }
 
+/**
+ * Props for the ItemTitle component.
+ * Title text for the item.
+ */
 export interface ItemTitleProps extends React.ComponentProps<'div'> {}
 
 function ItemTitle({ className, ...props }: ItemTitleProps) {
@@ -132,6 +176,10 @@ function ItemTitle({ className, ...props }: ItemTitleProps) {
   )
 }
 
+/**
+ * Props for the ItemDescription component.
+ * Description text for the item.
+ */
 export interface ItemDescriptionProps extends React.ComponentProps<'p'> {}
 
 function ItemDescription({ className, ...props }: ItemDescriptionProps) {
@@ -148,6 +196,10 @@ function ItemDescription({ className, ...props }: ItemDescriptionProps) {
   )
 }
 
+/**
+ * Props for the ItemActions component.
+ * Container for action buttons or icons.
+ */
 export interface ItemActionsProps extends React.ComponentProps<'div'> {}
 
 function ItemActions({ className, ...props }: ItemActionsProps) {
@@ -156,6 +208,10 @@ function ItemActions({ className, ...props }: ItemActionsProps) {
   )
 }
 
+/**
+ * Props for the ItemHeader component.
+ * Header section spanning full width of the item.
+ */
 export interface ItemHeaderProps extends React.ComponentProps<'div'> {}
 
 function ItemHeader({ className, ...props }: ItemHeaderProps) {
@@ -168,6 +224,10 @@ function ItemHeader({ className, ...props }: ItemHeaderProps) {
   )
 }
 
+/**
+ * Props for the ItemFooter component.
+ * Footer section spanning full width of the item.
+ */
 export interface ItemFooterProps extends React.ComponentProps<'div'> {}
 
 function ItemFooter({ className, ...props }: ItemFooterProps) {
@@ -214,7 +274,7 @@ function ItemMediaWireframe({
   className,
   children,
   ...props
-}: React.ComponentProps<'div'> & VariantProps<typeof itemMediaVariants>) {
+}: React.ComponentProps<'div'> & { variant?: 'default' | 'icon' | 'image' }) {
   return (
     <ItemMedia variant={variant} className={className} {...props}>
       {children || (

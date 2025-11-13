@@ -8,12 +8,20 @@ import { RectangleStackIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/registry/new-york/ui/button'
 import { Text } from '@/registry/new-york/ui/text'
 
+/**
+ * Props for the Drawer component.
+ * A panel that slides out from the edge of the screen with support for multiple directions.
+ */
 export type DrawerProps = React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Root>
 
 function Drawer(props: DrawerProps) {
   return <DrawerPrimitive.Root data-slot="drawer" {...props} />
 }
 
+/**
+ * Props for the DrawerTrigger component.
+ * Button that opens the drawer.
+ */
 export interface DrawerTriggerProps extends React.ComponentProps<typeof DrawerPrimitive.Trigger> {}
 
 function DrawerTrigger({ ...props }: DrawerTriggerProps) {
@@ -47,6 +55,10 @@ function DrawerOverlay({ className, ...props }: DrawerOverlayProps) {
   )
 }
 
+/**
+ * Props for the DrawerContent component.
+ * Container for the drawer's content with directional support.
+ */
 export interface DrawerContentProps extends React.ComponentProps<typeof DrawerPrimitive.Content> {}
 
 function DrawerContent({ className, children, ...props }: DrawerContentProps) {
@@ -72,6 +84,10 @@ function DrawerContent({ className, children, ...props }: DrawerContentProps) {
   )
 }
 
+/**
+ * Props for the DrawerHeader component.
+ * Container for drawer title and description.
+ */
 export interface DrawerHeaderProps extends React.ComponentProps<'div'> {}
 
 function DrawerHeader({ className, ...props }: DrawerHeaderProps) {
@@ -87,6 +103,10 @@ function DrawerHeader({ className, ...props }: DrawerHeaderProps) {
   )
 }
 
+/**
+ * Props for the DrawerFooter component.
+ * Container for drawer action buttons.
+ */
 export interface DrawerFooterProps extends React.ComponentProps<'div'> {}
 
 function DrawerFooter({ className, ...props }: DrawerFooterProps) {
@@ -99,6 +119,10 @@ function DrawerFooter({ className, ...props }: DrawerFooterProps) {
   )
 }
 
+/**
+ * Props for the DrawerTitle component.
+ * Accessible title for the drawer.
+ */
 export interface DrawerTitleProps extends React.ComponentProps<typeof DrawerPrimitive.Title> {}
 
 function DrawerTitle({ className, ...props }: DrawerTitleProps) {
@@ -111,6 +135,10 @@ function DrawerTitle({ className, ...props }: DrawerTitleProps) {
   )
 }
 
+/**
+ * Props for the DrawerDescription component.
+ * Accessible description for the drawer.
+ */
 export interface DrawerDescriptionProps
   extends React.ComponentProps<typeof DrawerPrimitive.Description> {}
 
@@ -124,10 +152,24 @@ function DrawerDescription({ className, ...props }: DrawerDescriptionProps) {
   )
 }
 
-// Wireframe helper component
+/**
+ * Props for the DrawerWireframeExample component.
+ * Wireframe helper that renders a complete drawer example with placeholder text.
+ */
 export interface DrawerWireframeExampleProps {
+  /**
+   * Icon to display in the trigger button
+   */
   triggerIcon?: React.ReactNode
+  /**
+   * Width of the title placeholder text
+   * @default 'md'
+   */
   titleWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  /**
+   * Width of the description placeholder text
+   * @default 'lg'
+   */
   descriptionWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
 

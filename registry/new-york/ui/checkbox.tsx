@@ -6,7 +6,34 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { cn } from '@/lib/utils'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
-export interface CheckboxProps extends React.ComponentProps<typeof CheckboxPrimitive.Root> {}
+/**
+ * Props for the Checkbox component.
+ * A control that allows the user to toggle between checked and not checked.
+ */
+export interface CheckboxProps extends React.ComponentProps<typeof CheckboxPrimitive.Root> {
+  /**
+   * Whether the checkbox is checked
+   */
+  checked?: boolean
+  /**
+   * Default checked state (uncontrolled)
+   */
+  defaultChecked?: boolean
+  /**
+   * Callback fired when the checked state changes
+   */
+  onCheckedChange?: (checked: boolean) => void
+  /**
+   * Whether the checkbox is disabled
+   * @default false
+   */
+  disabled?: boolean
+  /**
+   * Whether the checkbox is required
+   * @default false
+   */
+  required?: boolean
+}
 
 function Checkbox({ className, ...props }: CheckboxProps) {
   return (

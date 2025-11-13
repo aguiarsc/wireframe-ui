@@ -4,11 +4,35 @@ import { cn } from '@/lib/utils'
 import { Text, type TextProps } from '@/registry/new-york/ui/text'
 import type { WireframeSpacing } from '@/registry/new-york/lib/wireframe-types'
 
+/**
+ * Props for the ListGroup component.
+ * Renders list items with Text placeholders for wireframe prototyping.
+ */
 export interface ListGroupProps extends React.HTMLAttributes<HTMLUListElement> {
+  /**
+   * Number of list items to render
+   * @default 3
+   */
   items?: number
+  /**
+   * List marker style
+   * @default 'bullet'
+   */
   variant?: 'bullet' | 'number' | 'none'
+  /**
+   * Height of each text line
+   * @default 'base'
+   */
   size?: TextProps['size']
+  /**
+   * Width of each text line
+   * @default 'lg'
+   */
   itemWidth?: TextProps['width']
+  /**
+   * Vertical spacing between items
+   * @default 'normal'
+   */
   spacing?: WireframeSpacing
 }
 

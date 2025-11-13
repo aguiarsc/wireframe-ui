@@ -2,7 +2,18 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
+/**
+ * Props for the Card component.
+ * A container for displaying content with header, footer, and action sections.
+ */
 export interface CardProps extends React.ComponentProps<'div'> {
+  /**
+   * Wireframe spacing preset
+   * - 'compact': Minimal padding and gaps
+   * - 'detailed': Generous padding and gaps
+   * - 'none': Default spacing
+   * @default 'none'
+   */
   wireframe?: 'compact' | 'detailed' | 'none'
 }
 
@@ -32,6 +43,10 @@ function Card({ className, wireframe = 'none', ...props }: CardProps) {
   )
 }
 
+/**
+ * Props for the CardHeader component.
+ * Container for card title, description, and optional action.
+ */
 export interface CardHeaderProps extends React.ComponentProps<'div'> {}
 
 function CardHeader({ className, ...props }: CardHeaderProps) {
@@ -63,6 +78,10 @@ function CardHeader({ className, ...props }: CardHeaderProps) {
   )
 }
 
+/**
+ * Props for the CardTitle component.
+ * Displays the card's main heading.
+ */
 export interface CardTitleProps extends React.ComponentProps<'div'> {}
 
 function CardTitle({ className, ...props }: CardTitleProps) {
@@ -75,6 +94,10 @@ function CardTitle({ className, ...props }: CardTitleProps) {
   )
 }
 
+/**
+ * Props for the CardDescription component.
+ * Displays supporting text below the card title.
+ */
 export interface CardDescriptionProps extends React.ComponentProps<'div'> {}
 
 function CardDescription({ className, ...props }: CardDescriptionProps) {
@@ -87,6 +110,10 @@ function CardDescription({ className, ...props }: CardDescriptionProps) {
   )
 }
 
+/**
+ * Props for the CardAction component.
+ * Container for action buttons or icons in the card header.
+ */
 export interface CardActionProps extends React.ComponentProps<'div'> {}
 
 function CardAction({ className, ...props }: CardActionProps) {
@@ -99,6 +126,10 @@ function CardAction({ className, ...props }: CardActionProps) {
   )
 }
 
+/**
+ * Props for the CardContent component.
+ * Main content area of the card.
+ */
 export interface CardContentProps extends React.ComponentProps<'div'> {}
 
 function CardContent({ className, ...props }: CardContentProps) {
@@ -119,6 +150,10 @@ function CardContent({ className, ...props }: CardContentProps) {
   )
 }
 
+/**
+ * Props for the CardFooter component.
+ * Footer area for actions or additional information.
+ */
 export interface CardFooterProps extends React.ComponentProps<'div'> {}
 
 function CardFooter({ className, ...props }: CardFooterProps) {

@@ -21,9 +21,19 @@ const alertVariants = cva(
   }
 )
 
+/**
+ * Props for the Alert component.
+ * Displays a callout for user attention with optional icon and variant styles.
+ */
 export interface AlertProps
   extends React.ComponentProps<'div'>,
-    VariantProps<typeof alertVariants> {}
+    VariantProps<typeof alertVariants> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'destructive'
+}
 
 function Alert({ className, variant, ...props }: AlertProps) {
   return (
@@ -36,6 +46,10 @@ function Alert({ className, variant, ...props }: AlertProps) {
   )
 }
 
+/**
+ * Props for the AlertTitle component.
+ * Displays the alert's main heading.
+ */
 export interface AlertTitleProps extends React.ComponentProps<'div'> {}
 
 function AlertTitle({ className, ...props }: AlertTitleProps) {
@@ -44,6 +58,10 @@ function AlertTitle({ className, ...props }: AlertTitleProps) {
   )
 }
 
+/**
+ * Props for the AlertDescription component.
+ * Displays supporting text below the alert title.
+ */
 export interface AlertDescriptionProps extends React.ComponentProps<'div'> {}
 
 function AlertDescription({ className, ...props }: AlertDescriptionProps) {
@@ -56,12 +74,30 @@ function AlertDescription({ className, ...props }: AlertDescriptionProps) {
   )
 }
 
-// Wireframe helper components
-export interface AlertWireframeProps
-  extends Omit<AlertProps, 'children'>,
-    VariantProps<typeof alertVariants> {
+/**
+ * Props for the AlertWireframe component.
+ * Wireframe helper that renders a complete alert with placeholder text.
+ */
+export interface AlertWireframeProps extends Omit<AlertProps, 'children' | 'variant'> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'destructive'
+  /**
+   * Icon to display in the alert
+   * @default <ExclamationTriangleIcon />
+   */
   icon?: React.ReactNode
+  /**
+   * Width of the title placeholder text
+   * @default 'lg'
+   */
   titleWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  /**
+   * Width of the description placeholder text
+   * @default 'full'
+   */
   descriptionWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
 

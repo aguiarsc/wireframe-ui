@@ -28,9 +28,41 @@ const toggleVariants = cva(
   }
 )
 
+/**
+ * Props for the Toggle component.
+ * A two-state button that can be either on or off with multiple variants.
+ */
 export interface ToggleProps
   extends React.ComponentProps<typeof TogglePrimitive.Root>,
-    VariantProps<typeof toggleVariants> {}
+    VariantProps<typeof toggleVariants> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'outline'
+  /**
+   * Button size
+   * @default 'default'
+   */
+  size?: 'default' | 'sm' | 'lg'
+  /**
+   * Whether the toggle is pressed
+   */
+  pressed?: boolean
+  /**
+   * Default pressed state (uncontrolled)
+   */
+  defaultPressed?: boolean
+  /**
+   * Callback fired when the pressed state changes
+   */
+  onPressedChange?: (pressed: boolean) => void
+  /**
+   * Whether the toggle is disabled
+   * @default false
+   */
+  disabled?: boolean
+}
 
 function Toggle({ className, variant, size, ...props }: ToggleProps) {
   return (

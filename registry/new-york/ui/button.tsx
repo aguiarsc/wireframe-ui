@@ -30,9 +30,28 @@ const buttonVariants = cva(
   }
 )
 
+/**
+ * Props for the Button component.
+ * A versatile button with multiple variants and sizes.
+ */
 export interface ButtonProps
   extends React.ComponentProps<'button'>,
     VariantProps<typeof buttonVariants> {
+  /**
+   * Visual style variant
+   * @default 'default'
+   */
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+  /**
+   * Button size
+   * @default 'default'
+   */
+  size?: 'default' | 'sm' | 'lg' | 'icon'
+  /**
+   * Render as a child component (using Radix Slot)
+   * Useful for rendering as Link or other components
+   * @default false
+   */
   asChild?: boolean
 }
 

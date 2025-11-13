@@ -5,7 +5,22 @@ import * as SeparatorPrimitive from '@radix-ui/react-separator'
 
 import { cn } from '@/lib/utils'
 
-export interface SeparatorProps extends React.ComponentProps<typeof SeparatorPrimitive.Root> {}
+/**
+ * Props for the Separator component.
+ * Visually or semantically separates content with horizontal or vertical orientation.
+ */
+export interface SeparatorProps extends React.ComponentProps<typeof SeparatorPrimitive.Root> {
+  /**
+   * Orientation of the separator
+   * @default 'horizontal'
+   */
+  orientation?: 'horizontal' | 'vertical'
+  /**
+   * Whether the separator is purely decorative (affects accessibility)
+   * @default true
+   */
+  decorative?: boolean
+}
 
 function Separator({
   className,

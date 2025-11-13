@@ -2,10 +2,30 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
+/**
+ * Props for the Stack component.
+ * A layout primitive for arranging wireframe elements with configurable spacing and alignment.
+ */
 export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {
+  /**
+   * Flex direction of the stack
+   * @default 'vertical'
+   */
   direction?: 'vertical' | 'horizontal'
+  /**
+   * Gap between stack items
+   * @default 'md'
+   */
   spacing?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  /**
+   * Cross-axis alignment (align-items)
+   * @default 'stretch'
+   */
   align?: 'start' | 'center' | 'end' | 'stretch'
+  /**
+   * Main-axis alignment (justify-content)
+   * @default 'start'
+   */
   justify?: 'start' | 'center' | 'end' | 'between' | 'around'
 }
 

@@ -5,6 +5,10 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
 import { Button, buttonVariants } from '@/registry/new-york/ui/button'
 
+/**
+ * Props for the Pagination component.
+ * Pagination with page navigation, next and previous links.
+ */
 export interface PaginationProps extends React.ComponentProps<'nav'> {}
 
 function Pagination({ className, ...props }: PaginationProps) {
@@ -19,6 +23,10 @@ function Pagination({ className, ...props }: PaginationProps) {
   )
 }
 
+/**
+ * Props for the PaginationContent component.
+ * Container for pagination items.
+ */
 export interface PaginationContentProps extends React.ComponentProps<'ul'> {}
 
 function PaginationContent({ className, ...props }: PaginationContentProps) {
@@ -31,16 +39,32 @@ function PaginationContent({ className, ...props }: PaginationContentProps) {
   )
 }
 
+/**
+ * Props for the PaginationItem component.
+ * Individual pagination item wrapper.
+ */
 export interface PaginationItemProps extends React.ComponentProps<'li'> {}
 
 function PaginationItem({ ...props }: PaginationItemProps) {
   return <li data-slot="pagination-item" {...props} />
 }
 
+/**
+ * Props for the PaginationLink component.
+ * Clickable pagination link.
+ */
 export type PaginationLinkProps = {
+  /**
+   * Whether this is the active page
+   * @default false
+   */
   isActive?: boolean
-} & Pick<React.ComponentProps<typeof Button>, 'size'> &
-  React.ComponentProps<'a'>
+  /**
+   * Size of the link button
+   * @default 'icon'
+   */
+  size?: 'default' | 'sm' | 'lg' | 'icon'
+} & React.ComponentProps<'a'>
 
 function PaginationLink({ className, isActive, size = 'icon', ...props }: PaginationLinkProps) {
   return (
@@ -60,6 +84,10 @@ function PaginationLink({ className, isActive, size = 'icon', ...props }: Pagina
   )
 }
 
+/**
+ * Props for the PaginationPrevious component.
+ * Previous page navigation link.
+ */
 export interface PaginationPreviousProps extends React.ComponentProps<typeof PaginationLink> {}
 
 function PaginationPrevious({ className, children, ...props }: PaginationPreviousProps) {
@@ -76,6 +104,10 @@ function PaginationPrevious({ className, children, ...props }: PaginationPreviou
   )
 }
 
+/**
+ * Props for the PaginationNext component.
+ * Next page navigation link.
+ */
 export interface PaginationNextProps extends React.ComponentProps<typeof PaginationLink> {}
 
 function PaginationNext({ className, children, ...props }: PaginationNextProps) {
@@ -92,6 +124,10 @@ function PaginationNext({ className, children, ...props }: PaginationNextProps) 
   )
 }
 
+/**
+ * Props for the PaginationEllipsis component.
+ * Ellipsis indicator for skipped pages.
+ */
 export interface PaginationEllipsisProps extends React.ComponentProps<'span'> {}
 
 function PaginationEllipsis({ className, ...props }: PaginationEllipsisProps) {

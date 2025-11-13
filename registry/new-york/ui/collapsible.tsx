@@ -6,12 +6,38 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { Button } from '@/registry/new-york/ui/button'
 import { Text } from '@/registry/new-york/ui/text'
 
-export interface CollapsibleProps extends React.ComponentProps<typeof CollapsiblePrimitive.Root> {}
+/**
+ * Props for the Collapsible component.
+ * An interactive component which expands/collapses a panel.
+ */
+export interface CollapsibleProps extends React.ComponentProps<typeof CollapsiblePrimitive.Root> {
+  /**
+   * Whether the collapsible is open
+   */
+  open?: boolean
+  /**
+   * Default open state (uncontrolled)
+   */
+  defaultOpen?: boolean
+  /**
+   * Callback fired when the open state changes
+   */
+  onOpenChange?: (open: boolean) => void
+  /**
+   * Whether the collapsible is disabled
+   * @default false
+   */
+  disabled?: boolean
+}
 
 function Collapsible({ ...props }: CollapsibleProps) {
   return <CollapsiblePrimitive.Root data-slot="collapsible" {...props} />
 }
 
+/**
+ * Props for the CollapsibleTrigger component.
+ * Button that toggles the collapsible's expanded state.
+ */
 export interface CollapsibleTriggerProps
   extends React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger> {}
 
@@ -19,6 +45,10 @@ function CollapsibleTrigger({ ...props }: CollapsibleTriggerProps) {
   return <CollapsiblePrimitive.CollapsibleTrigger data-slot="collapsible-trigger" {...props} />
 }
 
+/**
+ * Props for the CollapsibleContent component.
+ * Collapsible content area.
+ */
 export interface CollapsibleContentProps
   extends React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent> {}
 

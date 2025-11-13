@@ -2,13 +2,42 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { MusicalNoteIcon, HandThumbUpIcon, PhotoIcon } from '@heroicons/react/24/outline'
 
+/**
+ * Props for the Media component.
+ * A container for displaying images, videos, and audio with loading states and fallback placeholders.
+ */
 export interface MediaProps extends React.ComponentProps<'div'> {
+  /**
+   * Source URL for the media file
+   */
   src?: string
+  /**
+   * Alternative text for images
+   * @default 'Media'
+   */
   alt?: string
+  /**
+   * Type of media to display
+   * @default 'image'
+   */
   type?: 'image' | 'video' | 'audio'
+  /**
+   * Aspect ratio of the media container
+   * @default 'video'
+   */
   aspectRatio?: 'square' | 'video' | 'portrait' | 'auto'
+  /**
+   * Whether the media is in a loading state
+   * @default false
+   */
   loading?: boolean
+  /**
+   * Callback fired when media loads successfully
+   */
   onLoad?: () => void
+  /**
+   * Callback fired when media fails to load
+   */
   onError?: () => void
 }
 

@@ -6,25 +6,75 @@ import * as SelectPrimitive from '@radix-ui/react-select'
 import { cn } from '@/lib/utils'
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 
-export interface SelectProps extends React.ComponentProps<typeof SelectPrimitive.Root> {}
+/**
+ * Props for the Select component.
+ * Displays a list of options for the user to pick from with keyboard navigation support.
+ */
+export interface SelectProps extends React.ComponentProps<typeof SelectPrimitive.Root> {
+  /**
+   * Current selected value (controlled)
+   */
+  value?: string
+  /**
+   * Default selected value (uncontrolled)
+   */
+  defaultValue?: string
+  /**
+   * Callback fired when the selected value changes
+   */
+  onValueChange?: (value: string) => void
+  /**
+   * Whether the select is open
+   */
+  open?: boolean
+  /**
+   * Default open state (uncontrolled)
+   */
+  defaultOpen?: boolean
+  /**
+   * Callback fired when the open state changes
+   */
+  onOpenChange?: (open: boolean) => void
+}
 
 function Select({ ...props }: SelectProps) {
   return <SelectPrimitive.Root data-slot="select" {...props} />
 }
 
+/**
+ * Props for the SelectGroup component.
+ * Groups related select items together.
+ */
 export interface SelectGroupProps extends React.ComponentProps<typeof SelectPrimitive.Group> {}
 
 function SelectGroup({ ...props }: SelectGroupProps) {
   return <SelectPrimitive.Group data-slot="select-group" {...props} />
 }
 
-export interface SelectValueProps extends React.ComponentProps<typeof SelectPrimitive.Value> {}
+/**
+ * Props for the SelectValue component.
+ * Displays the currently selected value.
+ */
+export interface SelectValueProps extends React.ComponentProps<typeof SelectPrimitive.Value> {
+  /**
+   * Placeholder text when no value is selected
+   */
+  placeholder?: string
+}
 
 function SelectValue({ ...props }: SelectValueProps) {
   return <SelectPrimitive.Value data-slot="select-value" {...props} />
 }
 
+/**
+ * Props for the SelectTrigger component.
+ * Button that opens the select dropdown.
+ */
 export interface SelectTriggerProps extends React.ComponentProps<typeof SelectPrimitive.Trigger> {
+  /**
+   * Size variant
+   * @default 'default'
+   */
   size?: 'sm' | 'default'
 }
 
@@ -47,7 +97,22 @@ function SelectTrigger({ className, size = 'default', children, ...props }: Sele
   )
 }
 
-export interface SelectContentProps extends React.ComponentProps<typeof SelectPrimitive.Content> {}
+/**
+ * Props for the SelectContent component.
+ * Container for select items.
+ */
+export interface SelectContentProps extends React.ComponentProps<typeof SelectPrimitive.Content> {
+  /**
+   * Positioning strategy
+   * @default 'popper'
+   */
+  position?: 'item-aligned' | 'popper'
+  /**
+   * Alignment relative to the trigger
+   * @default 'center'
+   */
+  align?: 'start' | 'center' | 'end'
+}
 
 function SelectContent({
   className,
@@ -86,6 +151,10 @@ function SelectContent({
   )
 }
 
+/**
+ * Props for the SelectLabel component.
+ * Label for a group of select items.
+ */
 export interface SelectLabelProps extends React.ComponentProps<typeof SelectPrimitive.Label> {}
 
 function SelectLabel({ className, ...props }: SelectLabelProps) {
@@ -98,7 +167,21 @@ function SelectLabel({ className, ...props }: SelectLabelProps) {
   )
 }
 
-export interface SelectItemProps extends React.ComponentProps<typeof SelectPrimitive.Item> {}
+/**
+ * Props for the SelectItem component.
+ * An individual selectable option.
+ */
+export interface SelectItemProps extends React.ComponentProps<typeof SelectPrimitive.Item> {
+  /**
+   * Unique value for this option
+   */
+  value: string
+  /**
+   * Whether the item is disabled
+   * @default false
+   */
+  disabled?: boolean
+}
 
 function SelectItem({ className, children, ...props }: SelectItemProps) {
   return (
@@ -120,6 +203,10 @@ function SelectItem({ className, children, ...props }: SelectItemProps) {
   )
 }
 
+/**
+ * Props for the SelectSeparator component.
+ * Visual separator between select items.
+ */
 export interface SelectSeparatorProps
   extends React.ComponentProps<typeof SelectPrimitive.Separator> {}
 

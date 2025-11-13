@@ -1,5 +1,9 @@
 import { cn } from '@/lib/utils'
 
+/**
+ * Props for the Kbd component.
+ * Displays keyboard shortcuts or keys with proper styling.
+ */
 export interface KbdProps extends React.ComponentProps<'kbd'> {}
 
 function Kbd({ className, ...props }: KbdProps) {
@@ -17,6 +21,10 @@ function Kbd({ className, ...props }: KbdProps) {
   )
 }
 
+/**
+ * Props for the KbdGroup component.
+ * Container for grouping multiple Kbd components (e.g., "Cmd + K").
+ */
 export interface KbdGroupProps extends React.ComponentProps<'div'> {}
 
 function KbdGroup({ className, ...props }: KbdGroupProps) {

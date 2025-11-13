@@ -5,6 +5,10 @@ import * as LabelPrimitive from '@radix-ui/react-label'
 
 import { cn } from '@/lib/utils'
 
+/**
+ * Props for the Label component.
+ * Renders an accessible label associated with form controls.
+ */
 export interface LabelProps extends React.ComponentProps<typeof LabelPrimitive.Root> {}
 
 function Label({ className, ...props }: LabelProps) {

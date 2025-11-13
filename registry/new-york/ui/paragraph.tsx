@@ -3,12 +3,38 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { Text, type TextProps } from '@/registry/new-york/ui/text'
 
+/**
+ * Props for the Paragraph component.
+ * Renders multiple Text lines to simulate paragraph content.
+ */
 export interface ParagraphProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'color'> {
+  /**
+   * Number of text lines to render
+   * @default 3
+   */
   lines?: number
+  /**
+   * Width of the last line (typically shorter than full width)
+   * @default 'lg'
+   */
   lastLineWidth?: TextProps['width']
+  /**
+   * Height of each text line
+   * @default 'base'
+   */
   size?: TextProps['size']
+  /**
+   * Color variant for all lines
+   */
   color?: TextProps['color']
+  /**
+   * Visual emphasis level for all lines
+   */
   emphasis?: TextProps['emphasis']
+  /**
+   * Vertical spacing between lines
+   * @default 'normal'
+   */
   spacing?: 'tight' | 'normal' | 'relaxed'
 }
 

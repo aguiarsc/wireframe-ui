@@ -5,12 +5,20 @@ import { cn } from '@/lib/utils'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
 
+/**
+ * Props for the Breadcrumb component.
+ * Displays the path to the current resource using a hierarchy of links.
+ */
 export interface BreadcrumbProps extends React.ComponentProps<'nav'> {}
 
 function Breadcrumb({ ...props }: BreadcrumbProps) {
   return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />
 }
 
+/**
+ * Props for the BreadcrumbList component.
+ * Ordered list container for breadcrumb items.
+ */
 export interface BreadcrumbListProps extends React.ComponentProps<'ol'> {}
 
 function BreadcrumbList({ className, ...props }: BreadcrumbListProps) {
@@ -26,6 +34,10 @@ function BreadcrumbList({ className, ...props }: BreadcrumbListProps) {
   )
 }
 
+/**
+ * Props for the BreadcrumbItem component.
+ * Individual item in the breadcrumb navigation.
+ */
 export interface BreadcrumbItemProps extends React.ComponentProps<'li'> {}
 
 function BreadcrumbItem({ className, ...props }: BreadcrumbItemProps) {
@@ -38,7 +50,16 @@ function BreadcrumbItem({ className, ...props }: BreadcrumbItemProps) {
   )
 }
 
+/**
+ * Props for the BreadcrumbLink component.
+ * Clickable link within a breadcrumb item.
+ */
 export interface BreadcrumbLinkProps extends React.ComponentProps<'a'> {
+  /**
+   * Render as a child component (using Radix Slot)
+   * Useful for rendering as Next.js Link
+   * @default false
+   */
   asChild?: boolean
 }
 
@@ -54,6 +75,10 @@ function BreadcrumbLink({ asChild, className, ...props }: BreadcrumbLinkProps) {
   )
 }
 
+/**
+ * Props for the BreadcrumbPage component.
+ * Current page indicator (non-clickable) in the breadcrumb.
+ */
 export interface BreadcrumbPageProps extends React.ComponentProps<'span'> {}
 
 function BreadcrumbPage({ className, ...props }: BreadcrumbPageProps) {
@@ -69,6 +94,10 @@ function BreadcrumbPage({ className, ...props }: BreadcrumbPageProps) {
   )
 }
 
+/**
+ * Props for the BreadcrumbSeparator component.
+ * Visual separator between breadcrumb items.
+ */
 export interface BreadcrumbSeparatorProps extends React.ComponentProps<'li'> {}
 
 function BreadcrumbSeparator({ children, className, ...props }: BreadcrumbSeparatorProps) {
@@ -85,6 +114,10 @@ function BreadcrumbSeparator({ children, className, ...props }: BreadcrumbSepara
   )
 }
 
+/**
+ * Props for the BreadcrumbEllipsis component.
+ * Ellipsis indicator for collapsed breadcrumb items.
+ */
 export interface BreadcrumbEllipsisProps extends React.ComponentProps<'span'> {}
 
 function BreadcrumbEllipsis({ className, ...props }: BreadcrumbEllipsisProps) {

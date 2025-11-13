@@ -22,9 +22,19 @@ const buttonGroupVariants = cva(
   }
 )
 
+/**
+ * Props for the ButtonGroup component.
+ * A button group component with wireframe helper for text labels.
+ */
 export interface ButtonGroupProps
   extends React.ComponentProps<'div'>,
-    VariantProps<typeof buttonGroupVariants> {}
+    VariantProps<typeof buttonGroupVariants> {
+  /**
+   * Orientation of the button group
+   * @default 'horizontal'
+   */
+  orientation?: 'horizontal' | 'vertical'
+}
 
 function ButtonGroup({ className, orientation, ...props }: ButtonGroupProps) {
   return (
@@ -38,7 +48,15 @@ function ButtonGroup({ className, orientation, ...props }: ButtonGroupProps) {
   )
 }
 
+/**
+ * Props for the ButtonGroupText component.
+ * Text label within a button group.
+ */
 export interface ButtonGroupTextProps extends React.ComponentProps<'div'> {
+  /**
+   * Render as a child component (using Radix Slot)
+   * @default false
+   */
   asChild?: boolean
 }
 
@@ -56,7 +74,17 @@ function ButtonGroupText({ className, asChild = false, ...props }: ButtonGroupTe
   )
 }
 
-export interface ButtonGroupSeparatorProps extends React.ComponentProps<typeof Separator> {}
+/**
+ * Props for the ButtonGroupSeparator component.
+ * Visual separator between buttons in a group.
+ */
+export interface ButtonGroupSeparatorProps extends React.ComponentProps<typeof Separator> {
+  /**
+   * Orientation of the separator
+   * @default 'vertical'
+   */
+  orientation?: 'horizontal' | 'vertical'
+}
 
 function ButtonGroupSeparator({
   className,

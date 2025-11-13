@@ -5,7 +5,49 @@ import * as SliderPrimitive from '@radix-ui/react-slider'
 
 import { cn } from '@/lib/utils'
 
-export interface SliderProps extends React.ComponentProps<typeof SliderPrimitive.Root> {}
+/**
+ * Props for the Slider component.
+ * An input where the user selects a value from within a given range.
+ */
+export interface SliderProps extends React.ComponentProps<typeof SliderPrimitive.Root> {
+  /**
+   * Current value(s) of the slider (controlled)
+   */
+  value?: number[]
+  /**
+   * Default value(s) of the slider (uncontrolled)
+   */
+  defaultValue?: number[]
+  /**
+   * Callback fired when the value changes
+   */
+  onValueChange?: (value: number[]) => void
+  /**
+   * Minimum value
+   * @default 0
+   */
+  min?: number
+  /**
+   * Maximum value
+   * @default 100
+   */
+  max?: number
+  /**
+   * Step increment
+   * @default 1
+   */
+  step?: number
+  /**
+   * Orientation of the slider
+   * @default 'horizontal'
+   */
+  orientation?: 'horizontal' | 'vertical'
+  /**
+   * Whether the slider is disabled
+   * @default false
+   */
+  disabled?: boolean
+}
 
 function Slider({ className, defaultValue, value, min = 0, max = 100, ...props }: SliderProps) {
   const _values = React.useMemo(

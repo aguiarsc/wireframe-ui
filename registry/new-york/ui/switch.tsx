@@ -5,7 +5,34 @@ import * as SwitchPrimitive from '@radix-ui/react-switch'
 
 import { cn } from '@/lib/utils'
 
-export interface SwitchProps extends React.ComponentProps<typeof SwitchPrimitive.Root> {}
+/**
+ * Props for the Switch component.
+ * A control that allows the user to toggle between checked and unchecked states.
+ */
+export interface SwitchProps extends React.ComponentProps<typeof SwitchPrimitive.Root> {
+  /**
+   * Whether the switch is checked
+   */
+  checked?: boolean
+  /**
+   * Default checked state (uncontrolled)
+   */
+  defaultChecked?: boolean
+  /**
+   * Callback fired when the checked state changes
+   */
+  onCheckedChange?: (checked: boolean) => void
+  /**
+   * Whether the switch is disabled
+   * @default false
+   */
+  disabled?: boolean
+  /**
+   * Whether the switch is required
+   * @default false
+   */
+  required?: boolean
+}
 
 function Switch({ className, ...props }: SwitchProps) {
   return (

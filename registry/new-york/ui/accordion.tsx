@@ -6,12 +6,20 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { cn } from '@/lib/utils'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
+/**
+ * Props for the Accordion component.
+ * A vertically stacked set of interactive headings that each reveal a section of content.
+ */
 export type AccordionProps = React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>
 
 function Accordion(props: AccordionProps) {
   return <AccordionPrimitive.Root data-slot="accordion" {...props} />
 }
 
+/**
+ * Props for the AccordionItem component.
+ * Individual collapsible section within an Accordion.
+ */
 export interface AccordionItemProps extends React.ComponentProps<typeof AccordionPrimitive.Item> {}
 
 function AccordionItem({ className, ...props }: AccordionItemProps) {
@@ -24,6 +32,10 @@ function AccordionItem({ className, ...props }: AccordionItemProps) {
   )
 }
 
+/**
+ * Props for the AccordionTrigger component.
+ * Button that toggles the accordion item's expanded state.
+ */
 export interface AccordionTriggerProps
   extends React.ComponentProps<typeof AccordionPrimitive.Trigger> {}
 
@@ -47,6 +59,10 @@ function AccordionTrigger({ className, children, ...props }: AccordionTriggerPro
   )
 }
 
+/**
+ * Props for the AccordionContent component.
+ * Collapsible content area of an accordion item.
+ */
 export interface AccordionContentProps
   extends React.ComponentProps<typeof AccordionPrimitive.Content> {}
 

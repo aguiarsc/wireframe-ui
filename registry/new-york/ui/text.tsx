@@ -68,16 +68,57 @@ const textVariants = cva('rounded-full inline-block align-middle', {
   },
 })
 
+/**
+ * Props for the Text component - the foundation of all wireframe components.
+ * Renders a skeleton text placeholder as an animated line.
+ */
 export interface TextProps
   extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'color'>,
     Omit<VariantProps<typeof textVariants>, 'animate' | 'emphasis'> {
+  /**
+   * Height of the text line
+   * @default 'base'
+   */
+  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl'
+  /**
+   * Width of the text line
+   * @default 'md'
+   */
+  width?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full'
+  /**
+   * Color variant of the text line
+   * @default 'default'
+   */
+  color?: 'default' | 'muted' | 'subtle' | 'primary' | 'secondary' | 'accent'
+  /**
+   * Whether to truncate the text with max-width
+   * @default false
+   */
   truncate?: boolean
+  /**
+   * Animation variant for the text line
+   * @default 'none'
+   */
   animate?: WireframeAnimation
+  /**
+   * Visual emphasis level (overrides color when set)
+   */
   emphasis?: WireframeEmphasis
+  /**
+   * Responsive size and width values for different breakpoints
+   * @example
+   * ```tsx
+   * <Text responsive={{ base: { size: 'sm' }, md: { size: 'lg' } }} />
+   * ```
+   */
   responsive?: ResponsiveProps<{
     size?: NonNullable<VariantProps<typeof textVariants>['size']>
     width?: NonNullable<VariantProps<typeof textVariants>['width']>
   }>
+  /**
+   * Breakpoints where the text should be hidden
+   * @example ['sm', 'md'] - hides on small and medium screens
+   */
   hideOn?: ('sm' | 'md' | 'lg' | 'xl')[]
 }
 
